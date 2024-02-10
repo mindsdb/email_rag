@@ -1,0 +1,1474 @@
+{
+    "examples": [
+        {
+            "query": "What is the FY2018 capital expenditure amount (in USD millions) for 3M? Give a response to the question by relying on the details shown in the cash flow statement.",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Table of Contents \n3M Company and Subsidiaries\nConsolidated Statement of Cash Flow s\nYears ended December 31\n \n(Millions)\n    \n2018\n    \n2017\n    \n2016\n \nCash Flows from Operating Activities\n \n \n  \n \n  \n \n  \nNet income including noncontrolling interest\n \n$\n5,363  \n$\n4,869  \n$\n5,058  \nAdjustments to reconcile net income including noncontrolling interest to net cash\nprovided by operating activities\n \n \n  \n \n  \n \n  \nDepreciation and amortization\n \n \n1,488  \n \n1,544  \n \n1,474  \nCompany pension and postretirement contributions\n \n \n(370) \n \n(967) \n \n(383) \nCompany pension and postretirement expense\n \n \n410  \n \n334  \n \n250  \nStock-based compensation expense\n \n \n302  \n \n324  \n \n298  \nGain on sale of businesses\n \n \n(545) \n \n(586) \n \n(111) \nDeferred income taxes\n \n \n(57) \n \n107  \n \n 7  \nChanges in assets and liabilities\n \n \n  \n \n  \n \n  \nAccounts receivable\n \n \n(305) \n \n(245) \n \n(313) \nInventories\n \n \n(509) \n \n(387) \n \n57  \nAccounts payable\n \n \n408  \n \n24  \n \n148  \nAccrued income taxes (current and long-term)\n \n \n134  \n \n967  \n \n101  \nOther \u2014 net\n \n \n120  \n \n256  \n \n76  \nNet cash provided by (used in) operating activities\n \n \n6,439  \n \n6,240  \n \n6,662  \n \n \n \n  \n \n  \n \n  \nCash Flows from Investing Activities\n \n \n  \n \n  \n \n  \nPurchases of property, plant and equipment (PP&E)\n \n \n(1,577) \n \n(1,373) \n \n(1,420) \nProceeds from sale of PP&E and other assets\n \n \n262  \n \n49  \n \n58  \nAcquisitions, net of cash acquired\n \n \n13  \n \n(2,023) \n \n(16) \nPurchases of marketable securities and investments\n \n \n(1,828) \n \n(2,152) \n \n(1,410) \nProceeds from maturities and sale of marketable securities and investments\n \n \n2,497  \n \n1,354  \n \n1,247  \nProceeds from sale of businesses, net of cash sold\n \n \n846  \n \n1,065  \n \n142  \nOther \u2014 net\n \n \n 9  \n \n(6) \n \n(4) \nNet cash provided by (used in) investing activities\n \n \n222  \n \n(3,086) \n \n(1,403) \n \n \n \n  \n \n  \n \n  \nCash Flows from Financing Activities\n \n \n  \n \n  \n \n  \nChange in short-term debt \u2014 net\n \n \n(284) \n \n578  \n \n(797) \nRepayment of debt (maturities greater than 90 days)\n \n \n(1,034) \n \n(962) \n \n(992) \nProceeds from debt (maturities greater than 90 days)\n \n \n2,251  \n \n1,987  \n \n2,832  \nPurchases of treasury stock\n \n \n(4,870) \n \n(2,068) \n \n(3,753) \nProceeds from issuance of treasury stock pursuant to stock option and benefit plans\n \n \n485  \n \n734  \n \n804  \nDividends paid to shareholders\n \n \n(3,193) \n \n(2,803) \n \n(2,678) \nOther \u2014 net\n \n \n(56) \n \n(121) \n \n(42) \nNet cash provided by (used in) financing activities\n \n \n(6,701) \n \n(2,655) \n \n(4,626) \n \n \n \n  \n \n  \n \n  \nEffect of exchange rate changes on cash and cash equivalents\n \n \n(160) \n \n156  \n \n(33) \n \n \n \n  \n \n  \n \n  \nNet increase (decrease) in cash and cash equivalents\n \n \n(200) \n \n655  \n \n600  \nCash and cash equivalents at beginning of year\n \n \n3,053  \n \n2,398  \n \n1,798  \nCash and cash equivalents at end of period\n \n$\n2,853  \n$\n3,053  \n$\n2,398  \n \nThe accompanying Notes to Consolidated Financial Statements are an integral part of this statement.\n \n60"
+            ],
+            "reference_answer": "$1577.00",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Assume that you are a public equities analyst. Answer the following question by primarily using information that is shown in the balance sheet: what is the year end FY2018 net PPNE for 3M? Answer in USD billions.",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Table of Contents \n3M Company and Subsidiaries\nConsolidated Balance Shee t\nAt December 31\n \n \n    \nDecember 31,\n    \nDecember 31,\n \n(Dollars in millions, except per share amount)\n    \n2018\n    \n2017\n \nAssets\n \n \n  \n \n  \nCurrent assets\n \n \n  \n \n  \nCash and cash equivalents\n \n$\n2,853  \n$\n3,053  \nMarketable securities \u2014 current\n \n \n380  \n \n1,076  \nAccounts receivable \u2014 net of allowances of $95 and $103\n \n \n5,020  \n \n4,911  \nInventories\n \n \n  \n \n  \nFinished goods\n \n \n2,120  \n \n1,915  \nWork in process\n \n \n1,292  \n \n1,218  \nRaw materials and supplies\n \n \n954  \n \n901  \nTotal inventories\n \n \n4,366  \n \n4,034  \nPrepaids\n \n \n741  \n \n937  \nOther current assets\n \n \n349  \n \n266  \nTotal current assets\n \n \n13,709  \n \n14,277  \nProperty, plant and equipment\n \n \n24,873  \n \n24,914  \nLess: Accumulated depreciation\n \n \n(16,135)  \n \n(16,048)  \nProperty, plant and equipment \u2014 net\n \n \n8,738  \n \n8,866  \nGoodwill\n \n \n10,051  \n \n10,513  \nIntangible assets \u2014 net\n \n \n2,657  \n \n2,936  \nOther assets\n \n \n1,345  \n \n1,395  \nTotal assets\n \n$\n36,500  \n$\n37,987  \nLiabilities\n \n \n  \n \n  \nCurrent liabilities\n \n \n  \n \n  \nShort-term borrowings and current portion of long-term debt\n \n$\n1,211  \n$\n1,853  \nAccounts payable\n \n \n2,266  \n \n1,945  \nAccrued payroll\n \n \n749  \n \n870  \nAccrued income taxes\n \n \n243  \n \n310  \nOther current liabilities\n \n \n2,775  \n \n2,709  \nTotal current liabilities\n \n \n7,244  \n \n7,687  \n \n \n \n  \n \n  \nLong-term debt\n \n \n13,411  \n \n12,096  \nPension and postretirement benefits\n \n \n2,987  \n \n3,620  \nOther liabilities\n \n \n3,010  \n \n2,962  \nTotal liabilities\n \n$\n26,652  \n$\n26,365  \nCommitments and contingencies (Note 16)\n \n \n  \n \n  \nEquity\n \n \n  \n \n  \n3M Company shareholders\u2019 equity:\n \n \n  \n \n  \nCommon stock par value, $.01 par value\n \n$\n 9  \n$\n 9  \nShares outstanding - 2018: 576,575,168\n \n \n  \n \n  \nShares outstanding - 2017: 594,884,237\n \n \n  \n \n  \nAdditional paid-in capital\n \n \n5,643  \n \n5,352  \nRetained earnings\n \n \n40,636  \n \n39,115  \nTreasury stock\n \n \n(29,626)  \n \n(25,887)  \nAccumulated other comprehensive income (loss)\n \n \n(6,866)  \n \n(7,026)  \nTotal 3M Company shareholders\u2019 equity\n \n \n9,796  \n \n11,563  \nNoncontrolling interest\n \n \n52  \n \n59  \nTotal equity\n \n$\n9,848  \n$\n11,622  \nTotal liabilities and equity\n \n$\n36,500  \n$\n37,987  \n \nThe accompanying Notes to Consolidated Financial Statements are an integral part of this statement.\n58"
+            ],
+            "reference_answer": "$8.70",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Is 3M a capital-intensive business based on FY2022 data?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "3M Company and Subsidiaries\n Consolidated Statement of Income\n Years ended December 31\n (Millions, except per share amounts) 2022 2021 2020\n Net sales $ 34,229 $ 35,355 $ 32,184___FINANCEBENCH_DELIMITER___3M Company and Subsidiaries\n Consolidated Balance Sheet\n At December 31\n (Dollars in millions, except per share amount) 2022 2021 Property, plant and equipment \u2014 net 9,178 9,429 Total assets $ 46,455 $ 47,072___FINANCEBENCH_DELIMITER___3M Company and Subsidiaries\n Consolidated Statement of Cash Flows\n Years ended December 31\n (Millions) 2022 2021 2020 Cash Flows from Investing Activities\n Purchases of property, plant and equipment (PP&E) (1,749) (1,603) (1,501)"
+            ],
+            "reference_answer": "No, the company is managing its CAPEX and Fixed Assets pretty efficiently, which is evident from below key metrics:\nCAPEX/Revenue Ratio: 5.1%\nFixed assets/Total Assets: 20%\nReturn on Assets= 12.4%",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What drove operating margin change as of FY2022 for 3M? If operating margin is not a useful metric for a company like this, then please state that and explain why.",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "SG&A, measured as a percent of sales, increased in 2022 when compared to the same period last year. SG&A was impacted by increased special item costs for significant\nlitigation primarily related to steps toward resolving Combat Arms Earplugs litigation (discussed in Note 16) resulting in a 2022 second quarter pre-tax charge of approximately\n$1.2 billion, certain impairment costs related to exiting PFAS manufacturing (see Note 15), costs related to exiting Russia (see Note 15), divestiture-related restructuring\ncharges (see Note 5), and continued investment in key growth initiatives. These increases were partially offset by restructuring benefits and ongoing general 3M cost\nmanagement."
+            ],
+            "reference_answer": "Operating Margin for 3M in FY2022 has decreased by 1.7% primarily due to: \n-Decrease in gross Margin\n-mostly one-off charges including Combat Arms Earplugs litigation, impairment related to exiting PFAS manufacturing, costs related to exiting Russia and divestiture-related restructuring\ncharges",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "If we exclude the impact of M&A, which segment has dragged down 3M's overall growth in 2022?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Worldwide Sales Change\nBy Business Segment Organic sales Acquisitions Divestitures Translation Total sales change\nSafety and Industrial 1.0 % \u2014 % \u2014 % (4.2) % (3.2) %\nTransportation and Electronics 1.2 \u2014 (0.5) (4.6) (3.9)\nHealth Care 3.2 \u2014 (1.4) (3.8) (2.0)\nConsumer (0.9) \u2014 (0.4) (2.6) (3.9)\nTotal Company 1.2 \u2014 (0.5) (3.9) (3.2)"
+            ],
+            "reference_answer": "The consumer segment shrunk by 0.9% organically.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Does 3M have a reasonably healthy liquidity profile based on its quick ratio for Q2 of FY2023? If the quick ratio is not relevant to measure liquidity, please state that and explain why.",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "3M Company and Subsidiaries\nConsolidated Balance Sheet\n(Unaudited)\n(Dollars in millions, except per share amount) June 30, 2023 December 31, 2022\nAssets\nCurrent assets\nCash and cash equivalents $ 4,258 $ 3,655\nMarketable securities \u2014 current 56 238\nAccounts receivable \u2014 net of allowances of $160 and $174 4,947 4,532\nInventories\nFinished goods 2,526 2,497\nWork in process 1,527 1,606\nRaw materials and supplies 1,227 1,269\nTotal inventories 5,280 5,372\nPrepaids 674 435\nOther current assets 539 456\nTotal current assets 15,754 14,688\nProperty, plant and equipment 26,459 25,998\nLess: Accumulated depreciation (17,248) (16,820)\nProperty, plant and equipment \u2014 net 9,211 9,178\nOperating lease right of use assets 812 829\nGoodwill 12,869 12,790\nIntangible assets \u2014 net 4,470 4,699\nOther assets 5,764 4,271\nTotal assets $ 48,880 $ 46,455\nLiabilities\nCurrent liabilities\nShort-term borrowings and current portion of long-term debt $ 3,033 $ 1,938\nAccounts payable 3,231 3,183\nAccrued payroll 785 692\nAccrued income taxes 172 259\nOperating lease liabilities \u2014 current 244 261\nOther current liabilities 3,471 3,190\nTotal current liabilities 10,936 9,523"
+            ],
+            "reference_answer": "No. The quick ratio for 3M was 0.96 by Jun'23 close, which needs a bit of an improvement to touch the 1x mark",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Which debt securities are registered to trade on a national securities exchange under 3M's name as of Q2 of 2023?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Title of each class Trading Symbol(s) Name of each exchange on which registered\nCommon Stock, Par Value $.01 Per Share MMM New York Stock Exchange\nMMM Chicago Stock Exchange, Inc.\n1.500% Notes due 2026 MMM26 New York Stock Exchange\n1.750% Notes due 2030 MMM30 New York Stock Exchange\n1.500% Notes due 2031 MMM31 New York Stock Exchange"
+            ],
+            "reference_answer": "Following debt securities registered under 3M's name are listed to trade on the New York Stock Exchange:\n-1.500% Notes due 2026 (Trading Symbol: MMM26)\n-1.750% Notes due 2030 (Trading Symbol: MMM30)\n-1.500% Notes due 2031 (Trading Symbol: MMM31)",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Does 3M maintain a stable trend of dividend distribution?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "This marked the 65th consecutive year of dividend increases for 3M."
+            ],
+            "reference_answer": "Yes, not only they distribute the dividends on a routine basis, 3M has also been increasing the per share dividend for consecutive 65 years",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What is the FY2019 fixed asset turnover ratio for Activision Blizzard? Fixed asset turnover ratio is defined as: FY2019 revenue / (average PP&E between FY2018 and FY2019). Round your answer to two decimal places. Base your judgments on the information provided primarily in the statement of income and the statement of financial position.",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Table of Contents\nACTIVISION BLIZZARD, INC. AND SUBSIDIARIES\nCONSOLIDATED BALANCE SHEETS\n(Amounts in millions, except share data)\n \nAt December 31, 2019\n \nAt December 31, 2018\nAssets\n \n  \nCurrent assets:\n \n  \nCash and cash equivalents\n$\n5,794\n $\n4,225\nAccounts receivable, net of allowances of $132 and $190, at December 31, 2019 and December 31, 2018, respectively\n848\n \n1,035\nInventories, net\n32\n \n43\nSoftware development\n322\n \n264\nOther current assets\n296\n \n539\nTotal current assets\n7,292\n \n6,106\nSoftware development\n54\n \n65\nProperty and equipment, net\n253\n \n282\nDeferred income taxes, net\n1,293\n \n458\nOther assets\n658\n \n482\nIntangible assets, net\n531\n \n735\nGoodwill\n9,764\n \n9,762\nTotal assets\n$\n19,845\n $\n17,890\n \n \n  \nLiabilities and Shareholders\u2019 Equity\n \n  \nCurrent liabilities:\n \n  \nAccounts payable\n$\n292\n $\n253\nDeferred revenues\n1,375\n \n1,493\nAccrued expenses and other liabilities\n1,248\n \n896\nTotal current liabilities\n2,915\n \n2,642\nLong-term debt, net\n2,675\n \n2,671\nDeferred income taxes, net\n505\n \n18\nOther liabilities\n945\n \n1,167\nTotal liabilities\n7,040\n \n6,498\nCommitments and contingencies (Note 23)\n \nShareholders\u2019 equity:\n \n \n \nCommon stock, $0.000001 par value, 2,400,000,000 shares authorized, 1,197,436,644 and 1,192,093,991 shares issued at\nDecember 31, 2019 and December 31, 2018, respectively\n\u2014\n \n\u2014\nAdditional paid-in capital\n11,174\n \n10,963\nLess: Treasury stock, at cost, 428,676,471 shares at December 31, 2019 and December 31, 2018\n(5,563)  \n(5,563)\nRetained earnings\n7,813\n \n6,593\nAccumulated other comprehensive loss\n(619)  \n(601)\nTotal shareholders\u2019 equity\n12,805\n \n11,392\nTotal liabilities and shareholders\u2019 equity\n$\n19,845\n $\n17,890\nThe accompanying notes are an integral part of these Consolidated Financial Statements.\nF-4___FINANCEBENCH_DELIMITER___Table of Contents\nACTIVISION BLIZZARD, INC. AND SUBSIDIARIES\nCONSOLIDATED STATEMENTS OF OPERATIONS\n(Amounts in millions, except per share data)\n \nFor the Years Ended December 31,\n \n2019\n \n2018\n \n2017\nNet revenues\n \n \n  \n \nProduct sales\n$\n1,975\n $\n2,255  $\n2,110\nSubscription, licensing, and other revenues\n4,514\n \n5,245  \n4,907\nTotal net revenues\n6,489\n \n7,500  \n7,017\n \n \n  \n  \nCosts and expenses\n \n \n  \n \nCost of revenues\u2014product sales:\n \n  \n  \nProduct costs\n656\n \n719  \n733\nSoftware royalties, amortization, and intellectual property licenses\n240\n \n371  \n300\nCost of revenues\u2014subscription, licensing, and other revenues:\n \n  \n  \nGame operations and distribution costs\n965\n \n1,028  \n984\nSoftware royalties, amortization, and intellectual property licenses\n233\n \n399  \n484\nProduct development\n998\n \n1,101  \n1,069\nSales and marketing\n926\n \n1,062  \n1,378\nGeneral and administrative\n732\n \n822  \n745\nRestructuring and related costs\n132\n \n10  \n15\nTotal costs and expenses\n4,882\n \n5,512  \n5,708\n \n \n  \n  \nOperating income\n1,607\n \n1,988  \n1,309\nInterest and other expense (income), net (Note 18)\n(26)  \n71  \n146\nLoss on extinguishment of debt\n\u2014\n \n40  \n12\nIncome before income tax expense\n1,633\n \n1,877  \n1,151\nIncome tax expense\n130\n \n29  \n878\nNet income\n$\n1,503\n $\n1,848  $\n273\n \n \n  \n  \nEarnings per common share\n \n \n  \n \nBasic\n$\n1.96\n $\n2.43  $\n0.36\nDiluted\n$\n1.95\n $\n2.40  $\n0.36\n \n \n  \n  \nWeighted-average number of shares outstanding\n \n \n  \n \nBasic\n767\n \n762  \n754\nDiluted\n771\n \n771  \n766\nThe accompanying notes are an integral part of these Consolidated Financial Statements.\nF-5"
+            ],
+            "reference_answer": "24.26",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What is the FY2017 - FY2019 3 year average of capex as a % of revenue for Activision Blizzard? Answer in units of percents and round to one decimal place. Calculate (or extract) the answer from the statement of income and the cash flow statement.",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Table of Contents\nACTIVISION BLIZZARD, INC. AND SUBSIDIARIES\nCONSOLIDATED STATEMENTS OF OPERATIONS\n(Amounts in millions, except per share data)\n \nFor the Years Ended December 31,\n \n2019\n \n2018\n \n2017\nNet revenues\n \n \n  \n \nProduct sales\n$\n1,975\n $\n2,255  $\n2,110\nSubscription, licensing, and other revenues\n4,514\n \n5,245  \n4,907\nTotal net revenues\n6,489\n \n7,500  \n7,017\n \n \n  \n  \nCosts and expenses\n \n \n  \n \nCost of revenues\u2014product sales:\n \n  \n  \nProduct costs\n656\n \n719  \n733\nSoftware royalties, amortization, and intellectual property licenses\n240\n \n371  \n300\nCost of revenues\u2014subscription, licensing, and other revenues:\n \n  \n  \nGame operations and distribution costs\n965\n \n1,028  \n984\nSoftware royalties, amortization, and intellectual property licenses\n233\n \n399  \n484\nProduct development\n998\n \n1,101  \n1,069\nSales and marketing\n926\n \n1,062  \n1,378\nGeneral and administrative\n732\n \n822  \n745\nRestructuring and related costs\n132\n \n10  \n15\nTotal costs and expenses\n4,882\n \n5,512  \n5,708\n \n \n  \n  \nOperating income\n1,607\n \n1,988  \n1,309\nInterest and other expense (income), net (Note 18)\n(26)  \n71  \n146\nLoss on extinguishment of debt\n\u2014\n \n40  \n12\nIncome before income tax expense\n1,633\n \n1,877  \n1,151\nIncome tax expense\n130\n \n29  \n878\nNet income\n$\n1,503\n $\n1,848  $\n273\n \n \n  \n  \nEarnings per common share\n \n \n  \n \nBasic\n$\n1.96\n $\n2.43  $\n0.36\nDiluted\n$\n1.95\n $\n2.40  $\n0.36\n \n \n  \n  \nWeighted-average number of shares outstanding\n \n \n  \n \nBasic\n767\n \n762  \n754\nDiluted\n771\n \n771  \n766\nThe accompanying notes are an integral part of these Consolidated Financial Statements.\nF-5___FINANCEBENCH_DELIMITER___Table of Contents\nACTIVISION BLIZZARD, INC. AND SUBSIDIARIES\nCONSOLIDATED STATEMENTS OF CASH FLOWS\n(Amounts in millions)\n \nFor the Years Ended December 31,\n \n2019\n \n2018\n \n2017\nCash flows from operating activities:\n \n \n \n \n \nNet income\n$\n1,503\n $\n1,848\n $\n273\nAdjustments to reconcile net income to net cash provided by operating activities:\n \n \n \n \n \nDeferred income taxes\n(352)  \n(35)  \n(181)\nProvision for inventories\n6\n \n6\n \n33\nNon-cash operating lease cost\n64\n \n\u2014\n \n\u2014\nDepreciation and amortization\n328\n \n509\n \n888\nAmortization of capitalized software development costs and intellectual property licenses (1)\n225\n \n489\n \n311\nLoss on extinguishment of debt\n\u2014\n \n40\n \n12\nShare-based compensation expense (2)\n166\n \n209\n \n176\nUnrealized gain on equity investment (Note 10)\n(38)  \n\u2014\n \n\u2014\nOther\n51\n \n7\n \n40\nChanges in operating assets and liabilities, net of effect from business acquisitions:\n \n \n \n \n \nAccounts receivable, net\n182\n \n(114)  \n(165)\nInventories\n7\n \n(5)  \n(26)\nSoftware development and intellectual property licenses\n(275)  \n(372)  \n(301)\nOther assets\n164\n \n(51)  \n(97)\nDeferred revenues\n(154)  \n(122)  \n220\nAccounts payable\n31\n \n(65)  \n85\nAccrued expenses and other liabilities\n(77)  \n(554)  \n945\nNet cash provided by operating activities\n1,831\n \n1,790\n \n2,213\nCash flows from investing activities:\n \n \n \n \n \nProceeds from maturities of available-for-sale investments\n153\n \n116\n \n80\nPurchases of available-for-sale investments\n(65)  \n(209)  \n(135)\nCapital expenditures\n(116)  \n(131)  \n(155)\nOther investing activities\n6\n \n(6)  \n3\nNet cash used in investing activities\n(22)  \n(230)  \n(207)\nCash flows from financing activities:\n \n \n \n \n \nProceeds from issuance of common stock to employees\n105\n \n99\n \n178\nTax payment related to net share settlements on restricted stock units\n(59)  \n(94)  \n(56)\nDividends paid\n(283)  \n(259)  \n(226)\nProceeds from debt issuances, net of discounts\n\u2014\n \n\u2014\n \n3,741\nRepayment of long-term debt\n\u2014\n \n(1,740)  \n(4,251)\nPremium payment for early redemption of note\n\u2014\n \n(25)  \n\u2014\nOther financing activities\n\u2014\n \n(1)  \n(10)\nNet cash used in financing activities\n(237)  \n(2,020)  \n(624)\nEffect of foreign exchange rate changes on cash and cash equivalents\n(3)  \n(31)  \n76\nNet increase (decrease) in cash and cash equivalents and restricted cash\n1,569\n \n(491)  \n1,458\nCash and cash equivalents and restricted cash at beginning of period\n4,229\n \n4,720\n \n3,262\nCash and cash equivalents and restricted cash at end of period\n$\n5,798\n $\n4,229\n $\n4,720\n(1)\nExcludes deferral and amortization of share-based compensation expense.\n(2)\nIncludes the net effects of capitalization, deferral, and amortization of share-based compensation expense.\nThe accompanying notes are an integral part of these Consolidated Financial Statements.\nF-8"
+            ],
+            "reference_answer": "1.9%",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Does Adobe have an improving operating margin profile as of FY2022? If operating margin is not a useful metric for a company like this, then state that and explain why.",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "ADOBE INC.\nCONSOLIDATED STATEMENTS OF INCOME\n(In millions, except per share data)\nYears Ended\nDecember 2,\n2022\nDecember 3,\n2021\nNovember 27,\n2020\nRevenue:\nSubscription $ 16,388 $ 14,573 $ 11,626\nProduct 532 555 507\nServices and other 686 657 735\nTotal revenue 17,606 15,785 12,868\nCost of revenue:\nSubscription 1,646 1,374 1,108\nProduct 35 41 36\nServices and other 484 450 578\nTotal cost of revenue 2,165 1,865 1,722\nGross profit 15,441 13,920 11,146\nOperating expenses:\nResearch and development 2,987 2,540 2,188\nSales and marketing 4,968 4,321 3,591\nGeneral and administrative 1,219 1,085 968\nAmortization of intangibles 169 172 162\nTotal operating expenses 9,343 8,118 6,909\nOperating income 6,098 5,802 4,237"
+            ],
+            "reference_answer": "No the operating margins of Adobe have recently declined from 36.8% in FY 2021 to 34.6% in FY2022. A drop by 2.2% in a year.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Does Adobe have an improving Free cashflow conversion as of FY2022?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "ADOBE INC.\n CONSOLIDATED STATEMENTS OF CASH FLOWS\n(In millions)\nYears Ended\nDecember 2,\n2022\nDecember 3,\n2021\nNovember 27,\n2020\nCash flows from operating activities:\nNet income $ 4,756 $ 4,822 $ 5,260\nAdjustments to reconcile net income to net cash provided by operating activities:\nDepreciation, amortization and accretion 856 788 757\nStock-based compensation 1,440 1,069 909\nReduction of operating lease right-of-use assets 83 73 87\nDeferred income taxes 328 183 (1,501)\nUnrealized losses (gains) on investments, net 29 (4) (11)\nOther non-cash items 10 7 40\nChanges in operating assets and liabilities, net of acquired assets and\n assumed liabilities:\nTrade receivables, net (198) (430) 106\nPrepaid expenses and other assets (94) (475) (288)\nTrade payables 66 (20) 96\nAccrued expenses and other liabilities 7 162 86\nIncome taxes payable 19 2 (72)\nDeferred revenue 536 1,053 258\nNet cash provided by operating activities 7,838 7,230 5,727\nCash flows from investing activities:\nPurchases of short-term investments (909) (1,533) (1,071)\nMaturities of short-term investments 683 877 915\nProceeds from sales of short-term investments 270 191 167\nAcquisitions, net of cash acquired (126) (2,682) \u2014\nPurchases of property and equipment (442) (348) (419)\nPurchases of long-term investments, intangibles and other assets (46) (42) (15)\nProceeds from sales of long-term investments and other assets \u2014 \u2014 9\nNet cash used for investing activities (570) (3,537) (414)"
+            ],
+            "reference_answer": "Yes, the FCF conversion (using net income as the denominator) for Adobe has improved by ~13% from 143% in 2021 to 156% in 2022",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What is the quantity of restructuring costs directly outlined in AES Corporation's income statements for FY2022? If restructuring costs are not explicitly outlined then state 0.",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Consolidated Statements of Operations\nYears ended December 31, 2022, 2021, and 2020\n2022 2021 2020\n(in millions, except per share amounts)\nRevenue:\nRegulated $ 3,538 $ 2,868 $ 2,661\nNon-Regulated 9,079 8,273 6,999\nTotal revenue 12,617 11,141 9,660\nCost of Sales:\nRegulated (3,162) (2,448) (2,235)\nNon-Regulated (6,907) (5,982) (4,732)\nTotal cost of sales (10,069) (8,430) (6,967)\nOperating margin 2,548 2,711 2,693\nGeneral and administrative expenses (207) (166) (165)\nInterest expense (1,117) (911) (1,038)\nInterest income 389 298 268\nLoss on extinguishment of debt (15) (78) (186)\nOther expense (68) (60) (53)\nOther income 102 410 75\nLoss on disposal and sale of business interests (9) (1,683) (95)\nGoodwill impairment expense (777) \u2014 \u2014\nAsset impairment expense (763) (1,575) (864)\nForeign currency transaction gains (losses) (77) (10) 55\nOther non-operating expense (175) \u2014 (202)\nINCOME (LOSS) FROM CONTINUING OPERATIONS BEFORE TAXES AND EQUITY IN EARNINGS OF AFFILIATES (169) (1,064) 488\nIncome tax benefit (expense) (265) 133 (216)\nNet equity in losses of affiliates (71) (24) (123)\nINCOME (LOSS) FROM CONTINUING OPERATIONS (505) (955) 149\nGain from disposal of discontinued businesses, net of income tax expense of $0, $1, and $0, respectively \u2014 4 3\nNET INCOME (LOSS) (505) (951) 152\nLess: Net loss (income) attributable to noncontrolling interests and redeemable stock of subsidiaries (41) 542 (106)\nNET INCOME (LOSS) ATTRIBUTABLE TO THE AES CORPORATION $ (546) $ (409) $ 46"
+            ],
+            "reference_answer": "0",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Roughly how many times has AES Corporation sold its inventory in FY2022? Calculate inventory turnover ratio for the FY2022; if conventional inventory management is not meaningful for the company then state that and explain why.",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Consolidated Balance Sheets\nDecember 31, 2022 and 2021\n2022 2021\n(in millions, except share and per share data)\nASSETS\nCURRENT ASSETS\nCash and cash equivalents $ 1,374 $ 943\nRestricted cash 536 304\nShort-term investments 730 232\nAccounts receivable, net of allowance for doubtful accounts of $5 and $5, respectively 1,799 1,418\nInventory 1,055 604___FINANCEBENCH_DELIMITER___Consolidated Statements of Operations\nYears ended December 31, 2022, 2021, and 2020\n2022 2021 2020\n(in millions, except per share amounts)\nRevenue:\nRegulated $ 3,538 $ 2,868 $ 2,661\nNon-Regulated 9,079 8,273 6,999\nTotal revenue 12,617 11,141 9,660\nCost of Sales:\nRegulated (3,162) (2,448) (2,235)\nNon-Regulated (6,907) (5,982) (4,732)\nTotal cost of sales (10,069) (8,430) (6,967)"
+            ],
+            "reference_answer": "AES has converted inventory 9.5 times in FY 2022.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Based on the information provided primarily in the statement of financial position and the statement of income, what is AES's FY2022 return on assets (ROA)? ROA is defined as: FY2022 net income / (average total assets between FY2021 and FY2022). Round your answer to two decimal places.",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "128    \nConsolidated Balance Sheets\nDecember 31, 2022 and 2021\n2022\n2021\n(in millions, except share and per share data)\nASSETS\nCURRENT ASSETS\nCash and cash equivalents\n$\n1,374 \n$\n943 \nRestricted cash\n536 \n304 \nShort-term investments\n730 \n232 \nAccounts receivable, net of allowance for doubtful accounts of $5 and $5, respectively\n1,799 \n1,418 \nInventory\n1,055 \n604 \nPrepaid expenses\n98 \n142 \nOther current assets, net of CECL allowance of $2 and $0, respectively\n1,533 \n897 \nCurrent held-for-sale assets\n518 \n816 \nTotal current assets\n7,643 \n5,356 \nNONCURRENT ASSETS\nProperty, Plant and Equipment:\nLand\n470 \n426 \nElectric generation, distribution assets and other\n26,599 \n25,552 \nAccumulated depreciation\n(8,651)\n(8,486)\nConstruction in progress\n4,621 \n2,414 \nProperty, plant and equipment, net\n23,039 \n19,906 \nOther Assets:\nInvestments in and advances to affiliates\n952 \n1,080 \nDebt service reserves and other deposits\n177 \n237 \nGoodwill\n362 \n1,177 \nOther intangible assets, net of accumulated amortization of $434 and $385, respectively\n1,841 \n1,450 \nDeferred income taxes\n319 \n409 \nLoan receivable, net of allowance of $26\n1,051 \n\u2014 \nOther noncurrent assets, net of allowance of $51 and $23, respectively\n2,979 \n2,188 \nNoncurrent held-for-sale assets\n\u2014 \n1,160 \nTotal other assets\n7,681 \n7,701 \nTOTAL ASSETS\n$\n38,363 \n$\n32,963 \nLIABILITIES AND EQUITY\nCURRENT LIABILITIES\nAccounts payable\n$\n1,730 \n$\n1,153 \nAccrued interest\n249 \n182 \nAccrued non-income taxes\n249 \n266 \nAccrued and other liabilities\n2,151 \n1,205 \nNon-recourse debt, including $416 and $302, respectively, related to variable interest entities\n1,758 \n1,367 \nCurrent held-for-sale liabilities\n354 \n559 \nTotal current liabilities\n6,491 \n4,732 \nNONCURRENT LIABILITIES\nRecourse debt\n3,894 \n3,729 \nNon-recourse debt, including $2,295 and $2,223, respectively, related to variable interest entities\n17,846 \n13,603 \nDeferred income taxes\n1,139 \n977 \nOther noncurrent liabilities\n3,168 \n3,358 \nNoncurrent held-for-sale liabilities\n\u2014 \n740 \nTotal noncurrent liabilities\n26,047 \n22,407 \nCommitments and Contingencies (see Notes 12 and 13)\nRedeemable stock of subsidiaries\n1,321 \n1,257 \nEQUITY\nTHE AES CORPORATION STOCKHOLDERS\u2019 EQUITY\nPreferred stock (without par value, 50,000,000 shares authorized; 1,043,050 issued and outstanding at December 31, 2022 and\nDecember 31, 2021)\n838 \n838 \nCommon stock ($0.01 par value, 1,200,000,000 shares authorized; 818,790,001 issued and 668,743,464 outstanding at December\n31, 2022 and 818,717,043 issued and 666,793,625 outstanding at December 31, 2021)\n8 \n8 \nAdditional paid-in capital\n6,688 \n7,106 \nAccumulated deficit\n(1,635)\n(1,089)\nAccumulated other comprehensive loss\n(1,640)\n(2,220)\nTreasury stock, at cost (150,046,537 and 151,923,418 shares at December 31, 2022 and December 31, 2021, respectively)\n(1,822)\n(1,845)\nTotal AES Corporation stockholders\u2019 equity\n2,437 \n2,798 \nNONCONTROLLING INTERESTS\n2,067 \n1,769 \nTotal equity\n4,504 \n4,567 \nTOTAL LIABILITIES AND EQUITY\n$\n38,363 \n$\n32,963 \nSee Accompanying Notes to Consolidated Financial Statements.___FINANCEBENCH_DELIMITER___129    \nConsolidated Statements of Operations\nYears ended December 31, 2022, 2021, and 2020\n2022\n2021\n2020\n(in millions, except per share amounts)\nRevenue:\nRegulated\n$\n3,538 \n$\n2,868 \n$\n2,661 \nNon-Regulated\n9,079 \n8,273 \n6,999 \nTotal revenue\n12,617 \n11,141 \n9,660 \nCost of Sales:\nRegulated\n(3,162)\n(2,448)\n(2,235)\nNon-Regulated\n(6,907)\n(5,982)\n(4,732)\nTotal cost of sales\n(10,069)\n(8,430)\n(6,967)\nOperating margin\n2,548 \n2,711 \n2,693 \nGeneral and administrative expenses\n(207)\n(166)\n(165)\nInterest expense\n(1,117)\n(911)\n(1,038)\nInterest income\n389 \n298 \n268 \nLoss on extinguishment of debt\n(15)\n(78)\n(186)\nOther expense\n(68)\n(60)\n(53)\nOther income\n102 \n410 \n75 \nLoss on disposal and sale of business interests\n(9)\n(1,683)\n(95)\nGoodwill impairment expense\n(777)\n\u2014 \n\u2014 \nAsset impairment expense\n(763)\n(1,575)\n(864)\nForeign currency transaction gains (losses)\n(77)\n(10)\n55 \nOther non-operating expense\n(175)\n\u2014 \n(202)\nINCOME (LOSS) FROM CONTINUING OPERATIONS BEFORE TAXES AND EQUITY IN EARNINGS OF AFFILIATES\n(169)\n(1,064)\n488 \nIncome tax benefit (expense)\n(265)\n133 \n(216)\nNet equity in losses of affiliates\n(71)\n(24)\n(123)\nINCOME (LOSS) FROM CONTINUING OPERATIONS\n(505)\n(955)\n149 \nGain from disposal of discontinued businesses, net of income tax expense of $0, $1, and $0, respectively\n\u2014 \n4 \n3 \nNET INCOME (LOSS)\n(505)\n(951)\n152 \nLess: Net loss (income) attributable to noncontrolling interests and redeemable stock of subsidiaries\n(41)\n542 \n(106)\nNET INCOME (LOSS) ATTRIBUTABLE TO THE AES CORPORATION\n$\n(546)\n$\n(409)\n$\n46 \nAMOUNTS ATTRIBUTABLE TO THE AES CORPORATION COMMON STOCKHOLDERS:\nIncome (loss) from continuing operations, net of tax\n$\n(546)\n$\n(413)\n$\n43 \nIncome from discontinued operations, net of tax\n\u2014 \n4 \n3 \nNET INCOME (LOSS) ATTRIBUTABLE TO THE AES CORPORATION\n$\n(546)\n$\n(409)\n$\n46 \nBASIC EARNINGS PER SHARE:\nIncome (loss) from continuing operations attributable to The AES Corporation common stockholders, net of tax\n$\n(0.82)\n$\n(0.62)\n$\n0.06 \nIncome from discontinued operations attributable to The AES Corporation common stockholders, net of tax\n\u2014 \n0.01 \n0.01 \nNET INCOME (LOSS) ATTRIBUTABLE TO THE AES CORPORATION COMMON STOCKHOLDERS\n$\n(0.82)\n$\n(0.61)\n$\n0.07 \nDILUTED EARNINGS PER SHARE:\nIncome (loss) from continuing operations attributable to The AES Corporation common stockholders, net of tax\n$\n(0.82)\n$\n(0.62)\n$\n0.06 \nIncome from discontinued operations attributable to The AES Corporation common stockholders, net of tax\n\u2014 \n0.01 \n0.01 \nNET INCOME (LOSS) ATTRIBUTABLE TO THE AES CORPORATION COMMON STOCKHOLDERS\n$\n(0.82)\n$\n(0.61)\n$\n0.07 \nSee Accompanying Notes to Consolidated Financial Statements."
+            ],
+            "reference_answer": "-0.02",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What is Amazon's FY2017 days payable outstanding (DPO)? DPO is defined as: 365 * (average accounts payable between FY2016 and FY2017) / (FY2017 COGS + change in inventory between FY2016 and FY2017). Round your answer to two decimal places. Address the question by using the line items and information shown within the balance sheet and the P&L statement.",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Table of Contents\nAMAZON.COM, INC.\nCONSOLIDATED STATEMENTS OF OPERATIONS\n(in millions, except per share data)\n \n   \nYear Ended December 31,\n \n2015\n \n2016\n \n2017\nNet product sales\n$\n79,268  $\n94,665  $\n118,573\nNet service sales\n27,738  \n41,322  \n59,293\nTotal net sales\n107,006  \n135,987  \n177,866\nOperating expenses:\n \n  \n  \nCost of sales\n71,651  \n88,265  \n111,934\nFulfillment\n13,410  \n17,619  \n25,249\nMarketing\n5,254  \n7,233  \n10,069\nTechnology and content\n12,540  \n16,085  \n22,620\nGeneral and administrative\n1,747  \n2,432  \n3,674\nOther operating expense, net\n171  \n167  \n214\nTotal operating expenses\n104,773  \n131,801  \n173,760\nOperating income\n2,233  \n4,186  \n4,106\nInterest income\n50  \n100  \n202\nInterest expense\n(459)  \n(484)  \n(848)\nOther income (expense), net\n(256)  \n90  \n346\nTotal non-operating income (expense)\n(665)  \n(294)  \n(300)\nIncome before income taxes\n1,568  \n3,892  \n3,806\nProvision for income taxes\n(950)  \n(1,425)  \n(769)\nEquity-method investment activity, net of tax\n(22)  \n(96)  \n(4)\nNet income\n$\n596  $\n2,371  $\n3,033\nBasic earnings per share\n$\n1.28  $\n5.01  $\n6.32\nDiluted earnings per share\n$\n1.25  $\n4.90  $\n6.15\nWeighted-average shares used in computation of earnings per share:\n \n  \n  \nBasic\n467  \n474  \n480\nDiluted\n477  \n484  \n493\nSee accompanying notes to consolidated financial statements.\n38___FINANCEBENCH_DELIMITER___Table of Contents\nAMAZON.COM, INC.\nCONSOLIDATED BALANCE SHEETS\n(in millions, except per share data)\n \n \nDecember 31,\n \n2016\n \n2017\nASSETS\n \n  \nCurrent assets:\n \n  \nCash and cash equivalents\n$\n19,334  $\n20,522\nMarketable securities\n6,647  \n10,464\nInventories\n11,461  \n16,047\nAccounts receivable, net and other\n8,339  \n13,164\nTotal current assets\n45,781  \n60,197\nProperty and equipment, net\n29,114  \n48,866\nGoodwill\n3,784  \n13,350\nOther assets\n4,723  \n8,897\nTotal assets\n$\n83,402  $\n131,310\nLIABILITIES AND STOCKHOLDERS\u2019 EQUITY\n \n  \nCurrent liabilities:\n \n  \nAccounts payable\n$\n25,309  $\n34,616\nAccrued expenses and other\n13,739  \n18,170\nUnearned revenue\n4,768  \n5,097\nTotal current liabilities\n43,816  \n57,883\nLong-term debt\n7,694  \n24,743\nOther long-term liabilities\n12,607  \n20,975\nCommitments and contingencies (Note 7)\n \nStockholders\u2019 equity:\n \n  \nPreferred stock, $0.01 par value:\n \n  \nAuthorized shares \u2014 500\n \n  \nIssued and outstanding shares \u2014 none\n\u2014  \n\u2014\nCommon stock, $0.01 par value:\n \n  \nAuthorized shares \u2014 5,000\n \n  \nIssued shares \u2014 500 and 507\n \n  \nOutstanding shares \u2014 477 and 484\n5  \n5\nTreasury stock, at cost\n(1,837)  \n(1,837)\nAdditional paid-in capital\n17,186  \n21,389\nAccumulated other comprehensive loss\n(985)  \n(484)\nRetained earnings\n4,916  \n8,636\nTotal stockholders\u2019 equity\n19,285  \n27,709\nTotal liabilities and stockholders\u2019 equity\n$\n83,402  $\n131,310\nSee accompanying notes to consolidated financial statements.\n40"
+            ],
+            "reference_answer": "93.86",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What is Amazon's year-over-year change in revenue from FY2016 to FY2017 (in units of percents and round to one decimal place)? Calculate what was asked by utilizing the line items clearly shown in the statement of income.",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Table of Contents\nAMAZON.COM, INC.\nCONSOLIDATED STATEMENTS OF OPERATIONS\n(in millions, except per share data)\n \n   \nYear Ended December 31,\n \n2015\n \n2016\n \n2017\nNet product sales\n$\n79,268  $\n94,665  $\n118,573\nNet service sales\n27,738  \n41,322  \n59,293\nTotal net sales\n107,006  \n135,987  \n177,866\nOperating expenses:\n \n  \n  \nCost of sales\n71,651  \n88,265  \n111,934\nFulfillment\n13,410  \n17,619  \n25,249\nMarketing\n5,254  \n7,233  \n10,069\nTechnology and content\n12,540  \n16,085  \n22,620\nGeneral and administrative\n1,747  \n2,432  \n3,674\nOther operating expense, net\n171  \n167  \n214\nTotal operating expenses\n104,773  \n131,801  \n173,760\nOperating income\n2,233  \n4,186  \n4,106\nInterest income\n50  \n100  \n202\nInterest expense\n(459)  \n(484)  \n(848)\nOther income (expense), net\n(256)  \n90  \n346\nTotal non-operating income (expense)\n(665)  \n(294)  \n(300)\nIncome before income taxes\n1,568  \n3,892  \n3,806\nProvision for income taxes\n(950)  \n(1,425)  \n(769)\nEquity-method investment activity, net of tax\n(22)  \n(96)  \n(4)\nNet income\n$\n596  $\n2,371  $\n3,033\nBasic earnings per share\n$\n1.28  $\n5.01  $\n6.32\nDiluted earnings per share\n$\n1.25  $\n4.90  $\n6.15\nWeighted-average shares used in computation of earnings per share:\n \n  \n  \nBasic\n467  \n474  \n480\nDiluted\n477  \n484  \n493\nSee accompanying notes to consolidated financial statements.\n38"
+            ],
+            "reference_answer": "30.8%",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Has AMCOR's quick ratio improved or declined between FY2023 and FY2022? If the quick ratio is not something that a financial analyst would ask about a company like this, then state that and explain why.",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Amcor plc and Subsidiaries\nConsolidated Balance Sheets\n($ in millions, except share and per share data)\nAs of June 30, 2023 2022\nAssets\nCurrent assets:\nCash and cash equivalents $ 689 $ 775\nTrade receivables, net of allowance for credit losses of $21 and $25, respectively 1,875 1,935\nInventories, net\nRaw materials and supplies 992 1,114\nWork in process and finished goods 1,221 1,325\nPrepaid expenses and other current assets 531 512\nAssets held for sale, net \u2014 192\nTotal current assets 5,308 5,853\nNon-current assets:\nProperty, plant, and equipment, net 3,762 3,646\nOperating lease assets 533 560\nDeferred tax assets 134 130\nOther intangible assets, net 1,524 1,657\nGoodwill 5,366 5,285\nEmployee benefit assets 67 89\nOther non-current assets 309 206\nTotal non-current assets 11,695 11,573\nTotal assets $ 17,003 $ 17,426\nLiabilities\nCurrent liabilities:\nCurrent portion of long-term debt $ 13 $ 14\nShort-term debt 80 136\nTrade payables 2,690 3,073\nAccrued employee costs 396 471\nOther current liabilities 1,297 1,344\nLiabilities held for sale \u2014 65\nTotal current liabilities 4,476 5,103\nNon-current liabilities:\nLong-term debt, less current portion 6,653 6,340\nOperating lease liabilities 463 493\nDeferred tax liabilities 616 677\nEmployee benefit obligations 224 201\nOther non-current liabilities 481 471\nTotal non-current liabilities 8,437 8,182\nTotal liabilities $ 12,913 $ 13,285"
+            ],
+            "reference_answer": "The quick ratio has slightly improved from 0.67 times to 0.69 times between FY 2023 and FY 2022.(3.4% jump)",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What are major acquisitions that AMCOR has done in FY2023, FY2022 and FY2021?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "On August 1, 2022, the Company completed the acquisition of 100% equity interest in a Czech Republic company that operates a world-class\nflexible packaging manufacturing plant. The purchase consideration of $59 million included a deferred portion of $5 million that was paid in the\nfirst quarter of fiscal year 2024. The acquisition is part of the Company's Flexibles reportable segment and resulted in the recognition of acquired\nidentifiable net assets of $36 million and goodwill of $23 million. Goodwill is not deductible for tax purposes. The fair values of the identifiable\nnet assets acquired and goodwill are based on the Company's best estimate as of June 30, 2023.\nOn March 17, 2023, the Company completed the acquisition of 100% equity interest in a medical device packaging manufacturing site in\nShanghai, China. The purchase consideration of $60 million is subject to customary post-closing adjustments. The consideration includes\ncontingent consideration of $20 million, to be earned and paid in cash over the three years following the acquisition date, subject to meeting\ncertain performance targets. The acquisition is part of the Company's Flexibles reportable segment and resulted in the recognition of acquired\nidentifiable net assets of $21 million and goodwill of $39 million. Goodwill is not deductible for tax purposes. The fair values of the contingent\nconsideration, identifiable net assets acquired, and goodwill are based on the Company's best estimate as of June 30, 2023, and are considered\npreliminary. The Company aims to complete the purchase price allocation as soon as practicable but no later than one year from the date of the\nacquisition.\nOn May 31, 2023, the Company completed the acquisition of a New Zealand based leading manufacturer of state-of-the-art, automated protein\npackaging machines. The purchase consideration of $45 million is subject to customary post-closing adjustments. The consideration includes\ncontingent consideration of $13 million, to be earned and paid in cash over the two years following the acquisition date, subject to meeting\ncertain performance targets. The acquisition is part of the Company's Flexibles reportable segment and resulted in the recognition of acquired\nidentifiable net assets of $9 million and goodwill of $36 million. Goodwill is deductible for tax purposes. The fair values of the contingent\nconsideration, identifiable net assets acquired, and goodwill are based on the Company's best estimate as of June 30, 2023, and are considered\npreliminary. The Company aims to complete the purchase price allocation as soon as practicable but no later than one year from the date of the\nacquisition."
+            ],
+            "reference_answer": "Amcor completed these acquisitions during FY2023:\n-100% equity interest of a flexibles manufacturing company in the Czech Republic\n- 100% equity interest in a medical device packaging manufacturing site in\nShanghai, China.\n-acquisition of a New Zealand-based leading manufacturer of state-of-the-art, automated protein\npackaging machines.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What industry does AMCOR primarily operate in?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Today, we are a global leader in developing and producing responsible\npackaging for food, beverage, pharmaceutical, medical, home and personal-care, and other products"
+            ],
+            "reference_answer": "Amcor is a global leader in packaging production for various use cases.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Does AMCOR have an improving gross margin profile as of FY2023? If gross margin is not a useful metric for a company like this, then state that and explain why.",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Amcor plc and Subsidiaries\nConsolidated Statements of Income\n($ in millions, except per share data)\nFor the years ended June 30, 2023 2022 2021\nNet sales $ 14,694 $ 14,544 $ 12,861\nCost of sales (11,969) (11,724) (10,129)\nGross profit 2,725 2,820 2,732"
+            ],
+            "reference_answer": "No. For AMCOR there has been a slight decline in gross margins by 0.8%.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What Was AMCOR's Adjusted Non GAAP EBITDA for FY 2023",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Twelve Months Ended June 30, 2022 Twelve Months Ended June 30, 2023\n($ million) EBITDA EBIT\nNet\nIncome\nEPS\n(Diluted\nUS\ncents)(1) EBITDA EBIT\nNet\nIncome\nEPS\n(Diluted\nUS\ncents)(1)\nNet income attributable to Amcor 805 805 805 52.9 1,048 1,048 1,048 70.5\nNet income attributable to non-controlling\ninterests 10 10 10 10\nTax expense 300 300 193 193\nInterest expense, net 135 135 259 259\nDepreciation and amortization 579 569\nEBITDA, EBIT, Net income and EPS 1,829 1,250 805 52.9 2,080 1,510 1,048 70.5\n2019 Bemis Integration Plan 37 37 37 2.5 \u2014 \u2014 \u2014 \u2014\nNet loss on disposals(2) 10 10 10 0.7 \u2014 \u2014 \u2014 \u2014\nImpact of hyperinflation 16 16 16 1.0 24 24 24 1.9\nProperty and other losses, net(3) 13 13 13 0.8 2 2 2 0.1\nRussia-Ukraine conflict impacts(4) 200 200 200 13.2 (90) (90) (90) (6.0)\nPension settlements 8 8 8 0.5 5 5 5 0.3\nOther 4 4 4 0.3 (3) (3) (3) (0.3)\nAmortization of acquired intangibles (5) 163 163 10.7 160 160 10.8\nTax effect of above items (32) (2.1) (57) (4.0)\nAdjusted EBITDA, EBIT, Net income and EPS 2,117 1,701 1,224 80.5 2,018 1,608 1,089 73.3"
+            ],
+            "reference_answer": "AMCOR's Adj. EBITDA was $2,018mn in FY 2023",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "How much was the Real change in Sales for AMCOR in FY 2023 vs FY 2022, if we exclude the impact of FX movement, passthrough costs and one-off items?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Three Months Ended June 30 Twelve Months Ended June 30\n($ million) Flexibles Rigid\nPackaging Total Flexibles Rigid\nPackaging Total\nNet sales fiscal year 2023 2,777 897 3,673 11,154 3,540 14,694\nNet sales fiscal year 2022 2,967 942 3,909 11,151 3,393 14,544\nReported Growth % (6) (5) (6) \u2014 4 1\nFX % 1 (1) \u2014 (4) (1) (3)\nConstant Currency Growth % (7) (4) (6) 4 5 4\nRaw Material Pass Through % 1 \u2014 1 5 8 5\nItems affecting comparability % (3) \u2014 (2) (2) \u2014 (1)\nComparable Constant Currency\nGrowth % (5) (4) (5) 1 (3) \u2014\nVolume % (7) (6) (7) (3) (4) (3)\nPrice/Mix % 2 2 2 4 1 3"
+            ],
+            "reference_answer": "The Real Growth was flat in FY 2023 vs FY 2022.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Does AMD have a reasonably healthy liquidity profile based on its quick ratio for FY22? If the quick ratio is not relevant to measure liquidity, please state that and explain why.",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Consolidated Balance Sheets\nDecember 31,\n2022\nDecember 25,\n2021\n(In millions, except par value amounts)\nASSETS\nCurrent assets:\nCash and cash equivalents $ 4,835 $ 2,535\nShort-term investments 1,020 1,073\nAccounts receivable, net 4,126 2,706\nInventories 3,771 1,955\nReceivables from related parties 2 2\nPrepaid expenses and other current assets 1,265 312\nTotal current assets 15,019 8,583\nProperty and equipment, net 1,513 702\nOperating lease right-of-use assets 460 367\nGoodwill 24,177 289\nAcquisition-related intangibles 24,118 \u2014\nInvestment: equity method 83 69\nDeferred tax assets 58 931\nOther non-current assets 2,152 1,478\nTotal assets $ 67,580 $ 12,419\nLIABILITIES AND STOCKHOLDERS\u2019 EQUITY\nCurrent liabilities:\nAccounts payable $ 2,493 $ 1,321\nPayables to related parties 463 85\nAccrued liabilities 3,077 2,424\nCurrent portion of long-term debt, net \u2014 312\nOther current liabilities 336 98\nTotal current liabilities 6,369 4,240\nLong-term debt, net of current portion 2,467 1\nLong-term operating lease liabilities 396 348\nDeferred tax liabilities 1,934 12\nOther long-term liabilities 1,664 321\nCommitments and Contingencies (see Notes 16 and 17)\nStockholders\u2019 equity:\nCapital stock:\nCommon stock, par value $0.01; shares authorized: 2,250; shares issued: 1,645 and 1,232; shares\noutstanding: 1,612 and 1,207 16 12\nAdditional paid-in capital 58,005 11,069\nTreasury stock, at cost (shares held: 33 and 25) (3,099) (2,130)\nAccumulated deficit (131) (1,451)\nAccumulated other comprehensive loss (41) (3)\nTotal stockholders\u2019 equity 54,750 7,497\nTotal liabilities and stockholders\u2019 equity $ 67,580 $ 12,419"
+            ],
+            "reference_answer": "Yes. The quick ratio is 1.57, calculated as (cash and cash equivalents+Short term investments+Accounts receivable, net+receivables from related parties)/ (current liabilities).",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What are the major products and services that AMD sells as of FY22?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Overview\nWe are a global semiconductor company primarily offering:\n\u2022 server microprocessors (CPUs) and graphics processing units (GPUs), data processing units (DPUs), Field Programmable Gate Arrays (FPGAs), and\nAdaptive System-on-Chip (SoC) products for data centers;\n\u2022 CPUs, accelerated processing units (APUs) that integrate CPUs and GPUs, and chipsets for desktop and notebook personal computers;\n\u2022 discrete GPUs, and semi-custom SoC products and development services; and\n\u2022 embedded CPUs, GPUs, APUs, FPGAs, and Adaptive SoC products.\nFrom time to time, we may also sell or license portions of our intellectual property (IP) portfolio."
+            ],
+            "reference_answer": "AMD sells server microprocessors (CPUs) and graphics processing units (GPUs), data processing units (DPUs), Field Programmable Gate Arrays (FPGAs), and Adaptive System-on-Chip (SoC) products for data centers; CPUs, accelerated processing units (APUs) that integrate CPUs and GPUs, and chipsets for desktop and notebook personal computers; discrete GPUs, and semi-custom SoC products and development services; and embedded CPUs, GPUs, APUs, FPGAs, and Adaptive SoC products.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What drove revenue change as of the FY22 for AMD?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Net\nrevenue for 2022 was $23.6 billion, an increase of 44% compared to 2021 net revenue of $16.4 billion. The increase in net revenue was driven by a 64%\nincrease in Data Center segment revenue primarily due to higher sales of our EPYC\u2122 server processors, a 21% increase in Gaming segment revenue\nprimarily due to higher semi-custom product sales, and a significant increase in Embedded segment revenue from the prior year period driven by the inclusion\nof Xilinx embedded product sales."
+            ],
+            "reference_answer": "In 2022, AMD reported Higher sales of their EPYC server processors, higher semi-custom product sales, and the inclusion of Xilinx embedded product sales",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What drove operating margin change as of the FY22 for AMD? If operating margin is not a useful metric for a company like this, then please state that and explain why.",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Operating income for 2022 was $1.3 billion compared to operating income of $3.6 billion for 2021. The decrease in operating income was primarily driven by\namortization of intangible assets associated with the Xilinx acquisition."
+            ],
+            "reference_answer": "The decrease in AMD's operating income was primarily driven by amortization of intangible assets associated with the Xilinx acquisition",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Among operations, investing, and financing activities, which brought in the most (or lost the least) cash flow for AMD in FY22?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Advanced Micro Devices, Inc.\nConsolidated Statements of Cash Flows\nYear Ended\nDecember 31,\n2022\nDecember 25,\n2021\nDecember 26,\n2020\n(In millions)\nCash flows from operating activities:\nNet income $ 1,320 $ 3,162 $ 2,490\nAdjustments to reconcile net income to net cash provided by operating activities:\nDepreciation and amortization 4,174 407 312\nStock-based compensation 1,081 379 274\nAmortization of debt discount and issuance costs \u2014 5 14\nAmortization of operating lease right-of-use assets 88 56 42\nAmortization of inventory fair value adjustment 189 \u2014 \u2014\nLoss on debt redemption, repurchase and conversion \u2014 7 54\nLoss on sale or disposal of property and equipment 16 34 33\nDeferred income taxes (1,505) 308 (1,223)\n(Gains) losses on equity investments, net 62 (56) (2)\nOther (14) (7) 8\nChanges in operating assets and liabilities:\nAccounts receivable, net (1,091) (640) (219)\nInventories (1,401) (556) (417)\nReceivables from related parties (13) 8 10\nPrepaid expenses and other assets (1,197) (920) (231)\nPayables to related parties 379 7 (135)\nAccounts payable 931 801 (513)\nAccrued liabilities and other 546 526 574\nNet cash provided by operating activities 3,565 3,521 1,071\nCash flows from investing activities:\nPurchases of property and equipment (450) (301) (294)\nPurchases of short-term investments (2,667) (2,056) (850)\nProceeds from maturity of short-term investments 4,310 1,678 192\nCash received from acquisition of Xilinx 2,366 \u2014 \u2014\nAcquisition of Pensando, net of cash acquired (1,544) \u2014 \u2014\nOther (16) (7) \u2014\nNet cash provided by (used in) investing activities 1,999 (686) (952)\nCash flows from financing activities:\nProceeds from debt, net of issuance costs 991 \u2014 200\nRepayment of debt (312) \u2014 (200)\nProceeds from sales of common stock through employee equity plans 167 104 85\nRepurchases of common stock (3,702) (1,762) \u2014\nCommon stock repurchases for tax withholding on employee equity plans (406) (237) (78)\nOther (2) \u2014 (1)\nNet cash (used in) provided by financing activities (3,264) (1,895) 6\nNet increase in cash and cash equivalents 2,300 940 125\nCash and cash equivalents at beginning of year 2,535 1,595 1,470\nCash and cash equivalents at end of year $ 4,835 $ 2,535 $ 1,595"
+            ],
+            "reference_answer": "In 2022, AMD brought in the most cashflow from Operations",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "From FY21 to FY22, excluding Embedded, in which AMD reporting segment did sales proportionally increase the most?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Year Ended\nDecember 31,\n2022\nDecember 25,\n2021\n(In millions)\nNet revenue:\nData Center $ 6,043 $ 3,694\nClient 6,201 6,887\nGaming 6,805 5,607\nEmbedded 4,552 246\nTotal net revenue $ 23,601 $ 16,434\nOperating income (loss):\nData Center $ 1,848 $ 991\nClient 1,190 2,088\nGaming 953 934\nEmbedded 2,252 44\nAll Other (4,979) (409)\nTotal operating income (loss) $ 1,264 $ 3,648"
+            ],
+            "reference_answer": "Data Center",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Did AMD report customer concentration in FY22?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "One customer accounted for 16% of our consolidated net revenue for the year ended December 31, 2022. Sales to this customer consisted of sales of products\nfrom our Gaming segment. A loss of this customer would have a material adverse effect on our business."
+            ],
+            "reference_answer": "Yes, one customer accounted for 16% of consolidated net revenue",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Which debt securities are registered to trade on a national securities exchange under American Express' name as of 2022?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Registrant\u2019s telephone number, including area code: (212) 640-2000\nSecurities registered pursuant to Section 12(b) of the Act:\nTitle of each class Trading Symbol(s) Name of each exchange on which registered\nCommon Shares (par value $0.20 per Share) AXP New York Stock Exchange\nSecurities registered pursuant to section 12(g) of the Act: None"
+            ],
+            "reference_answer": "There are none",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What are the geographies that American Express primarily operates in as of 2022?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "(Millions) United States EMEA APAC LACC Other Unallocated Consolidated\n2022\nTotal revenues net of interest expense $ 41,396 $ 4,871 $ 3,835 $ 2,917 $ (157) $ 52,862\nPretax income (loss) from continuing operations 10,383 550 376 500 (2,224) 9,585\n2021\nTotal revenues net of interest expense $ 33,103 $ 3,643 $ 3,418 $ 2,238 $ (22) $ 42,380\nPretax income (loss) from continuing operations 10,325 460 420 494 (1,010) 10,689\n2020\nTotal revenues net of interest expense $ 28,263 $ 3,087 $ 3,271 $ 2,019 $ (553) $ 36,087\nPretax income (loss) from continuing operations 5,422 187 328 273 (1,914) 4,296"
+            ],
+            "reference_answer": "United States, EMEA, APAC, and LACC",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Does AMEX have an improving operating margin profile as of 2022? If operating margin is not a useful metric for a company like this, then state that and explain why.",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "CONSOLIDATED STATEMENTS OF INCOME\nYear Ended December 31 (Millions, except per share amounts) 2022 2021 2020\nRevenues\nNon-interest revenues\nDiscount revenue $ 30,739 $ 24,563 $ 19,435\nNet card fees 6,070 5,195 4,664\nService fees and other revenue 4,521 3,316 2,702\nProcessed revenue 1,637 1,556 1,301\nTotal non-interest revenues 42,967 34,630 28,102\nInterest income\nInterest on loans 11,967 8,850 9,779\nInterest and dividends on investment securities 96 83 127\nDeposits with banks and other 595 100 177\nTotal interest income 12,658 9,033 10,083\nInterest expense\nDeposits 1,527 458 943\nLong-term debt and other 1,236 825 1,155\nTotal interest expense 2,763 1,283 2,098\nNet interest income 9,895 7,750 7,985\nTotal revenues net of interest expense 52,862 42,380 36,087\nProvisions for credit losses\nCard Member receivables 627 (73) 1,015\nCard Member loans 1,514 (1,155) 3,453\nOther 41 (191) 262\nTotal provisions for credit losses 2,182 (1,419) 4,730\nTotal revenues net of interest expense after provisions for credit losses 50,680 43,799 31,357\nExpenses\nCard Member rewards 14,002 11,007 8,041\nBusiness development 4,943 3,762 3,051\nCard Member services 2,959 1,993 1,230\nMarketing 5,458 5,291 3,696\nSalaries and employee benefits 7,252 6,240 5,718\nOther, net 6,481 4,817 5,325\nTotal expenses 41,095 33,110 27,061\nPretax income 9,585 10,689 4,296\nIncome tax provision 2,071 2,629 1,161\nNet income $ 7,514 $ 8,060 $ 3,135\nEarnings per Common Share \u2014 (Note 21)\nBasic $ 9.86 $ 10.04 $ 3.77\nDiluted $ 9.85 $ 10.02 $ 3.77\nAverage common shares outstanding for earnings per common share:\nBasic 751 789 805\nDiluted 752 790 806"
+            ],
+            "reference_answer": "Performance is not measured through operating margin",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What drove gross margin change as of the FY2022 for American Express? If gross margin is not a useful metric for a company like this, then please state that and explain why.",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "CONSOLIDATED STATEMENTS OF INCOME\nYear Ended December 31 (Millions, except per share amounts) 2022 2021 2020\nRevenues\nNon-interest revenues\nDiscount revenue $ 30,739 $ 24,563 $ 19,435\nNet card fees 6,070 5,195 4,664\nService fees and other revenue 4,521 3,316 2,702\nProcessed revenue 1,637 1,556 1,301\nTotal non-interest revenues 42,967 34,630 28,102\nInterest income\nInterest on loans 11,967 8,850 9,779\nInterest and dividends on investment securities 96 83 127\nDeposits with banks and other 595 100 177\nTotal interest income 12,658 9,033 10,083\nInterest expense\nDeposits 1,527 458 943\nLong-term debt and other 1,236 825 1,155\nTotal interest expense 2,763 1,283 2,098\nNet interest income 9,895 7,750 7,985\nTotal revenues net of interest expense 52,862 42,380 36,087\nProvisions for credit losses\nCard Member receivables 627 (73) 1,015\nCard Member loans 1,514 (1,155) 3,453\nOther 41 (191) 262\nTotal provisions for credit losses 2,182 (1,419) 4,730\nTotal revenues net of interest expense after provisions for credit losses 50,680 43,799 31,357\nExpenses\nCard Member rewards 14,002 11,007 8,041\nBusiness development 4,943 3,762 3,051\nCard Member services 2,959 1,993 1,230\nMarketing 5,458 5,291 3,696\nSalaries and employee benefits 7,252 6,240 5,718\nOther, net 6,481 4,817 5,325\nTotal expenses 41,095 33,110 27,061\nPretax income 9,585 10,689 4,296\nIncome tax provision 2,071 2,629 1,161\nNet income $ 7,514 $ 8,060 $ 3,135\nEarnings per Common Share \u2014 (Note 21)\nBasic $ 9.86 $ 10.04 $ 3.77\nDiluted $ 9.85 $ 10.02 $ 3.77\nAverage common shares outstanding for earnings per common share:\nBasic 751 789 805\nDiluted 752 790 806"
+            ],
+            "reference_answer": "Performance is not measured through gross margin",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "How much has the effective tax rate of American Express changed between FY2021 and FY2022?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "TABLE 1: SUMMARY OF FINANCIAL PERFORMANCE\nYears Ended December 31, Change Change\n(Millions, except percentages, per share amounts and where indicated) 2022 2021 2020 2022 vs. 2021 2021 vs. 2020\nSelected Income Statement Data\nTotal revenues net of interest expense $ 52,862 $ 42,380 $ 36,087 $ 10,482 25 % $ 6,293 17 %\nProvisions for credit losses 2,182 (1,419) 4,730 3,601 # (6,149) #\nExpenses 41,095 33,110 27,061 7,985 24 6,049 22\nPretax income 9,585 10,689 4,296 (1,104) (10) 6,393 #\nIncome tax provision 2,071 2,629 1,161 (558) (21) 1,468 #\nNet income 7,514 8,060 3,135 (546) (7) 4,925 #\nEarnings per common share \u2014 diluted $ 9.85 $ 10.02 $ 3.77 $ (0.17) (2)% $ 6.25 # %\nCommon Share Statistics\nCash dividends declared per common share $ 2.08 $ 1.72 $ 1.72 $ 0.36 21 % $ \u2014 \u2014 %\nAverage common shares outstanding:\nBasic 751 789 805 (38) (5)% (16) (2)%\nDiluted 752 790 806 (38) (5)% (16) (2)%\nSelected Metrics and Ratios\nNetwork volumes (Billions) $ 1,552.8 $ 1,284.2 $ 1,037.8 $ 269 21 % $ 246 24 %\nReturn on average equity 32.3 % 33.7 % 14.2 %\nNet interest income divided by average Card Member loans 10.4 % 10.2 % 10.7 %\nNet interest yield on average Card Member loans 10.6 % 10.7 % 11.5 %\nEffective tax rate 21.6 % 24.6 % 27.0 %\nCommon Equity Tier 1 10.3 % 10.5 % 13.5 %\nSelected Balance Sheet Data\nCash and cash equivalents $ 33,914 $ 22,028 $ 32,965 $ 11,886 54 % $ (10,937) (33)%\nCard Member receivables 57,613 53,645 43,701 3,968 7 9,944 23\nCard Member loans 107,964 88,562 73,373 19,402 22 15,189 21\nCustomer deposits 110,239 84,382 86,875 25,857 31 (2,493) (3)\nLong-term debt $ 42,573 $ 38,675 $ 42,952 $ 3,898 10 % $ (4,277) (10)%"
+            ],
+            "reference_answer": "The effective tax rate for American Express has changed/dropped from 24.6% in FY 2021 to 21.6% in FY 2022.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What was the largest liability in American Express's Balance Sheet in 2022?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "CONSOLIDATED BALANCE SHEETS\nDecember 31 (Millions, except share data) 2022 2021\nAssets\nCash and cash equivalents\nCash and due from banks (includes restricted cash of consolidated variable interest entities: 2022, $5; 2021, $11) $ 5,510 $ 1,292\nInterest-bearing deposits in other banks (includes securities purchased under resale agreements: 2022, $318; 2021, $463) 28,097 20,548\nShort-term investment securities (includes restricted investments of consolidated variable interest entities: 2022, $54; 2021, $32) 307 188\nTotal cash and cash equivalents 33,914 22,028\nCard Member receivables (includes gross receivables available to settle obligations of a consolidated variable interest entity: 2022, $5,193; 2021,\n$5,175), less reserves for credit losses: 2022, $229; 2021, $64 57,384 53,581\nCard Member loans (includes gross loans available to settle obligations of a consolidated variable interest entity: 2022, $28,461; 2021, $26,587),\nless reserves for credit losses: 2022, $3,747; 2021, $3,305 104,217 85,257\nOther loans, less reserves for credit losses: 2022, $59; 2021, $52 5,357 2,859\nInvestment securities 4,578 2,591\nPremises and equipment, less accumulated depreciation and amortization: 2022, $9,850; 2021, $8,602 5,215 4,988\nOther assets, less reserves for credit losses: 2022, $22; 2021, $25 17,689 17,244\nTotal assets $ 228,354 $ 188,548\nLiabilities and Shareholders\u2019 Equity\nLiabilities\nCustomer deposits $ 110,239 $ 84,382\nAccounts payable 12,133 10,574\nShort-term borrowings 1,348 2,243\nLong-term debt (includes debt issued by consolidated variable interest entities: 2022, $12,662; 2021, $13,803) 42,573 38,675\nOther liabilities 37,350 30,497\nTotal liabilities $ 203,643 $ 166,371\nContingencies and Commitments (Note 12)\nShareholders\u2019 Equity\nPreferred shares, $1.66 par value, authorized 20 million shares; issued and outstanding 1,600 shares as of December 31, 2022 and 2021 (Note\n16) \u2014 \u2014\nCommon shares, $0.20 par value, authorized 3.6 billion shares; issued and outstanding 743 million shares as of December 31, 2022 and 761\nmillion shares as of December 31, 2021 149 153\nAdditional paid-in capital 11,493 11,495\nRetained earnings 16,279 13,474\nAccumulated other comprehensive income (loss) (3,210) (2,945)\nTotal shareholders\u2019 equity 24,711 22,177\nTotal liabilities and shareholders\u2019 equity $ 228,354 $ 188,548"
+            ],
+            "reference_answer": "Customer deposits",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Was American Express able to retain card members during 2022?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Net card fees increased 17 percent year over-year, as new card acquisitions reached record levels in 2022 and Card Member\nretention remained high, demonstrating the impact of investments we have made in our premium value propositions"
+            ],
+            "reference_answer": "Yes",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Are Best Buy's gross margins historically consistent (not fluctuating more than roughly 2% each year)? If gross margins are not a relevant metric for a company like this, then please state that and explain why.",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Consolidated Statements of Earnings\n$ and shares in millions, except per share amounts\nFiscal Years Ended January 28, 2023 January 29, 2022 January 30, 2021\nRevenue $ 46,298 $ 51,761 $ 47,262\nCost of sales 36,386 40,121 36,689\nGross profit 9,912 11,640 10,573\nSelling, general and administrative expenses 7,970 8,635 7,928\nRestructuring charges 147 (34) 254\nOperating income 1,795 3,039 2,391\nOther income (expense):\nInvestment income and other 28 10 38\nInterest expense (35) (25) (52)\nEarnings before income tax expense and equity in income of affiliates 1,788 3,024 2,377\nIncome tax expense 370 574 579\nEquity in income of affiliates 1 4 -\nNet earnings $ 1,419 $ 2,454 $ 1,798"
+            ],
+            "reference_answer": "Yes, the margins have been consistent, there has been a minor decline of 1.1% in gross margins between FY2022 and FY2023.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What are major acquisitions that Best Buy has done in FY2023, FY2022 and FY2021?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Acquisitions\nCurrent Health Ltd.\nIn fiscal 2022, we acquired all of the outstanding shares of Current Health Ltd. (\u201cCurrent Health\u201d), a care-at-home technology platform, on November 2, 2021, for\nnet cash consideration of $389 million. The acquired assets included $351 million of goodwill that was assigned to our Best Buy Health reporting unit and was\ndeductible for income tax purposes. The acquisition is aligned with our focus in virtual care to enable people in their homes to connect seamlessly with their\nhealth care providers and is included in our Domestic reportable segment and Services revenue category. The acquisition was accounted for using the\nacquisition method of accounting for business combinations and was not material to the results of operations.\nTwo Peaks, LLC d/b/a Yardbird Furniture\nIn fiscal 2022, we acquired all of the outstanding shares of Two Peaks, LLC d/b/a Yardbird Furniture (\u201cYardbird\u201d), a direct-to-consumer outdoor furniture company,\non November 4, 2021, for net cash consideration of $79 million. The acquired assets included $47 million of goodwill that was assigned to our Best Buy Domestic\nreporting unit and was deductible for income tax purposes. The acquisition expands our assortment in categories like outdoor living, as more and more\nconsumers look to make over or upgrade their outdoor living spaces. The acquisition was accounted for using the acquisition method of accounting for business\ncombinations and was not material to the results of our operations."
+            ],
+            "reference_answer": "Best Buy closed two acquisitions, both these companies were already partially owned by Best Buy, but Best Buy acquired all outstanding shares of these two companies during FY 2022: (1) Current Health Ltd and (2) Two Peaks, LLC d/b/a Yardbird Furniture",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Among operations, investing, and financing activities, which brought in the most (or lost the least) cash flow for Best Buy in FY2023?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Consolidated Statements of Cash Flows\n$ in millions\nFiscal Years Ended January 28, 2023 January 29, 2022 January 30, 2021\nOperating activities\nNet earnings $ 1,419 $ 2,454 $ 1,798\nAdjustments to reconcile net earnings to total cash provided by operating activities:\nDepreciation and amortization 918 869 839\nRestructuring charges 147 (34) 254\nStock-based compensation 138 141 135\nDeferred income taxes 51 14 (36)\nOther, net 12 11 3\nChanges in operating assets and liabilities, net of acquired assets and liabilities:\nReceivables (103) 17 73\nMerchandise inventories 809 (328) (435)\nOther assets (21) (14) (51)\nAccounts payable (1,099) (201) 1,676\nIncome taxes 36 (156) 173\nOther liabilities (483) 479 498\nTotal cash provided by operating activities 1,824 3,252 4,927\nInvesting activities\nAdditions to property and equipment, net of $35, $46 and $32, respectively, of non-cash\ncapital expenditures (930) (737) (713)\nPurchases of investments (46) (233) (620)\nSales of investments 7 66 546\nAcquisitions, net of cash acquired - (468) -\nOther, net 7 - (1)\nTotal cash used in investing activities (962) (1,372) (788)\nFinancing activities\nRepurchase of common stock (1,014) (3,502) (312)\nIssuance of common stock 16 29 28\nDividends paid (789) (688) (568)\nBorrowings of debt - - 1,892\nRepayments of debt (19) (133) (1,916)\nOther, net - (3) -\nTotal cash used in financing activities (1,806) (4,297) (876)\nEffect of exchange rate changes on cash (8) (3) 7\nIncrease (decrease) in cash, cash equivalents and restricted cash (952) (2,420) 3,270\nCash, cash equivalents and restricted cash at beginning of period 3,205 5,625 2,355\nCash, cash equivalents and restricted cash at end of period $ 2,253 $ 3,205 $ 5,625"
+            ],
+            "reference_answer": "Best Buy generated the most cash flow from operating activities in FY 2023 ($1.8 bn)",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Was there any drop in Cash & Cash equivalents between FY 2023 and Q2 of FY2024?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "July 29, 2023 January 28, 2023 July 30, 2022\nCash and cash equivalents $ 1,093 $ 1,874 $ 840"
+            ],
+            "reference_answer": "Yes, there was a decline of ~42% between FY2023 and Q2 of FY 2024.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Was there any change in the number of Best Buy stores between Q2 of FY2024 and FY2023?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Fiscal 2024 Fiscal 2023\nTotal Stores at\nBeginning of\nSecond Quarter\nStores\nOpened\nStores\nClosed\nTotal Stores at\nEnd of Second\nQuarter\nTotal Stores at\nBeginning of\nSecond Quarter\nStores\nOpened\nStores\nClosed\nTotal Stores at\nEnd of Second\nQuarter\nBest Buy 908 - (1) 907 931 1 (2) 930\nOutlet Centers 20 1 (1) 20 16 2 - 18\nPacific Sales 20 - - 20 21 - - 21\nYardbird 18 4 - 22 9 4 - 13\nTotal 966 5 (2) 969 977 7 (2) 982"
+            ],
+            "reference_answer": "Yes, there is decline in number stores by 1.32% from 982 stores in Q2 FY 2023 to 969 by the end of Q2 FY2024.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Which Best Buy product category performed the best (by top line) in the domestic (USA) Market during Q2 of FY2024?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Computing and Mobile Phones: The 6.4% comparable sales decline was driven primarily by computing, mobile phones and tablets.\n\uf0b7 Consumer Electronics: The 5.7% comparable sales decline was driven primarily by home theater, partially offset by comparable sales growth in\nheadphones and portable speakers.\n\uf0b7 Appliances: The 16.1% comparable sales decline was driven primarily by large appliances.\n\uf0b7 Entertainment: The 9.0% comparable sales growth was driven primarily by gaming, partially offset by comparable sales declines in virtual reality and\ndrones.\n\uf0b7 Services: The 7.6% comparable sales growth was driven primarily by the cumulative growth in our paid membership base"
+            ],
+            "reference_answer": "The entertainment segment experienced the highest growth of 9% during Q2 FY2024, primarily from gaming division.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What is the FY2019 - FY2020 total revenue growth rate for Block (formerly known as Square)? Answer in units of percents and round to one decimal place. Approach the question asked by assuming the standpoint of an investment banking analyst who only has access to the statement of income.",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "SQUARE, INC.\nCONSOLIDATED STATEMENTS OF OPERATIONS\n(In thousands, except per share data)\nYear Ended December 31,\n2020\n2019\n2018\nRevenue:\nTransaction-based\u00a0revenue\n$\n3,294,978\u00a0\n$\n3,081,074\u00a0\n$\n2,471,451\u00a0\nSubscription\u00a0and\u00a0services-based\u00a0revenue\n1,539,403\u00a0\n1,031,456\u00a0\n591,706\u00a0\nHardware\u00a0revenue\n91,654\u00a0\n84,505\u00a0\n68,503\u00a0\nBitcoin\u00a0revenue\n4,571,543\u00a0\n516,465\u00a0\n166,517\u00a0\nTotal\u00a0net\u00a0revenue\n9,497,578\u00a0\n4,713,500\u00a0\n3,298,177\u00a0\nCost\u00a0of\u00a0revenue:\nTransaction-based\u00a0costs\n1,911,848\u00a0\n1,937,971\u00a0\n1,558,562\u00a0\nSubscription\u00a0and\u00a0services-based\u00a0costs\n222,712\u00a0\n234,270\u00a0\n169,884\u00a0\nHardware\u00a0costs\n143,901\u00a0\n136,385\u00a0\n94,114\u00a0\nBitcoin\u00a0costs\n4,474,534\u00a0\n508,239\u00a0\n164,827\u00a0\nAmortization\u00a0of\u00a0acquired\u00a0technology\n11,174\u00a0\n6,950\u00a0\n7,090\u00a0\nTotal\u00a0cost\u00a0of\u00a0revenue\n6,764,169\u00a0\n2,823,815\u00a0\n1,994,477\u00a0\nGross\u00a0profit\n2,733,409\u00a0\n1,889,685\u00a0\n1,303,700\u00a0\nOperating\u00a0expenses:\nProduct\u00a0development\n881,826\u00a0\n670,606\u00a0\n497,479\u00a0\nSales\u00a0and\u00a0marketing\n1,109,670\u00a0\n624,832\u00a0\n411,151\u00a0\nGeneral\u00a0and\u00a0administrative\n579,203\u00a0\n436,250\u00a0\n339,245\u00a0\nTransaction\u00a0and\u00a0loan\u00a0losses\n177,670\u00a0\n126,959\u00a0\n88,077\u00a0\nAmortization\u00a0of\u00a0acquired\u00a0customer\u00a0assets\n3,855\u00a0\n4,481\u00a0\n4,362\u00a0\nTotal\u00a0operating\u00a0expenses\n2,752,224\u00a0\n1,863,128\u00a0\n1,340,314\u00a0\nOperating\u00a0income\u00a0(loss)\n(18,815)\n26,557\u00a0\n(36,614)\nGain\u00a0on\u00a0sale\u00a0of\u00a0asset\u00a0group\n\u2014\u00a0\n(373,445)\n\u2014\u00a0\nInterest\u00a0expense,\u00a0net\n56,943\u00a0\n21,516\u00a0\n17,982\u00a0\nOther\u00a0expense\u00a0(income),\u00a0net\n(291,725)\n273\u00a0\n(18,469)\nIncome\u00a0(loss)\u00a0before\u00a0income\u00a0tax\n215,967\u00a0\n378,213\u00a0\n(36,127)\nProvision\u00a0for\u00a0income\u00a0taxes\n2,862\u00a0\n2,767\u00a0\n2,326\u00a0\nNet\u00a0income\u00a0(loss)\n$\n213,105\u00a0\n$\n375,446\u00a0\n$\n(38,453)\nNet\u00a0income\u00a0(loss)\u00a0per\u00a0share:\nBasic\n$\n0.48\u00a0\n$\n0.88\u00a0\n$\n(0.09)\nDiluted\n$\n0.44\u00a0\n$\n0.81\u00a0\n$\n(0.09)\nWeighted-average\u00a0shares\u00a0used\u00a0to\u00a0compute\u00a0net\u00a0income\u00a0(loss)\u00a0per\u00a0share:\nBasic\n443,126\u00a0\n424,999\u00a0\n405,731\u00a0\nDiluted\n482,167\u00a0\n466,076\u00a0\n405,731\u00a0\nSee\u00a0accompanying\u00a0notes\u00a0to\u00a0consolidated\u00a0financial\u00a0statements.\n85"
+            ],
+            "reference_answer": "101.5%",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Using the cash flow statement, answer the following question to the best of your abilities: how much did Block (formerly known as Square) generate in cash flow from operating activities in FY2020? Answer in USD millions.",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "SQUARE, INC.\nCONSOLIDATED STATEMENTS OF CASH FLOWS\n(In thousands)\nYear Ended December 31,\n2020\n2019\n2018\nCash flows from operating activities:\nNet\u00a0income\u00a0(loss)\n$\n213,105\u00a0\n$\n375,446\u00a0\n$\n(38,453)\nAdjustments\u00a0to\u00a0reconcile\u00a0net\u00a0loss\u00a0to\u00a0net\u00a0cash\u00a0provided\u00a0by\u00a0operating\u00a0activities:\nDepreciation\u00a0and\u00a0amortization\n84,212\u00a0\n75,598\u00a0\n60,961\u00a0\nNon-cash\u00a0interest\u00a0and\u00a0other\n76,129\u00a0\n33,478\u00a0\n28,512\u00a0\nLoss\u00a0on\u00a0extinguishment\u00a0of\u00a0long-term\u00a0debt\n6,651\u00a0\n\u2014\u00a0\n5,047\u00a0\nNon-cash\u00a0lease\u00a0expense\n70,253\u00a0\n29,696\u00a0\n\u2014\u00a0\nShare-based\u00a0compensation\n397,800\u00a0\n297,863\u00a0\n216,881\u00a0\nReplacement\u00a0stock\u00a0awards\u00a0issued\u00a0in\u00a0connection\u00a0with\u00a0acquisition\n\u2014\u00a0\n\u2014\u00a0\n899\u00a0\nGain\u00a0on\u00a0sale\u00a0of\u00a0asset\u00a0group\n\u2014\u00a0\n(373,445)\n\u2014\u00a0\nLoss\u00a0(gain)\u00a0on\u00a0revaluation\u00a0of\u00a0equity\u00a0investment\n(295,297)\n12,326\u00a0\n(20,342)\nTransaction\u00a0and\u00a0loan\u00a0losses\n177,670\u00a0\n126,959\u00a0\n88,077\u00a0\nChange\u00a0in\u00a0deferred\u00a0income\u00a0taxes\n(8,016)\n(1,376)\n(646)\nChanges\u00a0in\u00a0operating\u00a0assets\u00a0and\u00a0liabilities:\nSettlements\u00a0receivable\n(473,871)\n(248,271)\n245,795\u00a0\nCustomer\u00a0funds\n(1,151,536)\n(204,208)\n(131,004)\nPurchase\u00a0of\u00a0loans\u00a0held\u00a0for\u00a0sale\n(1,837,137)\n(2,266,738)\n(1,609,611)\nSales\u00a0and\u00a0principal\u00a0payments\u00a0of\u00a0loans\u00a0held\u00a0for\u00a0sale\n1,505,406\u00a0\n2,168,682\u00a0\n1,579,834\u00a0\nCustomers\u00a0payable\n1,733,138\u00a0\n523,795\u00a0\n15,597\u00a0\nSettlements\u00a0payable\n143,528\u00a0\n41,697\u00a0\n(60,651)\nCharge-offs\u00a0to\u00a0accrued\u00a0transaction\u00a0losses\n(73,613)\n(78,325)\n(58,192)\nOther\u00a0assets\u00a0and\u00a0liabilities\n(186,819)\n(47,478)\n(27,624)\nNet\u00a0cash\u00a0provided\u00a0by\u00a0operating\u00a0activities\n381,603\u00a0\n465,699\u00a0\n295,080\u00a0\nCash flows from investing activities:\nPurchase\u00a0of\u00a0marketable\u00a0debt\u00a0securities\n(1,322,362)\n(992,583)\n(1,000,346)\nProceeds\u00a0from\u00a0maturities\u00a0of\u00a0marketable\u00a0debt\u00a0securities\n607,134\u00a0\n430,888\u00a0\n197,454\u00a0\nProceeds\u00a0from\u00a0sale\u00a0of\u00a0marketable\u00a0debt\u00a0securities\n585,427\u00a0\n548,619\u00a0\n171,992\u00a0\nPurchase\u00a0of\u00a0marketable\u00a0debt\u00a0securities\u00a0from\u00a0customer\u00a0funds\n(642,252)\n(311,499)\n(148,096)\nProceeds\u00a0from\u00a0maturities\u00a0of\u00a0marketable\u00a0debt\u00a0securities\u00a0from\u00a0customer\u00a0funds\n382,887\u00a0\n158,055\u00a0\n\u2014\u00a0\nProceeds\u00a0from\u00a0sale\u00a0of\u00a0marketable\u00a0debt\u00a0securities\u00a0from\u00a0customer\u00a0funds\n51,430\u00a0\n17,493\u00a0\n48,334\u00a0\nPurchase\u00a0of\u00a0property\u00a0and\u00a0equipment\n(138,402)\n(62,498)\n(61,203)\nPurchase\u00a0of\u00a0other\u00a0investments\n(51,277)\n(15,250)\n\u2014\u00a0\nProceeds\u00a0from\u00a0sale\u00a0of\u00a0equity\u00a0investment\n\u2014\u00a0\n33,016\u00a0\n\u2014\u00a0\nPurchase\u00a0of\u00a0intangible\u00a0assets\n\u2014\u00a0\n\u2014\u00a0\n(1,584)\nProceeds\u00a0from\u00a0sale\u00a0of\u00a0asset\u00a0group\n\u2014\u00a0\n309,324\u00a0\n\u2014\u00a0\nBusiness\u00a0combinations,\u00a0net\u00a0of\u00a0cash\u00a0acquired\n(79,221)\n(20,372)\n(112,399)\nNet\u00a0cash\u00a0provided\u00a0by\u00a0(used\u00a0in)\u00a0investing\u00a0activities:\n(606,636)\n95,193\u00a0\n(905,848)\nCash flows from financing activities:\nProceeds\u00a0from\u00a0issuance\u00a0of\u00a0convertible\u00a0senior\u00a0notes,\u00a0net\n2,116,544\u00a0\n\u2014\u00a0\n855,663\u00a0\nPurchase\u00a0of\u00a0convertible\u00a0senior\u00a0note\u00a0hedges\n(338,145)\n\u2014\u00a0\n(172,586)\nProceeds\u00a0from\u00a0issuance\u00a0of\u00a0warrants\n232,095\u00a0\n\u2014\u00a0\n112,125\u00a0\nPrincipal\u00a0payment\u00a0on\u00a0conversion\u00a0of\u00a0senior\u00a0notes\n\u2014\u00a0\n\u2014\u00a0\n(219,384)\nProceeds\u00a0from\u00a0PPP\u00a0Liquidity\u00a0Facility\u00a0advances\n464,094\u00a0\n\u2014\u00a0\n\u2014\u00a0\nProceeds\u00a0from\u00a0the\u00a0exercise\u00a0of\u00a0stock\u00a0options\u00a0and\u00a0purchases\u00a0under\u00a0the\u00a0employee\u00a0stock\u00a0purchase\u00a0plan,\u00a0net\n161,985\u00a0\n118,514\u00a0\n133,850\u00a0\nPayments\u00a0for\u00a0tax\u00a0withholding\u00a0related\u00a0to\u00a0vesting\u00a0of\u00a0restricted\u00a0stock\u00a0units\n(314,019)\n(212,264)\n(189,124)\nOther\u00a0financing\u00a0activities\n(7,359)\n(5,124)\n(4,789)\nNet\u00a0cash\u00a0provided\u00a0by\u00a0(used\u00a0in)\u00a0financing\u00a0activities\n2,315,195\u00a0\n(98,874)\n515,755\u00a0\nEffect\u00a0of\u00a0foreign\u00a0exchange\u00a0rate\u00a0on\u00a0cash\u00a0and\u00a0cash\u00a0equivalents\n12,995\u00a0\n3,841\u00a0\n(7,221)\nNet\u00a0increase\u00a0(decrease)\u00a0in\u00a0cash,\u00a0cash\u00a0equivalents\u00a0and\u00a0restricted\u00a0cash\n2,103,157\u00a0\n465,859\u00a0\n(102,234)\nCash,\u00a0cash\u00a0equivalents\u00a0and\u00a0restricted\u00a0cash,\u00a0beginning\u00a0of\u00a0the\u00a0year\n1,098,706\u00a0\n632,847\u00a0\n735,081\u00a0\nCash,\u00a0cash\u00a0equivalents\u00a0and\u00a0restricted\u00a0cash,\u00a0end\u00a0of\u00a0the\u00a0year\n$\n3,201,863\u00a0\n$\n1,098,706\u00a0\n$\n632,847\u00a0\nSee\u00a0accompanying\u00a0notes\u00a0to\u00a0consolidated\u00a0financial\u00a0statements.\n89"
+            ],
+            "reference_answer": "$382.00",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Are there any product categories / service categories that represent more than 20% of Boeing's revenue for FY2022?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "The Boeing Company and Subsidiaries\nNotes to the Consolidated Financial Statements\nSummary of Business Segment Data\n(Dollars in millions)\nYears ended December 31, 2022 2021 2020\nRevenues:\nCommercial Airplanes $25,867 $19,493 $16,162\nDefense, Space & Security 23,162 26,540 26,257\nGlobal Services 17,611 16,328 15,543\nBoeing Capital 199 272 261\nUnallocated items, eliminations and other (231) (347) (65)\nTotal revenues $66,608 $62,286 $58,158"
+            ],
+            "reference_answer": "Yes. Boeing has product and service categories that represent more than 20% of Boeing's revenue for FY2022. These categories are Commercial Airplanes which comprises 39% of total revenue, Defence which comprises 35% of total revenue and Services which comprises 26% of total revenue.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Has Boeing reported any materially important ongoing legal battles from FY2022?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Multiple legal actions have been filed against us as a result of the October 29, 2018 accident of Lion Air Flight 610 and the March 10, 2019 accident of Ethiopian Airlines Flight 302."
+            ],
+            "reference_answer": "Yes. Multiple lawsuits have been filed against Boeing resulting from a 2018 Lion Air crash and a 2019 Ethiopian Airlines crash.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Does Boeing have an improving gross margin profile as of FY2022? If gross margin is not a useful metric for a company like this, then state that and explain why.",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "The Boeing Company and Subsidiaries\nConsolidated Statements of Operations\n(Dollars in millions, except per share data)\nYears ended December 31, 2022 2021 2020\nSales of products $55,893 $51,386 $47,142\nSales of services 10,715 10,900 11,016\nTotal revenues 66,608 62,286 58,158\nCost of products (53,969) (49,954) (54,568)\nCost of services (9,109) (9,283) (9,232)\nBoeing Capital interest expense (28) (32) (43)\nTotal costs and expenses (63,106) (59,269) (63,843)\n3,502 3,017 (5,685)"
+            ],
+            "reference_answer": "Yes. Boeing has an improving gross margin profile as of FY2022. Gross profit improved from $3,017 million in FY2021 to $3,502 million in FY2022. Gross margin % improved from 4.8% in FY2021 to 5.3% in FY2022.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Who are the primary customers of Boeing as of FY2022?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "We derive a significant portion of our revenues from a limited number of commercial airlines.___FINANCEBENCH_DELIMITER___We derive a substantial portion of our revenue from the U.S. government___FINANCEBENCH_DELIMITER___In 2022, 40% of our revenues were earned pursuant to U.S. government contracts"
+            ],
+            "reference_answer": "Boeing's primary customers as of FY2022 are a limited number of commercial airlines and the US government. The US government accounted for 40% of Boeing's total revenues in FY2022.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Is Boeing's business subject to cyclicality?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Historically, the\nairline industry has been cyclical and very competitive and has experienced significant profit swings and constant challenges to be more cost\ncompetitive."
+            ],
+            "reference_answer": "Yes, Boeing's business is subject to cyclicality due to its exposure to the airline industry which is a cyclical industry.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What production rate changes is Boeing forecasting for FY2023?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "We must minimize disruption caused by production changes, achieve operational stability and implement productivity improvements in order to\nmeet customer demand and maintain our profitability. We have previously announced plans to adjust production rates on several of our\ncommercial aircraft programs. The 787 program is currently producing at low rates and we expect to gradually increase to 5 per month in 2023.\nProduction of the 777X is currently paused and is expected to resume in 2023. The 737 program has experienced operational and supply chain\nchallenges stabilizing production at 31 per month. We plan to gradually increase 737 production rates based on market demand and supply\nchain capacity."
+            ],
+            "reference_answer": "Boeing forecasts an increase in the production rates for the 737, 777X and 787 aircrafts in 2023.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "How does Boeing's effective tax rate in FY2022 compare to FY2021?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "The Boeing Company and Subsidiaries\nConsolidated Statements of Operations\n(Dollars in millions, except per share data)\nYears ended December 31, 2022 2021 2020\nSales of products $55,893 $51,386 $47,142\nSales of services 10,715 10,900 11,016\nTotal revenues 66,608 62,286 58,158\nCost of products (53,969) (49,954) (54,568)\nCost of services (9,109) (9,283) (9,232)\nBoeing Capital interest expense (28) (32) (43)\nTotal costs and expenses (63,106) (59,269) (63,843)\n3,502 3,017 (5,685)\n(Loss)/income from operating investments, net (16) 210 9\nGeneral and administrative expense (4,187) (4,157) (4,817)\nResearch and development expense, net (2,852) (2,249) (2,476)\nGain on dispositions, net 6 277 202\nLoss from operations (3,547) (2,902) (12,767)\nOther income, net 1,058 551 447\nInterest and debt expense (2,533) (2,682) (2,156)\nLoss before income taxes (5,022) (5,033) (14,476)\nIncome tax (expense)/benefit (31) 743 2,535"
+            ],
+            "reference_answer": "Effective tax rate in FY2022 was 0.62%, compared to  -14.76% in FY2021.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "How much has the effective tax rate of Corning changed between FY2021 and FY2022?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "RESULTS OF OPERATIONS\nThe following table presents selected highlights from our operations (in millions):\nYear ended December 31, % change\n2022 2021 22 vs. 21\nNet sales $ 14,189 $ 14,082 1%\nGross margin $ 4,506 $ 5,063 (11%)\n(gross margin %) 32% 36%\nSelling, general and administrative expenses $ 1,898 $ 1,827 4%\n(as a % of net sales) 13% 13%\nResearch, development and engineering expenses $ 1,047 $ 995 5%\n(as a % of net sales) 7% 7%\nTranslated earnings contract gain, net $ 351 $ 354 (1%)\n(as a % of net sales) 2% 3%\nIncome before income taxes $ 1,797 $ 2,426 (26%)\n(as a % of net sales) 13% 17%\nProvision for income taxes $ (411) $ (491) 16%\nEffective tax rate 23% 20%\nNet income attributable to Corning Incorporated $ 1,316 $ 1,906 (31%)\n(as a % of net sales) 9% 14%\nComprehensive income attributable to Corning Incorporated $ 661 $ 1,471 (55%)"
+            ],
+            "reference_answer": "The effective tax rate of Corning has changed from 20% in FY2021 to 23% in FY 2022.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Does Corning have positive working capital based on FY2022 data? If working capital is not a useful or relevant metric for this company, then please state that and explain why.",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Consolidated Balance Sheets Corning Incorporated and Subsidiary Companies\nDecember 31,\n(in millions, except share and per share amounts) 2022 2021\nAssets\nCurrent assets:\nCash and cash equivalents $ 1,671 $ 2,148\nTrade accounts receivable, net of doubtful accounts - $40 and $42 1,721 2,004\nInventories (Note 5) 2,904 2,481\nOther current assets (Notes 10 and 14) 1,157 1,026\nTotal current assets 7,453 7,659\nProperty, plant and equipment, net of accumulated depreciation - $14,147 and $13,969 (Note 8) 15,371 15,804\nGoodwill, net (Note 9) 2,394 2,421\nOther intangible assets, net (Note 9) 1,029 1,148\nDeferred income taxes (Note 7) 1,073 1,066\nOther assets (Notes 10 and 14) 2,179 2,056\nTotal Assets $ 29,499 $ 30,154\nLiabilities and Equity\nCurrent liabilities:\nCurrent portion of long-term debt and short-term borrowings (Note 11) $ 224 $ 55\nAccounts payable 1,804 1,612\nOther accrued liabilities (Notes 10 and 13) 3,147 3,139\nTotal current liabilities 5,175 4,806\nLong-term debt (Note 11) 6,687 6,989\nPostretirement benefits other than pensions (Note 12) 407 622\nOther liabilities (Notes 10 and 13) 4,955 5,192\nTotal liabilities 17,224 17,609"
+            ],
+            "reference_answer": "Yes. Corning had a positive working capital amount of $831 million by FY 2022 close. This answer considers only operating current assets and current liabilities that were clearly shown in the balance sheet.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Is CVS Health a capital-intensive business based on FY2022 data?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Consolidated Statements of Operations\nFor the Years Ended December 31,\nIn millions, except per share amounts 2022 2021 2020\nRevenues:\nProducts $ 226,616 $ 203,738 $ 190,688\nPremiums 85,330 76,132 69,364\nServices 9,683 11,042 7,856\nNet investment income 838 1,199 798\nTotal revenues 322,467 292,111 268,706\nOperating costs:\nCost of products sold 196,892 175,803 163,981\nBenefit costs 71,281 64,260 55,679\nOpioid litigation charges 5,803 \u2014 \u2014\nLoss on assets held for sale 2,533 \u2014 \u2014\nStore impairments \u2014 1,358 \u2014\nGoodwill impairment \u2014 431 \u2014\nOperating expenses 38,212 37,066 35,135\nTotal operating costs 314,721 278,918 254,795\nOperating income 7,746 13,193 13,911\nInterest expense 2,287 2,503 2,907\nLoss on early extinguishment of debt \u2014 452 1,440\nOther income (169) (182) (206)\nIncome before income tax provision 5,628 10,420 9,770\nIncome tax provision 1,463 2,522 2,569\nIncome from continuing operations 4,165 7,898 7,201\nLoss from discontinued operations, net of tax \u2014 \u2014 (9)\nNet income 4,165 7,898 7,192___FINANCEBENCH_DELIMITER___Consolidated Balance Sheets\nAt December 31,\nIn millions, except per share amounts 2022 2021\nAssets:\nCash and cash equivalents $ 12,945 $ 9,408\nInvestments 2,778 3,117\nAccounts receivable, net 27,276 24,431\nInventories 19,090 17,760\nAssets held for sale 908 \u2014\nOther current assets 2,685 5,292\nTotal current assets 65,682 60,008\nLong-term investments 21,096 23,025\nProperty and equipment, net 12,873 12,896\nOperating lease right-of-use assets 17,872 19,122\nGoodwill 78,150 79,121\nIntangible assets, net 24,754 29,026\nSeparate accounts assets 3,228 5,087\nOther assets 4,620 4,714\nTotal assets $ 228,275 $ 232,999"
+            ],
+            "reference_answer": "Yes, CVS Health requires an extensive asset base to operate, which is evident from its ROA of only 1.82% in 2022 and 3.39% in 2021, though it should be noted that a significant portion of this asset base is goodwill, and CVS's fixed assets/total assets ratio is on the lower side of 5.6%.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Has CVS Health reported any materially important ongoing legal battles from 2022, 2021 and 2020?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Usual and Customary Pricing Litigation\nThe Company and certain current and former directors and officers are named as a defendant in a number of lawsuits that allege that the Company\u2019s retail\npharmacies overcharged for prescription drugs by not submitting the correct usual and customary price during the claims adjudication process.___FINANCEBENCH_DELIMITER___The Company is facing multiple lawsuits, including by state Attorneys General, governmental subdivisions and several putative class actions, regarding drug\npricing and its rebate arrangements with drug manufacturers. These complaints, brought by a number of different types of plaintiffs under a variety of legal\ntheories, generally allege that rebate agreements between the drug manufacturers and PBMs caused inflated prices for certain drug products.___FINANCEBENCH_DELIMITER___In December 2022, the Company agreed to a formal settlement agreement, the financial amounts of which were agreed to in principle in October 2022, with a\nleadership group of a number of state Attorneys General and the Plaintiffs\u2019 Executive Committee (\u201cPEC\u201d). The agreement would resolve substantially all\nopioid claims against Company entities by states and political subdivisions, but not private plaintiffs. The maximum amount payable by the Company under the\nsettlement would be approximately $4.3 billion in opioid remediation and $625 million in attorneys\u2019 fees and costs and additional remediation. The amounts\nwould be payable over 10 years, beginning in 2023."
+            ],
+            "reference_answer": "Yes, CVS Health has been involved in multiple ongoing legal battles. Some notable legal dispute areas for CVS are: (1) usual and customary pricing litigation: where it's claimed that CVS\u2019s retail pharmacies overcharged for prescription drugs; (2) PBM litigation and investigations: where it's claimed that that rebate agreements between the drug manufacturers and PBMs caused inflated prices for certain drug products; and (3) controlled substances litigation: legal matters around opioids for which CVS has agreed to pay up to $4.3 billion to claimants in remediation and $625 million to attorneys and fees",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Has CVS Health paid dividends to common shareholders in Q2 of FY2022?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Dividends\nDuring 2022, 2021 and 2020, the quarterly cash dividend was $0.55, $0.50 and $0.50 per share, respectively."
+            ],
+            "reference_answer": "Yes, CVS paid a $ 0.55 dividend per share every quarter in FY2022",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "By drawing conclusions from the information stated only in the statement of financial position, what is General Mills's FY2020 working capital ratio? Define working capital ratio as total current assets divided by total current liabilities. Round your answer to two decimal places.",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "50 \n \nConsolidated Balance Sheets \nGENERAL MILLS, INC. AND SUBSIDIARIES \n(In Millions, Except Par Value) \n \nMay 31, 2020 \nMay 26, 2019 \nASSETS \n \n \n  \n \nCurrent assets: \n \n \n  \n \nCash and cash equivalents \n$ \n1,677.8  $ \n450.0 \nReceivables \n \n1,615.1   \n1,679.7 \nInventories \n \n1,426.3   \n1,559.3 \nPrepaid expenses and other current assets \n \n402.1   \n497.5 \nTotal current assets \n \n5,121.3   \n4,186.5 \nLand, buildings, and equipment \n \n3,580.6   \n3,787.2 \nGoodwill \n \n13,923.2   \n13,995.8 \nOther intangible assets \n \n7,095.8   \n7,166.8 \nOther assets \n \n1,085.8   \n974.9 \nTotal assets \n$ \n30,806.7  $ \n30,111.2 \n \n \n \n  \n \nLIABILITIES AND EQUITY \n \n  \n  \n  \nCurrent liabilities: \n \n \n  \n \nAccounts payable \n$ \n3,247.7  $ \n2,854.1 \nCurrent portion of long-term debt \n \n2,331.5   \n1,396.5 \nNotes payable \n \n279.0   \n1,468.7 \nOther current liabilities \n \n1,633.3   \n1,367.8 \nTotal current liabilities \n \n7,491.5   \n7,087.1 \nLong-term debt \n \n10,929.0   \n11,624.8 \nDeferred income taxes \n \n1,947.1   \n2,031.0 \nOther liabilities \n \n1,545.0   \n1,448.9 \nTotal liabilities \n \n21,912.6   \n22,191.8 \nRedeemable interest \n \n544.6   \n551.7 \nStockholders' equity: \n \n \n  \n \nCommon stock, 754.6 shares issued, $0.10 par value \n \n75.5   \n75.5 \nAdditional paid-in capital \n \n1,348.6   \n1,386.7 \nRetained earnings \n \n15,982.1   \n14,996.7 \nCommon stock in treasury, at cost, shares of 144.8 and 152.7 \n \n(6,433.3)  \n(6,779.0)\nAccumulated other comprehensive loss \n \n(2,914.4)  \n(2,625.4)\nTotal stockholders' equity \n \n8,058.5   \n7,054.5 \nNoncontrolling interests \n \n291.0   \n313.2 \nTotal equity \n \n8,349.5   \n7,367.7 \nTotal liabilities and equity \n$ \n30,806.7  $ \n30,111.2 \nSee accompanying notes to consolidated financial statements."
+            ],
+            "reference_answer": "0.68",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "According to the information provided in the statement of cash flows, what is the FY2020 free cash flow (FCF) for General Mills? FCF here is defined as: (cash from operations - capex). Answer in USD millions.",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "52 \n \nConsolidated Statements of Cash Flows \nGENERAL MILLS, INC. AND SUBSIDIARIES \n(In Millions) \n \nFiscal Year \n \n2020 \n2019  \n2018  \nCash Flows - Operating Activities \n \n \n  \n  \nNet earnings, including earnings attributable to redeemable and noncontrolling interests $ \n2,210.8  $ \n1,786.2  $ \n2,163.0 \nAdjustments to reconcile net earnings to net cash provided by operating activities: \n \n \n  \n \n  \n \nDepreciation and amortization \n \n594.7   \n620.1   \n618.8 \nAfter-tax earnings from joint ventures \n \n(91.1)  \n(72.0)  \n(84.7)\nDistributions of earnings from joint ventures \n \n76.5   \n86.7   \n113.2 \nStock-based compensation \n \n94.9   \n84.9   \n77.0 \nDeferred income taxes \n \n(29.6)  \n93.5   \n(504.3)\nPension and other postretirement benefit plan contributions \n \n(31.1)  \n(28.8)  \n(31.8)\nPension and other postretirement benefit plan costs \n \n(32.3)  \n6.1   \n4.6 \nDivestitures loss \n \n-   \n30.0   \n- \nRestructuring, impairment, and other exit costs \n \n43.6   \n235.7   \n126.0 \nChanges in current assets and liabilities, excluding the effects of acquisitions \n  and divestitures \n \n793.9   \n(7.5)  \n542.1 \nOther, net \n \n45.9   \n(27.9)  \n(182.9)\nNet cash provided by operating activities \n \n3,676.2   \n2,807.0   \n2,841.0 \nCash Flows - Investing Activities \n \n \n  \n \n  \n \nPurchases of land, buildings, and equipment \n \n(460.8)  \n(537.6)  \n(622.7)\nAcquisition, net of cash acquired \n \n-   \n-   \n(8,035.8)\nInvestments in affiliates, net \n \n(48.0)  \n0.1   \n(17.3)\nProceeds from disposal of land, buildings, and equipment \n \n1.7   \n14.3   \n1.4 \nProceeds from divestitures \n \n-   \n26.4   \n- \nOther, net \n \n20.9   \n(59.7)  \n(11.0)\nNet cash used by investing activities \n \n(486.2)  \n(556.5)  \n(8,685.4)\nCash Flows - Financing Activities \n \n \n  \n \n  \n \nChange in notes payable \n \n(1,158.6)  \n(66.3)  \n327.5 \nIssuance of long-term debt \n \n1,638.1   \n339.1   \n6,550.0 \nPayment of long-term debt \n \n(1,396.7)  \n(1,493.8)  \n(600.1)\nProceeds from common stock issued on exercised options \n \n263.4   \n241.4   \n99.3 \nProceeds from common stock issued \n \n-   \n-   \n969.9 \nPurchases of common stock for treasury \n \n(3.4)  \n(1.1)  \n(601.6)\nDividends paid \n \n(1,195.8)  \n(1,181.7)  \n(1,139.7)\nInvestments in redeemable interest \n \n-   \n55.7   \n- \nDistributions to noncontrolling and redeemable interest holders \n \n(72.5)  \n(38.5)  \n(51.8)\nOther, net \n \n(16.0)  \n(31.2)  \n(108.0)\nNet cash (used) provided by financing activities \n \n(1,941.5)  \n(2,176.4)  \n5,445.5 \nEffect of exchange rate changes on cash and cash equivalents \n \n(20.7)  \n(23.1)  \n31.8 \nIncrease (decrease) in cash and cash equivalents \n \n1,227.8 \n \n51.0 \n \n(367.1)\nCash and cash equivalents - beginning of year \n \n450.0   \n399.0   \n766.1 \nCash and cash equivalents - end of year \n$ \n1,677.8  $ \n450.0  $ \n399.0 \nCash flow from changes in current assets and liabilities, excluding the effects of  \n  acquisitions and divestitures: \n \n \n  \n \n  \n \nReceivables \n$ \n37.9  $ \n(42.7) $ \n(122.7)\nInventories \n \n103.1   \n53.7   \n15.6 \nPrepaid expenses and other current assets \n \n94.2   \n(114.3)  \n(10.7)\nAccounts payable \n \n392.5   \n162.4   \n575.3 \nOther current liabilities \n \n166.2   \n(66.6)  \n84.6 \nChanges in current assets and liabilities \n$ \n793.9  $ \n(7.5) $ \n542.1 \nSee accompanying notes to consolidated financial statements."
+            ],
+            "reference_answer": "$3215.00",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Are JnJ's FY2022 financials that of a high growth company?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Results of Operations\nAnalysis of Consolidated Sales\nFor discussion on results of operations and financial condition pertaining to the fiscal years 2021 and 2020 see the Company\u2019s Annual Report on Form 10-K for the fiscal year ended January 2, 2022, Item 7. Management's Discussion and Analysis of Results of Operations and Financial Condition.\nIn 2022, worldwide sales increased 1.3% to $94.9 billion as compared to an increase of 13.6% in 2021. These sales changes consisted of the following:\nSales increase/(decrease) due to:\n2022\n2021\nVolume\n6.9\n%\n12.9\n%\nPrice\n(0.8)\n(0.7)\nCurrency\n(4.8)\n1.4\nTotal\n1.3\n%\n13.6\n%"
+            ],
+            "reference_answer": "No, JnJ's FY2022 financials are not of a high growth company as sales grew by 1.3% in FY2022.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What drove gross margin change as of FY2022 for JnJ? If gross margin is not a useful metric for a company like this, then please state that and explain why.",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Analysis of Consolidated Earnings Before Provision for Taxes on Income\nConsolidated earnings before provision for taxes on income was $21.7 billion and $22.8 billion for the years 2022 and 2021, respectively. As a percent tosales, consolidated earnings before provision for taxes on income was 22.9% and 24.3%, in 2022 and 2021, respectively.\n(Dollars in billions. Percentages in chart are as a percent to total sales)\nCost of Products Sold and Selling, Marketing and Administrative Expenses:\n(Dollars in billions. Percentages in chart are as a percent to total sales)\nCost of products sold increased as a percent to sales driven by:\n\u2022\nOne-time COVID-19 vaccine manufacturing exit related costs\n\u2022\nCurrency impacts in the Pharmaceutical segment\n\u2022\nCommodity inflation in the MedTech and Consumer Health segments\npartially offset by\n\u2022\nSupply chain benefits in the Consumer Health segment\nThe intangible asset amortization expense included in cost of products sold was $4.3 billion and $4.7 billion for the fiscal years 2022 and 2021,respectively."
+            ],
+            "reference_answer": "For FY22, JnJ had changes in gross margin due to: One-time COVID-19 vaccine manufacturing exit related costs, Currency impacts in the Pharmaceutical segment, Commodity inflation in the MedTech and Consumer Health segments, partially offset by Supply chain benefits in the Consumer Health segment.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Roughly how many times has JnJ sold its inventory in FY2022? Calculate inventory turnover ratio for FY2022; if conventional inventory management is not meaningful for the company then state that and explain why.",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "JOHNSON & JOHNSON AND SUBSIDIARIES\nCONSOLIDATED BALANCE SHEETS\nAt January 1, 2023 and January 2, 2022\n(Dollars in Millions Except Share and Per Share Amounts) (Note 1)\n2022\n2021\nAssets\nCurrent assets\nCash and cash equivalents (Notes 1 and 2)\n$\n14,127\n14,487\nMarketable securities (Notes 1 and 2)\n9,392\n17,121\nAccounts receivable trade, less allowances for doubtful accounts $203 (2021, $230)\n16,160\n15,283\nInventories (Notes 1 and 3)\n12,483\n10,387___FINANCEBENCH_DELIMITER___JOHNSON & JOHNSON AND SUBSIDIARIES\nCONSOLIDATED STATEMENTS OF EARNINGS\n(Dollars and Shares in Millions Except Per Share Amounts) (Note 1)\n2022\n2021\n2020\nSales to customers\n$\n94,943\n93,775\n82,584\nCost of products sold\n31,089\n29,855\n28,427"
+            ],
+            "reference_answer": "JnJ sold its inventory 2.7 times in FY2022.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Is growth in JnJ's adjusted EPS expected to accelerate in FY2023?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "2022 Fourth-Quarter reported sales decline of 4.4% to $23.7 Billion primarily driven by unfavorable foreign exchange and reduced COVID-19 Vaccine sales vs. prior year. Operational growth excluding COVID-19 Vaccine of 4.6%*\n\u2022 2022 Fourth-Quarter earnings per share (EPS) of $1.33 decreasing 24.9% and adjusted EPS of $2.35 increasing by 10.3%*\n__________________________________________________________________________________________\n\u2022 2022 Full-Year reported sales growth of 1.3% to $94.9 Billion primarily driven by strong commercial execution partially offset by unfavorable foreign exchange. Operational growth of 6.1%*\n\u2022 2022 Full-Year earnings per share (EPS) of $6.73 decreasing 13.8% and adjusted EPS of $10.15 increasing by 3.6%*\n__________________________________________________________________________________________\n\u2022 Company guides 2023 adjusted operational sales growth excluding COVID-19 Vaccine of 4.0%* and adjusted operational EPS of $10.50, reflecting growth of 3.5%*"
+            ],
+            "reference_answer": "No, rate of growth in adjusted EPS is expected to decelerate slightly from 3.6% in FY2022 to 3.5% in FY2023.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "How did JnJ's US sales growth compare to international sales growth in FY2022?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "REGIONAL SALES RESULTS\nQ4 % Change ($ in Millions) 2022 2021 Reported Operational1,2 Currency Adjusted Operational1,3 U.S. $12,516 $12,163 2.9% 2.9 -\n2.7 International 11,190 12,641\n(11.5) (1.1) (10.4)\n(1.0) Worldwide $23,706 $24,804 (4.4)% 0.9 (5.3)\n0.8\nFull Year % Change ($ in Millions) 2022 2021 Reported Operational1,2 Currency Adjusted Operational1,3 U.S. $48,580 $47,156 3.0% 3.0 -\n3.0 International 46,363 46,619\n(0.6)% 9.1 (9.7)\n9.3 Worldwide $94,943 $93,775 1.3% 6.1 (4.8)\n6.2"
+            ],
+            "reference_answer": "US sales increased 3.0% vs international sales decline of 0.6%.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Which business segment of JnJ will be treated as a discontinued operation from August 30, 2023 onward?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Exhibit 99.1\nJohnson & Johnson Announces Updated Financials and 2023 Guidance Following Completion of the KenvueSeparation\n\u2022\nCompany expects increased 2023 Reported Sales Growth of 7.0% - 8.0%, Operational Sales Growth of 7.5% - 8.5%, andAdjusted Operational Sales Growth of 6.2% - 7.2%; Figures exclude the COVID-19 Vaccine\n\u2022\nCompany expects 2023 Adjusted Reported Earnings Per Share (EPS) of $10.00 - $10.10, reflecting increased growth of12.5% at the mid-point and Adjusted Operational EPS of $9.90 - $10.00, reflecting increased growth of 11.5% at the mid-point\n\u2022\nCompany reduced outstanding share count by approximately 191 million; 2023 guidance reflects only a partial-year benefitof approximately 73.5 million shares or $0.28 benefit to EPS\n\u2022\nCompany secured $13.2 billion in cash proceeds from the Kenvue debt offering and initial public offering and maintains 9.5%of equity stake in Kenvue\n\u2022\nCompany maintains its quarterly dividend of $1.19 per share\nNew Brunswick, N.J. (August 30, 2023)\n\u2013 Johnson & Johnson (NYSE: JNJ) (\u201cthe Company\u201d) today announced updates to its financials and2023 guidance which reflect its operations as a company focused on transformational innovation in Pharmaceutical and MedTech. TheCompany has published a recorded webinar for investors to provide additional context behind the updated financials and 2023 guidancefound in this release, which may be accessed by visiting the Investors section of the Company's website at\nwebcasts & presentations\n.\n\u201cThe completion of this transaction uniquely positions Johnson & Johnson as a Pharmaceutical and MedTech company focused on deliveringtransformative healthcare solutions to patients,\u201d said Joaquin Duato, Chairman of the Board and Chief Executive Officer. \u201cWe are incrediblyproud of the focus and dedication of our employees worldwide to achieve this milestone, which we are confident will unlock near- and long-term value for all of our stakeholders.\u201d\nAs previously\nannounced\n, the Company recently completed an exchange offer to finalize the separation of Kenvue Inc., formerly Johnson &Johnson\u2019s Consumer Health business. As a result of the completion of the exchange offer, Johnson & Johnson will now present itsConsumer Health business financial results as discontinued operations, including a gain of approximately $20 billion in the third quarter of2023"
+            ],
+            "reference_answer": "The Consumer Health business segment will be treated as a discontinued operation from August 30, 2023 onward.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What is the amount of the gain accruing to JnJ as a result of the separation of its Consumer Health business segment, as of August 30, 2023?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Exhibit 99.1\nJohnson & Johnson Announces Updated Financials and 2023 Guidance Following Completion of the KenvueSeparation\n\u2022\nCompany expects increased 2023 Reported Sales Growth of 7.0% - 8.0%, Operational Sales Growth of 7.5% - 8.5%, andAdjusted Operational Sales Growth of 6.2% - 7.2%; Figures exclude the COVID-19 Vaccine\n\u2022\nCompany expects 2023 Adjusted Reported Earnings Per Share (EPS) of $10.00 - $10.10, reflecting increased growth of12.5% at the mid-point and Adjusted Operational EPS of $9.90 - $10.00, reflecting increased growth of 11.5% at the mid-point\n\u2022\nCompany reduced outstanding share count by approximately 191 million; 2023 guidance reflects only a partial-year benefitof approximately 73.5 million shares or $0.28 benefit to EPS\n\u2022\nCompany secured $13.2 billion in cash proceeds from the Kenvue debt offering and initial public offering and maintains 9.5%of equity stake in Kenvue\n\u2022\nCompany maintains its quarterly dividend of $1.19 per share\nNew Brunswick, N.J. (August 30, 2023)\n\u2013 Johnson & Johnson (NYSE: JNJ) (\u201cthe Company\u201d) today announced updates to its financials and2023 guidance which reflect its operations as a company focused on transformational innovation in Pharmaceutical and MedTech. TheCompany has published a recorded webinar for investors to provide additional context behind the updated financials and 2023 guidancefound in this release, which may be accessed by visiting the Investors section of the Company's website at\nwebcasts & presentations\n.\n\u201cThe completion of this transaction uniquely positions Johnson & Johnson as a Pharmaceutical and MedTech company focused on deliveringtransformative healthcare solutions to patients,\u201d said Joaquin Duato, Chairman of the Board and Chief Executive Officer. \u201cWe are incrediblyproud of the focus and dedication of our employees worldwide to achieve this milestone, which we are confident will unlock near- and long-term value for all of our stakeholders.\u201d\nAs previously\nannounced\n, the Company recently completed an exchange offer to finalize the separation of Kenvue Inc., formerly Johnson &Johnson\u2019s Consumer Health business. As a result of the completion of the exchange offer, Johnson & Johnson will now present itsConsumer Health business financial results as discontinued operations, including a gain of approximately $20 billion in the third quarter of2023."
+            ],
+            "reference_answer": "JnJ will make a gain of approximately $20 billion from the separation of its Consumer Health business segment.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What is the amount of the cash proceeds that JnJ realised from the separation of Kenvue (formerly Consumer Health business segment), as of August 30, 2023?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Exhibit 99.1\nJohnson & Johnson Announces Updated Financials and 2023 Guidance Following Completion of the KenvueSeparation\n\u2022\nCompany expects increased 2023 Reported Sales Growth of 7.0% - 8.0%, Operational Sales Growth of 7.5% - 8.5%, andAdjusted Operational Sales Growth of 6.2% - 7.2%; Figures exclude the COVID-19 Vaccine\n\u2022\nCompany expects 2023 Adjusted Reported Earnings Per Share (EPS) of $10.00 - $10.10, reflecting increased growth of12.5% at the mid-point and Adjusted Operational EPS of $9.90 - $10.00, reflecting increased growth of 11.5% at the mid-point\n\u2022\nCompany reduced outstanding share count by approximately 191 million; 2023 guidance reflects only a partial-year benefitof approximately 73.5 million shares or $0.28 benefit to EPS\n\u2022\nCompany secured $13.2 billion in cash proceeds from the Kenvue debt offering and initial public offering and maintains 9.5%of equity stake in Kenvue\n\u2022\nCompany maintains its quarterly dividend of $1.19 per share\nNew Brunswick, N.J. (August 30, 2023)\n\u2013 Johnson & Johnson (NYSE: JNJ) (\u201cthe Company\u201d) today announced updates to its financials and2023 guidance which reflect its operations as a company focused on transformational innovation in Pharmaceutical and MedTech. TheCompany has published a recorded webinar for investors to provide additional context behind the updated financials and 2023 guidancefound in this release, which may be accessed by visiting the Investors section of the Company's website at\nwebcasts & presentations\n.\n\u201cThe completion of this transaction uniquely positions Johnson & Johnson as a Pharmaceutical and MedTech company focused on deliveringtransformative healthcare solutions to patients,\u201d said Joaquin Duato, Chairman of the Board and Chief Executive Officer. \u201cWe are incrediblyproud of the focus and dedication of our employees worldwide to achieve this milestone, which we are confident will unlock near- and long-term value for all of our stakeholders.\u201d\nAs previously\nannounced\n, the Company recently completed an exchange offer to finalize the separation of Kenvue Inc., formerly Johnson &Johnson\u2019s Consumer Health business. As a result of the completion of the exchange offer, Johnson & Johnson will now present itsConsumer Health business financial results as discontinued operations, including a gain of approximately $20 billion in the third quarter of2023."
+            ],
+            "reference_answer": "JnJ realised $13.2 billion in cash proceeds from the separation of Kenvue.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Which of JPM's business segments had the lowest net revenue in 2021 Q1?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Segment results \u2013 managed basis\nThe following tables summarize the Firm\u2019s results by segment for the periods indicated.\nThree months ended March 31, Consumer & Community Banking Corporate & Investment Bank Commercial Banking\n(in millions, except ratios) 2021 2020 Change 2021 2020 Change 2021 2020 Change\nTotal net revenue $ 12,517 $ 13,287 (6) % $ 14,605 $ 10,003 46 % $ 2,393 $ 2,165 11 %\nTotal noninterest expense 7,202 7,269 (1) 7,104 5,955 19 969 986 (2) \nPre-provision profit/(loss) 5,315 6,018 (12) 7,501 4,048 85 1,424 1,179 21 \nProvision for credit losses (3,602) 5,772 NM (331) 1,401 NM (118) 1,010 NM\nNet income/(loss) 6,728 197 NM 5,740 1,985 189 1,168 139 NM\nReturn on equity (\u201cROE\u201d) 54 % 1 % 27 % 9 % 19 % 2 %\nThree months ended March 31, Asset & Wealth Management Corporate Total\n(in millions, except ratios) 2021 2020 Change 2021 2020 Change 2021 2020 Change\nTotal net revenue $ 4,077 $ 3,389 20 % $ (473) $ 166 NM $ 33,119 $ 29,010 14 %\nTotal noninterest expense 2,574 2,435 6 876 146 500 18,725 16,791 12 \nPre-provision profit/(loss) 1,503 954 58 (1,349) 20 NM 14,394 12,219 18 \nProvision for credit losses (121) 94 NM 16 8 100 (4,156) 8,285 NM\nNet income/(loss) 1,244 669 86 (580) (125) (364) 14,300 2,865 399 \nROE 35 % 25 % NM NM 23 % 4 %"
+            ],
+            "reference_answer": "Corporate. Its net revenue was -$473 million.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "If JPM went bankrupted by the end by 2021 Q1 and liquidated all of its assets to pay its shareholders, how much could each shareholder get?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "The Firm grew TBVPS, ending the first quarter of 2021 at $66.56, up 10% versus the prior year."
+            ],
+            "reference_answer": "They could receive $66.56 per share.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Which region had the Highest EBITDAR Contribution for MGM during FY2022?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "dited)\nThree months ended Twelve months ended\nDecember 31,\n2022\nDecember 31,\n2021\nDecember 31,\n2022\nDecember 31,\n2021\nLas Vegas Strip Resorts $ 877,052 $ 698,739 $ 3,142,308 $ 1,738,211\nRegional Operations 319,517 309,250 1,294,630 1,217,814\nMGM China (54,979) 5,015 (203,136) 25,367\nUnconsolidated affiliates(1) (43,029) (49,698) (222,079) (131,590)\nManagement and other operations (3,037) 2,087 (11,934) 15,766\nStock compensation (25,159) (26,494) (71,297) (63,984)\nCorporate(2) (113,058) (117,491) (431,238) (380,501)\n$ 957,307 $ 3,497,254"
+            ],
+            "reference_answer": "Las Vegas resorts contributed ~90% of company level EBITDAR during FY2022.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What was MGM's interest coverage ratio using FY2022 Adjusted EBIT as the numerator and annual Interest Expense as the denominator?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "dited)\nThree months ended Twelve months ended\nDecember 31,\n2022\nDecember 31,\n2021\nDecember 31,\n2022\nDecember 31,\n2021\nNet income attributable to MGM Resorts International $ 284,002 $ 131,013 $ 1,473,093 $ 1,254,370\nPlus: Net loss attributable to noncontrolling interests (604,016) (14,926) (1,266,362) (45,981)\nNet income (loss) (320,014) 116,087 206,731 1,208,389\nProvision for income taxes 285,937 31,152 697,068 253,415\nIncome (loss) before income taxes (34,077) 147,239 903,799 1,461,804\nNon-operating (income) expense\nInterest expense, net of amounts capitalized 137,132 201,477 594,954 799,593\nOther, net (104,951) 20,131 (59,381) 17,302\n32,181 221,608 535,573 816,895\nOperating income (loss) (1,896) 368,847 1,439,372 2,278,699\nPreopening and start-up expenses 504 3,452 1,876 5,094\nProperty transactions, net (1,060,701) (68,578) (1,036,997) (67,736)\nDepreciation and amortization 1,421,637 297,031 3,482,050 1,150,610\nGain on REIT transactions, net \u2014 \u2014 (2,277,747) \u2014\nGain on consolidation of CityCenter, net \u2014 \u2014 \u2014 (1,562,329)\nTriple-net operating lease and ground lease rent expense 600,467 262,307 1,950,566 833,158\nGain related to sale of Harmon land - unconsolidated affiliate \u2014 \u2014 \u2014 (49,755)\nIncome from unconsolidated affiliates related to real estate\nventures (2,704) (41,651) (61,866) (166,658)\nAdjusted EBITDAR $ 957,307 $ 3,497,254"
+            ],
+            "reference_answer": "As adjusted EBIT is negative, coverage ratio is zero",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Which region had the worst topline performance for MGM during FY2022?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Las Vegas Strip Resorts\n\u2022 Net revenues of $8.4 billion in the current year compared to $4.7 billion in the prior year, an\nincrease of 77%;___FINANCEBENCH_DELIMITER___Regional Operations\n\u2022 Net revenues of $3.8 billion in the current year compared to $3.4 billion in the prior year, an\nincrease of 12%;___FINANCEBENCH_DELIMITER___MGM China\n\u2022 Net revenues of $674 million in the current year compared to $1.2 billion in the prior year, a\ndecrease of 44%;"
+            ],
+            "reference_answer": "MGM China experienced the worst topline performance amongst the other regions presented. Its revenue declined 44% in FY2022 whereas the other regions presented increased their revenues.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What are the geographies that Pepsico primarily operates in as of FY2022?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Forward-Looking Statements\nThis Annual Report on Form 10-K contains statements reflecting our views about our future performance that constitute\u201cforward-looking statements\u201d within the meaning of the Private Securities Litigation Reform Act of 1995 (Reform Act).Statements that constitute forward-looking statements within the meaning of the Reform Act are generally identified through theinclusion of words such as \u201caim,\u201d \u201canticipate,\u201d \u201cbelieve,\u201d \u201cdrive,\u201d \u201cestimate,\u201d \u201cexpect,\u201d \u201cexpressed confidence,\u201d \u201cforecast,\u201d\u201cfuture,\u201d \u201cgoal,\u201d \u201cguidance,\u201d \u201cintend,\u201d \u201cmay,\u201d \u201cobjective,\u201d \u201coutlook,\u201d \u201cplan,\u201d \u201cposition,\u201d \u201cpotential,\u201d \u201cproject,\u201d \u201cseek,\u201d\u201cshould,\u201d \u201cstrategy,\u201d \u201ctarget,\u201d \u201cwill\u201d or similar statements or variations of such words and other similar expressions. Allstatements addressing our future operating performance, and statements addressing events and developments that we expect oranticipate will occur in the future, are forward-looking statements within the meaning of the Reform Act. These forward-lookingstatements are based on currently available information, operating plans and projections about future events and trends. Theyinherently involve risks and uncertainties that could cause actual results to differ materially from those predicted in any suchforward-looking statement. These risks and uncertainties include, but are not limited to, those described in \u201cItem 1A. RiskFactors\u201d and \u201cItem 7. Management\u2019s Discussion and Analysis of Financial Condition and Results of Operations \u2013 Our Business\u2013 Our Business Risks.\u201d Investors are cautioned not to place undue reliance on any such forward-looking statements, which speakonly as of the date they are made. We undertake no obligation to update any forward-looking statement, whether as a result ofnew information, future events or otherwise. The discussion of risks in this report is by no means all-inclusive but is designed tohighlight what we believe are important factors to consider when evaluating our future performance.\nPART I\nItem 1. Business.\nWhen used in this report, the terms \u201cwe,\u201d \u201cus,\u201d \u201cour,\u201d \u201cPepsiCo\u201d and the \u201cCompany\u201d mean PepsiCo, Inc. and its consolidatedsubsidiaries, collectively. Certain terms used in this Annual Report on Form 10-K are defined in the Glossary included in Item 7.of this report.\nCompany Overview\nWe were incorporated in Delaware in 1919 and reincorporated in North Carolina in 1986. We are a leading global beverage andconvenient food company with a complementary portfolio of brands, including Lay\u2019s, Doritos, Cheetos, Gatorade, Pepsi-Cola,Mountain Dew, Quaker and SodaStream. Through our operations, authorized bottlers, contract manufacturers and other thirdparties, we make, market, distribute and sell a wide variety of beverages and convenient foods, serving customers and consumersin more than 200 countries and territories.\nOur Operations\nWe are organized into seven reportable segments (also referred to as divisions), as follows:\n1)\nFrito-Lay North America (FLNA), which includes our branded convenient food businesses in the United States andCanada;\n2)\nQuaker Foods North America (QFNA), which includes our branded convenient food businesses, such as cereal, rice, pastaand other branded food, in the United States and Canada;\n3)\nPepsiCo Beverages North America (PBNA), which includes our beverage businesses in the United States and Canada;\n4)\nLatin America (LatAm), which includes all of our beverage and convenient food businesses in Latin America;\n5)\nEurope, which includes all of our beverage and convenient food businesses in Europe;___FINANCEBENCH_DELIMITER___6)\nAfrica, Middle East and South Asia (AMESA), which includes all of our beverage and convenient food businesses inAfrica, the Middle East and South Asia; and\n7)\nAsia Pacific, Australia and New Zealand and China Region (APAC), which includes all of our beverage and convenientfood businesses in Asia Pacific, Australia and New Zealand, and China region."
+            ],
+            "reference_answer": "As of FY2022, Pepsico primarily operates in the following geographies: North America, Latin America, Europe, Africa, Middle East, South Asia, Asia Pacific, Australia, New Zealand and China.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Has Pepsico reported any materially important ongoing legal battles from FY2022 and FY2021?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Item 3. Legal Proceedings.\nWe and our subsidiaries are party to a variety of litigation, claims, legal or regulatory proceedings, inquiries and investigations.While the results of such litigation, claims, legal or regulatory proceedings, inquiries and investigations cannot be predicted withcertainty, management believes that the final outcome of the foregoing will not have a material adverse effect on our financialcondition, results of operations or cash flows. See also \u201cItem 1. Business \u2013 Regulatory Matters\u201d and \u201cItem 1A. Risk Factors.\u201d"
+            ],
+            "reference_answer": "No, Pepsico is not involved in material legal battles.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What is the quantity of restructuring costs directly outlined in Pepsico's income statements for FY2022? If restructuring costs are not explicitly outlined then state 0.",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Note 3 \u2014 Restructuring and Impairment Charges\n2019 Multi-Year Productivity Plan\nWe publicly announced a multi-year productivity plan on February 15, 2019 (2019 Productivity Plan) that will leverage newtechnology and business models to further simplify, harmonize and automate processes; re-engineer our go-to-market andinformation systems, including deploying the right automation for each market; and simplify our organization and optimize ourmanufacturing and supply chain footprint. To build on the successful implementation of the 2019 Productivity Plan, in the fourthquarter of 2022, we expanded and extended the plan through the end of 2028 to take advantage of additional opportunities withinthe initiatives described above.\nAs a result, we expect to incur pre-tax charges of approximately $3.65 billion, including cashexpenditures of approximately $2.9 billion. These pre-tax charges are expected to consist of approximately\n55% of severance andother employee-related costs, 10% for asset impairments (all non-cash) resulting from plant closures and related actions and 35%for other co\nsts associated with the implementation of our initiatives.\nThe total plan pre-tax charges are expected to be incurred by division approximately as follows:\nFLNA\nQFNA\nPBNA\nLatAm\nEurope\nAMESA\nAPAC\nCorporate\nExpected pre-tax charges\n15\n%\n1\n%\n25\n%\n10\n%\n25\n%\n5\n%\n4\n%\n15\n%\nA summary of our 2019 Productivity Plan charges is as follows:\n2022\n2021\n2020\nCost of sales\n$\n33\n$\n29\n$\n30\nSelling, general and administrative expenses\n347\n208\n239\nOther pension and retiree medical benefits expense\n31\n10\n20\nTotal restructuring and impairment charges\n$\n411\n$\n247\n$\n289"
+            ],
+            "reference_answer": "Pepsico's restructuring costs in FY2022 amounted to $411 million .",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What is the FY2022 unadjusted EBITDA less capex for PepsiCo? Define unadjusted EBITDA as unadjusted operating income + depreciation and amortization [from cash flow statement]. Answer in USD millions. Respond to the question by assuming the perspective of an investment analyst who can only use the details shown within the statement of cash flows and the income statement.",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Table of Contents\nConsolidated Statement of Income\nPepsiCo, Inc. and Subsidiaries\nFiscal years ended December 31, 2022, December 25, 2021 and December 26, 2020\n(in millions except per share amounts)\n2022\n2021\n2020\nNet Revenue\n$\n86,392 $\n79,474 $\n70,372 \nCost of sales\n40,576 \n37,075 \n31,797 \nGross profit\n45,816 \n42,399 \n38,575 \nSelling, general and administrative expenses\n34,459 \n31,237 \n28,453 \nGain associated with the Juice Transaction (see Note 13)\n(3,321)\n\u2014 \n\u2014 \nImpairment of intangible assets (see Notes 1 and 4)\n3,166 \n\u2014 \n42 \nOperating Profit\n11,512 \n11,162 \n10,080 \nOther pension and retiree medical benefits income\n132 \n522 \n117 \nNet interest expense and other\n(939)\n(1,863)\n(1,128)\nIncome before income taxes\n10,705 \n9,821 \n9,069 \nProvision for income taxes\n1,727 \n2,142 \n1,894 \nNet income\n8,978 \n7,679 \n7,175 \nLess: Net income attributable to noncontrolling interests\n68 \n61 \n55 \nNet Income Attributable to PepsiCo\n$\n8,910 $\n7,618 $\n7,120 \nNet Income Attributable to PepsiCo per Common Share\nBasic\n$\n6.45 $\n5.51 $\n5.14 \nDiluted\n$\n6.42 $\n5.49 $\n5.12 \nWeighted-average common shares outstanding\nBasic\n1,380 \n1,382 \n1,385 \nDiluted\n1,387 \n1,389 \n1,392 \nSee accompanying notes to the consolidated financial statements.\n60___FINANCEBENCH_DELIMITER___Table of Contents\nConsolidated Statement of Cash Flows\nPepsiCo, Inc. and Subsidiaries\nFiscal years ended December 31, 2022, December 25, 2021 and December 26, 2020\n(in millions)\n2022\n2021\n2020\nOperating Activities\nNet income\n$\n8,978 $\n7,679 $\n7,175 \nDepreciation and amortization\n2,763 \n2,710 \n2,548 \nGain associated with the Juice Transaction\n(3,321)\n\u2014 \n\u2014 \nImpairment and other charges\n3,618 \n\u2014 \n\u2014 \nOperating lease right-of-use asset amortization\n517 \n505 \n478 \nShare-based compensation expense\n343 \n301 \n264 \nRestructuring and impairment charges\n411 \n247 \n289 \nCash payments for restructuring charges\n(224)\n(256)\n(255)\nAcquisition and divestiture-related charges\n80 \n(4)\n255 \nCash payments for acquisition and divestiture-related charges\n(46)\n(176)\n(131)\nPension and retiree medical plan expenses\n419 \n123 \n408 \nPension and retiree medical plan contributions\n(384)\n(785)\n(562)\nDeferred income taxes and other tax charges and credits\n(873)\n298 \n361 \nTax expense related to the TCJ Act\n86 \n190 \n\u2014 \nTax payments related to the TCJ Act\n(309)\n(309)\n(78)\nChange in assets and liabilities:\nAccounts and notes receivable\n(1,763)\n(651)\n(420)\nInventories\n(1,142)\n(582)\n(516)\nPrepaid expenses and other current assets\n118 \n159 \n26 \nAccounts payable and other current liabilities\n1,842 \n1,762 \n766 \nIncome taxes payable\n57 \n30 \n(159)\nOther, net\n(359)\n375 \n164 \nNet Cash Provided by Operating Activities\n10,811 \n11,616 \n10,613 \nInvesting Activities\nCapital spending\n(5,207)\n(4,625)\n(4,240)\nSales of property, plant and equipment\n251 \n166 \n55 \nAcquisitions, net of cash acquired, investments in noncontrolled affiliates and purchases of\nintangible and other assets\n(873)\n(61)\n(6,372)\nProceeds associated with the Juice Transaction\n3,456 \n\u2014 \n\u2014 \nOther divestitures, sales of investments in noncontrolled affiliates and other assets\n49 \n169 \n6 \nShort-term investments, by original maturity:\nMore than three months - purchases\n(291)\n\u2014 \n(1,135)\nMore than three months - maturities\n150 \n1,135 \n\u2014 \nThree months or less, net\n24 \n(58)\n27 \nOther investing, net\n11 \n5 \n40 \nNet Cash Used for Investing Activities\n(2,430)\n(3,269)\n(11,619)\n(Continued on following page)\n62"
+            ],
+            "reference_answer": "$9068.00",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What is the FY2022 unadjusted EBITDA % margin for PepsiCo? Calculate unadjusted EBITDA using unadjusted operating income and D&A (from cash flow statement). Give a response to the question by relying on the details shown in the statement of cash flows and the P&L statement.",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Table of Contents\nConsolidated Statement of Income\nPepsiCo, Inc. and Subsidiaries\nFiscal years ended December 31, 2022, December 25, 2021 and December 26, 2020\n(in millions except per share amounts)\n2022\n2021\n2020\nNet Revenue\n$\n86,392 $\n79,474 $\n70,372 \nCost of sales\n40,576 \n37,075 \n31,797 \nGross profit\n45,816 \n42,399 \n38,575 \nSelling, general and administrative expenses\n34,459 \n31,237 \n28,453 \nGain associated with the Juice Transaction (see Note 13)\n(3,321)\n\u2014 \n\u2014 \nImpairment of intangible assets (see Notes 1 and 4)\n3,166 \n\u2014 \n42 \nOperating Profit\n11,512 \n11,162 \n10,080 \nOther pension and retiree medical benefits income\n132 \n522 \n117 \nNet interest expense and other\n(939)\n(1,863)\n(1,128)\nIncome before income taxes\n10,705 \n9,821 \n9,069 \nProvision for income taxes\n1,727 \n2,142 \n1,894 \nNet income\n8,978 \n7,679 \n7,175 \nLess: Net income attributable to noncontrolling interests\n68 \n61 \n55 \nNet Income Attributable to PepsiCo\n$\n8,910 $\n7,618 $\n7,120 \nNet Income Attributable to PepsiCo per Common Share\nBasic\n$\n6.45 $\n5.51 $\n5.14 \nDiluted\n$\n6.42 $\n5.49 $\n5.12 \nWeighted-average common shares outstanding\nBasic\n1,380 \n1,382 \n1,385 \nDiluted\n1,387 \n1,389 \n1,392 \nSee accompanying notes to the consolidated financial statements.\n60___FINANCEBENCH_DELIMITER___Table of Contents\nConsolidated Statement of Cash Flows\nPepsiCo, Inc. and Subsidiaries\nFiscal years ended December 31, 2022, December 25, 2021 and December 26, 2020\n(in millions)\n2022\n2021\n2020\nOperating Activities\nNet income\n$\n8,978 $\n7,679 $\n7,175 \nDepreciation and amortization\n2,763 \n2,710 \n2,548 \nGain associated with the Juice Transaction\n(3,321)\n\u2014 \n\u2014 \nImpairment and other charges\n3,618 \n\u2014 \n\u2014 \nOperating lease right-of-use asset amortization\n517 \n505 \n478 \nShare-based compensation expense\n343 \n301 \n264 \nRestructuring and impairment charges\n411 \n247 \n289 \nCash payments for restructuring charges\n(224)\n(256)\n(255)\nAcquisition and divestiture-related charges\n80 \n(4)\n255 \nCash payments for acquisition and divestiture-related charges\n(46)\n(176)\n(131)\nPension and retiree medical plan expenses\n419 \n123 \n408 \nPension and retiree medical plan contributions\n(384)\n(785)\n(562)\nDeferred income taxes and other tax charges and credits\n(873)\n298 \n361 \nTax expense related to the TCJ Act\n86 \n190 \n\u2014 \nTax payments related to the TCJ Act\n(309)\n(309)\n(78)\nChange in assets and liabilities:\nAccounts and notes receivable\n(1,763)\n(651)\n(420)\nInventories\n(1,142)\n(582)\n(516)\nPrepaid expenses and other current assets\n118 \n159 \n26 \nAccounts payable and other current liabilities\n1,842 \n1,762 \n766 \nIncome taxes payable\n57 \n30 \n(159)\nOther, net\n(359)\n375 \n164 \nNet Cash Provided by Operating Activities\n10,811 \n11,616 \n10,613 \nInvesting Activities\nCapital spending\n(5,207)\n(4,625)\n(4,240)\nSales of property, plant and equipment\n251 \n166 \n55 \nAcquisitions, net of cash acquired, investments in noncontrolled affiliates and purchases of\nintangible and other assets\n(873)\n(61)\n(6,372)\nProceeds associated with the Juice Transaction\n3,456 \n\u2014 \n\u2014 \nOther divestitures, sales of investments in noncontrolled affiliates and other assets\n49 \n169 \n6 \nShort-term investments, by original maturity:\nMore than three months - purchases\n(291)\n\u2014 \n(1,135)\nMore than three months - maturities\n150 \n1,135 \n\u2014 \nThree months or less, net\n24 \n(58)\n27 \nOther investing, net\n11 \n5 \n40 \nNet Cash Used for Investing Activities\n(2,430)\n(3,269)\n(11,619)\n(Continued on following page)\n62"
+            ],
+            "reference_answer": "16.5%",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "By how much did Pepsico increase its unsecured five year revolving credit agreement on May 26, 2023?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Effective May 26, 2023, PepsiCo terminated the $3,800,000,000 five year unsecured revolving credit agreement, dated as of May 27, 2022, amongPepsiCo, as borrower, the lenders party thereto, and Citibank, N.A., as administrative agent (the \u201c\n2022 Five Year Credit Agreement\n\u201d). There were nooutstanding borrowings under the 2022 Five Year Credit Agreement at the time of its termination.\nOn May 26, 2023, PepsiCo entered into a new $4,200,000,000 five year unsecured revolving credit agreement (the \u201c\n2023 Five Year CreditAgreement\n\u201d) among PepsiCo, as borrower, the lenders party thereto, and Citibank, N.A., as administrative agent. The 2023 Five Year Credit Agreementenables PepsiCo and its borrowing subsidiaries to borrow up to $4,200,000,000 in U.S. Dollars and/or Euros, including a $750,000,000 swing linesubfacility for Euro-denominated borrowings permitted to be borrowed on a same day basis, subject to customary terms and conditions, and expires onMay 26, 2028. PepsiCo may also, upon the agreement of either the then existing lenders or of additional banks not currently party to the 2023 Five YearCredit Agreement, increase the commitments under the 2023 Five Year Credit Agreement to up to $4,950,000,000 in U.S. Dollars and/or Euros. PepsiComay, once a year, request renewal of the 2023 Five Year Credit Agreement for an additional one year period. Subject to certain conditions stated in the 2023Five Year Credit Agreement, PepsiCo and its borrowing subsidiaries may borrow, prepay and reborrow amounts under the 2023 Five Year CreditAgreement at any time during the term of the 2023 Five Year Credit Agreement. Funds borrowed under the 2023 Five Year Credit Agreement may be usedfor general corporate purposes of PepsiCo and its subsidiaries. The 2023 Five Year Credit Agreement contains customary representations and warrantiesand events of default. In the ordinary course of their respective businesses, the lenders under the 2023 Five Year Credit Agreement and their affiliates haveengaged, and may in the future engage, in commercial banking and/or investment banking transactions with PepsiCo and its affiliates."
+            ],
+            "reference_answer": "$400,000,000 increase.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "As of May 26, 2023, what is the total amount Pepsico may borrow under its unsecured revolving credit agreements?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Item 8.01.\nOther Events.\nEffective May 26, 2023, PepsiCo, Inc. (\u201c\nPepsiCo\n\u201d) terminated the $3,800,000,000 364 day unsecured revolving credit agreement, dated as ofMay 27, 2022, among PepsiCo, as borrower, the lenders party thereto, and Citibank, N.A., as administrative agent (the \u201c\n2022 364 Day CreditAgreement\n\u201d). There were no outstanding borrowings under the 2022 364 Day Credit Agreement at the time of its termination.\nOn May 26, 2023, PepsiCo entered into a new $4,200,000,000 364 day unsecured revolving credit agreement (the \u201c\n2023 364 Day CreditAgreement\n\u201d) among PepsiCo, as borrower, the lenders party thereto, and Citibank, N.A., as administrative agent. The 2023 364 Day Credit Agreementenables PepsiCo and its borrowing subsidiaries to borrow up to $4,200,000,000 in U.S. Dollars and/or Euros, subject to customary terms and conditions,and expires on May 24, 2024. PepsiCo may also, upon the agreement of either the then existing lenders or of additional banks not currently party to the2023 364 Day Credit Agreement, increase the commitments under the 2023 364 Day Credit Agreement to up to $4,950,000,000 in U.S. Dollars and/orEuros. PepsiCo may request renewal of the 2023 364 Day Credit Agreement for an additional 364 day period or convert any amounts outstanding into aterm loan for a period of up to one year, which term loan would mature no later than the anniversary of the then effective termination date. Subject tocertain conditions stated in the 2023 364 Day Credit Agreement, PepsiCo and its borrowing subsidiaries may borrow, prepay and reborrow amounts underthe 2023 364 Day Credit Agreement at any time during the term of the 2023 364 Day Credit Agreement. Funds borrowed under the 2023 364 Day CreditAgreement may be used for general corporate purposes of PepsiCo and its subsidiaries. The 2023 364 Day Credit Agreement contains customaryrepresentations and warranties and events of default. In the ordinary course of their respective businesses, the lenders under the 2023 364 Day CreditAgreement and their affiliates have engaged, and may in the future engage, in commercial banking and/or investment banking transactions with PepsiCoand its affiliates.\nEffective May 26, 2023, PepsiCo terminated the $3,800,000,000 five year unsecured revolving credit agreement, dated as of May 27, 2022, amongPepsiCo, as borrower, the lenders party thereto, and Citibank, N.A., as administrative agent (the \u201c\n2022 Five Year Credit Agreement\n\u201d). There were nooutstanding borrowings under the 2022 Five Year Credit Agreement at the time of its termination.\nOn May 26, 2023, PepsiCo entered into a new $4,200,000,000 five year unsecured revolving credit agreement (the \u201c\n2023 Five Year CreditAgreement\n\u201d) among PepsiCo, as borrower, the lenders party thereto, and Citibank, N.A., as administrative agent. The 2023 Five Year Credit Agreementenables PepsiCo and its borrowing subsidiaries to borrow up to $4,200,000,000 in U.S. Dollars and/or Euros, including a $750,000,000 swing linesubfacility for Euro-denominated borrowings permitted to be borrowed on a same day basis, subject to customary terms and conditions, and expires onMay 26, 2028. PepsiCo may also, upon the agreement of either the then existing lenders or of additional banks not currently party to the 2023 Five YearCredit Agreement, increase the commitments under the 2023 Five Year Credit Agreement to up to $4,950,000,000 in U.S. Dollars and/or Euros. PepsiComay, once a year, request renewal of the 2023 Five Year Credit Agreement for an additional one year period. Subject to certain conditions stated in the 2023Five Year Credit Agreement, PepsiCo and its borrowing subsidiaries may borrow, prepay and reborrow amounts under the 2023 Five Year CreditAgreement at any time during the term of the 2023 Five Year Credit Agreement. Funds borrowed under the 2023 Five Year Credit Agreement may be usedfor general corporate purposes of PepsiCo and its subsidiaries. The 2023 Five Year Credit Agreement contains customary representations and warrantiesand events of default. In the ordinary course of their respective businesses, the lenders under the 2023 Five Year Credit Agreement and their affiliates haveengaged, and may in the future engage, in commercial banking and/or investment banking transactions with PepsiCo and its affiliates."
+            ],
+            "reference_answer": "Total amount Pepsico may borrow under unsecured revolving credit agreements = $8,400,000,000.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "As of FY2023Q1, why did Pepsico raise full year guidance for FY2023?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "\u201cWe are very pleased with our performance and business momentum as our categories and\ngeographies remained resilient during the first quarter. Given our strong start to the year, we\nnow expect our full-year 2023 organic revenue to increase 8 percent (previously 6 percent) and\ncore constant currency EPS to increase 9 percent (previously 8 percent),\u201d said Chairman and\nCEO Ramon Laguarta."
+            ],
+            "reference_answer": "Pepsico experienced a strong start to FY2023.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "As of FY2023Q1, by how many percentage points did Pepsico raise full year guidance in respect of core constant currency EPS growth?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "\u201cWe are very pleased with our performance and business momentum as our categories and\ngeographies remained resilient during the first quarter. Given our strong start to the year, we\nnow expect our full-year 2023 organic revenue to increase 8 percent (previously 6 percent) and\ncore constant currency EPS to increase 9 percent (previously 8 percent),\u201d said Chairman and\nCEO Ramon Laguarta."
+            ],
+            "reference_answer": "Pepsico raised full year guidance in respect of core constant currency EPS growth by 1 percentage point.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Did Pfizer grow its PPNE between FY20 and FY21?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "As of December 31,\n(MILLIONS, EXCEPT PER COMMON SHARE DATA) 2021 2020\nAssets\nCash and cash equivalents $ 1,944 $ 1,786\nShort-term investments 29,125 10,437\nTrade accounts receivable, less allowance for doubtful accounts: 2021\u2014$492; 2020\u2014$508 11,479 7,913\nInventories 9,059 8,020\nCurrent tax assets 4,266 3,264\nOther current assets 3,820 3,646\nTotal current assets 59,693 35,067\nEquity-method investments 16,472 16,856\nLong-term investments 5,054 3,406\nProperty, plant and equipment 14,882 13,745"
+            ],
+            "reference_answer": "Yes, change in PPNE was positive year over year",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Were there any potential events that are not in Pfizer's standard business operations that substantially increased net income in 2019?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Year Ended December 31,\n(MILLIONS, EXCEPT PER COMMON SHARE DATA) 2021 2020 2019\nRevenues $ 81,288 $ 41,651 $ 40,905\nCosts and expenses:\nCost of sales(a) 30,821 8,484 8,054\nSelling, informational and administrative expenses(a) 12,703 11,597 12,726\nResearch and development expenses(a) 13,829 9,393 8,385\nAmortization of intangible assets 3,700 3,348 4,429\nRestructuring charges and certain acquisition-related costs 802 579 601\n(Gain) on completion of Consumer Healthcare JV transaction \u2014 (6) (8,107)\nOther (income)/deductions\u2013\u2013net (4,878) 1,219 3,497\nIncome from continuing operations before provision/(benefit) for taxes on income 24,311 7,036 11,321\nProvision/(benefit) for taxes on income 1,852 370 583\nIncome from continuing operations 22,459 6,666 10,738\nDiscontinued operations\u2013\u2013net of tax (434) 2,529 5,318\nNet income before allocation to noncontrolling interests 22,025 9,195 16,056\nLess: Net income attributable to noncontrolling interests 45 36 29\nNet income attributable to Pfizer Inc. common shareholders $ 21,979 $ 9,159 $ 16,026"
+            ],
+            "reference_answer": "Yes, the gain on completion of Consumer Healthcare JV Transaction",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What are three main companies acquired by Pfizer mentioned in this 10K report?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Note 2. Acquisitions, Divestitures, Equity-Method Investments, Licensing Arrangements and Collaborative\nArrangements\nA. Acquisitions\nTrillium\nOn November 17, 2021, we acquired all of the issued and outstanding common stock not already owned by Pfizer of Trillium, a clinical stage\nimmuno-oncology company developing therapies targeting cancer immune evasion pathways and specific cell targeting approaches, for a\nprice of $18.50 per share in cash, for total consideration of $2.0 billion, net of cash acquired. As a result, Trillium became our wholly owned\nsubsidiary. We previously held a 2% ownership investment in Trillium. Trillium\u2019s lead program, TTI-622, is an investigational fusion protein that\nis designed to block the inhibitory activity of CD47, a molecule that is overexpressed by a wide variety of tumors.\nWe accounted for the transaction as an asset acquisition since the lead asset, TTI-622, represented substantially all of the fair value of the\ngross assets acquired, which exclude cash acquired. At the acquisition date, we recorded a $2.1 billion charge representing an acquired\nIPR&D asset with no alternative future use in Research and development expenses, of which the $2.0 billion net cash consideration is\npresented as a cash outflow from operating activities. In connection with this acquisition, we recorded $256 million of assets acquired primarily\nconsisting of cash and investments. Liabilities assumed were approximately $81 million.\nArray\nOn July 30, 2019, we acquired Array, a commercial stage biopharmaceutical company focused on the discovery, development and\ncommercialization of targeted small molecule medicines to treat cancer and other diseases of high unmet need, for $48 per share in cash. The\ntotal fair value of the consideration transferred was $11.2 billion ($10.9 billion, net of cash acquired). In addition, $157 million in payments to\nArray employees for the fair value of previously unvested stock options was recognized as post-closing compensation expense and recorded\nin Restructuring charges and certain acquisition-related costs (see Note 3). We financed the majority of the transaction with debt and the\nbalance with existing cash.___FINANCEBENCH_DELIMITER___Therachon\nOn July 1, 2019, we acquired all the remaining shares of Therachon, a privately-held clinical-stage biotechnology company focused on rare\ndiseases, with assets in development for the treatment of achondroplasia, a genetic condition and the most common form of short-limb\ndwarfism, for $340 million upfront, plus potential milestone payments of up to $470 million contingent on the achievement of key milestones in\nthe development and commercialization of the lead asset. We accounted for the transaction as an asset acquisition since the lead asset\nrepresented substantially all the fair value of the gross assets acquired. The total fair value of the consideration transferred for Therachon was\n$322 million, which consisted of $317 million of cash and our previous $5 million investment in Therachon. In connection with this asset\nacquisition, we recorded a charge of $337 million in Research and development expenses."
+            ],
+            "reference_answer": "Trillium, Array, and Therachon",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "How much does Pfizer expect to pay to spin off Upjohn in the future in USD million?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "We expect to incur costs of approximately $700 million in connection with separating Upjohn, of which approximately 90% has been incurred since inception and through the second quarter of 2023. These charges include costs and expenses related to separation of legal entities and transaction costs."
+            ],
+            "reference_answer": "77.78",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "For Pfizer, which geographic region had the biggest drop in Q22023 year over year revenues (on a percentage basis)?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "The following summarizes revenues by geographic area:\nThree Months Ended Six Months Ended\n(MILLIONS)\nJuly 2,\n2023\nJuly 3,\n2022\n%\nChange\nJuly 2,\n2023\nJuly 3,\n2022\n%\nChange\nUnited States $ 6,185 $ 11,222 (45) $ 14,692 $ 20,140 (27)\nDeveloped Europe 2,415 5,480 (56) 5,236 11,569 (55)\nDeveloped Rest of World 1,305 5,034 (74) 3,778 8,320 (55)\nEmerging Markets 2,828 6,006 (53) 7,308 13,373 (45)\nRevenues $ 12,734 $ 27,742 (54) $ 31,015 $ 53,402 (42)"
+            ],
+            "reference_answer": "Developed Rest of the World",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "As of Q2'2023, is Pfizer spinning off any large business segments?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "We expect to incur costs of approximately $700 million in connection with separating Upjohn, of which approximately 90% has been incurred since inception\nand through the second quarter of 2023. These charges include costs and expenses related to separation of legal entities and transaction costs."
+            ],
+            "reference_answer": "Yes, it's spinning off Upjohn.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Which debt securities are registered to trade on a national securities exchange under Ulta Beauty's name as of FY2023?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "UNITED STATES\nSECURITIES AND EXCHANGE COMMISSION\nWashington, DC 20549\nFORM\n10-K\n\u2612\nAnnual Report Pursuant to Section 13 or 15(d) of the Securities Exchange Act of 1934\nFor the fiscal year ended\nJanuary 28, 2023\nor\n\u2610\nTransition Report Pursuant to Section 13 or 15(d) of the Securities Exchange Act of 1934\nFor the transition period from _____________ to _____________\nCommission File Number:\n001-33764\nULTA BEAUTY, INC.\n(Exact name of registrant as specified in its charter)\nDelaware\n(State or other jurisdiction of\nincorporation or organization)\n38-4022268\n(I.R.S. Employer\nIdentification No.)\n1000 Remington Blvd.\n,\nSuite 120\nBolingbrook\n,\nIllinois\n(Address of principal executive offices)\n60440\n(Zip code)\nRegistrant\u2019s telephone number, including area code: (\n630\n)\n410-4800\nSecurities registered pursuant to Section 12(b) of the Act:\nTitle of each class\nTrading symbol\nName of each exchange on which registered\nCommon stock, par value $0.01 per share\nULTA\nThe\nNASDAQ\nGlobal Select Market\nSecurities registered pursuant to Section 12(g) of the Act:\nNone"
+            ],
+            "reference_answer": "There are none",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What are major acquisitions that Ulta Beauty has done in FY2023 and FY2022?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Ulta Beauty, Inc.\nConsolidated Statements of Cash Flows\nFiscal year ended\nJanuary 28,\nJanuary 29,\nJanuary 30,\n(In thousands)\n2023\n2022\n2021\nOperating activities\nNet income\n$\n1,242,408\n$\n985,837\n$\n175,835\nAdjustments to reconcile net income to net cash provided by operating activities:\nDepreciation and amortization\n241,372\n268,460\n297,772\nNon-cash lease expense\n301,912\n276,229\n268,071\nLong-lived asset impairment charge\n\u2014\n\u2014\n72,533\nDeferred income taxes\n15,653\n(\n25,666\n)\n(\n24,008\n)\nStock-based compensation expense\n43,044\n47,259\n27,583\nLoss on disposal of property and equipment\n6,688\n5,358\n6,827\nChange in operating assets and liabilities:\nReceivables\n34,260\n(\n40,573\n)\n(\n53,772\n)\nMerchandise inventories\n(\n104,233\n)\n(\n331,003\n)\n125,486\nPrepaid expenses and other current assets\n(\n19,432\n)\n(\n3,412\n)\n(\n4,363\n)\nIncome taxes\n(\n45,182\n)\n(\n35,652\n)\n58,916\nAccounts payable\n8,309\n66,156\n62,324\nAccrued liabilities\n48,249\n58,598\n58,599\nDeferred revenue\n41,098\n79,196\n36,848\nOperating lease liabilities\n(\n324,500\n)\n(\n303,914\n)\n(\n297,513\n)\nOther assets and liabilities\n(\n7,731\n)\n12,392\n(\n783\n)\nNet cash provided by operating activities\n1,481,915\n1,059,265\n810,355\nInvesting activities\nProceeds from short-term investments\n\u2014\n\u2014\n110,000\nCapital expenditures\n(\n312,126\n)\n(\n172,187\n)\n(\n151,866\n)\nAcquisitions, net of cash acquired\n\u2014\n\u2014\n(\n1,220\n)"
+            ],
+            "reference_answer": "Ulta Beauty did not make any acquisitions in FY2023 and FY2022.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What drove the reduction in SG&A expense as a percent of net sales in FY2023?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "For the Full Year of Fiscal 2022\nNet sales increased 18.3% to $10.2 billion compared to $8.6 billion in fiscal 2021,\nprimarily due to the favorable impact from the continued resilience of the beauty\ncategory, retail price increases, the impact of new brands and product innovation,\nincreased social occasions, and fewer COVID-19 limitations compared to fiscal 2021.\nComparable sales increased 15.6% compared to an increase of 37.9% in fiscal 2021,\ndriven by a 10.8% increase in transactions and a 4.3% increase in average ticket.\nGross profit increased 20.1% to $4.0 billion compared to $3.4 billion in fiscal 2021. As\na percentage of net sales, gross profit increased to 39.6% compared to 39.0% in fiscal\n2021, primarily due to leverage of fixed costs, strong growth in other revenue, and\nfavorable channel mix shifts, partially offset by higher inventory shrink and lower\nmerchandise margin.\nSG&A expenses increased 16.2% to $2.4 billion compared to $2.1 billion in fiscal\n2021. As a percentage of net sales, SG&A expenses decreased to 23.5% compared to\n23.9% in fiscal 2021, primarily due to lower marketing expenses and leverage of\nincentive compensation due to higher sales, partially offset by deleverage of corporate\noverhead due to strategic investments and deleverage of store payroll and benefits\ndue to wage investments."
+            ],
+            "reference_answer": "Lower marketing expenses and leverage of incentive compensation due to higher sales. The answer here assumes FY2023 refers to the 12 months ended on January 28, 2023 (although the company refers to this period as its fiscal 2022.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What drove the increase in Ulta Beauty's merchandise inventories balance at end of FY2023?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Balance Sheet\nCash and cash equivalents at the end of the fourth quarter of fiscal 2022 were $737.9\nmillion.\nMerchandise inventories, net at the end of the fourth quarter of fiscal 2022 totaled $1.6\nbillion compared to $1.5 billion at the end of the fourth quarter of fiscal 2021. The $104.2\nmillion increase was primarily due to the opening of 47 new stores since January 29, 2022,\ninventory to support new brand launches and brand expansions, and inventory cost\nincreases."
+            ],
+            "reference_answer": "Increase in Merchandise inventories balance was driven by the opening of 47 new stores. The answer here assumes FY2023 refers to the 12 months ended on January 28, 2023 (although the company refers to this period as its fiscal 2022.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What percent of Ulta Beauty's total spend on stock repurchases for FY 2023 occurred in Q4 of FY2023?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Share Repurchase Program\nDuring the fourth quarter of fiscal 2022, the Company repurchased 722,457 shares of its\ncommon stock at a cost of $328.1 million. During fiscal 2022, the Company repurchased 2.2\nmillion shares of its common stock at a cost of $900.0 million. As of January 28, 2023, $1.1\nbillion remained available under the $2.0 billion share repurchase program announced in\nMarch 2022."
+            ],
+            "reference_answer": "36%. The answer here assumes FY2023 refers to the 12 months ended on January 28, 2023 (although the company refers to this period as its fiscal 2022.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Did Ulta Beauty's wages expense as a percent of net sales increase or decrease in FY2023?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "For the Full Year of Fiscal 2022\nNet sales increased 18.3% to $10.2 billion compared to $8.6 billion in fiscal 2021,\nprimarily due to the favorable impact from the continued resilience of the beauty\ncategory, retail price increases, the impact of new brands and product innovation,\nincreased social occasions, and fewer COVID-19 limitations compared to fiscal 2021.\nComparable sales increased 15.6% compared to an increase of 37.9% in fiscal 2021,\ndriven by a 10.8% increase in transactions and a 4.3% increase in average ticket.\nGross profit increased 20.1% to $4.0 billion compared to $3.4 billion in fiscal 2021. As\na percentage of net sales, gross profit increased to 39.6% compared to 39.0% in fiscal\n2021, primarily due to leverage of fixed costs, strong growth in other revenue, and\nfavorable channel mix shifts, partially offset by higher inventory shrink and lower\nmerchandise margin.\nSG&A expenses increased 16.2% to $2.4 billion compared to $2.1 billion in fiscal\n2021. As a percentage of net sales, SG&A expenses decreased to 23.5% compared to\n23.9% in fiscal 2021, primarily due to lower marketing expenses and leverage of\nincentive compensation due to higher sales, partially offset by deleverage of corporate\noverhead due to strategic investments and deleverage of store payroll and benefits\ndue to wage investments."
+            ],
+            "reference_answer": "Wages expense as a percent of net sales increased in FY2023. The answer here assumes FY2023 refers to the 12 months ended on January 28, 2023 (although the company refers to this period as its fiscal 2022.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Among all of the derivative instruments that Verizon used to manage the exposure to fluctuations of foreign currencies exchange rates or interest rates, which one had the highest notional value in FY 2021?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Derivative Instruments \nWe enter into derivative transactions primarily to manage our exposure to fluctuations in foreign currency exchange rates and interest rates. \nWe employ risk management strategies, which may include the use of a variety of derivatives including interest rate swaps, cross currency \nswaps, forward starting interest rate swaps, treasury rate locks, interest rate caps, swaptions and foreign exchange forwards. We do not hold \nderivatives for trading purposes. \nThe following table sets forth the notional amounts of our outstanding derivative instruments: \n(dollars in millions) \nAt December 31, 2021 2020 \nInterest rate swaps $ 19,779 $ 17,768 \nCross currency swaps 32,502 26,288 \nForward starting interest rate swaps 1,000 2,000 \nForeign exchange forwards 932 1,405"
+            ],
+            "reference_answer": "Cross currency swaps. Its notional value was $32,502 million.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "As of FY 2021, how much did Verizon expect to pay for its retirees in 2024?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Pension and postretirement health care and life insurance benefits earned during the year, as well as interest on projected benefit obligations, \nare accrued.___FINANCEBENCH_DELIMITER___Estimated Future Benefit Payments \nThe benefit payments to retirees are expected to be paid as follows: \n(dollars in millions) \nYear Pension Benefits Health Care and Life \n2022 $ 2,049 $ 906 \n2023 1,648 883 \n2024 1,097 862 \n2025 1,066 850 \n2026 1,034 840 \n2027 to 2031 5,097 4,139"
+            ],
+            "reference_answer": "The estimated pension benefits were $1097 million, and the estimated health care and life insurance benefits were $862 million.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Does Verizon have a reasonably healthy liquidity profile based on its quick ratio for FY 2022? If the quick ratio is not relevant to measure liquidity, please state that and explain why.",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Consolidated Balance Sheets \nVerizon Communications Inc. and Subsidiaries \n(dollars in millions, except per share amounts) \nAt December 31, 2022 2021 \nAssets \nCurrent assets \nCash and cash equivalents $ 2,605 $ 2,921 \nAccounts receivable 25,332 24,742 \nLess Allowance for credit losses 826 896 \nAccounts receivable, net 24,506 23,846 \nInventories 2,388 3,055 \nPrepaid expenses and other 8,358 6,906 \nTotal current assets 37,857 36,728 \nProperty, plant and equipment 307,689 289,897 \nLess Accumulated depreciation 200,255 190,201 \nProperty, plant and equipment, net 107,434 99,696 \nInvestments in unconsolidated businesses 1,071 1,061 \nWireless licenses 149,796 147,619 \nGoodwill 28,671 28,603 \nOther intangible assets, net 11,461 11,677 \nOperating lease right-of-use assets 26,130 27,883 \nOther assets 17,260 13,329 \nTotal assets $ 379,680 $ 366,596 \nLiabilities and Equity \nCurrent liabilities \nDebt maturing within one year $ 9,963 $ 7,443 \nAccounts payable and accrued liabilities 23,977 24,833 \nCurrent operating lease liabilities 4,134 3,859 \nOther current liabilities 12,097 11,025 \nTotal current liabilities 50,171 47,160"
+            ],
+            "reference_answer": "No. The quick ratio was approximately 0.54 for Verizon. It indicated that Verizon does not have a healthy liquidity profile.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Is Verizon a capital intensive business based on FY 2022 data?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Consolidated Balance Sheets \nVerizon Communications Inc. and Subsidiaries \n(dollars in millions, except per share amounts) \nAt December 31, 2022 2021 \nAssets \nCurrent assets \nCash and cash equivalents $ 2,605 $ 2,921 \nAccounts receivable 25,332 24,742 \nLess Allowance for credit losses 826 896 \nAccounts receivable, net 24,506 23,846 \nInventories 2,388 3,055 \nPrepaid expenses and other 8,358 6,906 \nTotal current assets 37,857 36,728 \nProperty, plant and equipment 307,689 289,897 \nLess Accumulated depreciation 200,255 190,201 \nProperty, plant and equipment, net 107,434 99,696 \nInvestments in unconsolidated businesses 1,071 1,061 \nWireless licenses 149,796 147,619 \nGoodwill 28,671 28,603 \nOther intangible assets, net 11,461 11,677 \nOperating lease right-of-use assets 26,130 27,883 \nOther assets 17,260 13,329 \nTotal assets $ 379,680 $ 366,596___FINANCEBENCH_DELIMITER___Consolidated Operating Revenues \n(dollars in millions) \nIncrease/(Decrease) \nYears Ended December 31, 2022 2021 2022 vs. 2021 \nConsumer $ 103,506 $ 95,300 $ 8,206 8.6 % \nBusiness 31,072 31,042 30 0.1 \nCorporate and other 2,510 7,722 (5,212) (67.5) \nEliminations (253) (451) 198 43.9 \nConsolidated Operating Revenues $ 136,835 $ 133,613 $ 3,222 2.4"
+            ],
+            "reference_answer": "Yes. Verizon's capital intensity ratio was approximately 2.774729. This means that it took approximately $2.77 of assets to generate $1 of revenue and thus, Verizon can be considered capital intensive.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Has Verizon increased its debt on balance sheet between 2022 and the 2021 fiscal period?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "At December 31, Maturities \nInterest \nRates % 2022 2021 \nVerizon Communications < 5 Years 0.75 - 5.82 $ 23,929 $ 18,406 \n5-10 Years 1.50 - 7.88 42,637 43,225 \n> 10 Years 1.13 - 8.95 60,134 73,520 \n< 5 Years Floating (1) 2,992 4,086 \n5-10 Years Floating (1) 3,029 824 \nAlltel Corporation 5-10 Years 6.80 - 7.88 94 38 \n> 10 Years N/A N/A 58 \nOperating telephone company subsidiaries\u2014debentures < 5 Years N/A N/A 141 \n5-10 Years 6.00 - 8.75 475 375 \n> 10 Years 5.13 - 7.38 139 250 \nOther subsidiaries\u2014asset-backed debt < 5 Years 0.41 - 5.72 9,767 9,620 \n< 5 Years Floating (2) 10,271 4,610 \nFinance lease obligations (average rate of 2.5% and 2.2% in \n2022 and 2021, respectively) 1,732 1,325 \nUnamortized discount, net of premium (4,039) (4,922) \nUnamortized debt issuance costs (671) (688) \nTotal long-term debt, including current maturities 150,489 150,868 \nLess long-term debt maturing within one year 9,813 7,443 \nTotal long-term debt $ 140,676 $ 143,425 \nLong-term debt maturing within one year $ 9,813 $ 7,443 \nAdd commercial paper 150 \u2014 \nDebt maturing within one year 9,963 7,443 \nAdd long-term debt 140,676 143,425 \nTotal debt $ 150,639 $ 150,868"
+            ],
+            "reference_answer": "No. Verizon's debt decreased by $229 million.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        }
+    ]
+}

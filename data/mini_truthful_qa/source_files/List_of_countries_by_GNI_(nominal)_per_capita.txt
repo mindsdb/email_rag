@@ -1,0 +1,39 @@
+This is a list of countries by gross national income per capita in 2022 at nominal values, according to the Atlas method, an indicator of income developed by the World Bank.
+
+
+== Methodology ==
+The GNI per capita is the dollar value of a country's final income in a year, divided by its population. It should be reflecting the average before tax income of a country's citizens.
+Knowing a country's GNI per capita is a good first step toward understanding the country's economic strengths and needs, as well as the general standard of living enjoyed by the average citizen. A country's GNI per capita tends to be closely linked with other indicators that measure the social, economic, and environmental well-being of the country and its people. 
+All data is in U.S. dollars. Rankings shown are those given by the World Bank. Non-sovereign entities or other special groupings are marked in italics.
+
+
+== List of countries and dependencies ==
+
+
+=== High-income group ===
+
+
+=== Upper-middle-income group ===
+
+
+=== Lower-middle-income group ===
+
+
+=== Low-income group ===
+
+
+== No data ==
+
+
+== See also ==
+World Bank high-income economy
+List of countries by GNI (PPP) per capita
+List of sovereign states in Europe by GNI (nominal) per capita
+List of countries by wealth per adult
+
+
+== References ==
+
+
+== External links ==
+The Atlas Method, by the World Bank
