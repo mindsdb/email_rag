@@ -1,5 +1,4 @@
 
-import os
 import pathlib
 from typing import List
 
@@ -14,17 +13,15 @@ from langchain.text_splitter import MarkdownHeaderTextSplitter
 from langchain_core.documents.base import Document
 from langchain_openai.embeddings import OpenAIEmbeddings
 
-from ingestors.base_ingestor import BaseIngestor
 
-
-class FileIngestor(BaseIngestor):
+class FileIngestor:
     '''Loads various file types into document representation'''
 
     _DEFAULT_CHUNK_SIZE = 1000
     _DEFAULT_CHUNK_OVERLAP = 50
 
-    def __init__(self, dataset_path: str):
-        self.dataset_path = dataset_path
+    def __init__(self, paths: List[str]):
+        self.paths = paths
         super().__init__()
 
     def _load_documents_from_file(self, path: str) -> List[Document]:
@@ -56,16 +53,8 @@ class FileIngestor(BaseIngestor):
         return text_splitter.split_documents(documents)
 
     def ingest(self) -> List[Document]:
-        source_files_path = os.path.join(self.dataset_path, 'source_files')
-        source_files = []
-        for f in os.listdir(path=source_files_path):
-            full_path = os.path.join(source_files_path, f)
-            if not os.path.isfile(full_path):
-                continue
-            source_files.append(full_path)
-
         all_documents = []
-        for f in source_files:
+        for f in self.paths:
             # Load and split each file individually
             all_documents += self._load_documents_from_file(f)
 

@@ -29,9 +29,16 @@ def evaluate_file_rag(dataset: str):
     '''Evaluates a RAG pipeline that answers questions from a dataset
     about various types of files, depending on the dataset.
     '''
-    dataset_path = os.path.join('./data', dataset)
-    ingestor = FileIngestor(dataset_path)
-    logging.info('Loading documents from {}'.format(dataset_path))
+    source_files_path = os.path.join('./data', dataset, 'source_files')
+    source_files = []
+    for f in os.listdir(path=source_files_path):
+        full_path = os.path.join(source_files_path, f)
+        if not os.path.isfile(full_path):
+            continue
+        source_files.append(full_path)
+
+    ingestor = FileIngestor(source_files)
+    logging.info('Loading documents from {}'.format(source_files_path))
     documents = ingestor.ingest()
     logging.info('Documents loaded')
 
