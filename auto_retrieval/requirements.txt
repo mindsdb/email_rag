@@ -1,0 +1,6 @@
+langchain
+langchain-openai
+chromadb
+lark
+openai
+pandas
