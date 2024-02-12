@@ -85,7 +85,7 @@ class AutoRetrieval:
         :return:
         """
         prompt = self.prompt_template.format(dataframe=self.df.head().to_json(), description=self.document_description)
-        result: List[dict] = json.loads(self.llm.predict(prompt))
+        result: List[dict] = json.loads(self.llm.invoke(input=prompt).content)
         self._alter_description(result)
 
         return result
