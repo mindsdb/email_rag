@@ -1,0 +1,550 @@
+{
+    "examples": [
+        {
+            "query": "Are infected people able to transmit the virus to their pets and visa versa?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "No, there is no evidence that pets such as cats and dogs have been infected or could spread the virus that causes COVID-19, according to the WHO.\r\n\r\nLast month, the pet dog of a coronavirus patient in Hong Kong tested \"weak\" positive for COVID-19 and was put in quarantine. Scientists concluded that pet cats and dogs can test positive for low levels of the pathogen if they catch it from their owners, but pets can't get sick from the virus.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "How can people who recently moved ensure they get their checks?\r\n\r\n",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "If you received a refund in 2018 or 2019 via direct deposit to your bank account, and you did not change your bank account when you moved, you should be able to receive your rebate via direct deposit.\r\n\r\nTax experts said that they think it would be helpful for the IRS to provide guidance for taxpayers who have moved or have new bank accounts since they filed their most recent tax return.\r\n\r\nUnder the bill, the IRS has to send a notice to a taxpayer\u2019s last known address within 15 days of distributing a payment. The notice should provide information about the payment amount, the method used to make the payment and an IRS phone number to report failures to receive the payment.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Do I have to apply to receive a payment?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "__ No. If you qualify, the Internal Revenue Service already has your bank account information, it will transfer the money to you via direct deposit based on the recent income-tax figures it already has. Treasury Secretary Steven Mnuchin [said](https://www.nytimes.com/2020/03/25/world/coronavirus- news-live.html#link-6b422738) he expected most people to get their payments in April.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "How is this going to affect the 2020 election?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "Several states have already postponed their primaries. Officials in states that are going ahead with primaries have been [trying to emphasize the new basics of voting hygiene](https://www.nytimes.com/2020/03/09/us/virus- election-voting.html), like using hand sanitizer at polling stations.  And though the general election has yet to begin, it is already [being profoundly shaped by the coronavirus](https://www.nytimes.com/2020/03/12/us/politics/coronavirus-2020-campaign.html), which has become the central issue between President Trump and the two major Democratic candidates, former Vice President Joseph R. Biden Jr. and Senator Bernie Sanders of Vermont. The pandemic\u2019s effects on the economy have challenged Mr. Trump\u2019s core message, that Americans are better off than before he took office. Mr. Biden has proposed a detailed plan for hospitals and research, echoing the language of presidents in past crises. He and Mr. Sanders curtailed their travel and canceled large gatherings like rallies.  It would be enormously difficult to cancel or postpone the November general election, though.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Is it ok to go to the park in the neighbourhood for my morning walk?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "Is it ok to go to the park in the neighbourhood for my morning walk?\nNo. Under the current circumstances, it is best to avoid outdoor activities. However, if you can find a time of the day when there is no one around, you can take a quick stroll.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What\u2019s an essential service? Who decides that?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "In places where officials have called for workplaces to be shuttered, there are exemptions for \u201cessential\u201d services and businesses. Those institutions can remain open for customers and have workers onsite.  In the United States there are[ ](https://www.cisa.gov/identifying-critical- infrastructure-during-covid-19)[federal guidelines](https://www.cisa.gov/identifying-critical-infrastructure-during- covid-19) for what is considered an essential service, but decisions are often made at the state level. For example, here are some lists of essential services in[ ](http://www.apple.com)[New York](https://www.governor.ny.gov/news/governor-cuomo-issues-guidance- essential-services-under-new-york-state-pause-executive-order),[ ](https://www.mass.gov/doc/covid-19-essential- services)[Massachusetts](https://www.mass.gov/doc/covid-19-essential- services),[ ](https://covid19.ca.gov/stay-home-except-for-essential- needs/)[California](https://covid19.ca.gov/stay-home-except-for-essential- needs/) and[ ](https://www2.illinois.gov/sites/coronavirus/FAQ/Pages/Stay-At- Home- FAQS.aspx#qst7)[Illinois](https://www2.illinois.gov/sites/coronavirus/FAQ/Pages/Stay- At-Home-FAQS.aspx#qst7). All four states consider pharmacies, gas stations, laundromats and groceries to be essential, and all of them say restaurants can stay open for take-out and delivery orders.  Typically, essential services also include utilities, telecommunications and transportation providers; animal shelters and veterinary services; manufacturers and distributors of basic goods; and child care for those who work in essential services.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Will families who receive food stamps be eligible for the stimulus check?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "Yes, families who receive food stamps are eligible to receive a stimuluscheck! The $2 trillion stimulus plan includes [one-time payments of$1,200](https://www.usatoday.com/story/news/politics/2020/03/26/coronavirus-americans-start-getting-stimulus-checks-three-weeks/5078658002/) per adult and$500 per child, $367 billion for small businesses, $500 billion for loans tolarger industries, $100 billion for hospitals and the health care system, and$600 more per week in unemployment benefits for those out of work.Here's [how you cancalculate](https://www.delawareonline.com/story/news/2020/03/26/find-out-how-much-your-stimulus-check/2917379001/) the amount of stimulus money yourhousehold can expect.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Can the virus that causes COVID-19 be transmitted through the air?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "Studies to date suggest that the virus that causes COVID-19 is mainly transmitted through contact with respiratory droplets rather than through the air. See previous answer on \"How does COVID-19 spread?\"",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Why do we need to stay six feet away? What\u2019s magic about that number?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "The coronavirus spreads primarily by droplets from your mouth and nose, especially when you cough or sneeze. While [a recent study](https://jamanetwork.com/journals/jama/fullarticle/2763852) suggested that gaseous clouds could travel up to 27 feet, six feet is the approximate range of larger droplets that are more likely to be infectious and is the [distance recommended by the C.D.C](https://www.cdc.gov/coronavirus/2019-ncov/prevent-getting-sick/how- covid- spreads.html?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fcoronavirus%2F2019-ncov%2Fprepare%2Ftransmission.html).  Our understanding about this strain of the coronavirus is constantly evolving, though. The [World Health Organization advises](https://www.who.int/emergencies/diseases/novel- coronavirus-2019/advice-for-public) at least 3 feet of distance.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Can young people fall seriously ill?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "While much of the attention about who is most vulnerable to COVID-19 has\ncentred on the elderly and those with underlying medical conditions, [it can\nalso affect young people.](https://www.ctvnews.ca/health/coronavirus/people-\nunder-40-make-up-one-third-of-canada-s-covid-19-cases-1.4872884)\n\nAccording to PHAC data, people in their 20s were responsible for 12 per cent\nof all confirmed COVID-19 cases in Canada as of March 30, and those aged 19 or\nyounger made up 4 per cent of the country's total caseload.\n\nDr. Isaac Bogoch said that everyone can be infected by the novel coronavirus\nand there\u2019s always a risk that some people will have a more severe infection.\n\nHowever, he said older people and those with underlying medical conditions\nstill have a greater risk of a severe outcome than younger individuals.\n\n\u201cIf we take a step back and look at the 30,000-foot view and look at who is\nmore likely to get a severe infection, it is overwhelmingly those over the age\nof 60 and really, over the age of 80 years old,\u201d he told CTV\u2019s Your Morning on\nMarch 20.\n\nBogoch said the most important metric to look at when studying data about\nsevere infections from this virus is death.\n\n\u201cIf you get infected, you either live or you die, it sounds morbid, but I\nthink that\u2019s an extremely important distinction to make and if we look at\ndeath, it is overwhelmingly in those over 60 and disproportionately high in\nthose over the age of 80,\u201d he said.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What Is COVID-19?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "COVID-19 is the infectious disease caused by the most recently discovered coronavirus. This new virus and disease were unknown before the outbreak began in Wuhan, China, in December 2019.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Are auto rickshaws allowed on the roads?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "Are auto rickshaws allowed on the roads?\nYes, provided the drivers are willing to ferry passengers",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Does testing positive mean that I have the virus and that I will develop symptoms?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "Yes, testing positive means that you have the virus, but it does not mean that you will develop symptoms. Some people who have the virus don't have any symptoms at all.\r\n\r\nAt the same time, testing negative does not necessarily mean that you don't have the virus.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Can the virus that causes COVID-19 be transmitted through the air?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "Studies to date suggest that the virus that causes COVID-19 is mainly transmitted through contact with respiratory droplets rather than through the air.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "How long is the incubation period for COVID-19?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "The \u201cincubation period\u201d means the time between catching the virus and beginning to have symptoms of the disease. Most estimates of the incubation period for COVID-19 range from 1-14 days, most commonly around five days. These estimates will be updated as more data become available.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "I have a sewing machine. Should I make masks?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "The C.D.C.[ ](https://www.nytimes.com/2020/04/02/health/masks-coronavirus- cdc.html)[recommends](https://www.nytimes.com/2020/04/02/health/masks- coronavirus-cdc.html) that all Americans wear cloth masks if they go out in public. This shift in federal guidance, announced by President Trump at a White House briefing, reflects[ ](https://www.nytimes.com/2020/03/31/health/coronavirus-asymptomatic- transmission.html)[new concerns that the coronavirus is being spread by infected people who have no symptoms](https://www.nytimes.com/2020/03/31/health/coronavirus-asymptomatic- transmission.html).  Those who are sick with the coronavirus [can help limit the spread](https://www.nytimes.com/2020/03/27/health/us-coronavirus-face- masks.html) of respiratory droplets by wearing a mask, and that applies to those who are asymptomatic or undiagnosed as well. Plus, some organizations are using fabric masks as a temporary stopgap (civilians should not use [medical-grade masks](https://www.nytimes.com/article/face-masks- coronavirus.html), which are in short supply and must be reserved for health care workers on the front line). The Sewing and Craft Alliance is continuously updating a list of [health care facilities](https://www.weneedmasks.org/list/) that have asked for fabric mask donations.  The New York Times and other news outlets had been reporting the C.D.C.\u2019s previous guidance.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Can I still travel?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "Depending on where you want to go, not easily. In March, as more and more governments around the world hoped to slow the spread of the coronavirus, they[ began to impose travel restrictions](https://www.nytimes.com/article/coronavirus-travel- restrictions.html) and even close their borders.  In the United States, President Trump has said he is considering some restrictions on domestic travel. (The military has curtailed domestic travel for service members and their families.)  And if you do go anywhere, remember to [practice social distancing](https://www.nytimes.com/2020/03/16/smarter-living/coronavirus- social-distancing.html): stay away from groups and keep at least six feet of distance between you and other people.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Protection measures for persons who are in or have recently visited (past 14 days) areas where COVID-19 is spreading",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "Follow the guidance outlined above (Protection measures for everyone)\nSelf-isolate by staying at home if you begin to feel unwell, even with mild symptoms such as headache, low grade fever (37.3 C or above) and slight runny nose, until you recover. If it is essential for you to have someone bring you supplies or to go out, e.g. to buy food, then wear a mask to avoid infecting other people.\nWhy? Avoiding contact with others and visits to medical facilities will allow these facilities to operate more effectively and help protect you and others from possible COVID-19 and other viruses. \n\n\nIf you develop fever, cough and difficulty breathing, seek medical advice promptly as this may be due to a respiratory infection or other serious condition. Call in advance and tell your provider of any recent travel or contact with travelers.\nWhy? Calling in advance will allow your health care provider to quickly direct you to the right health facility. This will also help to prevent possible spread of COVID-19 and other viruses.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What is involved in testing for the coronavirus? Is it the same as when they do a nasal swab for influenza?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "To collect a sample for a diagnostic test for SARS-CoV-2, the virus that causes the COVID-19 disease, doctors typically use the same method of collection as they would for influenza: a nasopharyngeal swab. For this swab, a tiny Q-tip on plastic or a wire stem is put up your nose about 3 or 4 inches.\r\n\r\n\"I've had it done, and it's mildly uncomfortable for a few seconds,\" said Gregory Poland, director of the Mayo Clinic\u2019s Vaccine Research Group.\r\n\r\nA doctor may also do a throat swab. In some cases, if you have a \"wet\" cough, a doctor may also have you cough up some phlegm into a collection cup. These specimen are then packed with ice and shipped to a lab for testing.\r\n\r\nTo determine if someone has recovered from the coronavirus, at least two different nasal swabs taken at least 24 hours apart must test negative, Poland said.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Can the virus be transmitted through the mail? Should I stop sending greeting cards?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "The chances of transmission through your mail is very low, Elliott says.\"Parts of the virus can fall on surfaces and survive on surfaces for up to 72hours. But you have to have pretty good conditions for that to happen. So thelikelihood would be very small, even with no precautions,\" she said.Elliott advises people to put their mail down on a plastic plate instead ofdirectly on a counter top or table, to use a letter opener, and to wash handsthoroughly after touching the mail.Research on how long a virus may live on surfaces is evolving. The CDC hassaid there is likely very low risk of transmission of COVID-19 from productsor packaging that are shipped over a period of days or weeks \"because of poorsurvivability of these coronaviruses on surfaces.\"A [recent study](https://www.usatoday.com/story/news/health/2020/03/18/heres-how-long-coronavirus-can-live-surfaces-and-air-study/2863287001/) found thatviable virus could be detected up to three hours later in the air, up to fourhours on copper, up to 24 hours on cardboard and up to two to three days onplastic and stainless steel. But [a subsequent report from theCDC](https://www.usatoday.com/story/news/health/2020/03/18/heres-how-long-coronavirus-can-live-surfaces-and-air-study/2863287001/) found that geneticmaterial from the virus can live on surfaces for more than two weeks.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Did Dean Koontz predict this outbreak in the book \u201cThe Eyes of Darkness\u201d almost 40 years ago?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "No. There are some interesting coincidences in the 1981 fiction novel, which says \u201ca severe pneumonia-like illness will spread around the globe\u201d around the year 2020. Modern editions of the book call the biological strain \u201cWuhan-400,\u201d and the current coronavirus outbreak started in Wuhan, China.\n But there are important differences between the book and reality. The original version of the book called the strain the \u201cGorki-400,\u201d in reference to a Russian locality, before it was later changed to the \u201cWuhan-400.\u201d In the book, the virus was man-made, while scientists believe the novel coronavirus started in animals and jumped to humans. And in the book, the virus had a 100% mortality rate. Early estimates of the mortality rate for this coronavirus outbreak range from 2-4%.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Can testing show if someone has had coronavirus and then recovered?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "Yes, but it depends on what kind of test you do. \"If you do an antibody test, in theory it could show that you had the virus and then recovered,\" Hotez said.\n\nTo do an antibody test, you'd need to have blood drawn. But coronavirus tests in the U.S. aren't being done this way.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Can someone get the coronavirus more than once?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "Scientists aren't sure yet. For many viruses, including the MERS virus, patients are unlikely to be re-infected shortly after they recover because a protective antibody is generated in those who are infected. But scientists still need to do more research to determine if this is also the case with COVID-19 and how long those antibodies may last.\n\n\"However, in certain individuals, the antibody cannot last that long. For many patients who have been cured, there is a likelihood of relapse,\" said Li QinGyuan, director of pneumonia prevention and treatment at China Japan Friendship Hospital in Beijing.\n\nPoland agreed, saying the chance of reinfection is \"very likely.\"",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What can I do if my loved one suspects they have coronavirus?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "Don\u2019t visit family members with suspected illness \u2013 keep up with them virtually.\n If that loved one lives with you, limit contact with them and avoid using the same bathroom or bedroom, the CDC advises.\n If they\u2019ve been diagnosed, they may be able to recover at home in isolation. Separate yourself as much as possible from your infected family member and keep animals away, too. Continue to use separate restrooms and regularly disinfect them with EPA-approved products.\n Stock up on groceries and household supplies for them while they can\u2019t travel outside and minimize trips to stores. Wash your hands frequently and avoid sharing personal items with the infected person.\n If you suspect you\u2019re developing symptoms, stay home and call your physician.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Can you get the virus from eating food made by someone who was sick?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "Probably not. For cooked food, heat likely inactivates the virus, though there hasn\u2019t been a study looking at the specific temperatures and conditions.  Of course there\u2019s the concern that your delivery person[ ](https://www.nytimes.com/2020/03/19/nyregion/coronavirus-nyc-delivery- workers.html)[who can't afford to stay home](https://www.nytimes.com/2020/03/19/nyregion/coronavirus-nyc-delivery- workers.html) has just touched the containers, so you should always wash your hands before eating.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What about my summer vacation? Should I cancel that?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "No one really knows what the course of the outbreak will be. Some airlines have already announced cuts through May, and President Trump has mentioned isolation measures lasting through July or August. The prevailing optimistic guess among experts for when the outbreak will abate hovers at about two months.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Is it advantageous for a younger healthy person to get the coronavirus to build immunity to it?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "No, for several reasons, says Peter Hotez, dean of the National School ofTropical Medicine at Baylor College of Medicine.While a protective antibody is generated in those who are infected,[scientists are not yetsure](https://www.usatoday.com/story/news/health/2020/03/12/coronavirus-reader-questions-answered-symptoms-testing-elderly/5012457002/) whether thatimmunity will last for a short period of time, for years or for life. Some saythe possibility of reinfection is very likely.Moreover, a [new federal health reportsays](https://www.usatoday.com/story/news/health/2020/03/19/coronavirus-illnesses-can-serious-young-adults-cdc-report/2874271001/) Americans of allages have faced serious health complications amid the outbreak. Data from theCDC show that among the roughly 12% of COVID-19 cases in the U.S. known toneed hospitalizations, about 1 in 5 were among people ages 20 to 44. Anywherefrom 14% to 21% of adults ages 20 to 44 with COVID-19 have been hospitalized,the CDC data estimates. Two to 4% of cases led to ICU admissions, and lessthan 1% were fatal.Finally, it's important to avoid getting and spreading the virus. While theyoung may not be the most at risk, they're carrying the disease to those whoare more vulnerable, such as older people and those with underlyingconditions. Dr. Deborah Birx, a member of the White House coronavirus taskforce, on Wednesday urged \"the millennial generation\" to take specialprecautions. \"You have the potential to spread it,\" she said.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Where does the name coronavirus come from?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "The coronavirus looks like a ball covered with spikes. Its outline is almost like a crown. That\u2019s how coronavirus got its name, because \u201ccorona\u201d is Latin for crown.  Listen [A kid\u2019s guide to coronavirus](https://www.nytimes.com/2020/03/27/podcasts/the-daily/kids- coronavirus.html) (A podcast from The Daily)",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Can I go out in my vehicle to pick up someone who is stranded somewhere?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "Can I go out in my vehicle to pick up someone who is stranded somewhere?\nYes, you can but only if the person concerned is not stranded outside the city limits",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Can I get welfare?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "Yes. ",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Will local grocery stores operate?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "Will local grocery stores operate?\nYes. All stores selling food items, groceries \u2014 fruits, vegetables, milk, bakery items, meat, fish etc \u2014 will continue to remain open.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "I\u2019m a college student, will I get anything?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "__ If you\u2019re listed as a dependent on a tax return, then no. Students under age 24 are often dependents in the eyes of the taxing authorities if a parent pays for at least half of their expenses.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "I made $85,000 last year. How much money will I receive?\n\n",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "For a single tax filer, the rebate amount reduces by $5 for every $100 of income over $75,000. So a single person with no children who had adjusted gross income of $85,000 in 2019, and has already filed a 2019 tax return, would receive $700.\n\nKeep in mind that phase-out of the credit is based on people\u2019s adjusted gross income, which does not include income put into pre-tax accounts such as traditional 401(k)s. As a result, someone with an annual salary of $85,000 and no other income could have adjusted gross income of less than $85,000.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "I\u2019m having trouble sleeping. Any tips?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "While there\u2019s no single trick that works for everyone, one thing you can [try now to improve your sleep](https://www.nytimes.com/2020/03/25/style/self- care/sleep-tips-benefits-coronavirus.html) is setting up a consistent schedule. That means sticking to a regular bedtime and wake time. Try to go 90 minutes without any screen time before bed -- that means no emails, social media or watching T.V. You can also take baby steps, beginning with 15 minutes, then working your way up.  Working out, whether that means taking a socially distant walk or doing an at- home routine, can also help tire you out and dispel extra nervous energy. Taking a warm shower or bath 90 minutes before lights out may also help prime you for a better night\u2019s sleep. Be sure to nix the coffee, alcohol and any eating before bed -- these things don\u2019t promote quality rest. Finally, [manage your anxiety](https://www.nytimes.com/2020/03/25/style/self-care/sleep-tips- benefits-coronavirus.html) through meditation, deep breathing techniques and, in some cases, medication. If your anxiety is debilitating, seek out a mental health professional or other clinical mental health services.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "How to put on, use, take off and dispose of a mask?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "Remember, a mask should only be used by health workers, care takers, and individuals with respiratory symptoms, such as fever and cough.\nBefore touching the mask, clean hands with an alcohol-based hand rub or soap and water\nTake the mask and inspect it for tears or holes.\nOrient which side is the top side (where the metal strip is).\nEnsure the proper side of the mask faces outwards (the coloured side).\nPlace the mask to your face. Pinch the metal strip or stiff edge of the mask so it moulds to the shape of your nose.\nPull down the mask\u2019s bottom so it covers your mouth and your chin.\nAfter use, take off the mask; remove the elastic loops from behind the ears while keeping the mask away from your face and clothes, to avoid touching potentially contaminated surfaces of the mask.\nDiscard the mask in a closed bin immediately after use.\nPerform hand hygiene after touching or discarding the mask \u2013 Use alcohol-based hand rub or, if visibly soiled, wash your hands with soap and water.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "My plans got derailed. Can I get a refund?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "With airlines cutting trans-Atlantic flights and cruise lines canceling sailings, travel conditions and refund policies are changing daily.  Keep an eye on social media and official communications from your airline, hotel, cruise or wherever you booked to stay up to date with any changes to refund policies. And expect long wait times if you do need to contact a company.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Are schools and unis closed? Will they close?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "Other countries have closed schools and universities as a social distancing measure, however Australia has not yet taken this step.\nThe situation with schools varies state by state. Queensland, South Australia, Western Australia, Tasmania and Northern Territory will keep schools open for the children of essential workers but will began to implement pupil-free days in the coming weeks. Victoria and ACT schools are already on break. NSW schools remain open but students are encouraged to stay at home.\nSeveral schools around the country have closed temporarily after a staff member or student tested positive for the virus.\nSome universities have chosen to close their campuses.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Is it safe to use the lift in my building. There are about 1500 apartments in the complex",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "Is it safe to use the lift in my building. There are about 1500 apartments in the complex\nYes. You have to ensure that you maintain proper hand hygeine and respiratory hygiene. You can even try disposable gloves and face mask to protect yourself from catching the infection through the lift buttons.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Do previous immunizations, such as the flu shot, help protect against COVID-19?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "While there have been suggestions that a regular flu shot can help protect\nindividuals against COVID-19, Bogoch said that\u2019s not true.\n\n\u201cThey do not protect against this particular infection. They do not protect\nagainst COVID-19,\u201d he said.\n\nHowever, Bogoch stressed that vaccinations such as the flu shot are still\nextremely important for optimizing health.\n\n\u201cWe should be up to date on all our routine vaccinations, our pneumonia\nvaccines, our flu vaccines, our regular vaccines, so that we can ensure that\nour health is optimized in case we come down with an infection,\u201d he said.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "For how long will the lockdown continue?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "For how long will the lockdown continue?\nA majority of the states have issued guidelines until March 31, however, there are some instances where advisories have been issued for shut down of services till mid-April.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Are antibiotics effective in preventing or treating the COVID-19?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "No. Antibiotics do not work against viruses, they only work on bacterial infections. COVID-19 is caused by a virus, so antibiotics do not work. Antibiotics should not be used as a means of prevention or treatment of COVID-19. They should only be used as directed by a physician to treat a bacterial infection.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "How do you know if you have a cold, the flu, or COVID-19?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "Those who are infected with COVID-19 may have few to no symptoms, according to\nthe Public Health Agency of Canada (PHAC). If symptoms are present, they can\neasily be mistaken for a common cold or the flu because of their similarities.\n\nAccording to the health agency, the main symptoms of COVID-19 are fever,\ncoughing, difficulty breathing, and pneumonia in both lungs. In severe cases,\nthe illness can even result in death.\n\nThe World Health Organization lists additional symptoms that have been\ndocumented in some COVID-19 patients, including tiredness, aches and pains,\nsore throat, diarrhea, nausea and runny nose.\n\nGorfinkel said clinicians can\u2019t distinguish between the illnesses based on\nsymptoms alone. She said they can all present the same way, which is why the\npatient\u2019s travel history or history of exposure to the virus is so important\nin determining whether someone might have COVID-19.\n\n\u201cWe do not have the facilities or the tests to test absolutely everybody, so\nthat history of travel if you\u2019re basically otherwise well, that\u2019s a critical\npart of it,\u201d she explained.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        }
+    ]
+}

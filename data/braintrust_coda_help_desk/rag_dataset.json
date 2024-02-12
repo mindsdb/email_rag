@@ -1,0 +1,1504 @@
+{
+    "examples": [
+        {
+            "query": "What is the main function of the \"starred docs\" feature in Coda docs, and where can these starred docs be found?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "Not all Coda docs are used in the same way. You'll inevitably have a few that you use every week, and some that you'll only use once. This is where starred docs can help you stay organized.\n\n\n\nStarring docs is a great way to mark docs of personal importance. After you star a doc, it will live in a section on your doc list called **My Shortcuts**. All starred docs, even from multiple different workspaces, will live in this section.\n\n\n\nStarring docs only saves them to your personal My Shortcuts. It doesn\u2019t affect the view for others in your workspace. If you\u2019re wanting to shortcut docs not just for yourself but also for others in your team or workspace, you\u2019ll use pinning instead."
+            ],
+            "reference_answer": "The main function of the \"starred docs\" feature in Coda docs is to mark documents of personal importance. After a document is starred, it can be found in a section on your document list called \"My Shortcuts\". This feature only affects the user's personal view and does not impact others in the workspace.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "What is the difference between \"starring\" and \"pinning\" a document in a workspace in terms of visibility to other team members?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "Not all Coda docs are used in the same way. You'll inevitably have a few that you use every week, and some that you'll only use once. This is where starred docs can help you stay organized.\n\n\n\nStarring docs is a great way to mark docs of personal importance. After you star a doc, it will live in a section on your doc list called **My Shortcuts**. All starred docs, even from multiple different workspaces, will live in this section.\n\n\n\nStarring docs only saves them to your personal My Shortcuts. It doesn\u2019t affect the view for others in your workspace. If you\u2019re wanting to shortcut docs not just for yourself but also for others in your team or workspace, you\u2019ll use pinning instead."
+            ],
+            "reference_answer": "\"Starring\" a document only saves it to your personal \"My Shortcuts\" and doesn't affect the view for others in your workspace. On the other hand, \"pinning\" a document is used when you want to shortcut docs not just for yourself but also for others in your team or workspace.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "Explain the process of starring a document in Braintrust, and how can you access it later?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**Star your docs**\n==================\n\n\nTo star a doc, hover over its name in the doc list and click the star icon. Alternatively, you can star a doc from within the doc itself. Hover over the doc title in the upper left corner, and click on the star.\n\n\n\nOnce you star a doc, you can access it quickly from the My Shortcuts tab of your doc list.\n\n\n\n!And, as your doc needs change, simply click the star again to un-star the doc and remove it from **My Shortcuts**."
+            ],
+            "reference_answer": "To star a document in Braintrust, you can either hover over the document's name in the document list and click the star icon, or you can do it from within the document itself by hovering over the document title in the upper left corner and clicking on the star. Once a document is starred, it can be quickly accessed from the \"My Shortcuts\" tab of your document list. If you no longer need quick access to the document, you can un-star it by clicking the star again, which will remove it from the \"My Shortcuts\" tab.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "What happens when you click the star again after a document has already been starred in Braintrust?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**Star your docs**\n==================\n\n\nTo star a doc, hover over its name in the doc list and click the star icon. Alternatively, you can star a doc from within the doc itself. Hover over the doc title in the upper left corner, and click on the star.\n\n\n\nOnce you star a doc, you can access it quickly from the My Shortcuts tab of your doc list.\n\n\n\n!And, as your doc needs change, simply click the star again to un-star the doc and remove it from **My Shortcuts**."
+            ],
+            "reference_answer": "When you click the star again after a document has already been starred in Braintrust, it un-stars the document and removes it from the \"My Shortcuts\" tab of your doc list.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "What is the process described in the document \"section_10.md\" for referencing other column values in a certain software or programming language?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**Reference other column values**\n=================================\n\n\nYou can reference columns by typing @ and choosing the column you want to reference from the dropdown menu. You can format these values by selecting the column chip and using the selection menu to bold, underline, italicize and more.\n\n\n\n!COMPOSE bold a column.gif"
+            ],
+            "reference_answer": "The document describes a process where you can reference columns by typing \"@\" and then choosing the column you want to reference from a dropdown menu. You can also format these values by selecting the column chip and using the selection menu to bold, underline, italicize and more.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "Based on the file size provided in the context, can you estimate the approximate length of the document \"section_10.md\"? Explain your reasoning.",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**Reference other column values**\n=================================\n\n\nYou can reference columns by typing @ and choosing the column you want to reference from the dropdown menu. You can format these values by selecting the column chip and using the selection menu to bold, underline, italicize and more.\n\n\n\n!COMPOSE bold a column.gif"
+            ],
+            "reference_answer": "No, the file size alone does not provide enough information to estimate the approximate length of the document \"section_10.md\". The file size (442) could refer to the number of bytes, kilobytes, or other units, but it doesn't directly translate to the number of words or pages in the document. Factors such as formatting, images, and non-text content can also affect the file size.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "In the context of the document, explain how the formula editor is activated in Coda's formula language and describe its potential uses.",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**Use formulas**\n================\n\n\nYou can include more complex calculations by using = to bring up the formula editor. This can be useful when you want to perform function on a column per row such as calculating if a Launch date is overdue etc. To learn more about writing in Coda\u2019s formula language, check out this article.\n\n\n\nBy default, any formulas you enter here will reference the current row (think, thisRow). If you want to reference other rows, tables, etc., you\u2019ll need to reference them by their full name.\n\n\n\n!Compose write a formula.gif"
+            ],
+            "reference_answer": "In Coda's formula language, the formula editor is activated by using the \"=\" sign. This feature allows users to perform more complex calculations. It can be particularly useful for performing functions on a column per row, such as determining if a Launch date is overdue. By default, any formulas entered will reference the current row, referred to as thisRow. If users want to reference other rows, tables, etc., they need to reference them by their full name.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "The document mentions the default reference used when entering formulas. What is this default reference and how would you change it if you wanted to reference other rows or tables?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**Use formulas**\n================\n\n\nYou can include more complex calculations by using = to bring up the formula editor. This can be useful when you want to perform function on a column per row such as calculating if a Launch date is overdue etc. To learn more about writing in Coda\u2019s formula language, check out this article.\n\n\n\nBy default, any formulas you enter here will reference the current row (think, thisRow). If you want to reference other rows, tables, etc., you\u2019ll need to reference them by their full name.\n\n\n\n!Compose write a formula.gif"
+            ],
+            "reference_answer": "The default reference used when entering formulas is the current row, referred to as \"thisRow\". If you want to reference other rows, tables, etc., you need to reference them by their full name.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "Based on the document \"section_12.md\", what is the function of typing **/** (forward slash) in the Compose column?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**Format text**\n===============\n\n\nYou can format text in your Compose column by typing **/** (forward slash), which will bring up a list of elements such as headings, bullets, emojis, and more. You can also highlight existing text to bring up the text formatting bar."
+            ],
+            "reference_answer": "Typing **/** (forward slash) in the Compose column brings up a list of elements such as headings, bullets, emojis, and more.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "According to the information in \"section_12.md\", what happens when you highlight existing text in the Compose column?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**Format text**\n===============\n\n\nYou can format text in your Compose column by typing **/** (forward slash), which will bring up a list of elements such as headings, bullets, emojis, and more. You can also highlight existing text to bring up the text formatting bar."
+            ],
+            "reference_answer": "When you highlight existing text in the Compose column, it brings up the text formatting bar.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "In the context of Compose columns, explain the process of converting a formulaic column into an editable one. What steps are involved and what changes occur in the column after this conversion?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**Convert to editable**\n=======================\n\n\nBy default, all Compose columns start as formulaic columns - they are determined by the underlying instructions you\u2019ve provided in the column settings. This means that you can\u2019t manually edit a specific cell.\n\n\n\nBut if you want to make your Compose columns editable, you can simply convert the column back to a normal canvas column. To do so, just right click on the column header, select **Column options**, then click the **Convert to editable** option towards the bottom of the dialog. Choosing this option will remove the Compose tab and store the current values in the column. The values are now editable in cell and will no longer update based on any previously referenced column values or formulas.\n\n\n\n!1_1 (5).png"
+            ],
+            "reference_answer": "In the context of Compose columns, converting a formulaic column into an editable one involves a few steps. First, you need to right-click on the column header. This will bring up a menu from which you select \"Column options\". In the subsequent dialog, you should find and click the \"Convert to editable\" option, which is usually located towards the bottom.\n\nAfter this conversion, several changes occur in the column. The Compose tab, which was present before, is removed. The current values that were in the column are stored and these values become editable at the cell level. This means you can manually change the values in each cell. Furthermore, these values will no longer update based on any previously referenced column values or formulas. This gives you more control over the data in the column, as it is no longer strictly governed by the original instructions or formulas.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "What happens to the Compose tab and the current values in the column when you choose the \"Convert to editable\" option? How does this affect the update mechanism of the column values?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**Convert to editable**\n=======================\n\n\nBy default, all Compose columns start as formulaic columns - they are determined by the underlying instructions you\u2019ve provided in the column settings. This means that you can\u2019t manually edit a specific cell.\n\n\n\nBut if you want to make your Compose columns editable, you can simply convert the column back to a normal canvas column. To do so, just right click on the column header, select **Column options**, then click the **Convert to editable** option towards the bottom of the dialog. Choosing this option will remove the Compose tab and store the current values in the column. The values are now editable in cell and will no longer update based on any previously referenced column values or formulas.\n\n\n\n!1_1 (5).png"
+            ],
+            "reference_answer": "When you choose the \"Convert to editable\" option, the Compose tab is removed and the current values in the column are stored. This means that the values in the column are now editable in each cell and will no longer update based on any previously referenced column values or formulas.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "Explain the difference between a Compose column and a Canvas column in terms of their functionality and editability. Provide examples for each.",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**FAQs**\n========\n\n\nHow is a Compose column different from a normal canvas column?\n--------------------------------------------------------------\n\n\n\nCanvas columns allow you to put pages within the cells of a table. Each cell of a canvas column is directly editable and can be manually modified - without affecting any other cells in that column.\n\n\n\nA Compose column, on the other hand, allows you to generate dynamic page content within the cells of a table. You predetermine what should be in each cell \u201cbehind the scenes\u201d - so the contents for each cell are automatically calculated and created for each new row. Each cell of a Compose column is *not* manually editable. The contents of each sell and pre-determined based on the settings of the column.\n\n\n\nWhy can\u2019t I delete the contents of a Compose column cell?\n---------------------------------------------------------\n\n\n\nThis is because Compose columns aren\u2019t manually editable. In other words, you can\u2019t manually edit individual cells. Instead, you use the column settings to create dynamic content - then Coda auto-fills the cells based on that info.\n\n\n\nIf you want to make your Compose column manually editable, check out the Convert to editable section above.\n\n\n\nCan I put non-text objects in a compose column?\n-----------------------------------------------\n\n\n\nCompose columns primarily support text, dynamic text, and formatted text. You can also add images by either copy/paste, or by referencing an image column. Aside from that, you cannot add other Coda objects (buttons, tables, reactions, etc.) to Compose columns.\n\n\n\n\n\n\n---"
+            ],
+            "reference_answer": "A Canvas column allows you to put pages within the cells of a table. Each cell of a canvas column is directly editable, meaning you can manually modify the content of each cell without affecting any other cells in that column. For example, if you have a Canvas column in a table, you can individually edit the content of each cell, like adding text or images.\n\nOn the other hand, a Compose column allows you to generate dynamic page content within the cells of a table. The content for each cell is predetermined \"behind the scenes\", meaning the contents for each cell are automatically calculated and created for each new row. Each cell of a Compose column is not manually editable. The contents of each cell are pre-determined based on the settings of the column. For example, if you have a Compose column, the content of each cell is auto-filled based on the predetermined settings, and you can't manually edit the content of each cell.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "What types of content are supported in a Compose column and why are other Coda objects like buttons, tables, reactions, etc., not supported?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**FAQs**\n========\n\n\nHow is a Compose column different from a normal canvas column?\n--------------------------------------------------------------\n\n\n\nCanvas columns allow you to put pages within the cells of a table. Each cell of a canvas column is directly editable and can be manually modified - without affecting any other cells in that column.\n\n\n\nA Compose column, on the other hand, allows you to generate dynamic page content within the cells of a table. You predetermine what should be in each cell \u201cbehind the scenes\u201d - so the contents for each cell are automatically calculated and created for each new row. Each cell of a Compose column is *not* manually editable. The contents of each sell and pre-determined based on the settings of the column.\n\n\n\nWhy can\u2019t I delete the contents of a Compose column cell?\n---------------------------------------------------------\n\n\n\nThis is because Compose columns aren\u2019t manually editable. In other words, you can\u2019t manually edit individual cells. Instead, you use the column settings to create dynamic content - then Coda auto-fills the cells based on that info.\n\n\n\nIf you want to make your Compose column manually editable, check out the Convert to editable section above.\n\n\n\nCan I put non-text objects in a compose column?\n-----------------------------------------------\n\n\n\nCompose columns primarily support text, dynamic text, and formatted text. You can also add images by either copy/paste, or by referencing an image column. Aside from that, you cannot add other Coda objects (buttons, tables, reactions, etc.) to Compose columns.\n\n\n\n\n\n\n---"
+            ],
+            "reference_answer": "Compose columns primarily support text, dynamic text, and formatted text. Images can also be added either by copy/paste, or by referencing an image column. Other Coda objects like buttons, tables, reactions, etc., are not supported in Compose columns. The context does not provide specific reasons why these other objects are not supported.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "Based on the context information provided, can you explain what the term \"thisRow\" means in Coda formulas and provide an example of when you might use it?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**Related resources**\n=====================\n\n\n* Canvas column type\n* The basics of Coda formulas\n* What is \u201cthisRow\u201d and when do I use it?"
+            ],
+            "reference_answer": "The context information does not provide a specific definition or example of the term \"thisRow\" in Coda formulas. However, it suggests that there are related resources available that could provide more information on the topic.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "Given a file named \"section_15.md\" with a size of 358, created and last modified on 2023-11-30, can you describe the steps you would take to access this file and identify its type?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**Related resources**\n=====================\n\n\n* Canvas column type\n* The basics of Coda formulas\n* What is \u201cthisRow\u201d and when do I use it?"
+            ],
+            "reference_answer": "As the context does not provide specific details about the system or platform the file is stored on, here are general steps you can follow:\n\n1. Navigate to the directory or path where the file is stored. This is not provided in the context, but the file is located at \"braintrust/section_15.md\". This suggests that the file is in a directory named \"braintrust\".\n\n2. Once you are in the correct directory, look for the file named \"section_15.md\". \n\n3. To access the file, you can simply double click on it if you're using a graphical interface, or use a command like 'open' if you're in a command line interface.\n\n4. To identify its type, you can look at the file extension. The \".md\" extension suggests that this is a Markdown file, which is a type of text file often used for readme files, or writing content on platforms like GitHub.\n\nPlease note that these steps might vary slightly depending on the operating system and the access rights you have.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "In the context of Coda's sharing features, what recent addition has been made to enhance the sharing process with a large number of people?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "Coda allows you to share your docs in a number of different ways (which you can read all about here). More recently, we\u2019ve added the ability to share a doc with specific Google Groups. This allows you to easily share your doc with a large number of people with only a few clicks.\n\n\n\nWithin this article you\u2019ll find...\n----------------------------------\n\n\n* Invite specific Google Groups to your doc\n* Access a doc that\u2019s been shared with your Google Group\n* FAQs\n\n\n\n---"
+            ],
+            "reference_answer": "Coda has recently added the ability to share a doc with specific Google Groups.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "What are the three main points discussed in the article about sharing a doc with specific Google Groups on Coda?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "Coda allows you to share your docs in a number of different ways (which you can read all about here). More recently, we\u2019ve added the ability to share a doc with specific Google Groups. This allows you to easily share your doc with a large number of people with only a few clicks.\n\n\n\nWithin this article you\u2019ll find...\n----------------------------------\n\n\n* Invite specific Google Groups to your doc\n* Access a doc that\u2019s been shared with your Google Group\n* FAQs\n\n\n\n---"
+            ],
+            "reference_answer": "The three main points discussed in the article are how to invite specific Google Groups to your doc, how to access a doc that's been shared with your Google Group, and FAQs related to these topics.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "In the context of sharing documents with Google Groups, explain the process of inviting a specific Google Group to your doc. What steps must be taken and what information is required to complete this process?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**Invite specific Google Groups to your doc**\n=============================================\n\n\nIf you use Google Groups, you can share docs with a large number of people by directly inviting the group email address to your doc.\n\n\n\nTo share docs with Google Groups, just click the **Share** button in the upper right corner of the doc. Then, in the text field, type the Google group email address that you\u2019d like to share the doc with. Click on the **Invite Google Group email button** to provide your OAuth credentials. After that, decide what type of access the group should have and simply hit **Send**!\n\n\n  \n\n\n\n!1_1.pngAlternatively, you can also provide your OAuth credentials and connect with Google Groups by going to the **Members** page in your workspace, and navigating to the **Groups** tab. Once you\u2019ve connected with Google Groups, go to any doc that you want to share and type the email address of the Google Group you'd like to share with. Then click on the **Invite Google Group email** button and hit send!\n\n\n\n*If you\u2019ve previously shared docs with Google Groups, please remove those email addresses and re-add them by clicking on the **Invite Google Group email** button.*  \n\n\n\n\n**Note**: You or at least one member in your workspace must connect with Google Groups by providing your OAuth credentials to enable sharing with Google Groups. Once you or a workspace member provides their OAuth credentials, everyone in the workspace will be able to share docs with Google Groups.\n\n\nOnce you have shared your doc with a valid Google Group email address, you\u2019ll also see all the Google groups you have access to in auto-complete the next time you share a doc."
+            ],
+            "reference_answer": "To invite a specific Google Group to your doc, follow these steps:\n\n1. Click the **Share** button in the upper right corner of the doc.\n2. In the text field, type the Google group email address that you\u2019d like to share the doc with.\n3. Click on the **Invite Google Group email button** to provide your OAuth credentials.\n4. Decide what type of access the group should have and hit **Send**.\n\nAlternatively, you can connect with Google Groups by:\n\n1. Going to the **Members** page in your workspace, and navigating to the **Groups** tab.\n2. Provide your OAuth credentials.\n3. Go to any doc that you want to share and type the email address of the Google Group you'd like to share with.\n4. Click on the **Invite Google Group email** button and hit send.\n\nIf you\u2019ve previously shared docs with Google Groups, you need to remove those email addresses and re-add them by clicking on the **Invite Google Group email** button.\n\nNote that you or at least one member in your workspace must connect with Google Groups by providing your OAuth credentials to enable sharing with Google Groups. Once you or a workspace member provides their OAuth credentials, everyone in the workspace will be able to share docs with Google Groups.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "According to the document, what is the significance of providing OAuth credentials in the process of sharing documents with Google Groups? What happens once a workspace member provides their OAuth credentials?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**Invite specific Google Groups to your doc**\n=============================================\n\n\nIf you use Google Groups, you can share docs with a large number of people by directly inviting the group email address to your doc.\n\n\n\nTo share docs with Google Groups, just click the **Share** button in the upper right corner of the doc. Then, in the text field, type the Google group email address that you\u2019d like to share the doc with. Click on the **Invite Google Group email button** to provide your OAuth credentials. After that, decide what type of access the group should have and simply hit **Send**!\n\n\n  \n\n\n\n!1_1.pngAlternatively, you can also provide your OAuth credentials and connect with Google Groups by going to the **Members** page in your workspace, and navigating to the **Groups** tab. Once you\u2019ve connected with Google Groups, go to any doc that you want to share and type the email address of the Google Group you'd like to share with. Then click on the **Invite Google Group email** button and hit send!\n\n\n\n*If you\u2019ve previously shared docs with Google Groups, please remove those email addresses and re-add them by clicking on the **Invite Google Group email** button.*  \n\n\n\n\n**Note**: You or at least one member in your workspace must connect with Google Groups by providing your OAuth credentials to enable sharing with Google Groups. Once you or a workspace member provides their OAuth credentials, everyone in the workspace will be able to share docs with Google Groups.\n\n\nOnce you have shared your doc with a valid Google Group email address, you\u2019ll also see all the Google groups you have access to in auto-complete the next time you share a doc."
+            ],
+            "reference_answer": "Providing OAuth credentials is significant in the process of sharing documents with Google Groups as it enables the connection between the workspace and Google Groups. Once a workspace member provides their OAuth credentials, everyone in the workspace will be able to share docs with Google Groups. This means that the ability to share documents with Google Groups is not limited to the individual who provided the OAuth credentials, but is extended to all members in the workspace.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "In the context of accessing a shared Google doc, what is the role of OAuth credentials and how does Coda use them to verify a user's group membership?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**Access a doc that\u2019s been shared with your Google Group**\n==========================================================\n\n\nTo access a doc that is shared with a Google Group, members of the group need to provide their OAuth credentials so Coda can verify their group membership and grant access to the doc.\n\n\n\nIf you see the screen below when you are trying to open a doc that\u2019s shared with a group you\u2019re a member of, click on **Check Groups access** button and provide your OAuth credentials to open the doc.  \n  \n\n\n\n!16_10.png"
+            ],
+            "reference_answer": "OAuth credentials are used to verify a user's identity and group membership. When a user tries to access a document shared with a Google Group they are a member of, they need to provide their OAuth credentials. Coda uses these credentials to confirm their membership in the group and subsequently grant access to the document.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "If a member of a Google Group is trying to open a shared document and encounters a specific screen, what action should they take to gain access to the document? Please explain the process in detail.",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**Access a doc that\u2019s been shared with your Google Group**\n==========================================================\n\n\nTo access a doc that is shared with a Google Group, members of the group need to provide their OAuth credentials so Coda can verify their group membership and grant access to the doc.\n\n\n\nIf you see the screen below when you are trying to open a doc that\u2019s shared with a group you\u2019re a member of, click on **Check Groups access** button and provide your OAuth credentials to open the doc.  \n  \n\n\n\n!16_10.png"
+            ],
+            "reference_answer": "If a member of a Google Group is trying to open a shared document and encounters a specific screen, they should click on the **Check Groups access** button. After clicking this button, they will need to provide their OAuth credentials. These credentials are used by Coda to verify their group membership and subsequently grant access to the document. This process ensures that only verified members of the group can access the shared document.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "In the context of Google Workspace, can documents be shared with personal Google groups or nested groups? Explain your answer.",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**FAQs**\n========\n\n\nCan someone that\u2019s not part of our organization share docs with our Google Groups?\n----------------------------------------------------------------------------------\n\n\n\nYes, however group members may / may not get notified based on the Google Groups setting. If your organization does not allow \u201canyone on the web\u201d to post to a Google group, members of the group will not get email notifications when someone shares a doc with that group. Group members would need a link to the doc to access it.\n\n\n\nCan I share docs with any Google group?\n---------------------------------------\n\n\n\nSharing with Google groups is only available for Google Workspace users. We do not support sharing with personal Google groups (i.e groups with a .googlegroups.com extension). We also do not support sharing with nested groups.\n\n\n\nHow can I learn about other ways to share my doc?\n-------------------------------------------------\n\n\n\nCheck out this comprehensive article on sharing your doc.\n\n\n\n\n\n---"
+            ],
+            "reference_answer": "No, documents cannot be shared with personal Google groups or nested groups in the context of Google Workspace. The document specifically mentions that sharing with Google groups is only available for Google Workspace users and does not support sharing with personal Google groups (i.e groups with a .googlegroups.com extension). It also does not support sharing with nested groups.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "If an individual outside of an organization shares a document with a Google Group within that organization, under what conditions would the group members not receive email notifications?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**FAQs**\n========\n\n\nCan someone that\u2019s not part of our organization share docs with our Google Groups?\n----------------------------------------------------------------------------------\n\n\n\nYes, however group members may / may not get notified based on the Google Groups setting. If your organization does not allow \u201canyone on the web\u201d to post to a Google group, members of the group will not get email notifications when someone shares a doc with that group. Group members would need a link to the doc to access it.\n\n\n\nCan I share docs with any Google group?\n---------------------------------------\n\n\n\nSharing with Google groups is only available for Google Workspace users. We do not support sharing with personal Google groups (i.e groups with a .googlegroups.com extension). We also do not support sharing with nested groups.\n\n\n\nHow can I learn about other ways to share my doc?\n-------------------------------------------------\n\n\n\nCheck out this comprehensive article on sharing your doc.\n\n\n\n\n\n---"
+            ],
+            "reference_answer": "Group members will not receive email notifications if the organization does not allow \"anyone on the web\" to post to a Google group. In this case, group members would need a link to the document to access it.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "In the context of document management, what is the key difference between starring a document and pinning it?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**FAQs**\n========\n\n\nWhen should I star a doc and when should I pin it?\n--------------------------------------------------\n\n\n\nStarring docs is best for docs of *personal* importance. Starred docs appear in your **My Shortcuts**, but they aren\u2019t starred for anyone else in your workspace. For instance, you may want to star your personal to-do list doc or any docs you use on a daily basis.\n\n\n\nPinning is recommended when you want to flag or shortcut a doc for *everyone* in your workspace or folder. For instance, you likely want to pin your company wiki doc to your workspace. And you may want to pin your team task tracker doc to your team\u2019s folder.\n\n\n\nCan I star docs for everyone?\n-----------------------------\n\n\n\nStarring docs only applies to your own view and your own My Shortcuts. To pin docs (or templates) to your workspace or folder, refer to this article.\n\n\n\n\n\n---"
+            ],
+            "reference_answer": "The key difference between starring and pinning a document in the context of document management is that starring a document is for personal importance and only applies to your own view and your own shortcuts. On the other hand, pinning a document is recommended when you want to flag or shortcut a document for everyone in your workspace or folder.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "Can you star a document for everyone in your workspace? Explain your answer with reference to the text.",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**FAQs**\n========\n\n\nWhen should I star a doc and when should I pin it?\n--------------------------------------------------\n\n\n\nStarring docs is best for docs of *personal* importance. Starred docs appear in your **My Shortcuts**, but they aren\u2019t starred for anyone else in your workspace. For instance, you may want to star your personal to-do list doc or any docs you use on a daily basis.\n\n\n\nPinning is recommended when you want to flag or shortcut a doc for *everyone* in your workspace or folder. For instance, you likely want to pin your company wiki doc to your workspace. And you may want to pin your team task tracker doc to your team\u2019s folder.\n\n\n\nCan I star docs for everyone?\n-----------------------------\n\n\n\nStarring docs only applies to your own view and your own My Shortcuts. To pin docs (or templates) to your workspace or folder, refer to this article.\n\n\n\n\n\n---"
+            ],
+            "reference_answer": "No, you cannot star a document for everyone in your workspace. According to the text, starring docs is a personal action that only applies to your own view and your own My Shortcuts. If you want to flag or shortcut a document for everyone in your workspace, you should pin it instead.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "Based on the context information provided, can you explain what the file \"section_20.md\" might contain, considering its location in the \"braintrust\" directory and its file size?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**Related resources**\n=====================\n\n\n* Share your doc\n* Enterprise admins: Pushing groups to Coda"
+            ],
+            "reference_answer": "The file \"section_20.md\" is likely a text document given the \".md\" extension, which stands for Markdown, a lightweight markup language for creating formatted text. However, without more specific information about the contents of the \"braintrust\" directory, it's hard to determine what the file might contain. The file size of 245 could refer to any unit (like bytes, kilobytes, etc.) and doesn't provide much detail about the content. It could be a section of a larger document or project given its name, but we can't definitively say what the content is based on the provided information.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "According to the context information, what actions might \"Enterprise admins: Pushing groups to Coda\" and \"Share your doc\" refer to in the related resources?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**Related resources**\n=====================\n\n\n* Share your doc\n* Enterprise admins: Pushing groups to Coda"
+            ],
+            "reference_answer": "The context does not provide specific details about what the actions \"Enterprise admins: Pushing groups to Coda\" and \"Share your doc\" refer to in the related resources.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "Can you describe the different features of Coda AI, including AI assistant, AI column, AI block, and AI chat, and explain how they can be used to generate or edit content in a Coda doc?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "Coda AI is a work assistant, and a Coda building block. Coda AI uses instructions that you provide in a prompt box to generate or edit content. You can @ reference other pages, tables, or data within the same row as part of your instructions on what you\u2019d like Coda AI to create, and it can refresh and generate more content as your doc gets updated.\n\n\n\nCoda AI\u2019s feature set includes the following:\n\n\n* **AI assistant:** creates content on the page canvas of a Coda doc. The prompt instructions can @ reference content within another page or table to generate new paragraphs, checklists, tables with data, and more. It can also edit existing text on the canvas.\n* **AI column:** creates content within a table via a prompt that can @ reference other data within the row.\n* **AI block:** generates an AI-powered block on the page of your doc, that can summarize or find action items from data in tables or other pages.\n* **AI chat:** brainstorm ideas, iterate on content, or get answers across your doc. It\u2019s always available to collaborate, in your side panel.\n\n\nWithin this article you\u2019ll find...\n----------------------------------\n\n\n* AI assistant\n* AI column\n* AI block\n* AI chat\n* Tips & tricks for prompts\n\n\n\n---"
+            ],
+            "reference_answer": "Coda AI is a work assistant with a variety of features designed to generate or edit content in a Coda doc:\n\n1. **AI assistant:** This feature creates content on the page canvas of a Coda doc using instructions provided in a prompt box. The instructions can reference content within another page or table to generate new paragraphs, checklists, tables with data, and more. It can also edit existing text on the canvas.\n\n2. **AI column:** The AI column feature creates content within a table via a prompt that can reference other data within the row. This allows for dynamic content creation within tables.\n\n3. **AI block:** This feature generates an AI-powered block on the page of your doc. It can summarize or find action items from data in tables or other pages, providing a quick overview or actionable insights from your data.\n\n4. **AI chat:** The AI chat feature allows for brainstorming ideas, iterating on content, or getting answers across your doc. It\u2019s always available to collaborate, located in your side panel.\n\nThese features can be used to automate the creation and editing of content in a Coda doc, making it easier to manage and update documents.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "How does Coda AI utilize the @ reference function in its prompt instructions, and what kind of content or data can it reference within a Coda doc?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "Coda AI is a work assistant, and a Coda building block. Coda AI uses instructions that you provide in a prompt box to generate or edit content. You can @ reference other pages, tables, or data within the same row as part of your instructions on what you\u2019d like Coda AI to create, and it can refresh and generate more content as your doc gets updated.\n\n\n\nCoda AI\u2019s feature set includes the following:\n\n\n* **AI assistant:** creates content on the page canvas of a Coda doc. The prompt instructions can @ reference content within another page or table to generate new paragraphs, checklists, tables with data, and more. It can also edit existing text on the canvas.\n* **AI column:** creates content within a table via a prompt that can @ reference other data within the row.\n* **AI block:** generates an AI-powered block on the page of your doc, that can summarize or find action items from data in tables or other pages.\n* **AI chat:** brainstorm ideas, iterate on content, or get answers across your doc. It\u2019s always available to collaborate, in your side panel.\n\n\nWithin this article you\u2019ll find...\n----------------------------------\n\n\n* AI assistant\n* AI column\n* AI block\n* AI chat\n* Tips & tricks for prompts\n\n\n\n---"
+            ],
+            "reference_answer": "Coda AI utilizes the @ reference function in its prompt instructions to generate or edit content. This function allows it to reference other pages, tables, or data within the same row as part of the instructions on what content to create. For instance, the prompt instructions can @ reference content within another page or table to generate new paragraphs, checklists, tables with data, and more. It can also edit existing text on the canvas. Additionally, within a table, a prompt that can @ reference other data within the row can be used to create content.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "In the context of the AI assistant feature described in the document, can you explain the process of creating a table using Coda AI? Include all the steps and any tips provided in your answer.",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**AI assistant**\n================\n\n\nWith the AI assistant feature, you can create text or tables, or edit text on the canvas. You can use this feature to generate content like blog posts, briefs, task checklists, poems, taglines, haikus, and more! You can also create tables with AI-populated data, such as 10 restaurants in Paris & their top dish, or suggested targeted audiences & their descriptions.\n\n\n\n\nCreate text\n-----------\n\n\nYou can use Coda AI to generate formatted headers, checklists, bullet points, paragraphs and more.\n\n\n1. Type **/** (forward slash) or **Ctrl+Space** into a new line in your doc.\n2. Under the AI options in the dropdown, select **Write a**...\n3. Then write a prompt of your choice (or choose from some of our pre-set suggestions). See guidance on writing good prompts below. Examples include:\n\n\n\t* What are 10 activities our team can do at an offsite?\n\t* List 5 potential icebreakers for a team meeting\n\t* Create an outline for a brief\n\t* Write a list of pros & cons to consider when opening a new office\n\t* Write a blog about brand loyalty\n\t* Create a checklist of typical tasks to complete your first day at a job\n\t* *\ud83d\udca1Tip: You can @ reference specific pages or tables in your doc by typing **@** into the prompt bar, or clicking the **@ button*****.** *You can also write **=** to open the formula builder.*\n4. Hit **Create.**\n5. Once the content is generated, you\u2019ll see a pop-up where you can provide further instructions to Coda AI, such as making the generated text shorter. You can also change the original prompt.\n6. When satisfied, press **Keep** to finalize.\n\n!AI text demo.gif\n\nCreate tables\n-------------\n\n\n1. Type **/** (forward slash) or **Ctrl+Space** into the canvas of your doc.\n2. Under the AI options in the dropdown, select **Make a table...**\n3. Write a prompt of your choice (or let the suggestions guide you), but include instructions to create a table. Examples include:\n\n\n\t* Generate a table with 10 potential target audiences\n\t* Create a table with 15 questions and answers for a new hire\n\t* Create a table with 20 potential names and a short press release for a new editor feature\n\t* Make a table of pros & cons to consider when opening a new office\n\t* *\ud83d\udca1Tip: You can @ reference other pages or tables in your doc by typing **@** into the prompt bar, or clicking the **@ button*****.** *You can also write **=** to open the formula builder.*\n4. Once the table is generated, you\u2019ll see a pop-up where you can provide further instructions to Coda AI, such as making the generated text shorter. You can also change the original prompt.\n5. When you have the results you want, hit **Keep**.\n\n!Coda AI create table.gif\n\nEdit text\n---------\n\n\n1. On the canvas or in a canvas column, highlight the text you want to edit.\n2. In the inline toolbar popup, select the AI option.\n3. Provide instructions in the prompt (see the section on Tips & tricks for prompts)\n4. Select **Create**.\n5. If needed, you can provide further instructions to Coda AI, such as making the generated text shorter. You can also change the original prompt. When you have the results you want, hit **Keep**.\n\n!AI edit text.gif"
+            ],
+            "reference_answer": "Sure, here are the steps to create a table using the Coda AI assistant:\n\n1. Type **/** (forward slash) or **Ctrl+Space** into the canvas of your document.\n2. Under the AI options in the dropdown, select **Make a table...**\n3. Write a prompt of your choice, but include instructions to create a table. Examples include:\n   * Generate a table with 10 potential target audiences\n   * Create a table with 15 questions and answers for a new hire\n   * Create a table with 20 potential names and a short press release for a new editor feature\n   * Make a table of pros & cons to consider when opening a new office\n4. Once the table is generated, you\u2019ll see a pop-up where you can provide further instructions to Coda AI, such as making the generated text shorter. You can also change the original prompt.\n5. When you have the results you want, hit **Keep**.\n\nTips provided in the document include:\n* You can @ reference other pages or tables in your document by typing **@** into the prompt bar, or clicking the **@ button**. \n* You can also write **=** to open the formula builder.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "Based on the document, what are the different types of content that can be generated using the AI assistant feature? Provide examples and explain how to generate such content.",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**AI assistant**\n================\n\n\nWith the AI assistant feature, you can create text or tables, or edit text on the canvas. You can use this feature to generate content like blog posts, briefs, task checklists, poems, taglines, haikus, and more! You can also create tables with AI-populated data, such as 10 restaurants in Paris & their top dish, or suggested targeted audiences & their descriptions.\n\n\n\n\nCreate text\n-----------\n\n\nYou can use Coda AI to generate formatted headers, checklists, bullet points, paragraphs and more.\n\n\n1. Type **/** (forward slash) or **Ctrl+Space** into a new line in your doc.\n2. Under the AI options in the dropdown, select **Write a**...\n3. Then write a prompt of your choice (or choose from some of our pre-set suggestions). See guidance on writing good prompts below. Examples include:\n\n\n\t* What are 10 activities our team can do at an offsite?\n\t* List 5 potential icebreakers for a team meeting\n\t* Create an outline for a brief\n\t* Write a list of pros & cons to consider when opening a new office\n\t* Write a blog about brand loyalty\n\t* Create a checklist of typical tasks to complete your first day at a job\n\t* *\ud83d\udca1Tip: You can @ reference specific pages or tables in your doc by typing **@** into the prompt bar, or clicking the **@ button*****.** *You can also write **=** to open the formula builder.*\n4. Hit **Create.**\n5. Once the content is generated, you\u2019ll see a pop-up where you can provide further instructions to Coda AI, such as making the generated text shorter. You can also change the original prompt.\n6. When satisfied, press **Keep** to finalize.\n\n!AI text demo.gif\n\nCreate tables\n-------------\n\n\n1. Type **/** (forward slash) or **Ctrl+Space** into the canvas of your doc.\n2. Under the AI options in the dropdown, select **Make a table...**\n3. Write a prompt of your choice (or let the suggestions guide you), but include instructions to create a table. Examples include:\n\n\n\t* Generate a table with 10 potential target audiences\n\t* Create a table with 15 questions and answers for a new hire\n\t* Create a table with 20 potential names and a short press release for a new editor feature\n\t* Make a table of pros & cons to consider when opening a new office\n\t* *\ud83d\udca1Tip: You can @ reference other pages or tables in your doc by typing **@** into the prompt bar, or clicking the **@ button*****.** *You can also write **=** to open the formula builder.*\n4. Once the table is generated, you\u2019ll see a pop-up where you can provide further instructions to Coda AI, such as making the generated text shorter. You can also change the original prompt.\n5. When you have the results you want, hit **Keep**.\n\n!Coda AI create table.gif\n\nEdit text\n---------\n\n\n1. On the canvas or in a canvas column, highlight the text you want to edit.\n2. In the inline toolbar popup, select the AI option.\n3. Provide instructions in the prompt (see the section on Tips & tricks for prompts)\n4. Select **Create**.\n5. If needed, you can provide further instructions to Coda AI, such as making the generated text shorter. You can also change the original prompt. When you have the results you want, hit **Keep**.\n\n!AI edit text.gif"
+            ],
+            "reference_answer": "The AI assistant feature can generate different types of content such as text, tables, and edited text.\n\n1. **Text**: This can include formatted headers, checklists, bullet points, paragraphs, and more. To generate text, you need to type a forward slash ( / ) or Ctrl+Space into a new line in your document. Then, under the AI options in the dropdown, select \"Write a...\", and write a prompt of your choice. Examples of prompts include \"What are 10 activities our team can do at an offsite?\" or \"Write a blog about brand loyalty\". Once the content is generated, you can provide further instructions to the AI, such as making the generated text shorter. When satisfied, press \"Keep\" to finalize.\n\n2. **Tables**: AI can create tables with populated data. To create a table, type a forward slash ( / ) or Ctrl+Space into the canvas of your document. Then, under the AI options in the dropdown, select \"Make a table...\", and write a prompt of your choice that includes instructions to create a table. Examples include \"Generate a table with 10 potential target audiences\" or \"Create a table with 20 potential names and a short press release for a new editor feature\". Once the table is generated, you can provide further instructions to the AI, such as making the generated text shorter. When you have the results you want, hit \"Keep\".\n\n3. **Edited Text**: The AI can also edit existing text. To do this, highlight the text you want to edit on the canvas or in a canvas column. In the inline toolbar popup, select the AI option, and provide instructions in the prompt. Select \"Create\", and if needed, you can provide further instructions to the AI, such as making the generated text shorter. When you have the results you want, hit \"Keep\".",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "Based on the document \"section_23.md\", explain the steps to use the AI column to generate content for multiple cells in a table. Provide a detailed walkthrough of the process.",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**AI column**\n=============\n\n\nYou can use AI column to generate content for one cell, multiple cells, or every cell in the column on a table. You can test your prompt in one or multiple cells before applying to every row in a column.\n\n\n1. Press the **Add column** button (upper right corner of a table) to add a blank column.\n2. Choose if you want AI to create content in one, multiple, or all cells in the column.\n\n\n\t1. To have AI generate content in just one cell, press the AI button in the desired cell to open up the prompt box.\n\t2. To have AI fill multiple cells, highlight the desired cells and then select the **Fill** button at the bottom of the table.\n\t3. To have AI populate all the cells in a column, choose the AI column type for the entire column.\n3. Write a prompt with instructions\u2014you can choose one of the options provided, or write your own. In the prompt, you can @ reference other data within the same row, or type = to open the formula builder.\n4. Select your desired length, tone and type.\n5. Select **Fill.**\n\n!Ai column walkthru.gif"
+            ],
+            "reference_answer": "To use the AI column to generate content for multiple cells in a table, follow these steps:\n\n1. Click on the **Add column** button, which is located in the upper right corner of the table. This will add a blank column to your table.\n\n2. Decide if you want the AI to create content in one, multiple, or all cells in the column. If you want to fill multiple cells, you should highlight the cells you want to fill.\n\n3. After highlighting the desired cells, select the **Fill** button at the bottom of the table.\n\n4. A prompt box will open. Here, you should write a prompt with instructions for the AI. You can choose one of the options provided, or write your own instructions. In the prompt, you can @ reference other data within the same row, or type = to open the formula builder.\n\n5. After writing the prompt, you can select your desired length, tone and type for the content that the AI will generate.\n\n6. Finally, click on **Fill** to have the AI generate and insert the content into the selected cells. \n\nPlease note that the document also mentions a gif titled \"Ai column walkthru.gif\" which likely provides a visual walkthrough of this process.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "The document mentions the use of a prompt with instructions in the AI column. Can you explain how to use the @ reference or the formula builder in the prompt? Provide examples based on the information given in \"section_23.md\".",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**AI column**\n=============\n\n\nYou can use AI column to generate content for one cell, multiple cells, or every cell in the column on a table. You can test your prompt in one or multiple cells before applying to every row in a column.\n\n\n1. Press the **Add column** button (upper right corner of a table) to add a blank column.\n2. Choose if you want AI to create content in one, multiple, or all cells in the column.\n\n\n\t1. To have AI generate content in just one cell, press the AI button in the desired cell to open up the prompt box.\n\t2. To have AI fill multiple cells, highlight the desired cells and then select the **Fill** button at the bottom of the table.\n\t3. To have AI populate all the cells in a column, choose the AI column type for the entire column.\n3. Write a prompt with instructions\u2014you can choose one of the options provided, or write your own. In the prompt, you can @ reference other data within the same row, or type = to open the formula builder.\n4. Select your desired length, tone and type.\n5. Select **Fill.**\n\n!Ai column walkthru.gif"
+            ],
+            "reference_answer": "The document doesn't provide specific examples of how to use the @ reference or the formula builder in the prompt. However, it mentions that in the prompt, you can use @ to reference other data within the same row. This likely means that you can use @ followed by the column name or identifier to pull data from that column into the prompt. \n\nFor example, if you have a column named \"Name\" and you want to generate a greeting for each name in a new column, your prompt might be \"Write a greeting for @Name.\"\n\nThe document also mentions you can type = to open the formula builder. While it doesn't provide specific details about how this works, it suggests that you can use formulas to manipulate or calculate data for your prompt. For example, if you have columns for \"Price\" and \"Quantity\", you might use a formula like \"=Price*Quantity\" to calculate the total cost in a new column.\n\nRemember, these are just inferred examples based on the general information given in \"section_23.md\". The actual usage might vary depending on the specific software or tool you're using.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "Explain the steps to generate a summary using the AI block in the document. What are the key components you need to specify before selecting \"Create\"?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**AI block**\n============\n\n\nAI block can generate summaries or find action items across data in tables or pages. And you can refresh these blocks with a click of a button to keep information up-to-date.\n\n\n\nSummary\n-------\n\n\n1. Type **/** (forward slash) or **Ctrl+Space** into the canvas of your doc\n2. From the AI dropdown options, select **Summarize**\n3. In your prompt, @ reference the table or the page that contains your notes or relevant. You can also type type **=** to open the formula builder. See guidance on writing good prompts below.\n4. Choose your desired length, tone and type.\n5. Select **Create.**\n\nWhenever you need to update the summary block, just hover over the block and click the rounded arrow in the upper right corner.\n\n\n\n\nAction items\n------------\n\n\n1. Type **/** (forward slash) or **Ctrl+Space** into the canvas of your doc\n2. From the AI dropdown options, select **Find action items from...**\n3. In your prompt, @ reference the table or the page that contains your notes. You can also type **=** to open the formula builder.\n4. Choose your desired length, tone and type. We recommend checkboxes.\n5. Select **Create.**\n\n!16_10 (1).pngWhenever you need to update the action items block, just hover over the block and click the rounded arrow in the upper right corner."
+            ],
+            "reference_answer": "To generate a summary using the AI block in the document, follow these steps:\n\n1. Type **/** (forward slash) or **Ctrl+Space** into the canvas of your doc.\n2. From the AI dropdown options, select **Summarize**.\n3. In your prompt, @ reference the table or the page that contains your notes or relevant information. You can also type **=** to open the formula builder.\n4. Choose your desired length, tone and type.\n5. Select **Create**.\n\nThe key components you need to specify before selecting \"Create\" are the source of the information (table or page), the desired length of the summary, the tone, and the type.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "How can you use the AI block to find action items from a table or a page in your notes? What is the recommended setting for the type of action items and how can you keep this information updated?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**AI block**\n============\n\n\nAI block can generate summaries or find action items across data in tables or pages. And you can refresh these blocks with a click of a button to keep information up-to-date.\n\n\n\nSummary\n-------\n\n\n1. Type **/** (forward slash) or **Ctrl+Space** into the canvas of your doc\n2. From the AI dropdown options, select **Summarize**\n3. In your prompt, @ reference the table or the page that contains your notes or relevant. You can also type type **=** to open the formula builder. See guidance on writing good prompts below.\n4. Choose your desired length, tone and type.\n5. Select **Create.**\n\nWhenever you need to update the summary block, just hover over the block and click the rounded arrow in the upper right corner.\n\n\n\n\nAction items\n------------\n\n\n1. Type **/** (forward slash) or **Ctrl+Space** into the canvas of your doc\n2. From the AI dropdown options, select **Find action items from...**\n3. In your prompt, @ reference the table or the page that contains your notes. You can also type **=** to open the formula builder.\n4. Choose your desired length, tone and type. We recommend checkboxes.\n5. Select **Create.**\n\n!16_10 (1).pngWhenever you need to update the action items block, just hover over the block and click the rounded arrow in the upper right corner."
+            ],
+            "reference_answer": "To use the AI block to find action items from a table or a page in your notes, you should first type **/** (forward slash) or **Ctrl+Space** into the canvas of your doc. From the AI dropdown options, select **Find action items from...**. In your prompt, @ reference the table or the page that contains your notes. You can also type **=** to open the formula builder. Choose your desired length, tone and type. It is recommended to use checkboxes for the type of action items. After setting these parameters, select **Create**. To keep this information updated, hover over the block and click the rounded arrow in the upper right corner whenever you need to update the action items block.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "Based on the document \"section_25.md\", describe the steps to use AI chat. What are some examples of prompts that can be used with this feature?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**AI chat**\n===========\n\n\nWith AI chat, you can get help with everything from editing content to asking specific questions about the content in your doc. It\u2019s available at any time, in your doc\u2019s side panel, and you can provide any ongoing instructions before deciding to insert the content in your doc.\n\n\n\n!To use AI chat:\n\n\n1. Open the AI icon, in the bottom right (next to the ? icon).\n2. Select one of the prompts, or write your own. Examples include:\n\n\n\n\t* Where can I find more information about what this team is working on?\n\t* What are the key milestones and dates?\n\t* What are the pros and cons with the suggested plan?\n\t* Write 5 suggestions of titles for this page.\n\t* Write a closing paragraph for this blog.\n\t* Create a table with next steps and action items.\n3. Choose the context you want to provide: no context, the current page, or the current doc. You can also highlight text on the current page, and choose that selection as the context.\n4. After Coda AI generates a response, you can add it to the current page (or open up a new one), by pressing **insert**.\n5. You can also provide more instructions, and AI chat will generate more content.\n6. When you\u2019re done, close AI chat, and open it back up again whenever you want."
+            ],
+            "reference_answer": "To use AI chat, follow these steps:\n\n1. Open the AI icon, which is located in the bottom right next to the ? icon.\n2. Select one of the prompts or write your own. Some examples of prompts include:\n   - Where can I find more information about what this team is working on?\n   - What are the key milestones and dates?\n   - What are the pros and cons with the suggested plan?\n   - Write 5 suggestions of titles for this page.\n   - Write a closing paragraph for this blog.\n   - Create a table with next steps and action items.\n3. Choose the context you want to provide: no context, the current page, or the current doc. You can also highlight text on the current page, and choose that selection as the context.\n4. After Coda AI generates a response, you can add it to the current page (or open up a new one), by pressing insert.\n5. You can also provide more instructions, and AI chat will generate more content.\n6. When you\u2019re done, close AI chat, and open it back up again whenever you want.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "In the context of the document \"section_25.md\", explain the role of context in using AI chat. How does the selection of context influence the responses generated by Coda AI?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**AI chat**\n===========\n\n\nWith AI chat, you can get help with everything from editing content to asking specific questions about the content in your doc. It\u2019s available at any time, in your doc\u2019s side panel, and you can provide any ongoing instructions before deciding to insert the content in your doc.\n\n\n\n!To use AI chat:\n\n\n1. Open the AI icon, in the bottom right (next to the ? icon).\n2. Select one of the prompts, or write your own. Examples include:\n\n\n\n\t* Where can I find more information about what this team is working on?\n\t* What are the key milestones and dates?\n\t* What are the pros and cons with the suggested plan?\n\t* Write 5 suggestions of titles for this page.\n\t* Write a closing paragraph for this blog.\n\t* Create a table with next steps and action items.\n3. Choose the context you want to provide: no context, the current page, or the current doc. You can also highlight text on the current page, and choose that selection as the context.\n4. After Coda AI generates a response, you can add it to the current page (or open up a new one), by pressing **insert**.\n5. You can also provide more instructions, and AI chat will generate more content.\n6. When you\u2019re done, close AI chat, and open it back up again whenever you want."
+            ],
+            "reference_answer": "In the document \"section_25.md\", context plays a significant role in using AI chat. The context refers to the specific information or content that the AI chat uses as a reference to generate responses. The user can choose to provide no context, the current page, or the current document as the context. They can also highlight specific text on the current page and choose that selection as the context. \n\nThe selection of context directly influences the responses generated by Coda AI. When a specific context is provided, the AI chat uses that information to generate more relevant and accurate responses. For instance, if the context is a specific page or document, the AI chat will generate responses based on the content of that page or document. If no context is provided, the AI chat may not be able to generate as relevant or accurate responses.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "Based on the \"Tips & tricks for prompts\" section in the document, can you explain how the use of relevant keywords can enhance the accuracy of responses generated by Coda AI? Provide an example to illustrate your answer.",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**Tips & tricks for prompts**\n=============================\n\n\nWhen writing a prompt for Coda AI, keep this tips in mind:\n\n\n* Make sure your objective is clear.\n* Use relevant keywords to help the AI generate accurate responses.\n* Give examples to clarify what you're looking for. If you want to guide the AI towards a certain context, include that information in your initial instruction, or @ reference the relevant table or page (or type = to open the formula builder).\n\n!AI @ mention.gif* Coda AI provides examples of prompts you can use, but feel free to write your own.\n* While Coda AI gives options for length, tone and type, you can also provide specific instructions, such as desired word count.\n* Keep it simple - don't use overly complex language.\n* Use formatting and punctuation to help the AI understand the structure.\n* Try different prompts to get a variety of responses, or ask for a few versions of the same thing.\n* Keep refining your prompts to improve the AI-generated content. You may need to test a few to get your desired outcome.\n* Keep in mind that while AI tries its best to provide accurate information, it's always a good idea to fact-check important information, as AI can sometimes produce inaccuracies or outdated information.\n* It's important to remember that the AI can have biases in its output, and it's possible to misuse generated content. Let's use AI responsibly.\n* **Limitations:**\n\n\n\t+ Keep in mind that while AI tries its best to provide accurate information, it's always a good idea to fact-check important information, as AI can sometimes produce inaccuracies or outdated information.\n\t+ Although Coda AI can generate tables and format text like headers, bold, italics it can\u2019t currently add certain Coda specific building blocks like callouts, Packs, formulas.\n\t+ The assistant only knows what you highlight on your page, reference in your prompt or any select list you\u2019re using. It can\u2019t search your web, docs or workspace for information.\n\t+ There are limits on how much text Coda AI can use as part of any prompt and its references. A rough guide is to try to keep your input to <10,000 words. We hope to increase this limit soon."
+            ],
+            "reference_answer": "Using relevant keywords in your prompts can enhance the accuracy of responses generated by Coda AI because these keywords guide the AI in understanding the context and the specific information you're seeking. The AI uses these keywords to generate responses that are closely aligned with the information you're looking for. \n\nFor example, if you're asking for information about the climate in a specific region, instead of just asking \"Tell me about the climate\", you could ask \"What is the average annual rainfall in Seattle?\" or \"What is the average summer temperature in Phoenix?\". These prompts include relevant keywords like \"rainfall\", \"Seattle\", \"summer temperature\", and \"Phoenix\", which help the AI to generate more accurate and specific responses.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "The document mentions some limitations of the Coda AI. Can you discuss one of these limitations and suggest a potential solution or workaround for it?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**Tips & tricks for prompts**\n=============================\n\n\nWhen writing a prompt for Coda AI, keep this tips in mind:\n\n\n* Make sure your objective is clear.\n* Use relevant keywords to help the AI generate accurate responses.\n* Give examples to clarify what you're looking for. If you want to guide the AI towards a certain context, include that information in your initial instruction, or @ reference the relevant table or page (or type = to open the formula builder).\n\n!AI @ mention.gif* Coda AI provides examples of prompts you can use, but feel free to write your own.\n* While Coda AI gives options for length, tone and type, you can also provide specific instructions, such as desired word count.\n* Keep it simple - don't use overly complex language.\n* Use formatting and punctuation to help the AI understand the structure.\n* Try different prompts to get a variety of responses, or ask for a few versions of the same thing.\n* Keep refining your prompts to improve the AI-generated content. You may need to test a few to get your desired outcome.\n* Keep in mind that while AI tries its best to provide accurate information, it's always a good idea to fact-check important information, as AI can sometimes produce inaccuracies or outdated information.\n* It's important to remember that the AI can have biases in its output, and it's possible to misuse generated content. Let's use AI responsibly.\n* **Limitations:**\n\n\n\t+ Keep in mind that while AI tries its best to provide accurate information, it's always a good idea to fact-check important information, as AI can sometimes produce inaccuracies or outdated information.\n\t+ Although Coda AI can generate tables and format text like headers, bold, italics it can\u2019t currently add certain Coda specific building blocks like callouts, Packs, formulas.\n\t+ The assistant only knows what you highlight on your page, reference in your prompt or any select list you\u2019re using. It can\u2019t search your web, docs or workspace for information.\n\t+ There are limits on how much text Coda AI can use as part of any prompt and its references. A rough guide is to try to keep your input to <10,000 words. We hope to increase this limit soon."
+            ],
+            "reference_answer": "One of the limitations mentioned in the document is that Coda AI can't currently add certain Coda specific building blocks like callouts, Packs, formulas. This means that while it can generate tables and format text like headers, bold, italics, it cannot incorporate more complex elements into its output.\n\nA potential solution or workaround for this could be to manually add these elements after the AI has generated the initial content. For instance, if you need a specific formula in your document, you could use the AI to generate the rest of the content and then manually insert the formula where needed. Alternatively, the development team could work on expanding the AI's capabilities to include these features in future updates.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "Explain the process of editing an AI prompt retroactively in Coda AI for both AI block and AI column. Why is it currently not possible to edit a prompt for AI assistant once the text or table has been generated?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**FAQs**\n========\n\n\nCan I edit an AI prompt retroactively?\n--------------------------------------\n\n\n\nYou can retroactively edit your prompts for AI column and AI block, and you can iterate and add any prompts to AI chat. \n\n\n* To edit an AI block prompt, just right click on the block and select **Change prompt**.\n* To edit an AI column prompt, right click on the column header and select **Edit AI**.\n* For AI chat, just reopen the chat, then keep typing and submitting new prompts. Coda AI will iterate on its response.\n\n\nIt isn\u2019t currently possible to retroactively edit a prompt for AI assistant. Once the assistant has generated the text or table, and you\u2019ve hit the **Keep** button, you won\u2019t be able to edit the prompt any further.\n\n\n\nCan I reference tables, pages, columns, etc. in my AI prompt?\n-------------------------------------------------------------\n\n\n\nAbsolutely! Whenever you want to reference a table or page, just type **@** into the prompt bar, then start typing the name of the table or page. Select the correct object from the dropdown list.\n\n\n\nAnd with AI columns, remember that you can also reference other columns in the table using the same steps.\n\n\n\nI\u2019m not getting the results I want from my prompt - what should I do?\n---------------------------------------------------------------------\n\n\n\nWriting prompt for AI can take some practice. Check out our section above for lots of advice on this.\n\n\n\nHow can I learn more about Coda AI?\n-----------------------------------\n\n\n\nNow that you\u2019ve learned about the current Coda AI feature set, explore how you can use it to help your team collaborate more easily, and focus on important work. Create a new doc, copy one from the Coda gallery, or add Coda AI to your existing docs\u2014and check out our guide for ideas and inspiration.\n\n\n\n\n\n\n---"
+            ],
+            "reference_answer": "In Coda AI, you can retroactively edit your prompts for both AI block and AI column. For an AI block prompt, you need to right click on the block and select \"Change prompt\". For an AI column prompt, you need to right click on the column header and select \"Edit AI\". \n\nHowever, it is currently not possible to retroactively edit a prompt for AI assistant. This is because once the assistant has generated the text or table, and you\u2019ve hit the \"Keep\" button, the system does not allow further editing of the prompt. The exact reason for this limitation is not specified in the context provided.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "How can you reference tables, pages, columns, etc. in your AI prompt in Coda AI? Provide a step-by-step explanation.",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**FAQs**\n========\n\n\nCan I edit an AI prompt retroactively?\n--------------------------------------\n\n\n\nYou can retroactively edit your prompts for AI column and AI block, and you can iterate and add any prompts to AI chat. \n\n\n* To edit an AI block prompt, just right click on the block and select **Change prompt**.\n* To edit an AI column prompt, right click on the column header and select **Edit AI**.\n* For AI chat, just reopen the chat, then keep typing and submitting new prompts. Coda AI will iterate on its response.\n\n\nIt isn\u2019t currently possible to retroactively edit a prompt for AI assistant. Once the assistant has generated the text or table, and you\u2019ve hit the **Keep** button, you won\u2019t be able to edit the prompt any further.\n\n\n\nCan I reference tables, pages, columns, etc. in my AI prompt?\n-------------------------------------------------------------\n\n\n\nAbsolutely! Whenever you want to reference a table or page, just type **@** into the prompt bar, then start typing the name of the table or page. Select the correct object from the dropdown list.\n\n\n\nAnd with AI columns, remember that you can also reference other columns in the table using the same steps.\n\n\n\nI\u2019m not getting the results I want from my prompt - what should I do?\n---------------------------------------------------------------------\n\n\n\nWriting prompt for AI can take some practice. Check out our section above for lots of advice on this.\n\n\n\nHow can I learn more about Coda AI?\n-----------------------------------\n\n\n\nNow that you\u2019ve learned about the current Coda AI feature set, explore how you can use it to help your team collaborate more easily, and focus on important work. Create a new doc, copy one from the Coda gallery, or add Coda AI to your existing docs\u2014and check out our guide for ideas and inspiration.\n\n\n\n\n\n\n---"
+            ],
+            "reference_answer": "To reference tables, pages, columns, etc. in your AI prompt in Coda AI, follow these steps:\n\n1. Start by typing your prompt in the prompt bar.\n2. When you want to reference a table, page, or column, type \"@\" into the prompt bar.\n3. After typing \"@\", start typing the name of the table, page, or column you want to reference.\n4. A dropdown list will appear with the objects that match the name you're typing.\n5. Select the correct object from the dropdown list.\n6. Continue typing your prompt as needed.\n\nRemember, you can also reference other columns in the table using the same steps when working with AI columns.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "Based on the context information provided, can you explain what the file named \"section_28.md\" in the \"braintrust\" path might contain? Consider the file's name, size, and related resources in your answer.",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**Related resources**\n=====================\n\n\n* How to get started with Coda AI\n* How to empower your team with Coda AI"
+            ],
+            "reference_answer": "The file named \"section_28.md\" is likely a markdown file given its \".md\" extension. Markdown files are often used for documentation, writing articles, or web content. Based on its location in the \"braintrust\" path, it may be part of a larger project or collection of documents. However, the exact content of the file is not clear from the context information provided. The file size is 271, but without a unit (like bytes or kilobytes), it's hard to infer the length or depth of the content. The related resources mention \"Coda AI\", suggesting the file could potentially have information related to this topic, but without more specific information, it's impossible to say for certain.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "Using the related resources provided in the context information, describe how Coda AI could potentially be used to empower a team. What are some possible applications of this technology?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**Related resources**\n=====================\n\n\n* How to get started with Coda AI\n* How to empower your team with Coda AI"
+            ],
+            "reference_answer": "The context information does not provide specific details on how Coda AI could potentially be used to empower a team or the possible applications of this technology. However, given that there are resources on how to get started with Coda AI and how to empower your team with Coda AI, it can be inferred that Coda AI is a tool that can be used to enhance team productivity or efficiency. The specific applications would likely be detailed in the mentioned resources.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "What are the benefits of using custom icons in Coda and who has the ability to upload these custom icons in a workspace?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "Coda comes with a default set of icons, which can be used in doc titles, page titles, buttons, reactions, and more. But custom icons allow you to add even more personality to your doc - whether you want to get more professional or more whimsical.\n\n\n\nCustom icons are available on all paid plans. All members of a workspace can use the icons that have been added to their workspace, in addition to Coda\u2019s default set of icons. Custom icons can be uploaded only by the Doc Makers in a workspace.\n\n\n\nWithin this article you\u2019ll find...\n----------------------------------\n\n\n* Add custom icons\n* Remove custom icons\n\n\n\n---"
+            ],
+            "reference_answer": "Using custom icons in Coda allows you to add more personality to your doc, whether you want to get more professional or more whimsical. Custom icons can be used in doc titles, page titles, buttons, reactions, and more. The ability to upload these custom icons in a workspace is only granted to the Doc Makers.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "In the context of the document, what are the two main actions discussed related to custom icons in Coda?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "Coda comes with a default set of icons, which can be used in doc titles, page titles, buttons, reactions, and more. But custom icons allow you to add even more personality to your doc - whether you want to get more professional or more whimsical.\n\n\n\nCustom icons are available on all paid plans. All members of a workspace can use the icons that have been added to their workspace, in addition to Coda\u2019s default set of icons. Custom icons can be uploaded only by the Doc Makers in a workspace.\n\n\n\nWithin this article you\u2019ll find...\n----------------------------------\n\n\n* Add custom icons\n* Remove custom icons\n\n\n\n---"
+            ],
+            "reference_answer": "The two main actions discussed related to custom icons in Coda are adding custom icons and removing custom icons.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "What is the name of the file discussed in the context and what is its size in bytes?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "Related resources\n=================\n\n\n* Pin docs to folders or workspaces\n* Organize docs with folders"
+            ],
+            "reference_answer": "The name of the file discussed in the context is \"section_3.md\" and its size is 237 bytes.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "Can you explain the difference between the creation date, last modified date, and last accessed date of a file, using the given file in the context as an example?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "Related resources\n=================\n\n\n* Pin docs to folders or workspaces\n* Organize docs with folders"
+            ],
+            "reference_answer": "The creation date of a file is the date when the file was initially created. In this context, the file named \"section_3.md\" was created on November 30, 2023.\n\nThe last modified date is the date when the file was last changed or updated. For the file \"section_3.md\", the last time it was modified or updated was also on November 30, 2023.\n\nThe last accessed date is the date when the file was last opened or used, regardless of whether any changes were made to it. In this case, the \"section_3.md\" file was last accessed on November 30, 2023.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "In the process of adding custom icons to a workspace from a doc, what are the steps to follow after clicking on the icon next to your doc title?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "Add custom icons\n================\n\n\nDoc makers can add custom icons to their workspace from any icon picker in a doc, or from the **Icons** section of your workspace.\n\n\n\nIn a doc:\n---------\n\n\n* Click on the icon next to your doc title to open the icon menu.\n* Click **Custom**\n* Click **Upload** and select a file. Square images under 5MB with transparent backgrounds work best. Images can be PNG, JPEG, or GIF format.\n* Give your icon a memorable name. You\u2019ll use this name to search for your icon in the future.\n* Click **Confirm**\n\nEveryone in the workspace can now use this icon to customize doc titles, page titles, callouts, and reactions.\n\n\n\n!1_1 (1).png**From your workspace page:**\n-----------------------------\n\n\n1. From your doc, navigate to your workspace by clicking the Coda icon in the top left corner.\n2. Underneath the name of your workspace on the left, select **Icons.**\n3. Click the **+New Icon**\n4. Follow the prompts to select and upload a file from your device. Square images under 5MB with transparent backgrounds work best. Images can be PNG, JPEG, or GIF format.\n5. Once you\u2019ve uploaded the image, hit **Save**.\n\nNow workspace members can start using those custom icons throughout docs."
+            ],
+            "reference_answer": "After clicking on the icon next to your doc title, you should follow these steps:\n\n1. Click **Custom**\n2. Click **Upload** and select a file. Square images under 5MB with transparent backgrounds work best. Images can be PNG, JPEG, or GIF format.\n3. Give your icon a memorable name. You\u2019ll use this name to search for your icon in the future.\n4. Click **Confirm**",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "How can a user navigate from their doc to their workspace to add a new icon and what are the image specifications for the icon to be uploaded?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "Add custom icons\n================\n\n\nDoc makers can add custom icons to their workspace from any icon picker in a doc, or from the **Icons** section of your workspace.\n\n\n\nIn a doc:\n---------\n\n\n* Click on the icon next to your doc title to open the icon menu.\n* Click **Custom**\n* Click **Upload** and select a file. Square images under 5MB with transparent backgrounds work best. Images can be PNG, JPEG, or GIF format.\n* Give your icon a memorable name. You\u2019ll use this name to search for your icon in the future.\n* Click **Confirm**\n\nEveryone in the workspace can now use this icon to customize doc titles, page titles, callouts, and reactions.\n\n\n\n!1_1 (1).png**From your workspace page:**\n-----------------------------\n\n\n1. From your doc, navigate to your workspace by clicking the Coda icon in the top left corner.\n2. Underneath the name of your workspace on the left, select **Icons.**\n3. Click the **+New Icon**\n4. Follow the prompts to select and upload a file from your device. Square images under 5MB with transparent backgrounds work best. Images can be PNG, JPEG, or GIF format.\n5. Once you\u2019ve uploaded the image, hit **Save**.\n\nNow workspace members can start using those custom icons throughout docs."
+            ],
+            "reference_answer": "A user can navigate from their doc to their workspace to add a new icon by clicking the Coda icon in the top left corner of their doc. Then, underneath the name of their workspace on the left, they should select **Icons** and click the **+New Icon**. \n\nThe image specifications for the icon to be uploaded are as follows: The image should be a square and under 5MB with a transparent background. The image can be in PNG, JPEG, or GIF format.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "In the document 'section_31.md', describe the step-by-step process to delete custom icons from the workspace library in Coda.",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**Remove custom icons**\n=======================\n\n\nMakers can delete custom icons from the workspace library via the **Icons** section of their workspace.\n\n\n1. From your doc, navigate to your workspace by clicking the Coda icon in the top left corner.\n2. Underneath the name of your workspace on the left, select **Icons.**\n3. Find the icon you\u2019d like to delete by searching or browsing.\n4. Click the trash can icon to remove the icon from the workspace library. This will ensure no one can use this icon any longer within the workspace, but will not impact any docs or folders currently using the icon.\n\n!remove custom icon.gif\n\n\n---"
+            ],
+            "reference_answer": "The document 'section_31.md' provides the following step-by-step process to delete custom icons from the workspace library in Coda:\n\n1. From your document, navigate to your workspace by clicking the Coda icon in the top left corner.\n2. Underneath the name of your workspace on the left, select **Icons.**\n3. Find the icon you\u2019d like to delete by searching or browsing.\n4. Click the trash can icon to remove the icon from the workspace library. This will ensure no one can use this icon any longer within the workspace, but will not impact any docs or folders currently using the icon.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "Based on the instructions provided in 'section_31.md', what happens to the docs or folders currently using a custom icon when that icon is removed from the workspace library?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**Remove custom icons**\n=======================\n\n\nMakers can delete custom icons from the workspace library via the **Icons** section of their workspace.\n\n\n1. From your doc, navigate to your workspace by clicking the Coda icon in the top left corner.\n2. Underneath the name of your workspace on the left, select **Icons.**\n3. Find the icon you\u2019d like to delete by searching or browsing.\n4. Click the trash can icon to remove the icon from the workspace library. This will ensure no one can use this icon any longer within the workspace, but will not impact any docs or folders currently using the icon.\n\n!remove custom icon.gif\n\n\n---"
+            ],
+            "reference_answer": "The docs or folders currently using the custom icon are not impacted when that icon is removed from the workspace library.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "Based on the information provided in the context, what is the file size of the document \"section_32.md\" and when was it last accessed?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "Related resources\n=================\n\n\n* Add reactions to your doc\u2019s text and tables\n* Roles in Coda: Doc Makers, admins, and editors"
+            ],
+            "reference_answer": "The file size of the document \"section_32.md\" is 310 and it was last accessed on 2023-11-30.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "Can you explain the roles in Coda as mentioned in the related resources? Specifically, what are the responsibilities of Doc Makers, admins, and editors?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "Related resources\n=================\n\n\n* Add reactions to your doc\u2019s text and tables\n* Roles in Coda: Doc Makers, admins, and editors"
+            ],
+            "reference_answer": "The context information provided does not contain specific details about the roles in Coda, specifically the responsibilities of Doc Makers, admins, and editors.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "What are the steps to install a Pack as mentioned in the \"section_33.md\" document?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "To begin using a Pack within a doc it must first be installed. There are a variety of ways to find and discover Packs, and installing them only takes a few minutes.\n\n\n\nWithin this article you\u2019ll find...\n----------------------------------\n\n\n* Install a Pack\n* Requesting approval to install\n* Remove a Pack\n* FAQs\n\n\n\n---"
+            ],
+            "reference_answer": "The document does not provide specific steps on how to install a Pack.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "According to the \"section_33.md\" document, what is the procedure to request approval for installing a Pack?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "To begin using a Pack within a doc it must first be installed. There are a variety of ways to find and discover Packs, and installing them only takes a few minutes.\n\n\n\nWithin this article you\u2019ll find...\n----------------------------------\n\n\n* Install a Pack\n* Requesting approval to install\n* Remove a Pack\n* FAQs\n\n\n\n---"
+            ],
+            "reference_answer": "The document does not provide specific details on the procedure to request approval for installing a Pack.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "Explain the process of installing a Pack from the Coda Gallery. What are the steps involved and what should you do if the Pack requires authentication?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**Install a Pack**\n==================\n\n\nPacks are installed into individual docs, not across an entire account or workspace. This means you\u2019ll have to install a Pack in each of the docs where you wish to use it. You must have edit access to a doc in order to install a Pack in it, and once installed anyone else with access to the doc can use the Pack you\u2019ve installed.\n\n\n\nFrom the Gallery\n----------------\n\n\nYou can find and install published Packs in the Coda Gallery.\n\n\n\n1. Open .\n2. Click on the **Packs** menu item in the left panel to browse the Packs.  \nAlternatively use the search box to search for the Pack you want.\n3. Click on the Pack you want to install to open it\u2019s listing page.\n4. Click the **Add to doc** button to begin the installation.   \nFor Paid packs you haven\u2019t yet purchased use the **Try it** button instead to begin a trial.\n5. Search and pick an existing doc you want to install the Pack into, or click the **+ New doc** button to create a new doc.\n\nThe doc will be opened and the Pack will be installed. Note that if your Pack requires authentication you\u2019ll have to connect an account manually.\n\n\n\nPrivate and internal Packs won\u2019t be found in the gallery, but you can install them from the **Packs** page in your workspace.\n\n\n\n\nFrom the within a doc\n---------------------\n\n\nYou can install a Pack directly from within the doc you are working in by using the Insert panel.\n\n\n\n1. Click the **Insert** button in the upper right of the doc.\n2. In the side panel click on the **Packs** menu item.\n3. Browse or search for the Pack you want to install.\n4. Click on the Pack you want to install to open it\u2019s listing page.\n5. Click the **Add to doc** button to begin the installation. \n\n\n\t1. *For Paid packs you haven\u2019t yet purchased use the **Try it** button instead to begin a trial.*\n\nIf the Pack requires authentication you will be prompted to connect an account in order to complete the installation.\n\n\n\n!install Pack in doc.gifTo start installing a Pack even more quickly use the slash menu, typing a forward slash and then the name of the Pack you want to install. For example, **/slack**."
+            ],
+            "reference_answer": "To install a Pack from the Coda Gallery, follow these steps:\n\n1. Open the Coda Gallery.\n2. Click on the **Packs** menu item in the left panel to browse the Packs. Alternatively, use the search box to search for the Pack you want.\n3. Click on the Pack you want to install to open its listing page.\n4. Click the **Add to doc** button to begin the installation. For Paid packs you haven\u2019t yet purchased, use the **Try it** button instead to begin a trial.\n5. Search and pick an existing doc you want to install the Pack into, or click the **+ New doc** button to create a new doc.\n\nAfter these steps, the doc will be opened and the Pack will be installed. If your Pack requires authentication, you\u2019ll have to connect an account manually.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "Describe the method of installing a Pack directly from within a doc using the Insert panel. How does this process differ when dealing with paid Packs that haven't been purchased yet?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**Install a Pack**\n==================\n\n\nPacks are installed into individual docs, not across an entire account or workspace. This means you\u2019ll have to install a Pack in each of the docs where you wish to use it. You must have edit access to a doc in order to install a Pack in it, and once installed anyone else with access to the doc can use the Pack you\u2019ve installed.\n\n\n\nFrom the Gallery\n----------------\n\n\nYou can find and install published Packs in the Coda Gallery.\n\n\n\n1. Open .\n2. Click on the **Packs** menu item in the left panel to browse the Packs.  \nAlternatively use the search box to search for the Pack you want.\n3. Click on the Pack you want to install to open it\u2019s listing page.\n4. Click the **Add to doc** button to begin the installation.   \nFor Paid packs you haven\u2019t yet purchased use the **Try it** button instead to begin a trial.\n5. Search and pick an existing doc you want to install the Pack into, or click the **+ New doc** button to create a new doc.\n\nThe doc will be opened and the Pack will be installed. Note that if your Pack requires authentication you\u2019ll have to connect an account manually.\n\n\n\nPrivate and internal Packs won\u2019t be found in the gallery, but you can install them from the **Packs** page in your workspace.\n\n\n\n\nFrom the within a doc\n---------------------\n\n\nYou can install a Pack directly from within the doc you are working in by using the Insert panel.\n\n\n\n1. Click the **Insert** button in the upper right of the doc.\n2. In the side panel click on the **Packs** menu item.\n3. Browse or search for the Pack you want to install.\n4. Click on the Pack you want to install to open it\u2019s listing page.\n5. Click the **Add to doc** button to begin the installation. \n\n\n\t1. *For Paid packs you haven\u2019t yet purchased use the **Try it** button instead to begin a trial.*\n\nIf the Pack requires authentication you will be prompted to connect an account in order to complete the installation.\n\n\n\n!install Pack in doc.gifTo start installing a Pack even more quickly use the slash menu, typing a forward slash and then the name of the Pack you want to install. For example, **/slack**."
+            ],
+            "reference_answer": "To install a Pack directly from within a doc using the Insert panel, follow these steps:\n\n1. Click the **Insert** button in the upper right of the doc.\n2. In the side panel click on the **Packs** menu item.\n3. Browse or search for the Pack you want to install.\n4. Click on the Pack you want to install to open its listing page.\n5. Click the **Add to doc** button to begin the installation.\n\nIf the Pack is a paid one and you haven't purchased it yet, the process is slightly different. Instead of clicking the **Add to doc** button, you would use the **Try it** button to begin a trial. If the Pack requires authentication, you will be prompted to connect an account in order to complete the installation.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "What are the steps to request approval for installing a Pack in an organization where admin has enabled Pack approvals?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**Request approval to install**\n===============================\n\n\nIf your organization\u2019s admin has enabled Pack approvals you won\u2019t be able to install a Pack until they first approve it. To request approval to install a Pack:\n\n\n\n* Click the **Request access** button in the Pack\u2019s listing page.\n* In the dialog, enter a message to accompany your request.  \nInclude any relevant details that would help the admin make a decision.\n* Click the **Send request** to send the request.  \nYou can close the dialog.\n\nYour organization\u2019s admin will receive a notification, including who made the request. They may follow up with you for more information. When they make a decision, either to approve or deny, you will receive a notification with the decision. If approved, you will now be able to install the Pack as described in the previous section.\n\n\n\n!request access to pack.gif"
+            ],
+            "reference_answer": "The steps to request approval for installing a Pack in an organization where admin has enabled Pack approvals are:\n\n1. Click the **Request access** button in the Pack\u2019s listing page.\n2. In the dialog, enter a message to accompany your request. Include any relevant details that would help the admin make a decision.\n3. Click the **Send request** to send the request. You can close the dialog after this.\n\nAfter these steps, the organization's admin will receive a notification about the request. They may follow up for more information and will make a decision to either approve or deny the request. You will receive a notification about this decision. If approved, you will be able to install the Pack.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "What happens after you send a request for approval to install a Pack? Describe the process of notification and decision-making.",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**Request approval to install**\n===============================\n\n\nIf your organization\u2019s admin has enabled Pack approvals you won\u2019t be able to install a Pack until they first approve it. To request approval to install a Pack:\n\n\n\n* Click the **Request access** button in the Pack\u2019s listing page.\n* In the dialog, enter a message to accompany your request.  \nInclude any relevant details that would help the admin make a decision.\n* Click the **Send request** to send the request.  \nYou can close the dialog.\n\nYour organization\u2019s admin will receive a notification, including who made the request. They may follow up with you for more information. When they make a decision, either to approve or deny, you will receive a notification with the decision. If approved, you will now be able to install the Pack as described in the previous section.\n\n\n\n!request access to pack.gif"
+            ],
+            "reference_answer": "After you send a request for approval to install a Pack, your organization's admin will receive a notification, which includes who made the request. They may follow up with you for more information. When they make a decision, either to approve or deny, you will receive a notification with the decision. If approved, you will then be able to install the Pack.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "What are the consequences of removing a Pack from your doc in the Braintrust platform?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**Remove a Pack**\n=================\n\n\nIf you no longer wish to use a Pack you can remove it from your doc. Any of the Pack\u2019s building blocks (formulas, actions, etc.) that are used within the doc will break once the Pack is removed. If you removed a Pack accidentally you can reinstall it to fix the errors.\n\n\nTo remove a Pack:\n\n\n\n1. Click the **Insert** button in the upper right of the doc.\n2. In the side panel click on the **Packs** menu item.\n3. Click on the Pack you want to remove.\n4. Click on the three-dots menu in the upper right of the Pack panel and then click on **Remove Pack from doc**.\n5. In the dialog click the button **Remove this Pack**.\n\n!16_9.png"
+            ],
+            "reference_answer": "Any of the Pack\u2019s building blocks (formulas, actions, etc.) that are used within the doc will break once the Pack is removed. If you removed a Pack accidentally you can reinstall it to fix the errors.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "Can you describe the step-by-step process of removing a Pack from a document in Braintrust?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**Remove a Pack**\n=================\n\n\nIf you no longer wish to use a Pack you can remove it from your doc. Any of the Pack\u2019s building blocks (formulas, actions, etc.) that are used within the doc will break once the Pack is removed. If you removed a Pack accidentally you can reinstall it to fix the errors.\n\n\nTo remove a Pack:\n\n\n\n1. Click the **Insert** button in the upper right of the doc.\n2. In the side panel click on the **Packs** menu item.\n3. Click on the Pack you want to remove.\n4. Click on the three-dots menu in the upper right of the Pack panel and then click on **Remove Pack from doc**.\n5. In the dialog click the button **Remove this Pack**.\n\n!16_9.png"
+            ],
+            "reference_answer": "Yes, here are the steps to remove a Pack from a document in Braintrust:\n\n1. Click the **Insert** button in the upper right of the doc.\n2. In the side panel click on the **Packs** menu item.\n3. Click on the Pack you want to remove.\n4. Click on the three-dots menu in the upper right of the Pack panel and then click on **Remove Pack from doc**.\n5. In the dialog click the button **Remove this Pack**.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "What happens when you install a Pack in terms of access to your account or the contents of your doc according to the document \"section_37.md\"?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**FAQs**\n========\n\n\nWhat access is granted to a Pack when I install it?\n---------------------------------------------------\n\n\nInstalling a Pack doesn\u2019t give it access to your account or the contents of your doc, but rather just makes it\u2019s building blocks available to use. You can learn more about the Packs security model in the Security of Packs on Coda.\n\n\n\nHow can I determine what Packs have already been installed?\n-----------------------------------------------------------\n\n\nThe list of Packs already installed in the doc are displayed in the Packs panel. You can open it by clicking **Insert** (upper right corner of your doc), then **Packs**. You\u2019ll then see an **Installed Packs** list.\n\n\n\n\n\n\n---"
+            ],
+            "reference_answer": "Installing a Pack does not give it access to your account or the contents of your doc. It only makes its building blocks available to use.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "According to the document \"section_37.md\", describe the process to determine what Packs have already been installed.",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**FAQs**\n========\n\n\nWhat access is granted to a Pack when I install it?\n---------------------------------------------------\n\n\nInstalling a Pack doesn\u2019t give it access to your account or the contents of your doc, but rather just makes it\u2019s building blocks available to use. You can learn more about the Packs security model in the Security of Packs on Coda.\n\n\n\nHow can I determine what Packs have already been installed?\n-----------------------------------------------------------\n\n\nThe list of Packs already installed in the doc are displayed in the Packs panel. You can open it by clicking **Insert** (upper right corner of your doc), then **Packs**. You\u2019ll then see an **Installed Packs** list.\n\n\n\n\n\n\n---"
+            ],
+            "reference_answer": "According to the document \"section_37.md\", to determine what Packs have already been installed, you need to open the Packs panel. This can be done by clicking on \"Insert\", which is located in the upper right corner of your document, and then clicking on \"Packs\". After doing this, you will see a list of \"Installed Packs\".",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "Based on the information provided in the document \"section_38.md\", what is the file size and what are the dates for creation, last modification, and last access?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**Related resources**\n=====================\n\n\n* Overview: Use Packs in Coda\n* Connect a Pack account\n* Sync data with Pack tables\n* Take actions with Pack buttons\n* Security of Packs on Coda"
+            ],
+            "reference_answer": "The file size of \"section_38.md\" is 560. The creation date, last modified date, and last accessed date are all on 2023-11-30.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "According to the related resources mentioned in the document, what are the different ways to use Packs in Coda as described in the document?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**Related resources**\n=====================\n\n\n* Overview: Use Packs in Coda\n* Connect a Pack account\n* Sync data with Pack tables\n* Take actions with Pack buttons\n* Security of Packs on Coda"
+            ],
+            "reference_answer": "The document does not provide specific ways to use Packs in Coda. However, the related resources suggest that you can connect a Pack account, sync data with Pack tables, and take actions with Pack buttons. Information about the security of Packs on Coda is also mentioned.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "What is the purpose of the importer built by the team at Coda, as mentioned in the document \"section_39.md\"?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "So you want to move some - or all - of your data from Airtable to Coda. Luckily, we\u2019ve built an importer that will allow you to do just that. With a few clicks, you can import your Airtable bases into Coda.\n\n\n\n\nThis feature is currently still in beta so may need some improvements. If you have any feedback to share, please submit it here. Thanks for helping make our product great!\n\n\n\nWithin this article, you\u2019ll find...\n-----------------------------------\n\n\n* Import to Coda as a new doc\n* Import to an existing Coda doc\n* FAQs\n\n\n\n---"
+            ],
+            "reference_answer": "The purpose of the importer built by the team at Coda is to allow users to move their data from Airtable to Coda. Users can import their Airtable bases into Coda with a few clicks.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "According to the document, what are the two main functionalities provided by the importer for moving data from Airtable to Coda?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "So you want to move some - or all - of your data from Airtable to Coda. Luckily, we\u2019ve built an importer that will allow you to do just that. With a few clicks, you can import your Airtable bases into Coda.\n\n\n\n\nThis feature is currently still in beta so may need some improvements. If you have any feedback to share, please submit it here. Thanks for helping make our product great!\n\n\n\nWithin this article, you\u2019ll find...\n-----------------------------------\n\n\n* Import to Coda as a new doc\n* Import to an existing Coda doc\n* FAQs\n\n\n\n---"
+            ],
+            "reference_answer": "The two main functionalities provided by the importer for moving data from Airtable to Coda are: importing to Coda as a new document and importing to an existing Coda document.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "What is the purpose of the article mentioned in the document \"section_4.md\"?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "We understand that the features of the paid plans may not be necessary for everyone. So this article will walk you through how to cancel your Coda subscription.\n\n\n\nThis article is intended only for customers on our **Pro** and **Team** plans. If you\u2019re an Enterprise customer looking to downgrade, please contact your account team or Coda Support."
+            ],
+            "reference_answer": "The purpose of the article mentioned in the document \"section_4.md\" is to guide customers on how to cancel their Coda subscription. This is specifically intended for customers on the Pro and Team plans.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "Who is the intended audience for the instructions provided in the document, and what should Enterprise customers do if they want to downgrade their subscription?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "We understand that the features of the paid plans may not be necessary for everyone. So this article will walk you through how to cancel your Coda subscription.\n\n\n\nThis article is intended only for customers on our **Pro** and **Team** plans. If you\u2019re an Enterprise customer looking to downgrade, please contact your account team or Coda Support."
+            ],
+            "reference_answer": "The instructions provided in the document are intended for customers on the Pro and Team plans of Coda. If Enterprise customers want to downgrade their subscription, they should contact their account team or Coda Support.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "Explain the steps to import an Airtable base into a new Coda doc. Include details about authorizing the application and selecting tables.",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**Import to Coda as a new doc**\n===============================\n\n\nTo create a brand new Coda doc from an Airtable base follow these steps:\n\n\n1. Navigate to your doc list at coda.io/docs\n2. Click the **+ Templates** button\n3. Select the **Import** option from the bottom left of the menu\n4. Find and click on the **Airtable** option\n5. Click the **Connect Account** button\n6. Authorize the coda application with the desired access level. You can choose a single base, single workspace or all workspaces.\n7. Choose your base and click next\n8. Choose your tables and views. Note that all linked tables must be selected.\n\nNote that large bases may take a while to fully import. See our FAQ on load time below for more info.\n\n\n\n!"
+            ],
+            "reference_answer": "To import an Airtable base into a new Coda doc, follow these steps:\n\n1. Start by navigating to your doc list at coda.io/docs.\n2. Click on the **+ Templates** button.\n3. From the menu that appears, select the **Import** option located at the bottom left.\n4. Look for the **Airtable** option and click on it.\n5. Next, click the **Connect Account** button to authorize the Coda application. \n6. During authorization, you'll be asked to set the desired access level. You can opt to give access to a single base, a single workspace, or all workspaces.\n7. After authorization, choose the base you want to import and click next.\n8. The final step involves selecting your tables and views. Remember that all linked tables must be selected for the import to be successful.\n\nPlease note that importing large bases may take some time.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "What should you consider when importing large bases from Airtable to Coda? What resources can you refer to for more information on this topic?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**Import to Coda as a new doc**\n===============================\n\n\nTo create a brand new Coda doc from an Airtable base follow these steps:\n\n\n1. Navigate to your doc list at coda.io/docs\n2. Click the **+ Templates** button\n3. Select the **Import** option from the bottom left of the menu\n4. Find and click on the **Airtable** option\n5. Click the **Connect Account** button\n6. Authorize the coda application with the desired access level. You can choose a single base, single workspace or all workspaces.\n7. Choose your base and click next\n8. Choose your tables and views. Note that all linked tables must be selected.\n\nNote that large bases may take a while to fully import. See our FAQ on load time below for more info.\n\n\n\n!"
+            ],
+            "reference_answer": "When importing large bases from Airtable to Coda, you should consider that it may take a while for the import to fully complete. For more information on this topic, you can refer to the FAQ on load time.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "In the process of importing an Airtable base to an existing Coda doc, what is the significance of the step where you authorize the coda application with the desired access level?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**Import to an existing Coda doc**\n==================================\n\n\nIf you want to add your Airtable base an existing Coda doc, follow these easy steps:\n\n\n1. Open the desired Coda doc\n2. Type **/airtable** anywhere on your page\n\n\n\t1. Alternatively, just click on the **Insert** tab in the upper right of your doc, then click into **Import**\n3. Select the **Airtable** option (under the **Import** heading)\n4. Click the **Connect Account** button\n5. Authorize the coda application with the desired access level. You can choose a single base, single workspace or all workspaces.\n6. Choose your base and click next\n7. Choose your tables and views. Note that all linked tables must be selected.\n\nNote that large bases may take a while to fully import. See our FAQ on load time below for more info.\n\n\n\n!import airtable existing doc.gif"
+            ],
+            "reference_answer": "The step where you authorize the coda application with the desired access level is significant because it allows you to control the level of access the coda application has to your Airtable data. You can choose to give access to a single base, single workspace, or all workspaces. This ensures that your data is protected and only the necessary information is shared with the coda application.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "What should you take into consideration when choosing your tables and views during the import process to a Coda doc from Airtable?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**Import to an existing Coda doc**\n==================================\n\n\nIf you want to add your Airtable base an existing Coda doc, follow these easy steps:\n\n\n1. Open the desired Coda doc\n2. Type **/airtable** anywhere on your page\n\n\n\t1. Alternatively, just click on the **Insert** tab in the upper right of your doc, then click into **Import**\n3. Select the **Airtable** option (under the **Import** heading)\n4. Click the **Connect Account** button\n5. Authorize the coda application with the desired access level. You can choose a single base, single workspace or all workspaces.\n6. Choose your base and click next\n7. Choose your tables and views. Note that all linked tables must be selected.\n\nNote that large bases may take a while to fully import. See our FAQ on load time below for more info.\n\n\n\n!import airtable existing doc.gif"
+            ],
+            "reference_answer": "You should take into consideration that all linked tables must be selected during the import process to a Coda doc from Airtable.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "Explain how the concepts of Workspaces, Bases, Tables, and Views in Airtable translate into Coda concepts. What are the similarities and differences?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**FAQs**\n========\n\n\nWhat happens to formulas, rollups, and grouping when importing into Coda?\n-------------------------------------------------------------------------\n\n\n\nUnfortunately Airtable does not provide any information on the specific formulas used in formula or rollup fields. There is also no information provided with regards to grouping. Coda supports formulas and grouping and these columns will just need to be updated post import.\n\n\n\nWhat about my automations?\n--------------------------\n\n\n\nAutomations are also not exported from Airtable\u2019s API. Luckily Coda has Automations as well that can be quickly created by using the /automations command\n\n\n\nCan I import Airtable interfaces?\n---------------------------------\n\n\n\nAirtable doesn\u2019t provide a way to export interfaces, so we currently import them into Coda docs. Since Coda is an all-in-one doc, you can present information in any way you see fit. You can mix and match tables, views, and rich content, right in the Canvas. If you want to know more, a good place to start is our guide on creating a visually impactful doc.\n\n\n\nHow do Airtable concepts translate to Coda concepts?\n----------------------------------------------------\n\n\n\nAirtable has Workspaces, Bases, Tables and Views. Coda has similar concepts for these behaviors. A workspace in Coda holds a list of Coda docs. We translate Airtable Bases to a Coda doc. A Coda doc seamlessly combines the database capabilities of Airtable tables, views and much more in a flexible surface.\n\n\n\nInterfaces in Airtable are replaced by Coda docs. Since a Coda doc is a flexible writing surface you can mix and match tables, views, and rich content in the Canvas.\n\n\n\nWhy is my Airtable import taking so long to complete?\n-----------------------------------------------------\n\n\n\nThere is rate limiting on the Airtable API that limits the number of calls we can make per second. We can only pull 100 records at a time and thus it may take some time to complete an import that has many rows.\n\n\n\n\n\n\n---"
+            ],
+            "reference_answer": "In Coda, the concepts of Workspaces, Bases, Tables, and Views from Airtable translate in the following ways:\n\n- Workspaces in Airtable are similar to a list of Coda docs in Coda. A workspace in Coda holds these documents.\n- Bases in Airtable are translated to a Coda doc in Coda. \n- The database capabilities of Airtable tables and views are seamlessly combined in a Coda doc, providing a flexible surface for these functionalities.\n- Interfaces in Airtable are replaced by Coda docs in Coda. A Coda doc is a flexible writing surface where you can mix and match tables, views, and rich content in the Canvas.\n\nThe main difference is that while Airtable has separate entities for Workspaces, Bases, Tables, Views, and Interfaces, Coda combines all these functionalities into a single, flexible document (Coda doc). This allows for a more integrated and flexible user experience.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "What are the limitations when importing data from Airtable to Coda, especially in terms of formulas, rollups, grouping, automations, and interfaces? How can these limitations be addressed within Coda?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**FAQs**\n========\n\n\nWhat happens to formulas, rollups, and grouping when importing into Coda?\n-------------------------------------------------------------------------\n\n\n\nUnfortunately Airtable does not provide any information on the specific formulas used in formula or rollup fields. There is also no information provided with regards to grouping. Coda supports formulas and grouping and these columns will just need to be updated post import.\n\n\n\nWhat about my automations?\n--------------------------\n\n\n\nAutomations are also not exported from Airtable\u2019s API. Luckily Coda has Automations as well that can be quickly created by using the /automations command\n\n\n\nCan I import Airtable interfaces?\n---------------------------------\n\n\n\nAirtable doesn\u2019t provide a way to export interfaces, so we currently import them into Coda docs. Since Coda is an all-in-one doc, you can present information in any way you see fit. You can mix and match tables, views, and rich content, right in the Canvas. If you want to know more, a good place to start is our guide on creating a visually impactful doc.\n\n\n\nHow do Airtable concepts translate to Coda concepts?\n----------------------------------------------------\n\n\n\nAirtable has Workspaces, Bases, Tables and Views. Coda has similar concepts for these behaviors. A workspace in Coda holds a list of Coda docs. We translate Airtable Bases to a Coda doc. A Coda doc seamlessly combines the database capabilities of Airtable tables, views and much more in a flexible surface.\n\n\n\nInterfaces in Airtable are replaced by Coda docs. Since a Coda doc is a flexible writing surface you can mix and match tables, views, and rich content in the Canvas.\n\n\n\nWhy is my Airtable import taking so long to complete?\n-----------------------------------------------------\n\n\n\nThere is rate limiting on the Airtable API that limits the number of calls we can make per second. We can only pull 100 records at a time and thus it may take some time to complete an import that has many rows.\n\n\n\n\n\n\n---"
+            ],
+            "reference_answer": "When importing data from Airtable to Coda, there are several limitations. \n\nFirstly, Airtable does not provide any information on the specific formulas used in formula or rollup fields, and there is also no information provided with regards to grouping. However, these limitations can be addressed in Coda as it supports formulas and grouping. These columns will just need to be updated post import.\n\nSecondly, automations are not exported from Airtable\u2019s API. To address this, Coda has Automations that can be quickly created by using the /automations command.\n\nLastly, Airtable doesn\u2019t provide a way to export interfaces, so these cannot be directly imported into Coda docs. However, Coda is an all-in-one doc, allowing you to present information in any way you see fit. You can mix and match tables, views, and rich content, right in the Canvas.\n\nIn terms of translating Airtable concepts to Coda, Airtable's Workspaces, Bases, Tables and Views have similar concepts in Coda. A workspace in Coda holds a list of Coda docs, Airtable Bases translate to a Coda doc, and interfaces in Airtable are replaced by Coda docs. \n\nIt's also worth noting that the import process may take some time due to rate limiting on the Airtable API, which limits the number of calls that can be made per second.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "Based on the provided context information, can you identify the file size of the document named \"section_43.md\" and explain what this size might indicate about the content of the file?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "Related resources\n=================\n\n\n* Overview: Import data into Coda"
+            ],
+            "reference_answer": "The file size of the document named \"section_43.md\" is 146. This size is relatively small, which might indicate that the content of the file is not very extensive, possibly a short text document or a piece of code.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "From the context information, what is the creation, last modified, and last accessed date of the file \"section_43.md\"? What does this information tell you about the activity related to this file?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "Related resources\n=================\n\n\n* Overview: Import data into Coda"
+            ],
+            "reference_answer": "The creation, last modified, and last accessed date of the file \"section_43.md\" is 2023-11-30. This information tells us that all the activities related to this file, including its creation, last modification, and last access, occurred on the same day, which is November 30, 2023.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "What is a unique feature of Packs and how does it provide rich information related to specific integrations like Spotify, Salesforce, or GMail? Provide an example using the Google Calendar Pack and its \"Event\" column format.",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "One valuable feature of Packs is their custom column formats. These columns allow you to get rich information related to the specific integration, whether it be Spotify, Salesforce, or GMail. For instance, the Google Calendar Pack includes the **Event** column format. This format allow you to paste a simple URLs of a GCal event into your Coda table. It then returns detailed information about the event - including date, start time, attendees, and so much more. You can even take those details and turn them into columns of their own. Read on to learn more about using Pack column formats.\n\n\n\nWithin this article you\u2019ll find...\n----------------------------------\n\n\n* Add Pack columns\n* Get rich data from links\n* FAQs\n\n\n\n---"
+            ],
+            "reference_answer": "A unique feature of Packs is their custom column formats. These columns allow you to get rich information related to the specific integration, whether it be Spotify, Salesforce, or GMail. For example, the Google Calendar Pack includes the \"Event\" column format. This format allows you to paste a simple URL of a Google Calendar event into your Coda table. It then returns detailed information about the event, including date, start time, attendees, and more. This information can even be turned into separate columns.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "In the context of the article, what are the three main topics that you would expect to learn about? Explain briefly what you think each topic might cover based on the context information provided.",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "One valuable feature of Packs is their custom column formats. These columns allow you to get rich information related to the specific integration, whether it be Spotify, Salesforce, or GMail. For instance, the Google Calendar Pack includes the **Event** column format. This format allow you to paste a simple URLs of a GCal event into your Coda table. It then returns detailed information about the event - including date, start time, attendees, and so much more. You can even take those details and turn them into columns of their own. Read on to learn more about using Pack column formats.\n\n\n\nWithin this article you\u2019ll find...\n----------------------------------\n\n\n* Add Pack columns\n* Get rich data from links\n* FAQs\n\n\n\n---"
+            ],
+            "reference_answer": "Based on the context information provided, the three main topics that you would expect to learn about in the article are:\n\n1. \"Add Pack columns\": This topic would likely cover how to add custom column formats, or \"Packs\", to your Coda table. It may provide step-by-step instructions or tips for adding these columns, which are a feature of Packs that allow you to get rich information related to specific integrations like Spotify, Salesforce, or GMail.\n\n2. \"Get rich data from links\": This section would likely explain how to use these custom column formats to extract detailed information from simple URLs. For example, the context mentions that the Google Calendar Pack's \"Event\" column format allows you to paste a URL of a GCal event into your Coda table and get detailed information about the event.\n\n3. \"FAQs\": This section would likely address common questions or issues that users might have when using Pack column formats. This could include troubleshooting tips, additional resources, or more detailed explanations of certain features.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "In the document 'section_45.md', describe the steps to add a Pack column to a table in your doc. What are the prerequisites for this process?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "Add Pack columns\n================\n\n\nTo add one of these columns to your table, you\u2019ll first need to make sure you\u2019ve installed the Pack in your doc. Then, create a new column in your table by clicking the plus icon in the upper right corner of your table. From the column type options, search for the Pack name. You should then see a list of the possible columns for that Pack. Click on an option to add it to your table.\n\n\n  \n\n\n\n!Add GCal column format.gif*\ud83d\udca1Tip: Once you\u2019ve added a Pack column to your table, you can typically learn more information about how the column is meant to work by right clicking on the column header, then selecting the **column** **options*****.**"
+            ],
+            "reference_answer": "To add a Pack column to a table in your doc as described in 'section_45.md', you need to follow these steps:\n\n1. Ensure that the Pack is installed in your doc. This is a prerequisite for the process.\n2. Create a new column in your table by clicking the plus icon in the upper right corner of your table.\n3. From the column type options, search for the Pack name.\n4. You should then see a list of the possible columns for that Pack.\n5. Click on an option to add it to your table.\n\nAfter you've added a Pack column to your table, you can typically learn more about how the column is meant to work by right clicking on the column header, then selecting the column options.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "According to the document 'section_45.md', how can you learn more about the functionality of a newly added Pack column in your table?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "Add Pack columns\n================\n\n\nTo add one of these columns to your table, you\u2019ll first need to make sure you\u2019ve installed the Pack in your doc. Then, create a new column in your table by clicking the plus icon in the upper right corner of your table. From the column type options, search for the Pack name. You should then see a list of the possible columns for that Pack. Click on an option to add it to your table.\n\n\n  \n\n\n\n!Add GCal column format.gif*\ud83d\udca1Tip: Once you\u2019ve added a Pack column to your table, you can typically learn more information about how the column is meant to work by right clicking on the column header, then selecting the **column** **options*****.**"
+            ],
+            "reference_answer": "You can learn more about the functionality of a newly added Pack column in your table by right clicking on the column header and then selecting the column options.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "In the context of using Packs in Coda, explain how a URL column works and how it can be utilized to gather detailed information from an external tool. Provide an example using a Jira Issues column.",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "Get data from URLs\n==================\n\n\nWhile there are a few different types of column formats for Packs, one of the most powerful is the URL column. These columns allow you to paste URLs from the external tool directly into your Coda table and then see detailed, rich information from that URL.\n\n\n\nFor example, with the Jira Issues column type, you can paste the URL of a Jira Issue right into the column of your Coda table. And you\u2019ll then see the URL automatically convert to an object that contains all of the information associated with that issue.\n\n\n\nOnce you\u2019ve added one of these column formats, you can start pasting URLs into the column. Then you can choose to add any of those fields as columns. To do so, just hover over the object in the initial URL column. You should see a scrollable pop-up that displays all the data contained in that object. Next to each field, there is an **Add column** button. Just click that button, and the column will be added to your table. The information in that column is auto-populated based on the URL.\n\n\n\n!add column from url pack column.gif"
+            ],
+            "reference_answer": "A URL column in Packs, a feature in Coda, allows users to paste URLs from an external tool directly into a Coda table to view detailed information from that URL. The URL automatically converts into an object that contains all the associated information. \n\nFor instance, if you use the Jira Issues column type, you can paste the URL of a Jira Issue into the column of your Coda table. The URL will then convert to an object that contains all the information related to that issue.\n\nOnce a URL column format is added, you can start pasting URLs into the column. You can then choose to add any of the fields as columns. To do this, hover over the object in the initial URL column. A scrollable pop-up will appear displaying all the data contained in that object. Next to each field, there is an \"Add column\" button. By clicking this button, the column will be added to your table. The information in that column is auto-populated based on the URL. This way, you can gather and organize detailed information from an external tool like Jira, directly in your Coda table.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "Describe the steps to add new fields as columns from a URL column in a Coda table. What happens when the \"Add column\" button is clicked?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "Get data from URLs\n==================\n\n\nWhile there are a few different types of column formats for Packs, one of the most powerful is the URL column. These columns allow you to paste URLs from the external tool directly into your Coda table and then see detailed, rich information from that URL.\n\n\n\nFor example, with the Jira Issues column type, you can paste the URL of a Jira Issue right into the column of your Coda table. And you\u2019ll then see the URL automatically convert to an object that contains all of the information associated with that issue.\n\n\n\nOnce you\u2019ve added one of these column formats, you can start pasting URLs into the column. Then you can choose to add any of those fields as columns. To do so, just hover over the object in the initial URL column. You should see a scrollable pop-up that displays all the data contained in that object. Next to each field, there is an **Add column** button. Just click that button, and the column will be added to your table. The information in that column is auto-populated based on the URL.\n\n\n\n!add column from url pack column.gif"
+            ],
+            "reference_answer": "To add new fields as columns from a URL column in a Coda table, you first need to add a URL column format. Once this is done, you can start pasting URLs into the column. After pasting the URL, you can choose to add any of the fields as columns. To do this, hover over the object in the initial URL column. A scrollable pop-up should appear displaying all the data contained in that object. Next to each field, there is an \"Add column\" button. When you click this button, the column will be added to your table. The information in that new column is automatically populated based on the URL.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "Explain the difference between Pack sync tables and Pack URL columns in Coda. Provide examples to illustrate your answer.",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "FAQs\n====\n\n\n**How often is data updated for these URL columns?**\n----------------------------------------------------\n\n\nThis depends on the default refresh rate of the Pack. You can choose which refresh rate is best for in the Pack settings. To open these settings, click on the **Insert** tab in the upper right corner of your doc, then search the Pack name, click on the Pack, and then click into **Settings.** Here you\u2019ll find the **Default refresh rate**. You can choose from **Manually**, **Daily**, or **Hourly** (note that some options are limited to specific Coda plans).\n\n\n\nHow do I add a Pack button column?\n----------------------------------\n\n\nGreat question! You can check out this article for all the info you need on Pack buttons.\n\n\n\n**I pasted a link into a Pack column format, but nothing happened. What\u2019s wrong?**\n-----------------------------------------------------------------------------------\n\n\nThere are a few things to check if this happens. First, check that your Pack is installed and your connection is working by clicking the Insert icon (upper right corner of the doc), then searching for the Pack you\u2019re troubleshooting. More on checking the connection of your Pack here.\n\n\n\nNext, make sure the link you\u2019re pasting actually corresponds to the format of the column. For example, the Spotify Pack offers three column formats: **Album**, **Track** and **Playlist**. The **Album** column will only work with links to *albums*, the **Track** column will only work with links to *tracks*, and so on. Links often contain a hint as to the format of their referenced data in the URL (e.g. the link *open.spotify.com/album/*.... refers to an album and should be pasted into a column of format **Album**).\n\n\n\nHow are these Pack URL columns different from Pack sync tables?\n---------------------------------------------------------------\n\n\nPack sync tables automatically bring in sets of data from the 3rd party tool based on the filter criteria you set for the sync. Coda will search the available data and pull in any and all rows that match the criteria of your sync settings.\n\n\n\nPack URL columns, on the other hand, allow you to manually curate whichever pieces of data you want to include in your table.\n\n\n\n\n\n---"
+            ],
+            "reference_answer": "Pack sync tables and Pack URL columns in Coda serve different purposes. \n\nPack sync tables are designed to automatically bring in sets of data from a third-party tool based on the filter criteria you set for the sync. For example, you might set up a sync table to pull in all data from a certain project in a project management tool, or all emails from a certain sender in an email tool. Coda will search the available data and pull in any and all rows that match the criteria of your sync settings.\n\nOn the other hand, Pack URL columns allow you to manually curate whichever pieces of data you want to include in your table. For instance, you might use a Pack URL column to include specific songs from Spotify in a table, or specific articles from a news website. You paste the URL of the specific piece of data into the column, and Coda will pull in the relevant data from that URL.\n\nSo, the main difference is that Pack sync tables are for automatic, criteria-based data import, while Pack URL columns are for manual, specific data import.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "What steps would you take if you pasted a link into a Pack column format and nothing happened? Discuss the importance of the format of the column and the link in this context.",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "FAQs\n====\n\n\n**How often is data updated for these URL columns?**\n----------------------------------------------------\n\n\nThis depends on the default refresh rate of the Pack. You can choose which refresh rate is best for in the Pack settings. To open these settings, click on the **Insert** tab in the upper right corner of your doc, then search the Pack name, click on the Pack, and then click into **Settings.** Here you\u2019ll find the **Default refresh rate**. You can choose from **Manually**, **Daily**, or **Hourly** (note that some options are limited to specific Coda plans).\n\n\n\nHow do I add a Pack button column?\n----------------------------------\n\n\nGreat question! You can check out this article for all the info you need on Pack buttons.\n\n\n\n**I pasted a link into a Pack column format, but nothing happened. What\u2019s wrong?**\n-----------------------------------------------------------------------------------\n\n\nThere are a few things to check if this happens. First, check that your Pack is installed and your connection is working by clicking the Insert icon (upper right corner of the doc), then searching for the Pack you\u2019re troubleshooting. More on checking the connection of your Pack here.\n\n\n\nNext, make sure the link you\u2019re pasting actually corresponds to the format of the column. For example, the Spotify Pack offers three column formats: **Album**, **Track** and **Playlist**. The **Album** column will only work with links to *albums*, the **Track** column will only work with links to *tracks*, and so on. Links often contain a hint as to the format of their referenced data in the URL (e.g. the link *open.spotify.com/album/*.... refers to an album and should be pasted into a column of format **Album**).\n\n\n\nHow are these Pack URL columns different from Pack sync tables?\n---------------------------------------------------------------\n\n\nPack sync tables automatically bring in sets of data from the 3rd party tool based on the filter criteria you set for the sync. Coda will search the available data and pull in any and all rows that match the criteria of your sync settings.\n\n\n\nPack URL columns, on the other hand, allow you to manually curate whichever pieces of data you want to include in your table.\n\n\n\n\n\n---"
+            ],
+            "reference_answer": "If you pasted a link into a Pack column format and nothing happened, there are several steps you can take to troubleshoot. First, you should check that your Pack is installed and your connection is working. You can do this by clicking the Insert icon located in the upper right corner of the document, then searching for the Pack you're troubleshooting.\n\nNext, you need to ensure that the link you're pasting matches the format of the column. For instance, if you're using the Spotify Pack, it offers three column formats: Album, Track, and Playlist. The Album column will only work with links to albums, the Track column will only work with links to tracks, and so on. The format of the link is crucial because links often contain a hint as to the format of their referenced data in the URL. For example, the link 'open.spotify.com/album/' refers to an album and should be pasted into a column of format Album. \n\nSo, the format of the column and the link is very important in this context as it determines whether the pasted link will work or not. If the formats do not match, the link will not work as expected.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "Based on the context information provided, what can you infer about the main content of the file named 'section_48.md'?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "Related resources\n=================\n\n\n* Overview: Use Packs in Coda\n* Sync data with Pack tables\n* Take actions with Pack buttons\n* Install Packs"
+            ],
+            "reference_answer": "The context information does not provide specific details about the main content of the file named 'section_48.md'.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "If you were to use the resources mentioned in the context, which resource would you use to learn how to install Packs and why?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "Related resources\n=================\n\n\n* Overview: Use Packs in Coda\n* Sync data with Pack tables\n* Take actions with Pack buttons\n* Install Packs"
+            ],
+            "reference_answer": "I would use the \"Install Packs\" resource to learn how to install Packs because it seems to be directly related to the process of installing Packs, as suggested by its title.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "What steps are outlined in the document \"section_49.md\" for customizing the Pack buttons in the application?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**Within this article you\u2019ll find...**\n\n\n* Add a Pack button\n* Customize your Pack buttons\n* FAQs\n\n\n\n---"
+            ],
+            "reference_answer": "The document doesn't provide specific steps on how to customize the Pack buttons in the application. It only mentions that the topic of customizing Pack buttons is covered.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "Based on the document \"section_49.md\", what are some of the frequently asked questions regarding the \"Add a Pack\" button feature?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**Within this article you\u2019ll find...**\n\n\n* Add a Pack button\n* Customize your Pack buttons\n* FAQs\n\n\n\n---"
+            ],
+            "reference_answer": "The document does not provide specific details about the frequently asked questions regarding the \"Add a Pack\" button feature.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "What are the steps to downgrade your Coda workspace subscription?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**Downgrade your Coda subscription**\n====================================\n\n\n*Note that you have to be a workspace admin in order to downgrade your Coda workspace.*\n\n\n\nCanceling your Coda plan is synonymous with downgrading to the Free tier. To downgrade your Coda workspace, just follow these steps:\n\n\n1. Go to your workspace home (coda.io/workspaces)\n2. From the options on the left, select the workspace you\u2019d like to downgrade\n3. Go to **Workspace settings**, then click into the **Billing** tab\n4. Next to your plan type at the top, select **Change plan**\n5. Find the plan you want to downgrade to, then click the **Downgrade** button beneath it. If you want to cancel your subscription entirely, choose the Free plan.\n6. You\u2019ll then see some warnings about what will happen when you downgrade. Depending on your situation, this may include docs becoming read-only. If you still want to proceed, click **Downgrade anyway.**\n\n!downgrade workspace self-serve.gif"
+            ],
+            "reference_answer": "1. Go to your workspace home (coda.io/workspaces).\n2. Select the workspace you\u2019d like to downgrade from the options on the left.\n3. Go to Workspace settings, then click into the Billing tab.\n4. Next to your plan type at the top, select Change plan.\n5. Find the plan you want to downgrade to, then click the Downgrade button beneath it. If you want to cancel your subscription entirely, choose the Free plan.\n6. You\u2019ll then see some warnings about what will happen when you downgrade. If you still want to proceed, click Downgrade anyway.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "What are the potential consequences of downgrading your Coda workspace as mentioned in the document?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**Downgrade your Coda subscription**\n====================================\n\n\n*Note that you have to be a workspace admin in order to downgrade your Coda workspace.*\n\n\n\nCanceling your Coda plan is synonymous with downgrading to the Free tier. To downgrade your Coda workspace, just follow these steps:\n\n\n1. Go to your workspace home (coda.io/workspaces)\n2. From the options on the left, select the workspace you\u2019d like to downgrade\n3. Go to **Workspace settings**, then click into the **Billing** tab\n4. Next to your plan type at the top, select **Change plan**\n5. Find the plan you want to downgrade to, then click the **Downgrade** button beneath it. If you want to cancel your subscription entirely, choose the Free plan.\n6. You\u2019ll then see some warnings about what will happen when you downgrade. Depending on your situation, this may include docs becoming read-only. If you still want to proceed, click **Downgrade anyway.**\n\n!downgrade workspace self-serve.gif"
+            ],
+            "reference_answer": "The document mentions that when you downgrade your Coda workspace, you may see some warnings about potential consequences. This may include documents becoming read-only.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "In the context of a Coda workspace, what happens to the documents if the paid features are not removed within the 14-day grace period after downgrading?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**FAQs**\n========\n\n\nWhy are some docs now read-only after downgrading? What can I do about this?\n----------------------------------------------------------------------------\n\n\n\nWhen you downgrade, you\u2019ll have a 14-day grace period to remove any paid features (locking, paid Packs, custom icons, etc.) before your docs become read-only. If you remove those paid features before the 14-day grace period, your docs will remain editable and you won\u2019t experience any interruption. If you\u2019ve passed the grace period without adjusting for those paid elements, your doc will be uneditable. In that case, you\u2019ll need to contact support (through the **?** in the bottom right of your doc) for further assistance.\n\n\n\nHow can I delete a Coda workspace?\n----------------------------------\n\n\n\nIf you want to delete a Coda workspace instead of just downgrading it, follow the steps here.\n\n\n\nHow do I delete my Coda account?\n--------------------------------\n\n\n\nDowngrading and cancelling only applies to workspaces - not to individual Coda accounts. If you\u2019re looking to delete your Coda account entirely, head over to this article.\n\n\n\nWho is affected when I downgrade my workspace?\n----------------------------------------------\n\n\n\nDowngrading applies to the entire workspace, not to your individual account. Therefore all workspaces members and all of their docs will be affected by downgrading.\n\n\n\n\n\n---"
+            ],
+            "reference_answer": "If the paid features are not removed within the 14-day grace period after downgrading a Coda workspace, the documents become read-only and uneditable.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "Who is impacted when a Coda workspace is downgraded and how does it affect their documents?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**FAQs**\n========\n\n\nWhy are some docs now read-only after downgrading? What can I do about this?\n----------------------------------------------------------------------------\n\n\n\nWhen you downgrade, you\u2019ll have a 14-day grace period to remove any paid features (locking, paid Packs, custom icons, etc.) before your docs become read-only. If you remove those paid features before the 14-day grace period, your docs will remain editable and you won\u2019t experience any interruption. If you\u2019ve passed the grace period without adjusting for those paid elements, your doc will be uneditable. In that case, you\u2019ll need to contact support (through the **?** in the bottom right of your doc) for further assistance.\n\n\n\nHow can I delete a Coda workspace?\n----------------------------------\n\n\n\nIf you want to delete a Coda workspace instead of just downgrading it, follow the steps here.\n\n\n\nHow do I delete my Coda account?\n--------------------------------\n\n\n\nDowngrading and cancelling only applies to workspaces - not to individual Coda accounts. If you\u2019re looking to delete your Coda account entirely, head over to this article.\n\n\n\nWho is affected when I downgrade my workspace?\n----------------------------------------------\n\n\n\nDowngrading applies to the entire workspace, not to your individual account. Therefore all workspaces members and all of their docs will be affected by downgrading.\n\n\n\n\n\n---"
+            ],
+            "reference_answer": "When a Coda workspace is downgraded, all workspace members and their documents are affected. This means that all the documents within the workspace will be subject to the changes brought about by the downgrade.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "Based on the context information provided, what is the file size of the document named 'section_7.md' and when was it last accessed?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "Related resources\n=================\n\n\n* How can I delete my account?\n* Create and manage your workspace\n* Upgrade your Coda workspace\n* Billing and pricing basics\n* Manage your billing account"
+            ],
+            "reference_answer": "The file size of the document named 'section_7.md' is 571 and it was last accessed on 2023-11-30.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "Can you explain the steps a user might need to take to manage their billing account, as suggested by the related resources in the context information?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "Related resources\n=================\n\n\n* How can I delete my account?\n* Create and manage your workspace\n* Upgrade your Coda workspace\n* Billing and pricing basics\n* Manage your billing account"
+            ],
+            "reference_answer": "The context information does not provide specific steps on how a user can manage their billing account.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "In the context of the article mentioned in section_8.md, explain the process of adding a new Compose column and how to reference other column values.",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**Within this article you\u2019ll find...**\n\n\n* Add a new Compose column\n* Reference other column values\n* Use formulas\n* Format text\n* Convert to editable\n* FAQs\n\n\n\n---"
+            ],
+            "reference_answer": "The context information doesn't provide specific details on how to add a new Compose column or how to reference other column values. However, it mentions that these topics are covered in the article contained in the file section_8.md. To get the specific information, you would need to access and read the content of the file.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "Can you describe how to use formulas and format text in the context of the information provided in section_8.md? Additionally, explain what it means to convert to editable and provide an example.",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**Within this article you\u2019ll find...**\n\n\n* Add a new Compose column\n* Reference other column values\n* Use formulas\n* Format text\n* Convert to editable\n* FAQs\n\n\n\n---"
+            ],
+            "reference_answer": "I'm sorry, but the context information provided doesn't include specific details on how to use formulas and format text, what it means to convert to editable, or provide an example. It only mentions that these topics are covered in the article found in the file section_8.md. To provide the information you're asking for, I would need to have access to the content of the file.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "What are the steps to add a new Compose column in a table according to the instructions in section_9.md file?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**Add a new Compose column**\n============================\n\n\nTo add a new Compose column, just follow these steps:\n\n\n1. In the upper right corner of your table, click the **plus icon** (**+**) to add a new column\n2. For the column type, choose **Compose.** This will create a new **Canvas column**. bring up the options dialog where you can build the dynamic text. Create your dynamic text here.\n3. Create your dynamic text here. The inline preview shows you what each value will look like per row.\n4. Tap outside the dialog to commit any changes. Hitting **Esc** will cancel any changes.\n5. If you want to turn off in-cell preview, go to the **Settings** tab and toggle that setting **off**.\n\n!1_1 (4).pngIf you need to access this editor again, you can do so by right clicking on the column header, and selecting **Column options.** Then you can make edits in the **Compose** tab."
+            ],
+            "reference_answer": "To add a new Compose column in a table according to the instructions in the section_9.md file, follow these steps:\n\n1. Click the plus icon (+) in the upper right corner of your table to add a new column.\n2. For the column type, choose Compose. This will create a new Canvas column and bring up the options dialog where you can build the dynamic text.\n3. Create your dynamic text in the options dialog. The inline preview shows you what each value will look like per row.\n4. Tap outside the dialog to commit any changes. Hitting Esc will cancel any changes.\n5. If you want to turn off in-cell preview, go to the Settings tab and toggle that setting off.\n\nIf you need to access this editor again, you can do so by right clicking on the column header, and selecting Column options. Then you can make edits in the Compose tab.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        },
+        {
+            "query": "How can you access the editor to make changes to the Compose column after it has been created, as described in the section_9.md file?",
+            "query_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            },
+            "reference_contexts": [
+                "**Add a new Compose column**\n============================\n\n\nTo add a new Compose column, just follow these steps:\n\n\n1. In the upper right corner of your table, click the **plus icon** (**+**) to add a new column\n2. For the column type, choose **Compose.** This will create a new **Canvas column**. bring up the options dialog where you can build the dynamic text. Create your dynamic text here.\n3. Create your dynamic text here. The inline preview shows you what each value will look like per row.\n4. Tap outside the dialog to commit any changes. Hitting **Esc** will cancel any changes.\n5. If you want to turn off in-cell preview, go to the **Settings** tab and toggle that setting **off**.\n\n!1_1 (4).pngIf you need to access this editor again, you can do so by right clicking on the column header, and selecting **Column options.** Then you can make edits in the **Compose** tab."
+            ],
+            "reference_answer": "You can access the editor to make changes to the Compose column by right clicking on the column header and selecting \"Column options\". Then you can make edits in the \"Compose\" tab.",
+            "reference_answer_by": {
+                "model_name": "gpt-4",
+                "type": "ai"
+            }
+        }
+    ]
+}

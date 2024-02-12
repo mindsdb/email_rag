@@ -1,0 +1,82 @@
+The blood type personality theory is a pseudoscientific belief prevalent in Japan which states that a person's blood group system is predictive of a person's personality, temperament, and compatibility with others. The theory is generally considered a superstition by the scientific community.
+One of the reasons Japan developed the blood type personality indicator theory was in reaction to a claim from German scientist Emil von Dungern, that Blood type B people were inferior. The popular belief originates with publications by Masahiko Nomi in the 1970s.
+Although some medical hypotheses have been proposed in support of blood type personality theory, the scientific community generally dismisses blood type personality theories as superstition or pseudoscience because of lack of evidence or testable criteria. Although research into the causal link between blood type and personality is limited, the majority of modern studies do not demonstrate any statistically significant association between the two. Some studies suggest that there is a statistically significant relationship between blood type and personality, although it is unclear if this is simply due to a self-fulfilling prophecy.
+
+
+== Overview ==
+According to popular belief, people with type A blood are friendly and kind, people with type B are spontaneous and creative, and people with type O are confident and aggressive. In a logical extension of this system, those with type AB are a mix of stereotypical A and B traits.
+
+
+== History ==
+The idea that personality traits were inherited through the blood dates as far back as Aristotle. Hippocrates also sought to link personality biologically, linking traits with the four bodily humors â sanguine, phlegmatic, choleric, and melancholic.In 1926, Rin Hirano and Tomita Yashima published the article "Blood Type Biological Related" in the Army Medical Journal.
+
+
+=== Takeji Furukawa ===
+In 1927, Takeji Furukawa, a professor at Tokyo Women's Teacher's School, published his paper "The Study of Temperament Through Blood Type" in the scholarly journal Psychological Research. The idea quickly took off with the Japanese public despite Furukawa's lack of credentials, and the militarist government of the time commissioned a study aimed at breeding ideal soldiers. The study used ten to twenty people for the investigation, thereby failing to meet the statistical requirements for generalizing the results to the wider population.On the other hand, in 1934, Fisher announced the chi-squared test, which is very popular at present, for the first time. Several scholars said that they found statistically significant differences in analyzing Japanese work conducted at that time.In another study, Furukawa compared the distribution of blood types among two ethnic groups: the Formosans in Taiwan and the Ainu of HokkaidÅ. His motivation for the study appears to have come from a political incident: After the Japanese occupation of Taiwan following Japan's invasion of China in 1895, the inhabitants tenaciously resisted their occupiers. Insurgencies in 1930 and 1931 resulted in the deaths of hundreds of Japanese settlers.The purpose of Furukawa's studies was to "penetrate the essence of the racial traits of the Taiwanese, who recently revolted and behaved so cruelly." Based on a finding that 41.2% of Taiwanese samples had type O blood, Furukawa assumed that the Taiwanese rebelliousness was genetic. His reasoning was supported by the fact that among the Ainu, whose temperament was characterized as submissive, only 23.8% is type O. In conclusion, Furukawa suggested that the Japanese should increase intermarriage with the Taiwanese to reduce the number of Taiwanese with type O blood.
+
+
+=== Masahiko Nomi ===
+
+Interest in the theory was revived in the 1970s with a book by Masahiko Nomi, a journalist with no medical background (he graduated from the engineering department of the University of Tokyo). Few Japanese psychologists criticized him at that time, so he continued to demonstrate statistically significant data in various fields and published several books with these results. Later after his death in 1981, Masahiko Nomi's work was said to be largely uncontrolled and anecdotal, and the methodology of his conclusions was unclear. Because of this, he was heavily criticized by the Japanese psychological community, although his books remain popular. His son, Toshitaka Nomi, continued to promote the theory with a series of books and by running the Institute of Blood Type Humanics. He later established the Human Science ABO Center for further research and publication in 2004.
+
+
+== Background and criticism ==
+
+
+=== Criticism ===
+Kengo Nawata, a Japanese social psychologist, statistically analyzed three data sets of over 10,000 Japanese and American people in total. However, 65 of the 68 items yielded non-significant differences between blood types and the other three items showed relatively slight relationships. Therefore, the blood type explained only 0.3% of the whole differences of these data sets. This result suggests that blood type explained very little of people's personalities. Nawata concluded that there is no relevance of blood type for personality.
+
+
+=== Controversial statistically significant data ===
+However, some academic researchers have shown several statistically significant data in Japan and Korea. Akira Sakamoto and Kenji Yamazaki, Japanese social psychologists, analyzed 32,347 samples of annual opinion polls from 1978 through 1988. These results indicated that Japanese blood-typical stereotypes influenced their self-reported personalities â like a self-fulfilling prophecy.
+Cosy Muto and Masahiro Nagashima et al. (Nagasaki University) conducted a supplementary survey of Yamazaki and Sakamoto in 2011. They demonstrated that significant and the same difference in personalities between blood-types by using the same database as Samamoto and Yamazaki used. In the 1990s, the difference due to blood types was stabilized and variances became smaller. Then in the 2000s, the difference was statistically significant, too. However, the effect magnitude was extremely small, despite 'significance' in the statistical sense.
+Another Japanese social psychologist, Shigeyuki Yamaoka (Shotoku University), announced results of his questionnaires, which were conducted in 1999 (1,300 subjects) and 2006 (1,362 subjects), In both cases, the subjects were university students, and only subjects with enough knowledge of and belief in the "blood-type diagnosis" showed meaningful differences. He concluded that these differences must be the influence of mass media, especially TV programs. Yamaoka later examined 6,660 samples from 1999 through 2009 in total and found the same result.On the other hand, there are opinions that the statistically meaningful differences according to the blood types are not explained only by beliefs, nor are they a self-fulfilling prophecy. In Japan, the penetration rate of blood-typical personality traits was investigated. Yoriko Watanabe, a Japanese psychologist (then Hokkaido University), chose "well-known" traits and found most traits were known to no more than half of Japanese (subjects were university students). A Japanese writer, Masayuki Kanazawa, analyzed these blood-typical traits in combination with data from Yamaoka (1999) that used the same items of Watanabe's penetration survey. If blood-typical differences are caused by penetration (or their self-recognition), the rate of differences of a trait is proportional to the rate of its penetration. However, Kanazawa was not able to discover any association with blood-type differences and penetration rates. This result raises doubt about the role of beliefs and self-fulfilling prophecy.
+Most reports that demonstrated statistical correlation attribute differences to a self-fulfilling prophecy. However, no study directly proved the existence of "self-fulfillment". Therefore, the opinions of researchers are varied at present:
+
+Whether there is a statistical correlation or not;
+Whether any statistical correlations are superficial, being caused by subjects' self-fulfilling prophecy, or if they are truly caused by the blood type.In a 2021 Japanese study, ANOVA results of a 6,000-population large-scale survey showed that respondents displayed the personality traits corresponding to their own blood type more strongly than respondents who had different blood types did. This finding was consistent across all traits, and all differences were statistically significant. The same differences in scores were found in the groups who reported no blood type personality knowledge, although the values were smaller.
+
+
+=== Blood-type personality and the five-factor model ===
+The five-factor model tests were carried out in several countries, including Japan, Korea, and Taiwan, after the year 2000. These tests were intended to digitize self-ratings of the "big five" personality traits. It was expected that differences in self-reported personalities (a self-fulfilling prophecy) would be detected from the subject who believed in blood-typical stereotypes. As a result, researchers found no meaningful statistical difference.So Ho Cho, a Korean psychologist (Yonsei University), and the others carried out a questionnaire about blood-typical items to subjects and discovered statistical differences as expected. However, the difference was not found when the five-factor model for big five personality traits was administered to the same subjects. Another Korean researcher Sohn (Yonsei University) re-analyzed Cho's data. He found that several independent items of the big five personality test detected differences according to each blood-typical stereotype. However, these differences became extinct in the process of plural items being gathered to five factors (big five). If these results are correct, the five-factor model test cannot detect differences between the blood types â if such a causal link did indeed exist.In 2014, a Korean matchmaking company ëì¤ Duo conducted a research survey closely examined 3,000 couples and found that blood type had no significant impact on the possibility of a couple getting married.In 2017, a meta-analysis of studies, using the Big Five personality test, involving 260,861 subjects found that six genes affected human personality. However, the coefficient of determination was as low as 0.04%. This is usually considered to be an error.
+
+
+=== Studies of blood distribution in various fields ===
+In order to avoid the influence of "contamination by knowledge", a Japanese psychologist group published a series of studies, but no significant differences were found except for Japanese prime ministers. Later, it was reported that significant differences were found not only for prime ministers, but also for foreign ministers, education ministers, professional baseball hitters, and soccer players in Japan.
+
+
+=== Brain waves and light topography ===
+Kim and Yi (Seoul University of Venture & Information) measured the brain waves of 4,636 adults. They reported that type O people were most stress-resistant.
+
+
+== Popularity ==
+In Japan, discussion of blood types is widely popular in women's magazines as a way of gauging relationship compatibility with a potential or current partner. Morning television shows feature blood type horoscopes, and similar horoscopes are published daily in newspapers. The blood types of celebrities are listed in their infoboxes on Japanese Wikipedia. A series of four books that describe people's character by blood type ranked third, fourth, fifth, and ninth on a list of best-selling books in Japan in 2008 compiled by Tohan Corporation.No less than two-thirds of the respondents, hailing from Chinese speaking East Asian countries and areas, believe in the association between blood types and personality.Furthermore, according to one Japanese survey, more than half of the Japanese respondents are fond of talking about blood type and personality. The research also says that people in Japan like blood-typical personality diagnosis and 1. talk about it with proper knowledge, 2. believe some relationships exist between blood type and personality, 3. feel its traits apply to themselves to a certain degree. The results of the two other surveys are the same.Although there is no proven correlation between blood type and personality, it remains popular with the many matchmaking services that cater to blood type. In this way, it is similar to the use of astrological signs, which are also popular in Japan. Asking one's blood type is common in Japan, and people are often surprised when a non-Japanese does not know their blood type.It is common among anime and manga authors to mention their characters' blood types and to give their characters blood types to match their personalities. Some video game characters have known blood types. Also, it is common for video game series to allow for blood type as an option in their creation modes.After then-Reconstruction Minister Ryu Matsumoto's abrasive comments towards the governors of Iwate and Miyagi forced him to step down from his post, he partially blamed his behavior on his blood type, saying "My blood is type B, which means I can be irritable and impetuous, and my intentions don't always come across."Blood types are important in South Korea as well. The Korean webcomic A Simple Thinking About Blood Type depicts the stereotypes of each blood type and has been adapted as a short anime series in Japan as Ketsuekigata-kun! in 2013 and 2015.
+
+
+== Discrimination ==
+Blood type harassment, called bura-hara (wasei-eigo: a portmanteau of blood and  harassment), has been blamed for bullying of children in playgrounds, loss of job opportunities, and ending of happy relationships.Many people in Japan and Korea have been discriminated against because of their blood type. Employers ask blood types during interviews despite the warnings they have been given. Children at schools have been split up according to their blood type. The national softball team has customized training to fit each player's blood type. Companies have given work assignments according to their employee's blood type.However, these episodes are thought to be more or less exaggerated â as well as horoscope addiction in Europe or the US, which is sometimes reported in Japan. No blood-type harassment trials have been reported, so far. In reality, most Japanese people do not think blood types determine their personalities, but rather affect them to some degree.
+
+
+== See also ==
+Barnum effect
+Blood type diet
+Zodiac signsâWestern equivalent using the positions of stars on a person's birthday to indicate or predict their personality.
+
+
+== References ==
+
+
+== Further reading ==
+Constantine, Peter. What's Your Type?: How Blood Types Are the Keys to Unlocking Your Personality. 1997. Plume, ISBN 0-452-27802-3.
+Jun Kim, Beom; et al. (2007). "Blood-type Distribution". Physica A. 373 (1): 533â540. Bibcode:2007PhyA..373..533K. doi:10.1016/j.physa.2006.05.027.
+Miller, Laura (1977). "People Types: Personality Classification in Japanese Women's Magazines". The Journal of Popular Culture. 11 (2): 436â452.
+Nawata, Kengo (2014). "No relationship between blood type and personality: Evidence from large-scale surveys in Japan and the US". The Japanese Journal of Psychology. 85 (2): 148â156. doi:10.4992/jjpsy.85.13016. PMID 25016835.
+Nomi, Toshitaka, and Alexander Besher, You Are Your Blood Type: The Biochemical Key to Unlocking the Secrets of Your Personality. New York: Pocket Books, 1988. ISBN 0-671-63342-2.
+Sakamoto, A.; Yamazaki, K. (2004). "Blood-typical personality stereotypes and self-fulfilling prophecy: A natural experiment with time-series data of 1978â1988" (PDF). Progress in Asian Social Psychology. 4: 239â262. Archived from the original (PDF) on 2016-01-22. Retrieved 2014-08-12.
+
+
+== External links ==
+Blood type and the five factors of personality in Asia
+Japanese Blood Types
+Human Science ABO Center
+Website of Peter J. D'Adamo

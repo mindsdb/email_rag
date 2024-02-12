@@ -1,0 +1,754 @@
+{
+    "examples": [
+        {
+            "query": "Can you provide for me the three highlights for the GHG emissions section of the Advancing Carbon-Free Energy Performance Highlights?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "GHG emissions\n65%\ncumulative GHG\nemissions reduction\nFrom 2011 to 2021, our renewable energy purchasing resulted in a cumulative 65% reduction in our Scope 1 and Scope 2 emissions, as compared with a business-as-usual scenario in which we didn\u2019t procure renewable energy via PPAs.\n81%\ndecrease\nin carbon intensity\nFrom 2011 to 2021, our carbon intensity per unit of revenue\ndecreased by 81%.\n15 years\nof carbon neutrality\nGoogle has been carbon neutral\nfor our operations since 2007. Because of our purchases\nof renewable energy and\nprocurement of high-quality\ncarbon credits, we have compensated for all our\noperational GHG emissions."
+            ],
+            "reference_answer": "Sure, they are: \n1. 65% cumulative GHG emissions reduction\n2. 81% decrease in carbon intensity\n3. 15 years of carbon neutrality",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What percentage of waste from Google's offices globally were diverted away from landfills in 2021?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "64%\nlandfill diversion\nIn 2021, we reached a 64% landfill diversion rate for waste from\nour offices globally."
+            ],
+            "reference_answer": "Sixty-four percent.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Can you present me with the performance highlights for Empowering Users With Technology?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "EMPOWERING USERS WITH TECHNOLOGY\nProducts\nTools\n1 billion km\nof transit results\non Google Maps\nGoogle Maps provides, on\naverage, more than 1 billion kilometers\u2019 (621 million miles\u2019)\nworth of transit results per day, helping to limit carbon emissions\nby giving people access to mass transit options, bike routes,\nand traffic information.\n200,000\nEV charging locations\non Google Maps\nBy the end of 2021, Google Maps contained nearly 200,000 EV charging locations globally.\n42,000\ncities and regions\non Environmental\nInsights Explorer\nBy the end of 2021, nearly 42,000 cities and regions worldwide were covered by the Environmental Insights Explorer, a tool that empowers city planners and policymakers with actionable data\nto help reduce global emissions.\n52 petabytes\nof freely available\ngeospatial data\nEarth Engine has enabled tens\nof thousands of active users\naround the world to easily\nanalyze over 52 petabytes13\nof freely available geospatial information, resulting in a deeper understanding of the planet.\nPrograms\n\u20ac10million\nGoogle.org Impact\nChallenge on Climate\nIn 2021, 11 organizations across Europe were selected to receive Google.org funding via the Impact Challenge on Climate, which provided \u20ac10 million to fund bold ideas that use technology to accelerate Europe\u2019s progress toward"
+            ],
+            "reference_answer": "Sure! The Performance Highlights for Empowering Users With Technology are listed below:\nProducts:\n1 billion km of transit results on Google Maps Google Maps provides, on average, more than 1 billion kilometers\u2019 (621 million miles\u2019) worth of transit results per day, helping to limit carbon emissions by giving people access to mass transit options, bike routes, and traffic information.\n200,000 EV charging locations on Google Maps By the end of 2021, Google Maps contained nearly 200,000 EV charging locations globally\nTools:\n42,000 cities and regions on Environmental Insights Explorer By the end of 2021, nearly 42,000 cities and regions worldwide were covered by the Environmental Insights Explorer, a tool that empowers city planners and policymakers with actionable data to help reduce global emissions.\n52 petabytes of freely available geospatial data Earth Engine has enabled tens of thousands of active users around the world to easily analyze over 52 petabytes13 of freely available geospatial information, resulting in a deeper understanding of the planet.\nPrograms:\n\u20ac10million Google.org Impact Challenge on Climate In 2021, 11 organizations across Europe were selected to receive Google.org funding via the Impact Challenge on Climate, which provided \u20ac10 million to fund bold ideas that use technology to accelerate Europe\u2019s progress toward a greener, more resilient future.\n\n\n",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What was the listed key achievement regarding sustainbility and climate change for Google in 2077?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "We\u2019ve been a leader on sustainability and climate change since Google\u2019s founding over 20 years ago. These are some of our key achievements over the past two decades:\n2007: We became the first major company to be carbon neutral for our operations.\n2017: We became the first major company to match 100% of our annual electricity use with renewable energy, which we\u2019ve achieved for five consecutive years.\n2020: We issued $5.75 billion in sustainability bonds\u2014the largest sustainability\nor green bond issuance by any company in history at the time.\n2021: We matched 66% of our data center electricity"
+            ],
+            "reference_answer": "In 2017, Google became the first major company to match 100% of their annual electricity use with renewable energy, which they've achieved for five consecutive years.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Did Google reach its intended Waste target under the Building Better Devices and Services Initiative in 2021?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Target: Achieve UL 2799 Zero Waste to Landfill\ncertification at all final assembly consumer\nhardware manufacturing sites by 2022.\n\n2021 Progress:\nIn 2021, we achieved certification to the UL 2799\nZero Waste to Landfill certification standard for\nseveral final assembly manufacturing sites."
+            ],
+            "reference_answer": "No, this target has not been met in 2021. However, Google has achieved certification to UL 2799 for several final assembly manufacturing sites.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "How many EV charging locations were there on Google Maps by the end of 2021?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "200,000\nEV charging locations\non Google Maps\nBy the end of 2021, Google Maps contained nearly 200,000 EV charging locations globally."
+            ],
+            "reference_answer": "200000",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "On what page of the report can I find the performance highlights for the Empowering Users With Technology initiative?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "EMPOWERING USERS WITH TECHNOLOGY\nProducts\nTools\n1 billion km\nof transit results\non Google Maps\nGoogle Maps provides, on\naverage, more than 1 billion kilometers\u2019 (621 million miles\u2019)\nworth of transit results per day, helping to limit carbon emissions\nby giving people access to mass transit options, bike routes,\nand traffic information.\n200,000\nEV charging locations\non Google Maps\nBy the end of 2021, Google Maps contained nearly 200,000 EV charging locations globally.\n42,000\ncities and regions\non Environmental\nInsights Explorer\nBy the end of 2021, nearly 42,000 cities and regions worldwide were covered by the Environmental Insights Explorer, a tool that empowers city planners and policymakers with actionable data\nto help reduce global emissions.\n52 petabytes\nof freely available\ngeospatial data\nEarth Engine has enabled tens\nof thousands of active users\naround the world to easily\nanalyze over 52 petabytes13\nof freely available geospatial information, resulting in a deeper understanding of the planet.\nPrograms\n\u20ac10million\nGoogle.org Impact\nChallenge on Climate\nIn 2021, 11 organizations across Europe were selected to receive Google.org funding via the Impact Challenge on Climate, which provided \u20ac10 million to fund bold ideas that use technology to accelerate Europe\u2019s progress toward a greener, more resilient future.\nGoogle Environmental Report 2022 7"
+            ],
+            "reference_answer": "The performance highlights for Empowering Users With Technology Initiative can be found on page 7.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Can you please provide for me the glossary of this document?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Glossary\nCFE: carbon-free energyCO2e: carbon dioxide equivalentEV: electric vehicleft: footFTE: full-time equivalentGHG: greenhouse gasGW: gigawattGWh: gigawatt-hourGWP: global warming potentialILFI: International Living Future InstituteISO: International Organization for Standardizationkg: kilogramkm: kilometerkWh: kilowatt-hourlb: poundLEED: Leadership in Energy and Environmental Designm: meterMBM: market-based methodMW: megawattMWh: megawatt-hourPPA: power purchase agreementPUE: power usage effectivenesstCO2: metric tons of carbon dioxidetCO2e: metric tons of carbon dioxide equivalentWBCSD: World Business Council for"
+            ],
+            "reference_answer": "Sure, here is the glossary:\nGlossary\nCFE: carbon-free energy\nCO2e: carbon dioxide equivalent\nEV: electric vehicleft: foot\nFTE: full-time equivalent\nGHG: greenhouse gas\nGW: gigawatt\nGWh: gigawatt-hour\nGWP: global warming potential\nILFI: International Living Future Institute\nISO: International Organization for Standardization\nkg: kilogram\nkm: kilometer\nkWh: kilowatt-hour\nlb: pound\nLEED: Leadership in Energy and Environmental Design\nm: meter\nMBM: market-based method\nMW: megawatt\nMWh: megawatt-hour\nPPA: power purchase agreement\nPUE: power usage effectiveness\ntCO2: metric tons of carbon dioxide\ntCO2e: metric tons of carbon dioxide equivalent\nWBCSD: World Business Council for Sustainable Development\nWRI: World Resources Institute",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "On what page can I find details about Amazons Climate solutions?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Contents\nIntroduction\n2 About Amazon\n3 Opening Letter From Kara Hurst\n4 Our Business\n5 2022 Year in Review\n6 Goals Summary\nSustainability\n8 Our Sustainability Approach\nDriving Climate Solutions\n9 Carbon\n22 Renewable Energy\nReducing Packaging and Waste\n26 Packaging\n30 Waste and Circularity\nProtecting Natural Resources\n35 Water\nRespecting Human Rights\n38 Human Rights\n42 Responsible Supply Chain\nInnovating Our Products and Services\n48 Product Sustainability\nPeople\n55 Enhancing the Amazon Employee Experience\n60 Improving Employee Health and Safety\n63 Creating Inclusive Experiences\n70 Increasing Supplier Diversity\n72 Supporting Global Communities\nAppendix\n78 Impact Reporting Topic Assessment\n79 Endnotes\n80 Assurance Statement\n81 Disclaimer and Forward-Looking Statements"
+            ],
+            "reference_answer": "You can find information on driving climate solutions from Pages 9 to 25",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "For the listed Renewable Energy goals, by when does Amazon intend to have all operations powered by 100% renewable energy?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Renewable Energy\nGoal: Power our operations with 100% renewable energy by 2030.\n2022 Progress: 90% renewable electricity"
+            ],
+            "reference_answer": "Amazon set the goal of becoming powered by 100% renewable energy by the year 2023.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Can you provide the Actions taken by Amazon for achieving their Carbon goals?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Actions\n90% Electricity consumed by Amazon attributable to renewable energy sources, up from 85% in 2021\n29% Reduction in Scope 2 emissions from purchased electricity\n7 New companies invested in through The Climate Pledge Fund to develop breakthrough low-carbon technologies to help transform the industry\n145M Packages delivered by EVs in the U.S. and Europe\n111 New signatories of The Climate Pledge"
+            ],
+            "reference_answer": "Sure, here they are:\nActions\n90% Electricity consumed by Amazon attributable to renewable energy sources, up from 85% in 2021\n29% Reduction in Scope 2 emissions from purchased electricity\n7 New companies invested in through The Climate Pledge Fund to develop breakthrough low-carbon technologies to help transform the industry\n145M Packages delivered by EVs in the U.S. and Europe\n111 New signatories of The Climate Pledge",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What were Amazon's Carbon Intesity values in (C02e per $ of GMS) in the years 2019 to 2022?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Amazon\u2019s Enterprisewide Carbon Footprint, 2019\u20132022\nCarbon Intensity 2019 2020 2021 2022 YoY%\nCarbon Intensity (grams of CO2e per $ of GMS) 122.8 102.7 100.8 93.7 -7%"
+            ],
+            "reference_answer": "Sure, here they are:\n2019: 122.8\n2020: 102.7\n2021: 100.8\n2022: 93.7",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What were Amazon's Total Carbon Footprint (MMT CO2e) in the years 2019 to 2022?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Emissions Category (MMT CO2e) 2019 2020 2021 2022 YoY%\nEmissions from Direct Operations (Scope 1) 5.76 9.62 12.11 13.40 11%\nFossil fuels 5.57 9.37 11.89 13.09 10%\nRefrigerants 0.19 0.25 0.22 0.31 41%\nEmissions from Purchased Electricity (Scope 2)* 5.50 5.27 4.07 2.89 -29%\nEmissions from Indirect Sources (Scope 3)* 39.91 45.75 55.36 54.98 -0.7%\nCorporate purchases and Amazon-branded product emissions (e.g., operating\nexpenses, business travel, and Amazon-branded product manufacturing, use\nphase, and end-of-life) 15.41 16.70 19.09 21.39 12%\nCapital goods (e.g., building construction, servers and other hardware,\nequipment, vehicles) 8.01 10.52 15.37 12.88 -16%\nOther indirect emissions (e.g., third-party transportation, packaging, upstream\nenergy related) 12.44 15.77 18.00 17.42 -3%\nLifecycle emissions from customer trips to Amazon\u2019s physical stores 4.05 2.77 2.91 3.29 13%\nAmazon\u2019s Total Footprint 51.17 60.64 71.54 71.27 -0.4%"
+            ],
+            "reference_answer": "Amazon's total footprint for the years 2019-2022 are as follows:\n2019: 51.17\n2020: 60.64\n2021: 71.54\n2022: 71.27",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "On what page can of the report can I find information about The Climate Page Fund?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "IntroductionSustainabilityDriving Climate SolutionsCarbonPeopleAppendix\nThe Climate Pledge\nThe Climate Pledge is a commitment to reach net-zero carbon emissions by 2040. Amazon co-founded The Climate Pledge with Global Optimism in 2019 and became the first company to sign on.\nThe Climate Pledge brings together the world\u2019s top companies to accelerate joint action, cross-sector collaboration, and responsible change. Signatories agree to three areas of action:\n\u2022\nRegular reporting: Measure and report on greenhouse gas (GHG) emissions on a regular basis.\n\u2022\nCarbon elimination: Implement decarbonization strategies in line with the Paris Agreement through business change and innovations, including efficiency improvements, renewable energy, materials reductions, and other carbon-emission-elimination strategies.\n\u2022\nCredible offsets: Neutralize any remaining emissions with additional, quantifiable, real, permanent, and socially beneficial offsets to achieve net-zero annual carbon emissions by 2040.\nWhile each company will take its own path to net zero, signing The Climate Pledge reinforces their commitment to sustainability.\nProgress in 2022\nAs of 2022 year end, The Climate Pledge signatories represent:\n396 Signatories\n36 Countries\n55 Industries\n9.3M+ Employees\n$3.68T In global annual revenue\nWe have set a goal to recruit additional signatories every year. In 2022 alone, 111 companies signed The Climate Pledge. We also facilitated signatory collaboration to tackle hard-to-abate emissions while providing The Climate Pledge community with helpful information and partnerships to drive forward multisectoral decarbonization initiatives.\nLearn more about The Climate Pledge .\nThe Climate Pledge Fund\nThe Climate Pledge Fund is a $2 billion venture investment program supporting the advancement of sustainable technologies and services that will enable Amazon to meet our net-zero carbon goal. Throughout 2022, The Climate Pledge Fund continued its mission to support companies working on promising decarbonization solutions.\nWe made new investments in seven companies: Electric Hydrogen, Sunfire, and Verne, which are developing green hydrogen production and storage methods;2 Moxion Power and Ambient Photonics, which are advancing cleaner energy storage; and Brimstone and Electra, which are working to decarbonize construction. These investments bring our portfolio to 20 total companies as of the end of 2022.\nEquitably Scaling Climate Tech Solutions\nWomen-founded companies typically receive a fraction of the total venture capital flowing into climate tech startups.3 In November 2022, Amazon made a $53 million commitment to help address this gender inequity. This includes a $50 million commitment through The Climate Pledge Fund\u2019s new Female Founder Initiative to invest in women-founded and women-led climate tech companies. Amazon also committed $3 million to the U.S. Agency for International Development (USAID) Climate Gender Equity Fund. As a co-founder of The Climate Pledge, Amazon will work with Pledge signatories and other companies to encourage their additional support and corporate investment in the Climate Gender Equity Fund.\nThrough The Climate Pledge Fund, we invest in companies\u2014like electric aircraft innovator BETA Technologies\u2014that are developing low-carbon solutions.\nIn 2022, Amazon became a founding member of the Climate Resolute Coalition, a multistakeholder organization focused on advancing women\u2019s economic empowerment and climate solutions in global supply chains. We also work with various other organizations to enhance equitable opportunities for climate tech entrepreneurs, including Greentown Labs and Elemental Excelerator. 2022 Amazon Sustainability Report 14\n|"
+            ],
+            "reference_answer": "On page 14",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What household brands were featured in the in the climate pledge infographic on page 14?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "The Climate Pledge\nThe Climate Pledge is a commitment to reach net-zero carbon emissions by 2040. Amazon co-founded The Climate Pledge with Global Optimism in 2019 and became the first company to sign on.\nThe Climate Pledge brings together the world\u2019s top companies to accelerate joint action, cross-sector collaboration, and responsible change. Signatories agree to three areas of action:\n\u2022\nRegular reporting: Measure and report on greenhouse gas (GHG) emissions on a regular basis.\n\u2022\nCarbon elimination: Implement decarbonization strategies in line with the Paris Agreement through business change and innovations, including efficiency improvements, renewable energy, materials reductions, and other carbon-emission-elimination strategies.\n\u2022\nCredible offsets: Neutralize any remaining emissions with additional, quantifiable, real, permanent, and socially beneficial offsets to achieve net-zero annual carbon emissions by 2040.\nWhile each company will take its own path to net zero, signing The Climate Pledge reinforces their commitment to sustainability.\nProgress in 2022\nAs of 2022 year end, The Climate Pledge signatories represent:\n396 Signatories\n36 Countries\n55 Industries\n9.3M+ Employees\n$3.68T In global annual revenue\nWe have set a goal to recruit additional signatories every year. In 2022 alone, 111 companies signed The Climate Pledge. We also facilitated signatory collaboration to tackle hard-to-abate emissions while providing The Climate Pledge community with helpful information and partnerships to drive forward multisectoral decarbonization initiatives.\nLearn more about The Climate Pledge .\n\nMicrosoft, jetBlue, Uber, Mercedes-Benz, Visa, IBM, Heineken"
+            ],
+            "reference_answer": "Microsoft, jetBlue, Uber, Mercedez-Benz, Visa, IBM and Heineken",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What percentage of corporate emissions since 2020 were attributed to renewable electricity?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Carbon neutral for\ncorporate emissions\nSince April 2020, we\u2019ve achieved carbon\nneutrality for our corporate emissions by\nsourcing 100 percent renewable electricity\nfor Apple facilities, implementing energy\nefficiency initiatives, and securing carbon\noffsets for remaining emissions."
+            ],
+            "reference_answer": "100% since April 2020.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "In Apple's comprehensive carbon footprint, what were the top two categories leading to the most avoided emissions?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Supplier clean energy:\n13.9 million metric tons avoided\nSupplier energy efficiency:\n1.1 million metric tons avoided\nFY21 REC purchase:\n0.4 million metric tons avoided\nLow-carbon materials*:\n7.3 million metric tons avoided\nProduct energy efficiency: 0.2 million metric tons avoided\nLoad reduction and mode switching: 0.2 million metric tons avoided\nUse of renewable electricity: 1.0 million metric tons avoided\nCorporate energy efficiency: 0.06 million metric tons avoided"
+            ],
+            "reference_answer": "The top two categories were: supplier clean energy and low-carbon materials.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "By what percentage did Apple reduce plastic in packaging compared to year 2015?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "75%\nWe\u2019ve reduced the plastic in our packaging\nby 75 percent compared with 2015,\nprogressing toward our goal to eliminate\nall plastic from our packaging by 2025"
+            ],
+            "reference_answer": "75%",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "How many metric tons of waste were redirected from landfill by supplier facilities?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "2M+\nmetric tons of waste redirected from\nlandfill by supplier facilities as part of\nApple\u2019s Zero Waste Program"
+            ],
+            "reference_answer": "More than 2 million metric tons of waste were redirected from landfill by supplier facilities.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "In 2021, how many hours were spent by staff across all Apple University courses?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "In fiscal year 2021,\nteam members spent more than 175,000\nhours participating in all Apple University\ncourses combined."
+            ],
+            "reference_answer": "175000 hours",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "How many millions of gallons of freshwater was saved in the supply chain category for the year 2018?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Supply chain Freshwater saved million gallons 12,300 10,800 9,300 7,600 5,100"
+            ],
+            "reference_answer": "7600 million gallons of freshwater were saved in 2018 under the supply chain category",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What were the Total Packaging resources used in years 2017 to 2021? ",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Product packaging footprint\nTotal packaging metric tons 257,000 226,000 189,000 187,000 169,000"
+            ],
+            "reference_answer": "2021: 257000\n2020: 226000\n2019: 189000\n2018: 187000\n2017: 169000",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What is the objective of the Carbon Call initiative?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "In February 2022, Microsoft, ClimateWorks Foundation, and over 20 leading organizations launched an important new initiative called the Carbon Call. The objective of this program is to unify the world around a carbon accounting system that is more reliable and interoperable."
+            ],
+            "reference_answer": "The objective of Carbon Call is to unify the world around a carbon accounting system that is more reliable and interoperable",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What are the three key areas that will enable the scale of sustainability solutions?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "We will continue\ninvesting in three key areas that will enable the scale\nof sustainability solutions needed to address the\nclimate crisis:\n1 Advancing AI solutions for greater\nclimate impact.\n2 Accelerating the development of sustainability\nmarkets through investment.\n3 Creating tools that advance emissions\nmeasurement and compliance."
+            ],
+            "reference_answer": "1 Advancing AI solutions for greater climate impact.\n2 Accelerating the development of sustainability markets through investment.\n3 Creating tools that advance emissions measurement and compliance.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "How many people in India did Microsoft provide water access to?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Water Table 3\n\nIndia: 309,921\nIndonesia: 225,389\nBrazil: 16,408\nMexico: 340"
+            ],
+            "reference_answer": "309,921",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "How many people in Indonesia did Microsoft provide water access to?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Water Table 3\n\nIndia: 309,921\nIndonesia: 225,389\nBrazil: 16,408\nMexico: 340"
+            ],
+            "reference_answer": "225,389",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "How many people in Brazil did Microsoft provide water access to?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Water Table 3\n\nIndia: 309,921\nIndonesia: 225,389\nBrazil: 16,408\nMexico: 340"
+            ],
+            "reference_answer": "16,408",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "How many people in Mexico did Microsoft provide water access to?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Water Table 3\n\nIndia: 309,921\nIndonesia: 225,389\nBrazil: 16,408\nMexico: 340"
+            ],
+            "reference_answer": "340",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "How many more acres of land does Microsoft need to protect by 2025 according to Ecosystems Chart 1?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Ecosystems Chart 1\nAchieving our target of protecting more land than we use by 2025\nAs of FY22, Microsoft has contracted to protect 17,268 acres of land, which is over 50 percent more than the land we use to operate, and 12,270 acres were designated as permanently protected."
+            ],
+            "reference_answer": "4998 more acres",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What key insight was listed in page 56 of the document?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "25%\nWe are reducing idle\npower consumption\nof servers when they\nare not actively being\nused and expect\nup to a 25 percent\nreduction in energy\nusage for these\nunallocated servers."
+            ],
+            "reference_answer": "25%\nWe are reducing idle power consumption of servers when they are not actively being used and expect up to a 25 percent reduction in energy usage for these unallocated servers.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What key insight was listed in page 61 of the document?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "100%\nOur key European\nand American\ndistribution centers\nnow produce over\ntwo million kWh of\nsolar energy and are\n100 percent powered\nby renewable energy."
+            ],
+            "reference_answer": "100%\nOur key European and American distribution centers now produce over two million kWh of solar energy and are 100 percent powered by renewable energy.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What are the four commitments listed on page 66?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Our commitment\nUsing our voice on climate-related public policy issues\nInvesting in climate innovation\nDriving collective action\nEmpowering our global workforce"
+            ],
+            "reference_answer": "1. Using our voice on climate-related public policy issues\n2. Investing in climate innovation\n3. Driving collective action\n4. Empowering our global workforce",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What is the last Key project listed under Policy and advocacy section?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Making green jobs, skills, and\nentrepreneurship central to climate action\nUsing its Economic Graph insights, LinkedIn embarked\non a major research initiative focused on the rise\nand proliferation of green skills throughout the labor\nmarket. The 2022 Global Green Skills Report brings this\nresearch into focus through two key findings: 1) demand\nfor green skills is on track to outpace supply, and 2) not\nonly are green jobs growing, but also green skills are\nbecoming increasingly common across existing jobs\nthat are not traditionally thought of as green. At COP26,\nLinkedIn announced it would be one of the founding\npartners on the U.S. State Department's Connecting\nClimate Entrepreneurs initiative, through which the\nUS government will catalyze resources to support job\ngrowth by climate entrepreneurs in the global south."
+            ],
+            "reference_answer": "Making green jobs, skills, and entrepreneurship central to climate action.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What are the sub sections for \"What We Create\" section of the document?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "64 What We Create\nRaising Awareness\nTackling Climate Misinformation\nBuilding the Metaverse"
+            ],
+            "reference_answer": "Raising Awareness, Tackling Climate Misinformation, and Building the Metaverse",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What are the category labels for each topic in the chart of page 14?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Important, Very Important, Critical"
+            ],
+            "reference_answer": "Important, Very Important, Critical",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "How many pages and groups were removed for repeatedly violating Meta's rules against spreading COVID-19 misinformation?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "3000\nPages and groups\nremoved for\nrepeatedly violating\nour rules against\nspreading COVID-19\nmisinformation"
+            ],
+            "reference_answer": "3000",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "How many artifacts were removed from Facebook due to misleading information about COVID-19?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "12Million\nPieces of\nmisleading\nCOVID-19\ninformation\nremoved from\nFacebook"
+            ],
+            "reference_answer": "12000000",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "How many unique visitors to the Facebook Marketing Analytics Professional Certificate landing page?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "368,000\nUnique Visitors\nto the Facebook\nMarketing Analytics\nProfessional\nCertificate\nlanding page"
+            ],
+            "reference_answer": "368000",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "How many users were surveyed for their views on climate change? And across how many countries?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "76,328\nFacebook users\nreached with the\nClimate Change\nOpinion Survey\nto provide insights\ninto public views\non climate change\nacross 31 countries"
+            ],
+            "reference_answer": "76328 users across 31 countries.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What were the subsections for the 2021 Highlights?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "2021 Highlights\nThrough operational improvements\nand product innovations, we\nmade significant progress toward\na better reality in 2021. We are\nproud of how far we have\ncome\u2014and we are ready to go\nso much further.\n\nProtecting People\nand Planet Through\nResponsible Operations\n\nAccelerating\nAccess to Accurate\nInformation via the\nClimate Science Center\n\nTackling Climate\nMisinformation\n\nExpanding Net Zero\nfrom our Operations\nto our Value Chain\n\nBecoming\nWater Positive\n\n"
+            ],
+            "reference_answer": "1 Protecting People and Planet Through Responsible Operations\n2 Accelerating Access to Accurate Information via the Climate Science Center\n3 Tackling Climate Misinformation\n4 Expanding Net Zero from our Operations to our Value Chain\n5 Becoming Water Positive",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What are the subsections of the Workplaces section of the report?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Workplaces\nHealthy and Sustainable\nWorkplaces\nExpanding our Healthy and\nSustainable Materials\nProgram\u2014which focuses on\nreducing embodied carbon\nand avoiding chemicals of\nconcern\u2014to address product\nGlobal Warming Potential\u2197 is a\ncritical step in reaching our goal\nto reduce the embodied carbon of\nfacility building materials by 40%\nin 2030 from a 2019 baseline.\nEmbodied carbon refers to the\nCO2 emissions generated by the\nmanufacturing and transporting\nof building materials as well as\nthe construction process. The\nplan imposes limits on carbonintensive\nconstruction materials,\nsuch as concrete, steel, drywall,\ncarpet and furniture.\nMany of our offices are certified by LEED\u2014a globally recognized\nthird-party verification standard for sustainable buildings developed by\nthe U.S. Green Building Council (USGBC)\u2197. All of our new offices over\n100,000 square feet pursue LEED Gold Certification or higher. To date,\nwe have 50 offices globally that are LEED certified.\nIn 2021:\n\u2022 21 offices received LEED\nGold certification (Dublin,\nSeattle, Denver, Chicago,\nLos Angeles, and multiple\ncities in the San Francisco\nBay Area)\n\u2022 Sydney, Australia office\nreceived Green Star\nCertification\u2197 (6-Star Level)\n\u2022 Fremont, California,\ncampus earned Fitwel\u2197\nCertification (2-Star Level)\n\u2022 Hong Kong office achieved\nWorld Green Organisation\u2019s\nGreen Office & Eco-Healthy\nWorkplace Award\u2197\n\u2022 Dublin and London offices\nwere re-certified under ISO\n50001 Energy Management\nCertification\u2197\n"
+            ],
+            "reference_answer": "1. Healthy and Sustainable Workplaces\n2. Office Spotlight",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What is the fact about Oceans shared on page 43?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Oceans absorb\nmore than 90% of\nthe heat that reaches\nEarth\u2019s surface."
+            ],
+            "reference_answer": "Oceans absorb more than 90% ofthe heat that reaches Earth\u2019s surface.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What are the 4 facts shared in the Greenhouse Gas Emissions Sections?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "1. CO2 emissions are increasing more than 250 times faster from human activity than from natural sources after the last Ice Age.\n2. Shifting to a green economy could produce over 65 million new low-carbon jobs.\n3. Scope 3 emissions usually account for more than 70% of a business\u2019s carbon footprint.\n4. CO2 remains in the atmosphere for up to 1,000 years, nitrous oxide for up to 120 years and methane for up to 10 years."
+            ],
+            "reference_answer": "1. CO2 emissions are increasing more than 250 times faster from human activity than from natural sources after the last Ice Age.\n2. Shifting to a green economy could produce over 65 million new low-carbon jobs.\n3. Scope 3 emissions usually account for more than 70% of a business\u2019s carbon footprint.\n4. CO2 remains in the atmosphere for up to 1,000 years, nitrous oxide for up to 120 years and methane for up to 10 years.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "In the about netflix page, what are the mentioned highlights about the company?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Public in 2002\nFounded in 1997\n231M paid memberships\n30+ languages streamed in more than 190 countries\n12.8k employees in 65 countries\n50+ countries where films and series are created"
+            ],
+            "reference_answer": "Public in 2002\nFounded in 1997\n231M paid memberships\n30+ languages streamed in more than 190 countries\n12.8k employees in 65 countries\n50+ countries where films and series are created",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Who provided the testimonial on Netflix's Sustainability Strategy that started with \"Netflix's Sustainability Strategy is music to our ears...\"?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Netflix\u2019s Sustainability Strategy is music to our ears. We are\ndelighted to see Netflix apply the same positive disruption\nto sustainability that they\u2019ve applied to their business, upping\nthe ambition for achieving near-term net zero targets and\nharnessing the power of storytelling to educate and\nentertain citizens.\nChristiana Figueres,\nDiplomat and Architect of the U.N. Paris Agreement"
+            ],
+            "reference_answer": "Christiana Figueres,\nDiplomat and Architect of the U.N. Paris Agreement",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What are the Scope 1 and Scope 2 emission reductions levers?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Action\nEnergy Efficiency\nRenewable Energy (electricity and fuel)\nElectric (and other low-carbon) Vehicles\nClean Mobile Power"
+            ],
+            "reference_answer": "1 Energy Efficiency\n2 Renewable Energy (electricity and fuel)\n3 Electric (and other low-carbon) Vehicles\n4 Clean Mobile Power",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Who provided the testimonial on Netflix's Sustainability Across the Value Chain, that started with \"This is what industry leadership looks like...\"?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "This is what industry leadership looks like. Netflix is raising the bar\nby aligning operations with science, pioneering approaches to\nprotect nature, and sending new demand signals to suppliers that\nsustainability is a measurable priority. Not only do we see progress\nagainst ambitious near-term goals, Netflix is also leveraging their\nplatform for positive change. It\u2019s clear that Netflix is taking climate\naction seriously.\nElizabeth Sturcken,\nManaging Director, Environmental Defense Fund"
+            ],
+            "reference_answer": "Elizabeth Sturcken,\nManaging Director, Environmental Defense Fund",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Can you provide the quote by Xiye Bastida?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Young people like myself view Netflix as a cherished form of\nentertainment but also as a source of education and\ninspiration. As more and more of our generation recognizes\nthe implications of the climate crisis on our daily lives we feel\nhopeful when shows like The Crown tackle coal pollution, or\nwhen Zac Efron\u2019s Down to Earth highlights new green\ntechnologies. I\u2019m proud of Netflix for being serious about\ntackling the climate crisis both in-house and on-screen.\nXiye Bastida,\nIndigenous youth climate activist and winner of\nthe Spirit of the UN Award"
+            ],
+            "reference_answer": "Young people like myself view Netflix as a cherished form of\nentertainment but also as a source of education and\ninspiration. As more and more of our generation recognizes\nthe implications of the climate crisis on our daily lives we feel\nhopeful when shows like The Crown tackle coal pollution, or\nwhen Zac Efron\u2019s Down to Earth highlights new green\ntechnologies. I\u2019m proud of Netflix for being serious about\ntackling the climate crisis both in-house and on-screen.\nXiye Bastida,\nIndigenous youth climate activist and winner of\nthe Spirit of the UN Award",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Can you provide the quote by Aditi Sharma?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Aditi Sharma\nGraduate of the Netflix x Film Companion\nTake Ten Initiative, India\n\nThrough the Take Ten program, I got to learn about writing a\nscreenplay, creating characters, directing actors, along with many\nother filmmaking lessons. We had the opportunity to do this\nunder the guidance of Film Companion, and being mentored by\nprofessionals who are not only good at what they do, but also\ntruly invested in the process of teaching, was extremely helpful.\nThere aren\u2019t any grant opportunities in India to speak of, and to\nhave a platform like Netflix to showcase your film was a huge deal\nfor a first time filmmaker like me. For the first time, me and my\nteam believed that we had a real shot at this."
+            ],
+            "reference_answer": "Through the Take Ten program, I got to learn about writing a screenplay, creating characters, directing actors, along with many other filmmaking lessons. We had the opportunity to do this under the guidance of Film Companion, and being mentored by professionals who are not only good at what they do, but also truly invested in the process of teaching, was extremely helpful. There aren\u2019t any grant opportunities in India to speak of, and to. have a platform like Netflix to showcase your film was a huge deal for a first time filmmaker like me. For the first time, me and my team believed that we had a real shot at this.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What 3 partner companies were spotlighted in the Inclusion and Diversity section?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": [
+                "Netflix ESG Report 2022 48\nWith a catalytic seed investment of $25 million, Netflix collaborated with LISC\nFund Management (LFM) to create the Black Economic Development Fund\n(BEDF). The Fund launched in 2020 to address economic challenges in the\nBlack community and to help close the racial wealth gap. Since then, BEDF has\ngrown into a $250 million mission-driven fund investing in Black-led\ndevelopers, financial institutions, anchor organizations and businesses, with\nthe goal of growing these organizations and strengthening their contributions\nto the Black community. From inception to the end of 2022, Netflix\ncontributions supported BEDF\u2019s investment of $158 million in black-led\ntransactions: $12 million in deposits to Black-owned banks; $18 million to\nBlack-owned businesses; and $128 million in Black-led real estate developers.\nNetflix\u2019s anchor investment of $25 million has been instrumental\nin the creation of the Black Economic Development Fund,\nenabling us to invest in the Black community in a bold way.\nWithout the support of visionary partners like Netflix, this\ntransformative initiative may have never come to fruition.\nWe are deeply grateful for their partnership and look forward\nto continuing to drive positive change together.\nMichelle Spivak, Senior Director,\nLISC Fund Management\nInclusion and Diversity Responsible Products\nPARTNER SPOTLIGHTS\nHope Credit Union was one of the first investments in the Netflix\ncommitment to build economic opportunity in Black communities.\nThe investment in HOPE is supporting the financing of more than\n2,500 entrepreneurs, homebuyers and consumers of color. To\nlearn more about these investments and their impact, check out the\nYouTube web series \u201cBanking On Us.\u201d Episode 1 Episode 2 Episode 3\nIntroduction Environment Social Governance Appendix\n\nNetflix ESG Report 2022 49\nAs a women-led B-Corp, we\u2019re delighted to collaborate with Netflix,\na leader in promoting racial justice, in our shared goal of reimagining\nhow corporations invest in Communities of Color. Hand in hand,\nwe\u2019re charting a new course for corporate responsibility.\nCash Deposits: Netflix has committed $6 million to CNote Impact\nCash\u00ae funds to be deposited with mission-driven depository\ninstitutions (DIs). Investments from Netflix have supported\ncollective lending for over $1.9 billion in auto loans, over $4.2\nbillion in commercial loans and over $1.5 billion in housing loans.\nCatherine Berman,\nCEO of CNote\nInclusion and Diversity Responsible Products\nNetflix leverages CNote\u2019s technology solution to support cash\nmanagement into diversified deposits targeting social impact.\nDeposits are deployed with a network of impact-driven\ndepository institutions that support Black, Indigenous, People\nof Color (BIPOC) and low-to-moderate income communities\nand individuals, as well as women entrepreneurs.\nRacial Equity and Disability Loans: A Netflix fixed income\ncommitment of $16 million focused on racial equity and disability\nhas supported loans to 7 community development financial\ninstitutions (CDFIs) as of the end of 2022. These CDFIs provide\nfunds to support individuals with physical disabilities, those\nsuffering from mental illness, those recently released from\nincarceration or recovering from substance abuse issues and\nmembers of BIPOC communities that have been denied access to\ncapital or services.\nPARTNER SPOTLIGHTS\nIntroduction Environment Social Governance Appendix"
+            ],
+            "reference_answer": "1. Black Economic Development Fund\n2. Hope Credit Union\n3. CNote",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        }
+    ]
+}
