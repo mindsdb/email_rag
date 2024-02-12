@@ -135,6 +135,3 @@ if __name__ == "__main__":
     df.fillna("unknown", inplace=True)
     ar = AutoRetrieval(df, "content", document_description="Brief summary of a movie")
     print(ar.query("I want to watch a movie rated higher than 8.5"))
-
-
-
