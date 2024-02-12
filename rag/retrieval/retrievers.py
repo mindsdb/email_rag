@@ -23,11 +23,6 @@ import pandas as pd
 import json
 
 
-
-
-
-
-
 class AutoRetriever:
     """
     AutoRetrieval is a class that uses langchain to extract metadata from a dataframe and query it using self retrieval.
