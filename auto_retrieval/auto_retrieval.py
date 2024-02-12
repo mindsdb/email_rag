@@ -84,7 +84,7 @@ class AutoRetrieval:
         Given a dataframe, use llm to extract metadata from it.
         :return:
         """
-        prompt = self.prompt_template.format(dataframe=self.df.head().to_json())
+        prompt = self.prompt_template.format(dataframe=self.df.head().to_json(), description=self.document_description)
         result: List[dict] = json.loads(self.llm.predict(prompt))
         self._alter_description(result)
 
