@@ -1,4 +1,4 @@
-
+DEFAULT_CARDINALITY_THRESHOLD = 40
 DEFAULT_LLM_MODEL = "gpt-3.5-turbo"
 DEFAULT_AUTO_META_PROMPT_TEMPLATE = """
 Below is a json representation of a table with information about {description}. 

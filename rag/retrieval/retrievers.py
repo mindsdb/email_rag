@@ -17,13 +17,15 @@ from langchain_core.runnables import RunnableLambda
 from rag.settings import (DEFAULT_LLM_MODEL,
                           DEFAULT_AUTO_META_PROMPT_TEMPLATE,
                           DEFAULT_SQL_RESULT_PROMPT,
-                          DEFAULT_TEXT_2_PGVECTOR_PROMPT
+                          DEFAULT_TEXT_2_PGVECTOR_PROMPT, DEFAULT_CARDINALITY_THRESHOLD
                           )
 import pandas as pd
 import json
 
 
-# to do make base class
+
+
+
 
 
 class AutoRetriever:
@@ -43,7 +45,7 @@ class AutoRetriever:
             document_description: str = "",
             model: str = DEFAULT_LLM_MODEL,
             prompt_template: str = DEFAULT_AUTO_META_PROMPT_TEMPLATE,
-            cardinality_threshold: int = 40
+            cardinality_threshold: int = DEFAULT_CARDINALITY_THRESHOLD
     ):
         """
         Given a dataframe, use llm to extract metadata from it.
