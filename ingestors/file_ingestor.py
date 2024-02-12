@@ -2,7 +2,7 @@
 import pathlib
 from typing import List
 
-from langchain_community.document_loaders import PyPDFLoader
+from langchain_community.document_loaders import PyMuPDFLoader
 from langchain_community.document_loaders import TextLoader
 from langchain_community.document_loaders import UnstructuredHTMLLoader
 from langchain_community.document_loaders import UnstructuredMarkdownLoader
@@ -32,7 +32,7 @@ class FileIngestor:
             chunk_size=FileIngestor._DEFAULT_CHUNK_SIZE,
             chunk_overlap=FileIngestor._DEFAULT_CHUNK_OVERLAP)
         if file_extension == '.pdf':
-            loader = PyPDFLoader(path)
+            loader = PyMuPDFLoader(path)
             # Use semantic chunking to understand the PDf structure.
             text_splitter = SemanticChunker(OpenAIEmbeddings())
         elif file_extension == '.html':
