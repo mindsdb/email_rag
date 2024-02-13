@@ -1,0 +1,21 @@
+Email_thread_id,Mail_id,Subject,Date,From,To,Body,Attachments
+Thread1,Mail1,Project Update,2024-02-01,project.manager@example.com,team@example.com,"We've made significant progress on the project. Here's the latest update..., Best, Project Manager",ProjectPlan.pdf
+Thread2,Mail2,Weekly Newsletter,2024-02-02,newsletter@example.com,subscriber@example.com,"This week's highlights include..., Stay informed, Newsletter Team",
+Thread3,Mail3,Meeting Invitation,2024-02-03,coordinator@example.com,attendee@example.com,"You're invited to the upcoming meeting..., Best, Meeting Coordinator",Agenda.pdf
+Thread4,Mail4,Technical Support,2024-02-04,support@example.com,user@example.com,"We received your inquiry about..., Best regards, Support Team",
+Thread5,Mail5,Order Confirmation,2024-02-05,orders@example.com,customer@example.com,"Thank you for your order. Here are the details..., Best, Sales Department",Invoice.pdf
+Thread6,Mail6,Feedback Request,2024-02-06,feedback@example.com,customer@example.com,"We value your feedback..., Best wishes, Customer Service",SurveyLink.txt
+Thread7,Mail7,Subscription Renewal,2024-02-07,billing@example.com,subscriber@example.com,"It's time to renew your subscription..., Regards, Billing Department",RenewalInstructions.pdf
+Thread8,Mail8,Event Reminder,2024-02-08,events@example.com,participant@example.com,"Don't forget about the upcoming event..., Cheers, Events Team",EventDetails.pdf
+Thread9,Mail9,Product Launch,2024-02-09,marketing@example.com,client@example.com,"Exciting news! We're launching..., Best, Marketing Team",ProductBrochure.pdf
+Thread10,Mail10,Service Outage Alert,2024-02-10,it@example.com,user@example.com,"We're experiencing a temporary service outage..., Regards, IT Department",
+Thread11,Mail11,Security Update,2024-02-11,security@example.com,user@example.com,"Important security update for your account..., Stay secure, Security Team",SecurityUpdate.pdf
+Thread12,Mail12,New Feature Announcement,2024-02-12,product.team@example.com,user@example.com,"We're excited to introduce a new feature..., Enjoy, Product Team",FeatureGuide.pdf
+Thread13,Mail13,Thank You Note,2024-02-13,ceo@example.com,staff@example.com,"I want to personally thank you for your hard work..., Best, CEO",
+Thread14,Mail14,Policy Update,2024-02-14,hr@example.com,employee@example.com,"Please review the updated company policies..., Regards, HR Department",PolicyDocument.pdf
+Thread15,Mail15,Customer Inquiry,2024-02-15,customer.service@example.com,inquiry@example.com,"Thank you for reaching out. Here's the information you requested..., Sincerely, Customer Service",
+Thread16,Mail16,Invoice Reminder,2024-02-16,accounts.receivable@example.com,client@example.com,"Just a reminder that your invoice is due..., Regards, Accounts Department",Invoice.pdf
+Thread17,Mail17,Welcome Email,2024-02-17,welcome@example.com,new.user@example.com,"Welcome to our service! Here's everything you need to get started..., Cheers, Welcome Team",WelcomePack.pdf
+Thread18,Mail18,Survey Invitation,2024-02-18,research@example.com,participant@example.com,"We invite you to participate in our survey..., Thank you, Research Team",SurveyLink.txt
+Thread19,Mail19,Software Update,2024-02-19,it.support@example.com,user@example.com,"A new software update is available..., Best, IT Support",UpdateInstructions.pdf
+Thread20,Mail20,Happy Holidays,2024-02-20,info@example.com,subscriber@example.com,"Wishing you a happy holiday season..., Warm wishes, The Team",HolidayCard.pdf
