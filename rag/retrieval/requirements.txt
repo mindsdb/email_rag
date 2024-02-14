@@ -1,7 +1,0 @@
-langchain
-langchain-community
-langchain-openai
-chromadb
-lark
-openai
-pandas

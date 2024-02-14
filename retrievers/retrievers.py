@@ -14,21 +14,21 @@ from langchain_core.runnables import RunnablePassthrough
 import re
 from langchain_core.runnables import RunnableLambda
 
-from rag.settings import (DEFAULT_LLM_MODEL,
-                          DEFAULT_AUTO_META_PROMPT_TEMPLATE,
-                          DEFAULT_SQL_RESULT_PROMPT,
-                          DEFAULT_TEXT_2_PGVECTOR_PROMPT, DEFAULT_CARDINALITY_THRESHOLD
-                          )
+from settings import (DEFAULT_LLM_MODEL,
+                      DEFAULT_AUTO_META_PROMPT_TEMPLATE,
+                      DEFAULT_SQL_RESULT_PROMPT,
+                      DEFAULT_TEXT_2_PGVECTOR_PROMPT, DEFAULT_CARDINALITY_THRESHOLD
+                      )
 import pandas as pd
 import json
 
 
 class AutoRetriever:
     """
-    AutoRetrieval is a class that uses langchain to extract metadata from a dataframe and query it using self retrieval.
+    AutoRetrieval is a class that uses langchain to extract metadata from a dataframe and query it using self retrievers.
 
     pass in a dataframe and a content column name, and it will use langchain to extract metadata from the dataframe.
-    if you pass in a vectorstore, it will use it in the self retrieval.
+    if you pass in a vectorstore, it will use it in the self retrievers.
     """
 
     def __init__(
