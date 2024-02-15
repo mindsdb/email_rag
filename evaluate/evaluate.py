@@ -49,9 +49,10 @@ def evaluate(
     for i, question in enumerate(questions):
         logging.info('Answering question {} of {}'.format(
             i + 1, num_questions))
-        answers.append(pipeline.invoke(question))
+        result = pipeline.invoke(question)
+        answers.append(result['answer'])
         contexts.append(
-            [docs.page_content for docs in retriever.get_relevant_documents(question)])
+            [docs.page_content for docs in result['context']])
 
     data = {
         'question': questions,
