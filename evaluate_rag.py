@@ -103,8 +103,6 @@ def evaluate_rag(dataset: str,
     :param input_data_type: InputDataType
 
     :return:
-
-
     """
     if input_data_type == InputDataType.FILE:
         all_documents = ingest_files(dataset)
@@ -162,7 +160,7 @@ def evaluate_rag(dataset: str,
 
     qa_file = os.path.join('./data', dataset, 'rag_dataset.json')
 
-    evaluate.evaluate(rag_chain, retriever, qa_file, output_file)
+    evaluate.evaluate(rag_chain, qa_file, output_file)
 
 
 if __name__ == '__main__':
