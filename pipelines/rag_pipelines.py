@@ -11,7 +11,7 @@ from retrievers.retrievers import SQLRetriever, AutoRetriever
 from langchain_core.runnables import RunnableParallel, RunnablePassthrough, RunnableSerializable
 from langchain.docstore.document import Document
 
-from settings import DEFAULT_LLM
+from settings import DEFAULT_LLM, DEFAULT_SQL_RETRIEVAL_PROMPT_TEMPLATE, DEFAULT_AUTO_META_PROMPT_TEMPLATE
 
 
 class LangChainRAGPipeline:
@@ -78,6 +78,8 @@ class LangChainRAGPipeline:
 
         :return:
         """
+        retriever_prompt_template = retriever_prompt_template or DEFAULT_SQL_RETRIEVAL_PROMPT_TEMPLATE
+
         retriever = SQLRetriever(connection_dict=connection_dict, prompt_template=retriever_prompt_template)
         return cls(retriever, rag_prompt_template, llm)
 
@@ -105,5 +107,7 @@ class LangChainRAGPipeline:
 
         :return:
         """
+        retriever_prompt_template = retriever_prompt_template or DEFAULT_AUTO_META_PROMPT_TEMPLATE
+
         retriever = AutoRetriever(data=data, prompt_template=retriever_prompt_template, vectorstore=vectorstore)
         return cls(retriever, rag_prompt_template, llm)

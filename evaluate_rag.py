@@ -9,7 +9,6 @@ from typing import Union
 
 from langchain_core.embeddings import Embeddings
 from langchain_core.language_models import BaseChatModel
-from langchain_core.retrievers import BaseRetriever
 from langchain_core.vectorstores import VectorStore
 
 from evaluate import evaluate
@@ -18,8 +17,7 @@ from ingestors.email_ingestor.email_ingestor import EmailIngestor
 from ingestors.email_ingestor.email_search_options import EmailSearchOptions
 from ingestors.file_ingestor import FileIngestor
 from pipelines.rag_pipelines import LangChainRAGPipeline
-from settings import DEFAULT_LLM, DEFAUlT_VECTOR_STORE, DEFAULT_EVALUATION_PROMPT_TEMPLATE, DEFAULT_EMBEDDINGS, \
-    DEFAULT_AUTO_META_PROMPT_TEMPLATE, DEFAULT_SQL_RETRIEVAL_PROMPT_TEMPLATE
+from settings import DEFAULT_LLM, DEFAUlT_VECTOR_STORE, DEFAULT_EVALUATION_PROMPT_TEMPLATE, DEFAULT_EMBEDDINGS
 
 
 # Define the type of retriever to use.
@@ -79,7 +77,6 @@ def ingest_emails():
 def evaluate_rag(dataset: str,
                  db_connection_dict: dict = None,
                  vector_store: VectorStore = DEFAUlT_VECTOR_STORE,
-                 retriever: BaseRetriever = None,
                  llm: BaseChatModel = DEFAULT_LLM,
                  embeddings_model: Embeddings = DEFAULT_EMBEDDINGS,
                  rag_prompt_template: str = DEFAULT_EVALUATION_PROMPT_TEMPLATE,
@@ -94,7 +91,6 @@ def evaluate_rag(dataset: str,
     :param dataset: str
     :param db_connection_dict: dict
     :param vector_store: VectorStore
-    :param retriever: BaseRetriever
     :param llm: BaseChatModel
     :param embeddings_model: Embeddings
     :param rag_prompt_template: str
@@ -115,7 +111,6 @@ def evaluate_rag(dataset: str,
         raise ValueError('Invalid input data type, must be one of: file, email.')
 
     if retriever_type == RetrieverType.SQL:
-        retriever_prompt_template = retriever_prompt_template or DEFAULT_SQL_RETRIEVAL_PROMPT_TEMPLATE
 
         rag_pipeline = LangChainRAGPipeline.from_sql_retriever(
             connection_dict=db_connection_dict,
@@ -140,7 +135,6 @@ def evaluate_rag(dataset: str,
             )
 
         elif retriever_type == RetrieverType.AUTO:
-            retriever_prompt_template = retriever_prompt_template or DEFAULT_AUTO_META_PROMPT_TEMPLATE
 
             rag_pipeline = LangChainRAGPipeline.from_auto_retriever(
                 vectorstore=vectorstore,
