@@ -60,7 +60,7 @@ def ingest_emails():
     search_options = EmailSearchOptions(
         mailbox='INBOX',
         subject=None,
-        to_email='noreply@nvcl.ca',
+        to_email=None,
         from_email=None,
         since_date=None,
         until_date=None,
