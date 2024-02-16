@@ -1,4 +1,6 @@
 asyncio
+bs4==0.0.2
+chardet
 langchain>=0.1.6
 langchain-community
 langchain-openai
