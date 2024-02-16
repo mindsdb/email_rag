@@ -94,14 +94,24 @@ class EmailClient:
             email_line['subject'] = email_message.get('Subject')
             email_line['date'] = email_message.get('Date')
 
+            plain_payload = None
+            html_payload = None
+            content_type = 'html'
             for part in email_message.walk():
-                # Email bodies will either be HTML or plaintext.
-                if part.get_content_type() == "text/plain" or part.get_content_type() == 'text/html':
-                    email_line['body'] = part.as_string()
-                    email_line['body_type'] = part.get_content_type()
-                # This currently doesn't support attachments.
-                break
-
+                subtype = part.get_content_subtype()
+                if subtype == 'plain':
+                    # Prioritize plain text payloads when present.
+                    plain_payload = part.get_payload(decode=True)
+                    content_type = 'plain'
+                    break
+                if subtype == 'html':
+                    html_payload = part.get_payload(decode=True)
+            body = plain_payload or html_payload
+            if body is None:
+                # Very rarely messages won't have plain text or html payloads.
+                continue
+            email_line['body'] = plain_payload or html_payload
+            email_line['body_content_type'] = content_type
             ret.append(email_line)
 
         return pd.DataFrame(ret)
