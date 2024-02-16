@@ -17,14 +17,13 @@ from callback_handlers.log_callback_handler import LogCallbackHandler
 
 def evaluate(
         pipeline: RunnableSerializable,
-        retriever: BaseRetriever,
         qa_dataset_path: str,
         output_path: str):
-    '''Evaluates a RAG pipeline against the given Q&A dataset using the RAGAs library.
+    '''
+    Evaluates a RAG pipeline against the given Q&A dataset using the RAGAs library.
 
     Parameters:
         pipeline (RunnableSerializable): The RAG pipeline to run
-        retriever (BaseRetriever): Retriever to use to fetch context
         qa_dataset_path (str): Path to the JSON file containing questions & answers.
             MUST follow format: {
                 'examples': [{'query': '...', 'reference_answer': '...'}]
@@ -49,9 +48,10 @@ def evaluate(
     for i, question in enumerate(questions):
         logging.info('Answering question {} of {}'.format(
             i + 1, num_questions))
-        answers.append(pipeline.invoke(question))
+        result = pipeline.invoke(question)
+        answers.append(result['answer'])
         contexts.append(
-            [docs.page_content for docs in retriever.get_relevant_documents(question)])
+            [docs.page_content for docs in result['context']])
 
     data = {
         'question': questions,

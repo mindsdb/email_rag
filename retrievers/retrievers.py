@@ -1,8 +1,10 @@
-from typing import List
+from typing import List, Union
 
+from langchain_core.embeddings import Embeddings
+from langchain_core.language_models import BaseChatModel
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.vectorstores import VectorStore
-from langchain_openai import ChatOpenAI, OpenAIEmbeddings
+
 from langchain.sql_database import SQLDatabase
 from langchain_community.vectorstores import Chroma
 
@@ -14,10 +16,11 @@ from langchain_core.runnables import RunnablePassthrough
 import re
 from langchain_core.runnables import RunnableLambda
 
-from settings import (DEFAULT_LLM_MODEL,
+from settings import (DEFAULT_LLM,
+                      DEFAULT_EMBEDDINGS,
                       DEFAULT_AUTO_META_PROMPT_TEMPLATE,
-                      DEFAULT_SQL_RESULT_PROMPT,
-                      DEFAULT_TEXT_2_PGVECTOR_PROMPT, DEFAULT_CARDINALITY_THRESHOLD
+                      DEFAULT_SQL_RETRIEVAL_PROMPT_TEMPLATE,
+                      DEFAULT_CARDINALITY_THRESHOLD
                       )
 import pandas as pd
 import json
@@ -33,35 +36,37 @@ class AutoRetriever:
 
     def __init__(
             self,
-            df: pd.DataFrame,
-            content_column_name: str,
+            data: Union[pd.DataFrame, List[Document]],
+            content_column_name: str = None,
             vectorstore: VectorStore = None,
+            embeddings_model: Embeddings = DEFAULT_EMBEDDINGS,
+            llm: BaseChatModel = DEFAULT_LLM,
             filter_columns: List[str] = None,
             document_description: str = "",
-            model: str = DEFAULT_LLM_MODEL,
             prompt_template: str = DEFAULT_AUTO_META_PROMPT_TEMPLATE,
             cardinality_threshold: int = DEFAULT_CARDINALITY_THRESHOLD
     ):
         """
         Given a dataframe, use llm to extract metadata from it.
-        :param df: pd.DataFrame
+        :param data: Union[pd.DataFrame, List[Document]]
         :param content_column_name: str
         :param vectorstore: VectorStore
         :param filter_columns: List[str]
-        :document_description: str
-        :param model: str
+        :param document_description: str
+        :param embeddings_model: Embeddings
+        :param llm: BaseChatModel
         :param prompt_template: str
         :param cardinality_threshold: int
 
         """
 
-        self.df = df
+        self.data = data
         self.content_column_name = content_column_name
         self.vectorstore = vectorstore
         self.filter_columns = filter_columns
         self.document_description = document_description
-        self.llm = ChatOpenAI(model=model)
-        self.embeddings_model = OpenAIEmbeddings()
+        self.llm = llm
+        self.embeddings_model = embeddings_model
         self.prompt_template = prompt_template
         self.cardinality_threshold = cardinality_threshold
 
@@ -71,10 +76,10 @@ class AutoRetriever:
         :return:
         """
         low_cardinality_columns = []
-        columns = self.df.columns if self.filter_columns is None else self.filter_columns
+        columns = self.data.columns if self.filter_columns is None else self.filter_columns
         for column in columns:
-            if self.df[column].dtype != "bool":
-                if self.df[column].nunique() < self.cardinality_threshold:
+            if self.data[column].dtype != "bool":
+                if self.data[column].nunique() < self.cardinality_threshold:
                     low_cardinality_columns.append(column)
         return low_cardinality_columns
 
@@ -86,7 +91,7 @@ class AutoRetriever:
 
         low_cardinality_columns = self._get_low_cardinality_columns()
         for column_name in low_cardinality_columns:
-            valid_values = sorted(self.df[column_name].unique())
+            valid_values = sorted(self.data[column_name].unique())
             for entry in result:
                 if entry["name"] == column_name:
                     entry["description"] += f"{entry['description']}. Valid values: {valid_values}"
@@ -96,7 +101,7 @@ class AutoRetriever:
         Given a dataframe, use llm to extract metadata from it.
         :return:
         """
-        prompt = self.prompt_template.format(dataframe=self.df.head().to_json(), description=self.document_description)
+        prompt = self.prompt_template.format(dataframe=self.data.head().to_json(), description=self.document_description)
         result: List[dict] = json.loads(self.llm.invoke(input=prompt).content)
         self._alter_description(result)
 
@@ -108,7 +113,7 @@ class AutoRetriever:
         :return:
         """
         docs = []
-        for _, row in self.df.iterrows():
+        for _, row in self.data.iterrows():
             metadata_dict = row.drop(self.content_column_name).dropna().to_dict()
             docs.append(Document(page_content=row[self.content_column_name], metadata=metadata_dict))
 
@@ -116,10 +121,11 @@ class AutoRetriever:
 
     def get_vectorstore(self):
         """
-        Given a dataframe, convert it to a list of documents and use it to create a vectorstore.
+        Given data either List[Documents] pd.Dataframe,  use it to create a vectorstore.
         :return:
         """
-        self.vectorstore = Chroma.from_documents(self.df_to_documents(), self.embeddings_model)
+        documents = self.df_to_documents() if isinstance(self.data, pd.DataFrame) else self.data
+        self.vectorstore = Chroma.from_documents(documents, self.embeddings_model)
 
     def get_retriever(self):
         """
@@ -127,7 +133,7 @@ class AutoRetriever:
         :return:
         """
         if self.vectorstore is None:
-            # if no vector stor is passed on init, create one from input data.
+            # if no vector store is passed on init, create one from input data.
 
             self.get_vectorstore()
 
@@ -156,19 +162,23 @@ class SQLRetriever:
     """
 
     def __init__(self,
-                 user: str,
-                 host: str,
-                 port: int,
-                 db_name: str,
-                 sql_query_prompt_template: str = DEFAULT_TEXT_2_PGVECTOR_PROMPT,
-                 sql_result_prompt_template: str = DEFAULT_SQL_RESULT_PROMPT
+                 connection_dict: dict,
+                 llm: BaseChatModel = DEFAULT_LLM,
+                 embeddings_model: Embeddings = DEFAULT_EMBEDDINGS,
+                 prompt_template: dict = DEFAULT_SQL_RETRIEVAL_PROMPT_TEMPLATE
                  ):
-        connection_string = f"postgresql+psycopg2://postgres:{user}@{host}:{port}/{db_name}"
+
+        self.prompt_template = prompt_template
+
+        connection_string = (f"postgresql+psycopg2://postgres:"
+                             f"{connection_dict['user']}"
+                             f"@{connection_dict['host']}"
+                             f":{connection_dict['port']}"
+                             f"/{connection_dict['db_name']}")
+
         self.db = SQLDatabase.from_uri(connection_string)
-        self.llm = ChatOpenAI(model_name="gpt-4", temperature=0)
-        self.sql_query_prompt_template = sql_query_prompt_template
-        self.sql_result_prompt_template = sql_result_prompt_template
-        self.embeddings_model = OpenAIEmbeddings()
+        self.llm = llm
+        self.embeddings_model = embeddings_model
 
     @staticmethod
     def format_prompt(prompt_template: str):
@@ -203,7 +213,7 @@ class SQLRetriever:
     def sql_query_chain(self):
         return (
                 RunnablePassthrough.assign(schema=self.get_schema)
-                | self.format_prompt(self.sql_query_prompt_template)
+                | self.format_prompt(self.prompt_template["sql_query"])
                 | self.llm.bind(stop=["\nSQLResult:"])
                 | StrOutputParser()
         )
@@ -216,6 +226,6 @@ class SQLRetriever:
             schema=self.get_schema,
             response=RunnableLambda(lambda x: self.db.run(self.get_query(x["query"]))),
         )
-                | self.format_prompt(self.sql_result_prompt_template)
+                | self.format_prompt(self.prompt_template["sql_result"])
                 | self.llm
         )
