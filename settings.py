@@ -4,6 +4,8 @@ from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 
 DEFAULT_CARDINALITY_THRESHOLD = 40
 DEFAULT_LLM_MODEL = "gpt-3.5-turbo"
+DEFAULT_CONTENT_COLUMN_NAME = "body"
+DEFAULT_DATASET_DESCRIPTION = "email inbox"
 DEFAULT_LLM = ChatOpenAI(model_name=DEFAULT_LLM_MODEL, temperature=0)
 DEFAULT_EMBEDDINGS = OpenAIEmbeddings()
 DEFAUlT_VECTOR_STORE = Chroma

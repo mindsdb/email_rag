@@ -1,4 +1,4 @@
-from typing import List, Union
+from typing import List
 
 from langchain_core.embeddings import Embeddings
 from langchain_core.language_models import BaseChatModel
@@ -6,7 +6,6 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.vectorstores import VectorStore
 
 from langchain.sql_database import SQLDatabase
-from langchain_community.vectorstores import Chroma
 
 from langchain.retrievers.self_query.base import SelfQueryRetriever
 from langchain.docstore.document import Document
@@ -20,25 +19,37 @@ from settings import (DEFAULT_LLM,
                       DEFAULT_EMBEDDINGS,
                       DEFAULT_AUTO_META_PROMPT_TEMPLATE,
                       DEFAULT_SQL_RETRIEVAL_PROMPT_TEMPLATE,
-                      DEFAULT_CARDINALITY_THRESHOLD
+                      DEFAULT_CARDINALITY_THRESHOLD,
+                      DEFAUlT_VECTOR_STORE, DEFAULT_CONTENT_COLUMN_NAME
                       )
 import pandas as pd
 import json
+
+
+def documents_to_df(content_column_name, documents: List[Document]):
+    """
+    Given a list of documents, convert it to a dataframe.
+
+    :param content_column_name: str
+    :param documents: List[Document]
+    :return:
+    """
+    df = pd.DataFrame([doc.metadata for doc in documents])
+    df[content_column_name] = [doc.page_content for doc in documents]
+    return df
 
 
 class AutoRetriever:
     """
     AutoRetrieval is a class that uses langchain to extract metadata from a dataframe and query it using self retrievers.
 
-    pass in a dataframe and a content column name, and it will use langchain to extract metadata from the dataframe.
-    if you pass in a vectorstore, it will use it in the self retrievers.
     """
 
     def __init__(
             self,
-            data: Union[pd.DataFrame, List[Document]],
-            content_column_name: str = None,
-            vectorstore: VectorStore = None,
+            data: List[Document],
+            content_column_name: str = DEFAULT_CONTENT_COLUMN_NAME,
+            vectorstore: VectorStore = DEFAUlT_VECTOR_STORE,
             embeddings_model: Embeddings = DEFAULT_EMBEDDINGS,
             llm: BaseChatModel = DEFAULT_LLM,
             filter_columns: List[str] = None,
@@ -48,7 +59,7 @@ class AutoRetriever:
     ):
         """
         Given a dataframe, use llm to extract metadata from it.
-        :param data: Union[pd.DataFrame, List[Document]]
+        :param data: List[Document]
         :param content_column_name: str
         :param vectorstore: VectorStore
         :param filter_columns: List[str]
@@ -70,40 +81,54 @@ class AutoRetriever:
         self.prompt_template = prompt_template
         self.cardinality_threshold = cardinality_threshold
 
-    def _get_low_cardinality_columns(self):
+    def _get_low_cardinality_columns(self, data: pd.DataFrame):
         """
         Given a dataframe, return a list of columns with low cardinality if datatype is not bool.
         :return:
         """
         low_cardinality_columns = []
-        columns = self.data.columns if self.filter_columns is None else self.filter_columns
+        columns = data.columns if self.filter_columns is None else self.filter_columns
         for column in columns:
-            if self.data[column].dtype != "bool":
-                if self.data[column].nunique() < self.cardinality_threshold:
+            if data[column].dtype != "bool":
+                if data[column].nunique() < self.cardinality_threshold:
                     low_cardinality_columns.append(column)
         return low_cardinality_columns
-
-    def _alter_description(self, result: List[dict]):
-        """
-        For low cardinality columns, alter the description to include the sorted valid values.
-        :param result: List[dict]
-        """
-
-        low_cardinality_columns = self._get_low_cardinality_columns()
-        for column_name in low_cardinality_columns:
-            valid_values = sorted(self.data[column_name].unique())
-            for entry in result:
-                if entry["name"] == column_name:
-                    entry["description"] += f"{entry['description']}. Valid values: {valid_values}"
 
     def get_metadata_field_info(self):
         """
         Given a dataframe, use llm to extract metadata from it.
         :return:
         """
-        prompt = self.prompt_template.format(dataframe=self.data.head().to_json(), description=self.document_description)
+
+        def _alter_description(data: pd.DataFrame,
+                               low_cardinality_columns: list,
+                               result: List[dict]):
+            """
+            For low cardinality columns, alter the description to include the sorted valid values.
+            :param data: pd.DataFrame
+            :param low_cardinality_columns: list
+            :param result: List[dict]
+            """
+            for column_name in low_cardinality_columns:
+                valid_values = sorted(data[column_name].unique())
+                for entry in result:
+                    if entry["name"] == column_name:
+                        entry["description"] += f". Valid values: {valid_values}"
+
+        data = documents_to_df(
+            self.content_column_name,
+            self.data
+        )
+
+        prompt = self.prompt_template.format(dataframe=data.head().to_json(),
+                                             description=self.document_description)
         result: List[dict] = json.loads(self.llm.invoke(input=prompt).content)
-        self._alter_description(result)
+
+        _alter_description(
+            data,
+            self._get_low_cardinality_columns(data),
+            result
+        )
 
         return result
 
@@ -125,21 +150,18 @@ class AutoRetriever:
         :return:
         """
         documents = self.df_to_documents() if isinstance(self.data, pd.DataFrame) else self.data
-        self.vectorstore = Chroma.from_documents(documents, self.embeddings_model)
+        return self.vectorstore.from_documents(documents, self.embeddings_model)
 
-    def get_retriever(self):
+    def as_retriever(self):
         """
         return the self-query retriever
         :return:
         """
-        if self.vectorstore is None:
-            # if no vector store is passed on init, create one from input data.
-
-            self.get_vectorstore()
+        vectorstore = self.get_vectorstore()
 
         return SelfQueryRetriever.from_llm(
             llm=self.llm,
-            vectorstore=self.vectorstore,
+            vectorstore=vectorstore,
             document_contents=self.document_description,
             metadata_field_info=self.get_metadata_field_info(),
             verbose=True
@@ -167,7 +189,6 @@ class SQLRetriever:
                  embeddings_model: Embeddings = DEFAULT_EMBEDDINGS,
                  prompt_template: dict = DEFAULT_SQL_RETRIEVAL_PROMPT_TEMPLATE
                  ):
-
         self.prompt_template = prompt_template
 
         connection_string = (f"postgresql+psycopg2://postgres:"
@@ -218,8 +239,7 @@ class SQLRetriever:
                 | StrOutputParser()
         )
 
-    @property
-    def full_chain(self):
+    def as_retriever(self):
         return (
                 RunnablePassthrough.assign(query=self.sql_query_chain)
                 | RunnablePassthrough.assign(
@@ -228,4 +248,5 @@ class SQLRetriever:
         )
                 | self.format_prompt(self.prompt_template["sql_result"])
                 | self.llm
+                | StrOutputParser()
         )

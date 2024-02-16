@@ -17,7 +17,12 @@ from ingestors.email_ingestor.email_ingestor import EmailIngestor
 from ingestors.email_ingestor.email_search_options import EmailSearchOptions
 from ingestors.file_ingestor import FileIngestor
 from pipelines.rag_pipelines import LangChainRAGPipeline
-from settings import DEFAULT_LLM, DEFAUlT_VECTOR_STORE, DEFAULT_EVALUATION_PROMPT_TEMPLATE, DEFAULT_EMBEDDINGS
+from settings import (DEFAULT_LLM,
+                      DEFAUlT_VECTOR_STORE,
+                      DEFAULT_EVALUATION_PROMPT_TEMPLATE,
+                      DEFAULT_EMBEDDINGS,
+                      DEFAULT_CONTENT_COLUMN_NAME,
+                      DEFAULT_DATASET_DESCRIPTION)
 
 
 # Define the type of retriever to use.
@@ -75,6 +80,8 @@ def ingest_emails():
 
 
 def evaluate_rag(dataset: str,
+                 content_column_name: str = DEFAULT_CONTENT_COLUMN_NAME,
+                 dataset_description: str = DEFAULT_DATASET_DESCRIPTION,
                  db_connection_dict: dict = None,
                  vector_store: VectorStore = DEFAUlT_VECTOR_STORE,
                  llm: BaseChatModel = DEFAULT_LLM,
@@ -89,6 +96,8 @@ def evaluate_rag(dataset: str,
     about various emails, depending on the dataset.
 
     :param dataset: str
+    :param content_column_name: str
+    :param dataset_description: str
     :param db_connection_dict: dict
     :param vector_store: VectorStore
     :param llm: BaseChatModel
@@ -119,33 +128,34 @@ def evaluate_rag(dataset: str,
             llm=llm
         )
 
-    else:
+    elif retriever_type == RetrieverType.VECTOR_STORE:
+
         vectorstore = vector_store.from_documents(
             documents=all_documents,
             embedding=embeddings_model,
         )
 
-        if retriever_type == RetrieverType.VECTOR_STORE:
-            retriever = vectorstore.as_retriever()
+        rag_pipeline = LangChainRAGPipeline.from_retriever(
+            retriever=vectorstore.as_retriever(),
+            prompt_template=DEFAULT_EVALUATION_PROMPT_TEMPLATE,
+            llm=llm
+        )
 
-            rag_pipeline = LangChainRAGPipeline.from_retriever(
-                retriever=retriever,
-                prompt_template=DEFAULT_EVALUATION_PROMPT_TEMPLATE,
-                llm=llm
-            )
+    elif retriever_type == RetrieverType.AUTO:
 
-        elif retriever_type == RetrieverType.AUTO:
+        rag_pipeline = LangChainRAGPipeline.from_auto_retriever(
+            vectorstore=vector_store,
+            data=all_documents,
+            data_description=dataset_description,
+            content_column_name=content_column_name,
+            retriever_prompt_template=retriever_prompt_template,
+            rag_prompt_template=DEFAULT_EVALUATION_PROMPT_TEMPLATE,
+            llm=llm
+        )
 
-            rag_pipeline = LangChainRAGPipeline.from_auto_retriever(
-                vectorstore=vectorstore,
-                retriever_prompt_template=retriever_prompt_template,
-                rag_prompt_template=DEFAULT_EVALUATION_PROMPT_TEMPLATE,
-                llm=llm
-            )
-
-        else:
-            raise ValueError(
-                f'Invalid retriever type, must be one of: vector_store, auto, sql. Got {retriever_type}')
+    else:
+        raise ValueError(
+            f'Invalid retriever type, must be one of: vector_store, auto, sql. Got {retriever_type}')
 
     rag_chain = rag_pipeline.rag_with_returned_sources()
 
@@ -180,8 +190,13 @@ Uses evaluation metrics from the RAGAs library.
     )
     parser.add_argument(
         '-d', '--dataset', help='Name of QA dataset to use for evaluation (e.g. personal_emails)')
+    parser.add_argument('-dd', '--dataset_description', help='Description of the dataset',
+                        default=DEFAULT_DATASET_DESCRIPTION)
     parser.add_argument(
         '-c', '--connection_dict', help='Connection string for SQL retriever', default=None)
+    parser.add_argument('-cc', '--content_column_name',
+                        help='Name of the column containing the content i.e. body of the email',
+                        default=DEFAULT_CONTENT_COLUMN_NAME)
     parser.add_argument('-r', '--retriever_type', help='Type of retriever to use (vector_store, auto, sql)',
                         type=RetrieverType, choices=list(RetrieverType), default=RetrieverType.VECTOR_STORE)
     parser.add_argument('-i', '--input_data_type', help='Type of input data to use (email, file)',
@@ -195,6 +210,8 @@ Uses evaluation metrics from the RAGAs library.
 
     evaluate_rag(
         dataset=args.dataset,
+        dataset_description=args.dataset_description,
+        content_column_name=args.content_column_name,
         db_connection_dict=args.connection_dict,
         retriever_type=args.retriever_type,
         input_data_type=args.input_data_type
