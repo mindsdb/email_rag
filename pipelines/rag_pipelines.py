@@ -87,7 +87,7 @@ class LangChainRAGPipeline:
         retriever = SQLRetriever(
             connection_dict=connection_dict,
             prompt_template=retriever_prompt_template
-        ).full_chain()
+        ).as_retriever()
 
         return cls(retriever, rag_prompt_template, llm)
 
@@ -123,5 +123,5 @@ class LangChainRAGPipeline:
 
         retriever = AutoRetriever(data=data, content_column_name=content_column_name, vectorstore=vectorstore,
                                   document_description=data_description,
-                                  prompt_template=retriever_prompt_template).get_retriever()
+                                  prompt_template=retriever_prompt_template).as_retriever()
         return cls(retriever, rag_prompt_template, llm)

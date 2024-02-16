@@ -152,7 +152,7 @@ class AutoRetriever:
         documents = self.df_to_documents() if isinstance(self.data, pd.DataFrame) else self.data
         return self.vectorstore.from_documents(documents, self.embeddings_model)
 
-    def get_retriever(self):
+    def as_retriever(self):
         """
         return the self-query retriever
         :return:
@@ -239,8 +239,7 @@ class SQLRetriever:
                 | StrOutputParser()
         )
 
-    @property
-    def full_chain(self):
+    def as_retriever(self):
         return (
                 RunnablePassthrough.assign(query=self.sql_query_chain)
                 | RunnablePassthrough.assign(
