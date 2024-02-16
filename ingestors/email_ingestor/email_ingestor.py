@@ -49,7 +49,12 @@ class EmailIngestor:
                 # Easier to treat this at utf-8 since str constructor doesn't support all encodings here:
                 # https://chardet.readthedocs.io/en/latest/supported-encodings.html.
                 encoding = 'utf-8'
-            body_str = str(row['body'], encoding=encoding)
+            try:
+                body_str = str(body_str, encoding=encoding)
+            except UnicodeDecodeError:
+                # If illegal characters are found, we ignore them.
+                # I encountered this issue with some emails that had a mix of encodings.
+                body_str = row['body'].decode(encoding, errors='ignore')
         # We split by paragraph so make sure there aren't too many newlines in a row.
         body_str = re.sub(r'[\r\n]\s*[\r\n]', '\n\n', body_str)
         email_doc = Document(body_str)
@@ -59,6 +64,11 @@ class EmailIngestor:
             'subject': row['subject'],
             'date': row['date']
         }
+
+        # Replacing None values {None: ""}
+        for key in email_doc.metadata:
+            if email_doc.metadata[key] is None:
+                email_doc.metadata[key] = ""
 
         # Split by ["\n\n", "\n", " ", ""] in order.
         text_splitter = RecursiveCharacterTextSplitter(
