@@ -60,7 +60,7 @@ def ingest_emails():
     search_options = EmailSearchOptions(
         mailbox='INBOX',
         subject=None,
-        to_email=None,
+        to_email='noreply@nvcl.ca',
         from_email=None,
         since_date=None,
         until_date=None,
@@ -81,8 +81,8 @@ def evaluate_rag(dataset: str,
                  embeddings_model: Embeddings = DEFAULT_EMBEDDINGS,
                  rag_prompt_template: str = DEFAULT_EVALUATION_PROMPT_TEMPLATE,
                  retriever_prompt_template: Union[str, dict] = None,
-                 retriever_type: str = RetrieverType.VECTOR_STORE,
-                 input_data_type: str = InputDataType.EMAIL
+                 retriever_type: RetrieverType = RetrieverType.VECTOR_STORE,
+                 input_data_type: InputDataType = InputDataType.EMAIL
                  ):
     """
     Evaluates a RAG pipeline that answers questions from a dataset
@@ -104,11 +104,11 @@ def evaluate_rag(dataset: str,
         all_documents = ingest_files(dataset)
 
     elif input_data_type == InputDataType.EMAIL:
-
         all_documents = ingest_emails()
 
     else:
-        raise ValueError('Invalid input data type, must be one of: file, email.')
+        raise ValueError(
+            f'Invalid input data type, must be one of: file, email. Got {input_data_type}')
 
     if retriever_type == RetrieverType.SQL:
 
@@ -144,9 +144,10 @@ def evaluate_rag(dataset: str,
             )
 
         else:
-            raise ValueError('Invalid retriever type, must be one of: vector_store, auto, sql.')
+            raise ValueError(
+                f'Invalid retriever type, must be one of: vector_store, auto, sql. Got {retriever_type}')
 
-    rag_chain = rag_pipeline.get_rag_chain()
+    rag_chain = rag_pipeline.rag_with_returned_sources()
 
     # Generate filename based on current datetime.
     dt_string = datetime.now().strftime('%d%m%Y_%H%M%S')
@@ -182,9 +183,9 @@ Uses evaluation metrics from the RAGAs library.
     parser.add_argument(
         '-c', '--connection_dict', help='Connection string for SQL retriever', default=None)
     parser.add_argument('-r', '--retriever_type', help='Type of retriever to use (vector_store, auto, sql)',
-                        default='vector_store')
+                        type=RetrieverType, choices=list(RetrieverType), default=RetrieverType.VECTOR_STORE)
     parser.add_argument('-i', '--input_data_type', help='Type of input data to use (email, file)',
-                        default='email')
+                        type=InputDataType, choices=list(InputDataType), default=InputDataType.EMAIL)
     parser.add_argument(
         '-l', '--log', help='Logging level to use (default WARNING)', default='WARNING')
 
