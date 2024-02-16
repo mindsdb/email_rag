@@ -40,10 +40,6 @@ These datasets are interesting because they come with various challenges,
   **[RAG]** From the conversations between me and Claudia, tell me what are Claudia’s kid’s names, ages and birthdays if possible?
 
 
-Tools that we will be possibly using:
-
-* **For guardrails:** https://github.com/NVIDIA/NeMo-Guardrails?utm_source=www.turingpost.com&utm_medium=referral&utm_campaign=8-open-source-tools-for-retrieval-augmented-generation-rag-implementation
-
 
 ## High Level Design
 
