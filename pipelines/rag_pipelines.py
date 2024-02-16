@@ -32,6 +32,10 @@ class LangChainRAGPipeline:
         """
 
         def format_docs(docs):
+            if isinstance(docs, str):
+                # this is to handle the case where the retriever returns a string
+                # instead of a list of documents e.g. SQLRetriever
+                return docs
             return "\n\n".join(doc.page_content for doc in docs)
 
         prompt = ChatPromptTemplate.from_template(self.prompt_template)
@@ -80,14 +84,20 @@ class LangChainRAGPipeline:
         """
         retriever_prompt_template = retriever_prompt_template or DEFAULT_SQL_RETRIEVAL_PROMPT_TEMPLATE
 
-        retriever = SQLRetriever(connection_dict=connection_dict, prompt_template=retriever_prompt_template)
+        retriever = SQLRetriever(
+            connection_dict=connection_dict,
+            prompt_template=retriever_prompt_template
+        ).full_chain()
+
         return cls(retriever, rag_prompt_template, llm)
 
     @classmethod
     def from_auto_retriever(cls,
                             retriever_prompt_template: str,
                             rag_prompt_template: str,
-                            data: Union[pd.DataFrame, List[Document]] = None,
+                            data_description: str,
+                            content_column_name: str,
+                            data: Union[pd.DataFrame, List[Document]],
                             vectorstore: VectorStore = None,
                             llm: BaseChatModel = None
                             ):
@@ -99,15 +109,19 @@ class LangChainRAGPipeline:
         if data is specified, it should be a pd.DataFrame or a List[Document],
         by default Chroma will be used to create a vectorstore
 
-        :param data: Union[pd.DataFrame, List[Document]]
-        :param vectorstore: VectorStore
         :param retriever_prompt_template: str
         :param rag_prompt_template: str
+        :param data_description: str
+        :param content_column_name: str
+        :param data: Union[pd.DataFrame, List[Document]]
+        :param vectorstore: VectorStore
         :param llm: BaseChatModel
 
         :return:
         """
         retriever_prompt_template = retriever_prompt_template or DEFAULT_AUTO_META_PROMPT_TEMPLATE
 
-        retriever = AutoRetriever(data=data, prompt_template=retriever_prompt_template, vectorstore=vectorstore)
+        retriever = AutoRetriever(data=data, content_column_name=content_column_name, vectorstore=vectorstore,
+                                  document_description=data_description,
+                                  prompt_template=retriever_prompt_template).get_retriever()
         return cls(retriever, rag_prompt_template, llm)
