@@ -2,7 +2,6 @@ import json
 import logging
 
 from datasets import Dataset
-from langchain_core.retrievers import BaseRetriever
 from langchain_core.runnables.base import RunnableSerializable
 from ragas import evaluate as ragas_evaluate
 from ragas.metrics import (
@@ -11,6 +10,7 @@ from ragas.metrics import (
     context_recall,
     faithfulness,
 )
+from pandas import DataFrame
 
 from callback_handlers.log_callback_handler import LogCallbackHandler
 
@@ -18,7 +18,7 @@ from callback_handlers.log_callback_handler import LogCallbackHandler
 def evaluate(
         pipeline: RunnableSerializable,
         qa_dataset_path: str,
-        output_path: str):
+        output_path: str) -> DataFrame:
     '''
     Evaluates a RAG pipeline against the given Q&A dataset using the RAGAs library.
 
@@ -29,6 +29,8 @@ def evaluate(
                 'examples': [{'query': '...', 'reference_answer': '...'}]
             }
         output_path (str): Path to output evaluation results
+    Returns:
+        df (DataFrame): DataFrame representing evaluation results
     '''
     qa_dataset = {'examples': []}
     with open(qa_dataset_path) as qa_dataset_file:
@@ -73,4 +75,6 @@ def evaluate(
     )
 
     df = result.to_pandas()
+    df.fillna(0.0)
     df.to_csv(output_path)
+    return df

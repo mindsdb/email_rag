@@ -23,6 +23,7 @@ from settings import (DEFAULT_LLM,
                       DEFAULT_EMBEDDINGS,
                       DEFAULT_CONTENT_COLUMN_NAME,
                       DEFAULT_DATASET_DESCRIPTION)
+from visualize import visualize_evaluation_metrics
 
 
 # Define the type of retriever to use.
@@ -89,7 +90,8 @@ def evaluate_rag(dataset: str,
                  rag_prompt_template: str = DEFAULT_EVALUATION_PROMPT_TEMPLATE,
                  retriever_prompt_template: Union[str, dict] = None,
                  retriever_type: RetrieverType = RetrieverType.VECTOR_STORE,
-                 input_data_type: InputDataType = InputDataType.EMAIL
+                 input_data_type: InputDataType = InputDataType.EMAIL,
+                 show_visualization=False
                  ):
     """
     Evaluates a RAG pipeline that answers questions from a dataset
@@ -106,6 +108,7 @@ def evaluate_rag(dataset: str,
     :param retriever_prompt_template: Union[str, dict]
     :param retriever_type: RetrieverType
     :param input_data_type: InputDataType
+    :param show_visualization: bool
 
     :return:
     """
@@ -161,11 +164,14 @@ def evaluate_rag(dataset: str,
 
     # Generate filename based on current datetime.
     dt_string = datetime.now().strftime('%d%m%Y_%H%M%S')
-    output_file = f'evaluate_{input_data_type}_rag_{dt_string}.csv'
+    output_file = f'evaluate_{input_data_type.value}_rag_{dt_string}.csv'
 
     qa_file = os.path.join('./data', dataset, 'rag_dataset.json')
 
-    evaluate.evaluate(rag_chain, qa_file, output_file)
+    evaluation_df = evaluate.evaluate(
+        rag_chain, qa_file, output_file, show_visualization=show_visualization)
+    if show_visualization:
+        visualize_evaluation_metrics(output_file, evaluation_df)
 
 
 if __name__ == '__main__':
@@ -201,6 +207,8 @@ Uses evaluation metrics from the RAGAs library.
                         type=RetrieverType, choices=list(RetrieverType), default=RetrieverType.VECTOR_STORE)
     parser.add_argument('-i', '--input_data_type', help='Type of input data to use (email, file)',
                         type=InputDataType, choices=list(InputDataType), default=InputDataType.EMAIL)
+    parser.add_argument('-v', '--show_visualization', type=bool,
+                        help='Whether or not to plot and show evaluation metrics', default=False)
     parser.add_argument(
         '-l', '--log', help='Logging level to use (default WARNING)', default='WARNING')
 
@@ -214,5 +222,6 @@ Uses evaluation metrics from the RAGAs library.
         content_column_name=args.content_column_name,
         db_connection_dict=args.connection_dict,
         retriever_type=args.retriever_type,
-        input_data_type=args.input_data_type
+        input_data_type=args.input_data_type,
+        show_visualization=args.show_visualization
     )
