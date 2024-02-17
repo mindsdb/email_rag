@@ -23,7 +23,7 @@ from settings import (DEFAULT_LLM,
                       DEFAULT_EMBEDDINGS,
                       DEFAULT_CONTENT_COLUMN_NAME,
                       DEFAULT_DATASET_DESCRIPTION)
-from visualize import visualize_evaluation_metrics
+from visualize.visualize import visualize_evaluation_metrics
 
 
 # Define the type of retriever to use.
