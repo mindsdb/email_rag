@@ -20,23 +20,10 @@ from settings import (DEFAULT_LLM,
                       DEFAULT_AUTO_META_PROMPT_TEMPLATE,
                       DEFAULT_SQL_RETRIEVAL_PROMPT_TEMPLATE,
                       DEFAULT_CARDINALITY_THRESHOLD,
-                      DEFAUlT_VECTOR_STORE, DEFAULT_CONTENT_COLUMN_NAME
+                      DEFAUlT_VECTOR_STORE, DEFAULT_CONTENT_COLUMN_NAME, documents_to_df
                       )
 import pandas as pd
 import json
-
-
-def documents_to_df(content_column_name, documents: List[Document]):
-    """
-    Given a list of documents, convert it to a dataframe.
-
-    :param content_column_name: str
-    :param documents: List[Document]
-    :return:
-    """
-    df = pd.DataFrame([doc.metadata for doc in documents])
-    df[content_column_name] = [doc.page_content for doc in documents]
-    return df
 
 
 class AutoRetriever:
@@ -173,7 +160,7 @@ class AutoRetriever:
         :param question: str
         :return: List[Document]
         """
-        retriever = self.get_retriever()
+        retriever = self.as_retriever()
 
         return retriever.get_relevant_documents(question)
 
@@ -184,18 +171,12 @@ class SQLRetriever:
     """
 
     def __init__(self,
-                 connection_dict: dict,
+                 connection_string: str,
                  llm: BaseChatModel = DEFAULT_LLM,
                  embeddings_model: Embeddings = DEFAULT_EMBEDDINGS,
                  prompt_template: dict = DEFAULT_SQL_RETRIEVAL_PROMPT_TEMPLATE
                  ):
         self.prompt_template = prompt_template
-
-        connection_string = (f"postgresql+psycopg2://postgres:"
-                             f"{connection_dict['user']}"
-                             f"@{connection_dict['host']}"
-                             f":{connection_dict['port']}"
-                             f"/{connection_dict['db_name']}")
 
         self.db = SQLDatabase.from_uri(connection_string)
         self.llm = llm
@@ -212,7 +193,7 @@ class SQLRetriever:
             [("system", prompt_template), ("human", "{question}")]
         )
 
-    def get_schema(self):
+    def get_schema(self, _):
         """
         Get DB schema
         :return:

@@ -13,3 +13,5 @@ pymupdf
 lark
 pandas
 seaborn>=0.13.2
+pgvector
+psycopg2-binary

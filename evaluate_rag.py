@@ -10,6 +10,7 @@ from typing import Union
 from langchain_core.embeddings import Embeddings
 from langchain_core.language_models import BaseChatModel
 from langchain_core.vectorstores import VectorStore
+from sqlalchemy import create_engine
 
 from evaluate import evaluate
 from ingestors.email_ingestor.email_client import EmailClient
@@ -22,7 +23,10 @@ from settings import (DEFAULT_LLM,
                       DEFAULT_EVALUATION_PROMPT_TEMPLATE,
                       DEFAULT_EMBEDDINGS,
                       DEFAULT_CONTENT_COLUMN_NAME,
-                      DEFAULT_DATASET_DESCRIPTION)
+                      DEFAULT_DATASET_DESCRIPTION,
+                      documents_to_df,
+                      DEFAULT_TEST_TABLE_NAME
+                      )
 from visualize.visualize import visualize_evaluation_metrics
 
 
@@ -57,7 +61,7 @@ def ingest_files(dataset: str):
     return all_documents
 
 
-def ingest_emails():
+def ingest_emails(to_df: bool = False):
     username = os.getenv('EMAIL_USERNAME')
     password = os.getenv('EMAIL_PASSWORD')
     email_client = EmailClient(username, password)
@@ -83,7 +87,8 @@ def ingest_emails():
 def evaluate_rag(dataset: str,
                  content_column_name: str = DEFAULT_CONTENT_COLUMN_NAME,
                  dataset_description: str = DEFAULT_DATASET_DESCRIPTION,
-                 db_connection_dict: dict = None,
+                 db_connection_string: str = None,
+                 test_table_name: str = DEFAULT_TEST_TABLE_NAME,
                  vector_store: VectorStore = DEFAUlT_VECTOR_STORE,
                  llm: BaseChatModel = DEFAULT_LLM,
                  embeddings_model: Embeddings = DEFAULT_EMBEDDINGS,
@@ -100,7 +105,8 @@ def evaluate_rag(dataset: str,
     :param dataset: str
     :param content_column_name: str
     :param dataset_description: str
-    :param db_connection_dict: dict
+    :param db_connection_string: str
+    :param test_table_name: str
     :param vector_store: VectorStore
     :param llm: BaseChatModel
     :param embeddings_model: Embeddings
@@ -122,10 +128,25 @@ def evaluate_rag(dataset: str,
         raise ValueError(
             f'Invalid input data type, must be one of: file, email. Got {input_data_type}')
 
+    all_documents = all_documents[:10]
+
     if retriever_type == RetrieverType.SQL:
 
+        documents_df = documents_to_df(content_column_name,
+                                       all_documents,
+                                       embeddings_model=embeddings_model,
+                                       with_embeddings=True)
+
+        # Save the dataframe to a SQL table.
+
+        alchemyEngine = create_engine(db_connection_string, pool_recycle=3600)
+        db_connection = alchemyEngine.connect()
+
+        # issues with langchain compatibility with vector type in postgres need to investigate further
+        documents_df.to_sql(test_table_name, db_connection, index=False, if_exists='append')
+
         rag_pipeline = LangChainRAGPipeline.from_sql_retriever(
-            connection_dict=db_connection_dict,
+            connection_string=db_connection_string,
             retriever_prompt_template=retriever_prompt_template,
             rag_prompt_template=rag_prompt_template,
             llm=llm
@@ -169,7 +190,7 @@ def evaluate_rag(dataset: str,
     qa_file = os.path.join('./data', dataset, 'rag_dataset.json')
 
     evaluation_df = evaluate.evaluate(
-        rag_chain, qa_file, output_file, show_visualization=show_visualization)
+        rag_chain, qa_file, output_file)
     if show_visualization:
         visualize_evaluation_metrics(output_file, evaluation_df)
 
@@ -199,10 +220,13 @@ Uses evaluation metrics from the RAGAs library.
     parser.add_argument('-dd', '--dataset_description', help='Description of the dataset',
                         default=DEFAULT_DATASET_DESCRIPTION)
     parser.add_argument(
-        '-c', '--connection_dict', help='Connection string for SQL retriever', default=None)
+        '-c', '--connection_string', help='Connection string for SQL retriever', default=None)
     parser.add_argument('-cc', '--content_column_name',
                         help='Name of the column containing the content i.e. body of the email',
                         default=DEFAULT_CONTENT_COLUMN_NAME)
+    parser.add_argument('-t', '--test_table_name', help='Name of the table to use for testing '
+                                                        '(only for SQL retriever)',
+                        default=DEFAULT_TEST_TABLE_NAME)
     parser.add_argument('-r', '--retriever_type', help='Type of retriever to use (vector_store, auto, sql)',
                         type=RetrieverType, choices=list(RetrieverType), default=RetrieverType.VECTOR_STORE)
     parser.add_argument('-i', '--input_data_type', help='Type of input data to use (email, file)',
@@ -216,12 +240,8 @@ Uses evaluation metrics from the RAGAs library.
     log_level = getattr(logging, args.log.upper())
     logging.basicConfig(level=log_level)
 
-    evaluate_rag(
-        dataset=args.dataset,
-        dataset_description=args.dataset_description,
-        content_column_name=args.content_column_name,
-        db_connection_dict=args.connection_dict,
-        retriever_type=args.retriever_type,
-        input_data_type=args.input_data_type,
-        show_visualization=args.show_visualization
-    )
+    evaluate_rag(dataset=args.dataset, content_column_name=args.content_column_name,
+                 dataset_description=args.dataset_description, db_connection_string=args.connection_string,
+                 test_table_name=args.test_table_name,
+                 retriever_type=args.retriever_type, input_data_type=args.input_data_type,
+                 show_visualization=args.show_visualization)

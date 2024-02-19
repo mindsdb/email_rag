@@ -67,7 +67,7 @@ class LangChainRAGPipeline:
 
     @classmethod
     def from_sql_retriever(cls,
-                           connection_dict,
+                           connection_string,
                            retriever_prompt_template: dict,
                            rag_prompt_template,
                            llm: BaseChatModel = None
@@ -75,17 +75,17 @@ class LangChainRAGPipeline:
         """
         Builds a RAG pipeline with returned sources using a SQLRetriever
 
-        :param connection_dict:
-        :param retriever_prompt_template:
-        :param rag_prompt_template:
-        :param llm:
+        :param connection_string: str
+        :param retriever_prompt_template: dict
+        :param rag_prompt_template: str
+        :param llm: BaseChatModel
 
         :return:
         """
         retriever_prompt_template = retriever_prompt_template or DEFAULT_SQL_RETRIEVAL_PROMPT_TEMPLATE
 
         retriever = SQLRetriever(
-            connection_dict=connection_dict,
+            connection_string=connection_string,
             prompt_template=retriever_prompt_template
         ).as_retriever()
 
