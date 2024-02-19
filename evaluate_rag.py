@@ -61,7 +61,7 @@ def ingest_files(dataset: str):
     return all_documents
 
 
-def ingest_emails(to_df: bool = False):
+def ingest_emails():
     username = os.getenv('EMAIL_USERNAME')
     password = os.getenv('EMAIL_PASSWORD')
     email_client = EmailClient(username, password)
