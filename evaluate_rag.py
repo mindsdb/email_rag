@@ -141,7 +141,7 @@ def evaluate_rag(dataset: str,
         db_connection = alchemyEngine.connect()
 
         # issues with langchain compatibility with vector type in postgres need to investigate further
-        documents_df.to_sql(test_table_name, db_connection, index=False, if_exists='append')
+        documents_df.to_sql(test_table_name, db_connection, index=False, if_exists='replace')
 
         rag_pipeline = LangChainRAGPipeline.from_sql_retriever(
             connection_string=db_connection_string,
