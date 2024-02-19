@@ -128,8 +128,6 @@ def evaluate_rag(dataset: str,
         raise ValueError(
             f'Invalid input data type, must be one of: file, email. Got {input_data_type}')
 
-    all_documents = all_documents[:10]
-
     if retriever_type == RetrieverType.SQL:
 
         documents_df = documents_to_df(content_column_name,
