@@ -12,3 +12,4 @@ python-dotenv
 pymupdf
 lark
 pandas
+seaborn>=0.13.2

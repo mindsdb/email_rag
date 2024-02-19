@@ -23,6 +23,26 @@ Question: {question}
 Context: {context}
 Answer:'''
 
+DEFAULT_QA_GENERATION_PROMPT_TEMPLATE = '''You are an assistant for
+generating sample questions and answers from the given document and metadata. Given
+a document and its metadata as context, generate a question and answer from that document and its metadata.
+
+The document will be a string. The metadata will be a JSON string. You need
+to parse the JSON to understand it.
+
+Generate a question that requires BOTH the document and metadata to answer, if possible.
+Otherwise, generate a question that requires ONLY the document to answer.
+
+Return a JSON dictionary with the question and answer like this:
+{{ "question": <the full generated question>, "answer": <the full generated answer> }}
+
+Make sure the JSON string is valid before returning it. You must return the question and answer
+in the specified JSON format no matter what.
+
+Document: {document}
+Metadata: {metadata}
+Answer:'''
+
 DEFAULT_TEXT_2_PGVECTOR_PROMPT_TEMPLATE = """You are a Postgres expert. Given an input question, first create a syntactically correct Postgres query to run, then look at the results of the query and return the answer to the input question.
 Unless the user specifies in the question a specific number of examples to obtain, query for at most 5 results using the LIMIT clause as per Postgres. You can order the results to return the most informative data in the database.
 Never query for all columns from a table. You must query only the columns that are needed to answer the question. Wrap each column name in double quotes (") to denote them as delimited identifiers.
