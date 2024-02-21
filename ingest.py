@@ -39,7 +39,7 @@ def ingest(search_options: EmailSearchOptions,
            collection_name: str = None,
            output_path: str = None):
     '''Ingests emails from search options and stores in .csv or Postgres.
-    
+
     Parameters:
         search_options (EmailSearchOptions): Search options defining emails to ingest.
         connection_string (str): If storing in Postgres, the DB connection string.
