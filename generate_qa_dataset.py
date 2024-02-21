@@ -3,6 +3,7 @@ from typing import List
 import argparse
 import json
 import logging
+import os
 
 from langchain_core.documents.base import Document
 
@@ -77,7 +78,8 @@ def generate(dataset: str):
 
     dataset_obj = {'examples': all_examples}
 
-    with open('dataset.json', 'w') as dataset_file:
+    dataset_path = os.path.join('./data', dataset, 'rag_dataset.json')
+    with open(dataset_path, 'w') as dataset_file:
         json.dump(dataset_obj, dataset_file)
 
 

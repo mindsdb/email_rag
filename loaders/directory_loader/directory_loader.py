@@ -28,7 +28,7 @@ class DirectoryLoader(BaseLoader):
         self.paths = paths
         super().__init__()
 
-    def _get_loader_from_extension(extension: str, path: str) -> BaseLoader:
+    def _get_loader_from_extension(self, extension: str, path: str) -> BaseLoader:
         if extension == '.pdf':
             return PyMuPDFLoader(path)
         if extension == '.csv':
@@ -47,7 +47,7 @@ class DirectoryLoader(BaseLoader):
             doc.metadata['extension'] = file_extension
             yield doc
 
-    def _get_text_splitter_from_extension(extension: str) -> TextSplitter:
+    def _get_text_splitter_from_extension(self, extension: str) -> TextSplitter:
         if extension == '.pdf':
             return SemanticChunker(OpenAIEmbeddings())
         if extension == '.md':
