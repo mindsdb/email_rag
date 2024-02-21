@@ -1,6 +1,5 @@
-from typing import Union, List
+from typing import List
 
-import pandas as pd
 from langchain_core.language_models import BaseChatModel
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
@@ -67,7 +66,7 @@ class LangChainRAGPipeline:
 
     @classmethod
     def from_sql_retriever(cls,
-                           connection_dict,
+                           connection_string,
                            retriever_prompt_template: dict,
                            rag_prompt_template,
                            llm: BaseChatModel = None
@@ -75,17 +74,17 @@ class LangChainRAGPipeline:
         """
         Builds a RAG pipeline with returned sources using a SQLRetriever
 
-        :param connection_dict:
-        :param retriever_prompt_template:
-        :param rag_prompt_template:
-        :param llm:
+        :param connection_string: str
+        :param retriever_prompt_template: dict
+        :param rag_prompt_template: str
+        :param llm: BaseChatModel
 
         :return:
         """
         retriever_prompt_template = retriever_prompt_template or DEFAULT_SQL_RETRIEVAL_PROMPT_TEMPLATE
 
         retriever = SQLRetriever(
-            connection_dict=connection_dict,
+            connection_string=connection_string,
             prompt_template=retriever_prompt_template
         ).as_retriever()
 
@@ -97,7 +96,7 @@ class LangChainRAGPipeline:
                             rag_prompt_template: str,
                             data_description: str,
                             content_column_name: str,
-                            data: Union[pd.DataFrame, List[Document]],
+                            data: List[Document],
                             vectorstore: VectorStore = None,
                             llm: BaseChatModel = None
                             ):
@@ -106,14 +105,12 @@ class LangChainRAGPipeline:
 
         NB specify either data or vectorstore, not both
 
-        if data is specified, it should be a pd.DataFrame or a List[Document],
-        by default Chroma will be used to create a vectorstore
 
         :param retriever_prompt_template: str
         :param rag_prompt_template: str
         :param data_description: str
         :param content_column_name: str
-        :param data: Union[pd.DataFrame, List[Document]]
+        :param data: List[Document]
         :param vectorstore: VectorStore
         :param llm: BaseChatModel
 

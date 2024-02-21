@@ -1,11 +1,12 @@
 from langchain_community.vectorstores.chroma import Chroma
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 
-
 DEFAULT_CARDINALITY_THRESHOLD = 40
+DEFAULT_POOL_RECYCLE = 3600
 DEFAULT_LLM_MODEL = "gpt-3.5-turbo"
 DEFAULT_CONTENT_COLUMN_NAME = "body"
 DEFAULT_DATASET_DESCRIPTION = "email inbox"
+DEFAULT_TEST_TABLE_NAME = "test_email"
 DEFAULT_LLM = ChatOpenAI(model_name=DEFAULT_LLM_MODEL, temperature=0)
 DEFAULT_EMBEDDINGS = OpenAIEmbeddings()
 DEFAUlT_VECTOR_STORE = Chroma
@@ -77,6 +78,6 @@ SQL Query: {query}
 SQL Response: {response}"""
 
 DEFAULT_SQL_RETRIEVAL_PROMPT_TEMPLATE = {
-                "sql_query": DEFAULT_TEXT_2_PGVECTOR_PROMPT_TEMPLATE,
-                "sql_result": DEFAULT_SQL_RESULT_PROMPT_TEMPLATE
-            }
+    "sql_query":DEFAULT_TEXT_2_PGVECTOR_PROMPT_TEMPLATE,
+    "sql_result":DEFAULT_SQL_RESULT_PROMPT_TEMPLATE
+}

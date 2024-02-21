@@ -59,8 +59,8 @@ class EmailIngestor:
         body_str = re.sub(r'[\r\n]\s*[\r\n]', '\n\n', body_str)
         email_doc = Document(body_str)
         email_doc.metadata = {
-            'from': row['from'],
-            'to': row['to'],
+            'from_field': row['from'],
+            'to_field': row['to'],
             'subject': row['subject'],
             'date': row['date']
         }
