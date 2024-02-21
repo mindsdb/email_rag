@@ -20,7 +20,7 @@ from settings import (DEFAULT_LLM,
                       DEFAULT_AUTO_META_PROMPT_TEMPLATE,
                       DEFAULT_SQL_RETRIEVAL_PROMPT_TEMPLATE,
                       DEFAULT_CARDINALITY_THRESHOLD,
-                      DEFAUlT_VECTOR_STORE, DEFAULT_CONTENT_COLUMN_NAME, documents_to_df
+                      DEFAUlT_VECTOR_STORE, DEFAULT_CONTENT_COLUMN_NAME
                       )
 from utils import documents_to_df
 import pandas as pd
