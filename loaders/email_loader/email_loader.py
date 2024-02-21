@@ -1,20 +1,21 @@
 
-from typing import List
+from typing import Iterator, List
 import re
 
 from bs4 import BeautifulSoup
 import bs4.element
 import chardet
 
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain.text_splitter import RecursiveCharacterTextSplitter, TextSplitter
+from langchain_community.document_loaders.base import BaseLoader
 from langchain_core.documents.base import Document
 import pandas as pd
 
-from ingestors.email_ingestor.email_client import EmailClient
-from ingestors.email_ingestor.email_search_options import EmailSearchOptions
+from loaders.email_loader.email_client import EmailClient
+from loaders.email_loader.email_search_options import EmailSearchOptions
 
 
-class EmailIngestor:
+class EmailLoader(BaseLoader):
     '''Loads emails into document representation'''
 
     _DEFAULT_CHUNK_SIZE = 500
@@ -37,7 +38,7 @@ class EmailIngestor:
         visible_texts = filter(self._is_tag_visible, texts)
         return '\n'.join(t.strip() for t in visible_texts)
 
-    def _ingest_email_row(self, row: pd.Series) -> List[Document]:
+    def _ingest_email_row(self, row: pd.Series) -> Document:
         if row['body_content_type'] == 'html':
             # Extract meaningful text from raw HTML.
             row['body'] = self._preprocess_raw_html(row['body'])
@@ -69,17 +70,26 @@ class EmailIngestor:
         for key in email_doc.metadata:
             if email_doc.metadata[key] is None:
                 email_doc.metadata[key] = ""
+        return email_doc
 
+    def load_and_split(self, text_splitter: TextSplitter = None) -> List[Document]:
         # Split by ["\n\n", "\n", " ", ""] in order.
-        text_splitter = RecursiveCharacterTextSplitter(
-            chunk_size=EmailIngestor._DEFAULT_CHUNK_SIZE,
-            chunk_overlap=EmailIngestor._DEFAULT_CHUNK_OVERLAP)
-        return text_splitter.split_documents([email_doc])
+        if text_splitter is None:
+            text_splitter = RecursiveCharacterTextSplitter(
+                chunk_size=EmailLoader._DEFAULT_CHUNK_SIZE,
+                chunk_overlap=EmailLoader._DEFAULT_CHUNK_OVERLAP)
 
-    def ingest(self) -> List[Document]:
+        all_documents = self.load()
+        split_documents = []
+        for doc in all_documents:
+            split_documents += text_splitter.split_documents([doc])
+        return split_documents
+
+    def load(self) -> List[Document]:
+        return list(self.lazy_load())
+
+    def lazy_load(self) -> Iterator[Document]:
         emails_df = self.email_client.search_email(self.search_options)
-        all_documents = []
         for _, row in emails_df.iterrows():
-            all_documents += self._ingest_email_row(row)
+            yield self._ingest_email_row(row)
         self.email_client.logout()
-        return all_documents

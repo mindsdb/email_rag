@@ -78,6 +78,6 @@ SQL Query: {query}
 SQL Response: {response}"""
 
 DEFAULT_SQL_RETRIEVAL_PROMPT_TEMPLATE = {
-    "sql_query":DEFAULT_TEXT_2_PGVECTOR_PROMPT_TEMPLATE,
-    "sql_result":DEFAULT_SQL_RESULT_PROMPT_TEMPLATE
-}
+                "sql_query": DEFAULT_TEXT_2_PGVECTOR_PROMPT_TEMPLATE,
+                "sql_result": DEFAULT_SQL_RESULT_PROMPT_TEMPLATE
+            }
