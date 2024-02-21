@@ -29,6 +29,11 @@ def _load_files(dataset: str) -> List[Document]:
 
 
 def generate(dataset: str):
+    '''Generates question & answer pairs from a dataset (one per document).
+
+    Parameters:
+        dataset (str): Name of dataset to generate Q&A pairs from (e.g. personal_emails)
+    '''
     all_documents = _load_files(dataset)
     num_documents = len(all_documents)
     all_examples = []
@@ -86,10 +91,8 @@ def generate(dataset: str):
 if __name__ == '__main__':
     # OPENAI_API_KEY='<YOUR_API_KEY>'
     parser = argparse.ArgumentParser(
-        prog='Evaluate RAG',
-        description='''Evaluates the performance of a RAG pipeline with email or file.
-Uses evaluation metrics from the RAGAs library.
-        '''
+        prog='Generate Q&A Dataset',
+        description='''Generates question & answer pairs from a dataset using an LLM (one per document).'''
     )
     parser.add_argument(
         '-d', '--dataset', help='Name of QA dataset to use for Q&A (e.g. personal_emails)')
