@@ -13,10 +13,10 @@ from langchain_core.vectorstores import VectorStore
 from sqlalchemy import create_engine
 
 from evaluate import evaluate
-from loaders.email_loader.email_client import EmailClient
-from loaders.email_loader.email_loader import EmailLoader
-from loaders.email_loader.email_search_options import EmailSearchOptions
-from loaders.directory_loader.directory_loader import DirectoryLoader
+from ingestors.email_ingestor.email_client import EmailClient
+from ingestors.email_ingestor.email_ingestor import EmailIngestor
+from ingestors.email_ingestor.email_search_options import EmailSearchOptions
+from ingestors.file_ingestor import FileIngestor
 from pipelines.rag_pipelines import LangChainRAGPipeline
 from settings import (DEFAULT_LLM,
                       DEFAUlT_VECTOR_STORE,
@@ -54,9 +54,9 @@ def ingest_files(dataset: str):
         if f.is_file():
             source_files.append(str(f))
 
-    directory_loader = DirectoryLoader(source_files)
+    ingestor = FileIngestor(source_files)
     logging.info('Loading documents from {}'.format(source_files_path))
-    all_documents = directory_loader.load_and_split()
+    all_documents = ingestor.ingest()
     logging.info('Documents loaded')
 
     return all_documents
@@ -77,9 +77,9 @@ def ingest_emails():
         until_date=None,
         since_email_id=None
     )
-    email_loader = EmailLoader(email_client, search_options)
+    email_ingestor = EmailIngestor(email_client, search_options)
     logging.info('Ingesting emails')
-    all_documents = email_loader.load_and_split()
+    all_documents = email_ingestor.ingest()
     logging.info('Ingested')
 
     return all_documents
