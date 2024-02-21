@@ -24,9 +24,10 @@ from settings import (DEFAULT_LLM,
                       DEFAULT_EMBEDDINGS,
                       DEFAULT_CONTENT_COLUMN_NAME,
                       DEFAULT_DATASET_DESCRIPTION,
-                      documents_to_df,
-                      DEFAULT_TEST_TABLE_NAME
+                      DEFAULT_TEST_TABLE_NAME,
+                      DEFAULT_POOL_RECYCLE
                       )
+from utils import documents_to_df
 from visualize.visualize import visualize_evaluation_metrics
 
 
@@ -137,7 +138,7 @@ def evaluate_rag(dataset: str,
 
         # Save the dataframe to a SQL table.
 
-        alchemyEngine = create_engine(db_connection_string, pool_recycle=3600)
+        alchemyEngine = create_engine(db_connection_string, pool_recycle=DEFAULT_POOL_RECYCLE)
         db_connection = alchemyEngine.connect()
 
         # issues with langchain compatibility with vector type in postgres need to investigate further

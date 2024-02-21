@@ -22,6 +22,7 @@ from settings import (DEFAULT_LLM,
                       DEFAULT_CARDINALITY_THRESHOLD,
                       DEFAUlT_VECTOR_STORE, DEFAULT_CONTENT_COLUMN_NAME, documents_to_df
                       )
+from utils import documents_to_df
 import pandas as pd
 import json
 
