@@ -1,12 +1,8 @@
-from typing import List
-
-import pandas as pd
 from langchain_community.vectorstores.chroma import Chroma
-from langchain_core.documents import Document
-from langchain_core.embeddings import Embeddings
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 
 DEFAULT_CARDINALITY_THRESHOLD = 40
+DEFAULT_POOL_RECYCLE = 3600
 DEFAULT_LLM_MODEL = "gpt-3.5-turbo"
 DEFAULT_CONTENT_COLUMN_NAME = "body"
 DEFAULT_DATASET_DESCRIPTION = "email inbox"
@@ -85,34 +81,3 @@ DEFAULT_SQL_RETRIEVAL_PROMPT_TEMPLATE = {
     "sql_query":DEFAULT_TEXT_2_PGVECTOR_PROMPT_TEMPLATE,
     "sql_result":DEFAULT_SQL_RESULT_PROMPT_TEMPLATE
 }
-
-
-def documents_to_df(content_column_name: str,
-                    documents: List[Document],
-                    embeddings_model: Embeddings = None,
-                    with_embeddings: bool = False):
-    """
-    Given a list of documents, convert it to a dataframe.
-
-    :param content_column_name: str
-    :param documents: List[Document]
-    :param embeddings_model: Embeddings
-    :param with_embeddings: bool
-
-    :return:
-    """
-    df = pd.DataFrame([doc.metadata for doc in documents])
-
-    df[content_column_name] = [doc.page_content for doc in documents]
-
-    if 'date' in df.columns:
-        df['date'] = pd.to_datetime(df['date'], errors='coerce')
-
-    # Reordering the columns to have the content column first.
-    df = df[[content_column_name] + [col for col in df.columns if col != content_column_name]]
-
-    if with_embeddings:
-        df["embeddings"] = embeddings_model.embed_documents(df[content_column_name].tolist())
-
-    return df
-
