@@ -4,7 +4,7 @@ import imaplib
 
 import pandas as pd
 
-from ingestors.email_ingestor.email_search_options import EmailSearchOptions
+from loaders.email_loader.email_search_options import EmailSearchOptions
 
 
 class EmailClient:
