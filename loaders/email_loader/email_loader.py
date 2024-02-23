@@ -21,7 +21,6 @@ DEFAULT_CHUNK_OVERLAP = 50
 class EmailLoader(BaseLoader):
     '''Loads emails into document representation'''
 
-
     def __init__(self, email_client: EmailClient, search_options: EmailSearchOptions):
         self.email_client = email_client
         self.search_options = search_options

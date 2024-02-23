@@ -24,7 +24,6 @@ DEFAULT_CHUNK_OVERLAP = 50
 class DirectoryLoader(BaseLoader):
     '''Loads various file types in a directory into document representation'''
 
-
     def __init__(self, paths: List[str]):
         self.paths = paths
         super().__init__()

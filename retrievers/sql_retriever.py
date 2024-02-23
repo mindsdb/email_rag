@@ -1,4 +1,3 @@
-from typing import List
 import re
 
 from langchain.sql_database import SQLDatabase
