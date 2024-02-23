@@ -17,12 +17,12 @@ from langchain_openai.embeddings import OpenAIEmbeddings
 
 from loaders.directory_loader.csv_loader import CSVLoader
 
+DEFAULT_CHUNK_SIZE = 1000
+DEFAULT_CHUNK_OVERLAP = 50
+
 
 class DirectoryLoader(BaseLoader):
     '''Loads various file types in a directory into document representation'''
-
-    _DEFAULT_CHUNK_SIZE = 1000
-    _DEFAULT_CHUNK_OVERLAP = 50
 
     def __init__(self, paths: List[str]):
         self.paths = paths
@@ -61,15 +61,14 @@ class DirectoryLoader(BaseLoader):
                 ('h4', 'Header 4')])
         # Split by ["\n\n", "\n", " ", ""] in order.
         return RecursiveCharacterTextSplitter(
-            chunk_size=DirectoryLoader._DEFAULT_CHUNK_SIZE,
-            chunk_overlap=DirectoryLoader._DEFAULT_CHUNK_OVERLAP)
+            chunk_size=DEFAULT_CHUNK_SIZE,
+            chunk_overlap=DEFAULT_CHUNK_OVERLAP)
 
     def load_and_split(self, text_splitter: TextSplitter = None) -> List[Document]:
         if text_splitter is None:
             # Split by ["\n\n", "\n", " ", ""] in order.
             text_splitter = RecursiveCharacterTextSplitter(
-                chunk_size=DirectoryLoader._DEFAULT_CHUNK_SIZE,
-                chunk_overlap=DirectoryLoader._DEFAULT_CHUNK_OVERLAP)
+                chunk_size=DEFAULT_CHUNK_SIZE, chunk_overlap=DEFAULT_CHUNK_OVERLAP)
         all_documents = self.load()
         split_documents = []
         for doc in all_documents:

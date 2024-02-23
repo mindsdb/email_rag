@@ -10,9 +10,13 @@ from ragas.metrics import (
     context_recall,
     faithfulness,
 )
+from ragas.run_config import RunConfig
 from pandas import DataFrame
 
 from callback_handlers.log_callback_handler import LogCallbackHandler
+
+_DEFAULT_MAX_RAGAS_RETRIES = 20
+_DEFAULT_MAX_RAGAS_WAIT_TIME_SECS = 500
 
 
 def evaluate(
@@ -71,7 +75,11 @@ def evaluate(
             faithfulness,
             answer_relevancy,
         ],
-        callbacks=[LogCallbackHandler('evaluate')]
+        callbacks=[LogCallbackHandler('evaluate')],
+        # More generous RunConfig since we could be sending many requests.
+        run_config=RunConfig(timeout=None, max_retries=_DEFAULT_MAX_RAGAS_RETRIES,
+                             max_wait=_DEFAULT_MAX_RAGAS_WAIT_TIME_SECS),
+        raise_exceptions=False
     )
 
     df = result.to_pandas()

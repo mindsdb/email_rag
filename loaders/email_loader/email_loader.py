@@ -14,12 +14,12 @@ import pandas as pd
 from loaders.email_loader.email_client import EmailClient
 from loaders.email_loader.email_search_options import EmailSearchOptions
 
+DEFAULT_CHUNK_SIZE = 500
+DEFAULT_CHUNK_OVERLAP = 50
+
 
 class EmailLoader(BaseLoader):
     '''Loads emails into document representation'''
-
-    _DEFAULT_CHUNK_SIZE = 500
-    _DEFAULT_CHUNK_OVERLAP = 50
 
     def __init__(self, email_client: EmailClient, search_options: EmailSearchOptions):
         self.email_client = email_client
@@ -76,8 +76,7 @@ class EmailLoader(BaseLoader):
         # Split by ["\n\n", "\n", " ", ""] in order.
         if text_splitter is None:
             text_splitter = RecursiveCharacterTextSplitter(
-                chunk_size=EmailLoader._DEFAULT_CHUNK_SIZE,
-                chunk_overlap=EmailLoader._DEFAULT_CHUNK_OVERLAP)
+                chunk_size=DEFAULT_CHUNK_SIZE, chunk_overlap=DEFAULT_CHUNK_OVERLAP)
 
         all_documents = self.load()
         split_documents = []

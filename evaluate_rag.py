@@ -5,8 +5,10 @@ import logging
 import os
 import platform
 from enum import Enum
-from typing import Union
+from typing import List, Union
 
+from langchain.docstore.document import Document
+from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_core.embeddings import Embeddings
 from langchain_core.language_models import BaseChatModel
 from langchain_core.vectorstores import VectorStore
@@ -14,7 +16,7 @@ from sqlalchemy import create_engine
 
 from evaluate import evaluate
 from loaders.email_loader.email_client import EmailClient
-from loaders.email_loader.email_loader import EmailLoader
+from loaders.email_loader.email_loader import EmailLoader, DEFAULT_CHUNK_SIZE, DEFAULT_CHUNK_OVERLAP
 from loaders.email_loader.email_search_options import EmailSearchOptions
 from loaders.directory_loader.directory_loader import DirectoryLoader
 from pipelines.rag_pipelines import LangChainRAGPipeline
@@ -27,7 +29,7 @@ from settings import (DEFAULT_LLM,
                       DEFAULT_TEST_TABLE_NAME,
                       DEFAULT_POOL_RECYCLE
                       )
-from utils import documents_to_df
+from utils import documents_to_df, vector_store_from_documents
 from visualize.visualize import visualize_evaluation_metrics
 
 
@@ -36,6 +38,7 @@ class RetrieverType(Enum):
     VECTOR_STORE = 'vector_store'
     AUTO = 'auto'
     SQL = 'sql'
+    MULTI = 'multi'
 
 
 class InputDataType(Enum):
@@ -43,7 +46,7 @@ class InputDataType(Enum):
     FILE = 'file'
 
 
-def ingest_files(dataset: str):
+def ingest_files(dataset: str, split_documents: bool = True):
     # Define the path to the source files directory
     source_files_path = Path('./data') / dataset / 'source_files'
 
@@ -56,13 +59,16 @@ def ingest_files(dataset: str):
 
     directory_loader = DirectoryLoader(source_files)
     logging.info('Loading documents from {}'.format(source_files_path))
-    all_documents = directory_loader.load_and_split()
+    if split_documents:
+        all_documents = directory_loader.load_and_split()
+    else:
+        all_documents = directory_loader.load()
     logging.info('Documents loaded')
 
     return all_documents
 
 
-def ingest_emails():
+def ingest_emails(split_documents: bool = True):
     username = os.getenv('EMAIL_USERNAME')
     password = os.getenv('EMAIL_PASSWORD')
     email_client = EmailClient(username, password)
@@ -79,10 +85,94 @@ def ingest_emails():
     )
     email_loader = EmailLoader(email_client, search_options)
     logging.info('Ingesting emails')
-    all_documents = email_loader.load_and_split()
+    if split_documents:
+        all_documents = email_loader.load_and_split()
+    else:
+        all_documents = email_loader.load()
     logging.info('Ingested')
 
     return all_documents
+
+
+def _ingest_documents(input_data_type: InputDataType, dataset: str, split_documents: bool = True) -> List[Document]:
+
+    if input_data_type == InputDataType.FILE:
+        return ingest_files(dataset, split_documents)
+    if input_data_type == InputDataType.EMAIL:
+        return ingest_emails(split_documents)
+    raise ValueError(
+        f'Invalid input data type, must be one of: file, email. Got {input_data_type}')
+
+
+def _get_pipeline_from_retriever(
+        all_documents: List[Document],
+        content_column_name: str = DEFAULT_CONTENT_COLUMN_NAME,
+        dataset_description: str = DEFAULT_DATASET_DESCRIPTION,
+        db_connection_string: str = None,
+        test_table_name: str = DEFAULT_TEST_TABLE_NAME,
+        vector_store: VectorStore = DEFAUlT_VECTOR_STORE,
+        llm: BaseChatModel = DEFAULT_LLM,
+        embeddings_model: Embeddings = DEFAULT_EMBEDDINGS,
+        rag_prompt_template: str = DEFAULT_EVALUATION_PROMPT_TEMPLATE,
+        retriever_prompt_template: Union[str, dict] = None,
+        retriever_type: RetrieverType = RetrieverType.VECTOR_STORE) -> LangChainRAGPipeline:
+    if retriever_type == RetrieverType.SQL:
+
+        documents_df = documents_to_df(content_column_name,
+                                       all_documents,
+                                       embeddings_model=embeddings_model,
+                                       with_embeddings=True)
+
+        # Save the dataframe to a SQL table.
+        alchemyEngine = create_engine(
+            db_connection_string, pool_recycle=DEFAULT_POOL_RECYCLE)
+        db_connection = alchemyEngine.connect()
+
+        # issues with langchain compatibility with vector type in postgres need to investigate further
+        documents_df.to_sql(test_table_name, db_connection,
+                            index=False, if_exists='replace')
+
+        return LangChainRAGPipeline.from_sql_retriever(
+            connection_string=db_connection_string,
+            retriever_prompt_template=retriever_prompt_template,
+            rag_prompt_template=rag_prompt_template,
+            llm=llm
+        )
+
+    if retriever_type == RetrieverType.VECTOR_STORE:
+        vectorstore = vector_store_from_documents(
+            vector_store, all_documents, embeddings_model)
+        return LangChainRAGPipeline.from_retriever(
+            retriever=vectorstore.as_retriever(),
+            prompt_template=DEFAULT_EVALUATION_PROMPT_TEMPLATE,
+            llm=llm
+        )
+
+    if retriever_type == RetrieverType.AUTO:
+        return LangChainRAGPipeline.from_auto_retriever(
+            vectorstore=vector_store,
+            data=all_documents,
+            data_description=dataset_description,
+            content_column_name=content_column_name,
+            retriever_prompt_template=retriever_prompt_template,
+            rag_prompt_template=DEFAULT_EVALUATION_PROMPT_TEMPLATE,
+            llm=llm
+        )
+
+    if retriever_type == RetrieverType.MULTI:
+        # The splitter to use to embed smaller chunks
+        child_text_splitter = RecursiveCharacterTextSplitter(
+            chunk_size=DEFAULT_CHUNK_SIZE, chunk_overlap=DEFAULT_CHUNK_OVERLAP)
+        return LangChainRAGPipeline.from_multi_vector_retriever(
+            documents=all_documents,
+            rag_prompt_template=DEFAULT_EVALUATION_PROMPT_TEMPLATE,
+            vectorstore=vector_store,
+            text_splitter=child_text_splitter,
+            llm=llm
+        )
+
+    raise ValueError(
+        f'Invalid retriever type, must be one of: vector_store, auto, sql, multi. Got {retriever_type}')
 
 
 def evaluate_rag(dataset: str,
@@ -97,7 +187,8 @@ def evaluate_rag(dataset: str,
                  retriever_prompt_template: Union[str, dict] = None,
                  retriever_type: RetrieverType = RetrieverType.VECTOR_STORE,
                  input_data_type: InputDataType = InputDataType.EMAIL,
-                 show_visualization=False
+                 show_visualization=False,
+                 split_documents=True
                  ):
     """
     Evaluates a RAG pipeline that answers questions from a dataset
@@ -116,69 +207,25 @@ def evaluate_rag(dataset: str,
     :param retriever_type: RetrieverType
     :param input_data_type: InputDataType
     :param show_visualization: bool
+    :param split_documents: bool
 
     :return:
     """
-    if input_data_type == InputDataType.FILE:
-        all_documents = ingest_files(dataset)
-
-    elif input_data_type == InputDataType.EMAIL:
-        all_documents = ingest_emails()
-
-    else:
-        raise ValueError(
-            f'Invalid input data type, must be one of: file, email. Got {input_data_type}')
-
-    if retriever_type == RetrieverType.SQL:
-
-        documents_df = documents_to_df(content_column_name,
-                                       all_documents,
-                                       embeddings_model=embeddings_model,
-                                       with_embeddings=True)
-
-        # Save the dataframe to a SQL table.
-
-        alchemyEngine = create_engine(db_connection_string, pool_recycle=DEFAULT_POOL_RECYCLE)
-        db_connection = alchemyEngine.connect()
-
-        # issues with langchain compatibility with vector type in postgres need to investigate further
-        documents_df.to_sql(test_table_name, db_connection, index=False, if_exists='replace')
-
-        rag_pipeline = LangChainRAGPipeline.from_sql_retriever(
-            connection_string=db_connection_string,
-            retriever_prompt_template=retriever_prompt_template,
-            rag_prompt_template=rag_prompt_template,
-            llm=llm
-        )
-
-    elif retriever_type == RetrieverType.VECTOR_STORE:
-
-        vectorstore = vector_store.from_documents(
-            documents=all_documents,
-            embedding=embeddings_model,
-        )
-
-        rag_pipeline = LangChainRAGPipeline.from_retriever(
-            retriever=vectorstore.as_retriever(),
-            prompt_template=DEFAULT_EVALUATION_PROMPT_TEMPLATE,
-            llm=llm
-        )
-
-    elif retriever_type == RetrieverType.AUTO:
-
-        rag_pipeline = LangChainRAGPipeline.from_auto_retriever(
-            vectorstore=vector_store,
-            data=all_documents,
-            data_description=dataset_description,
-            content_column_name=content_column_name,
-            retriever_prompt_template=retriever_prompt_template,
-            rag_prompt_template=DEFAULT_EVALUATION_PROMPT_TEMPLATE,
-            llm=llm
-        )
-
-    else:
-        raise ValueError(
-            f'Invalid retriever type, must be one of: vector_store, auto, sql. Got {retriever_type}')
+    all_documents = _ingest_documents(
+        input_data_type, dataset, split_documents=split_documents)
+    rag_pipeline = _get_pipeline_from_retriever(
+        all_documents,
+        content_column_name=content_column_name,
+        dataset_description=dataset_description,
+        db_connection_string=db_connection_string,
+        test_table_name=test_table_name,
+        vector_store=vector_store,
+        llm=llm,
+        embeddings_model=embeddings_model,
+        rag_prompt_template=rag_prompt_template,
+        retriever_prompt_template=retriever_prompt_template,
+        retriever_type=retriever_type,
+    )
 
     rag_chain = rag_pipeline.rag_with_returned_sources()
 
@@ -226,12 +273,14 @@ Uses evaluation metrics from the RAGAs library.
     parser.add_argument('-t', '--test_table_name', help='Name of the table to use for testing '
                                                         '(only for SQL retriever)',
                         default=DEFAULT_TEST_TABLE_NAME)
-    parser.add_argument('-r', '--retriever_type', help='Type of retriever to use (vector_store, auto, sql)',
+    parser.add_argument('-r', '--retriever_type', help='Type of retriever to use (vector_store, auto, sql, multi)',
                         type=RetrieverType, choices=list(RetrieverType), default=RetrieverType.VECTOR_STORE)
     parser.add_argument('-i', '--input_data_type', help='Type of input data to use (email, file)',
                         type=InputDataType, choices=list(InputDataType), default=InputDataType.EMAIL)
     parser.add_argument('-v', '--show_visualization', type=bool,
                         help='Whether or not to plot and show evaluation metrics', default=False)
+    parser.add_argument('-s', '--split_documents', type=bool, help='Whether or not to split documents after they are loaded',
+                        default=True)
     parser.add_argument(
         '-l', '--log', help='Logging level to use (default WARNING)', default='WARNING')
 
@@ -243,4 +292,5 @@ Uses evaluation metrics from the RAGAs library.
                  dataset_description=args.dataset_description, db_connection_string=args.connection_string,
                  test_table_name=args.test_table_name,
                  retriever_type=args.retriever_type, input_data_type=args.input_data_type,
-                 show_visualization=args.show_visualization)
+                 show_visualization=args.show_visualization,
+                 split_documents=args.split_documents)
