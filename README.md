@@ -44,3 +44,51 @@ These datasets are interesting because they come with various challenges,
 ## High Level Design
 
 ![img_4.png](reference_architecture.png)
+
+## Methodology
+
+Our approach on enterprise ready RAG for emails is metrics driven. Specifically, we're using the [RAGAs library](https://docs.ragas.io/en/latest/concepts/metrics/index.html) to evaluate key metrics:
+- Retrieval metrics:
+    - **Context precision** (signal to noise ratio of retrieved content)
+    - **Context recall** (ability to retrieve *all* relevant information to answer the query)
+- Generation metrics:
+    - **Faithfulness** (how factually accurate the answer is)
+    - **Answer relevancy** (how relevant is the generated answer to the query)
+
+The `evaluate_rag.py`, `visualize/visualize.py`, and `ingest.py` modules can be used to experiment with ingesting (real or test) email/document data, and evaluate RAG pipelines against Q&A datasets in `data/` subdirectories.
+
+### E2E Email Evaluation
+
+For testing with personal emails, you need to do create/generate a Q&A dataset for your emails in a new `data/` subdirectory. See [blockchain_solana dataset](https://github.com/mindsdb/email_rag/blob/main/data/blockchain_solana/rag_dataset.json) for an example `rag_dataset.json` file.
+
+We provide various other datasets in `data/` subdirectories (email & documents) to evaluate against as well.
+
+Then, you can run `evaluate_rag.py`:
+
+`python ./evaluate_rag.py --dataset=<YOUR_CUSTOM_EMAILS> --retriever_type=<vector_store, auto, sql, multi>, --input_data_type=email --show_visualization=true`
+
+This will ingest your emails from the last 10 days, and use the chosen RAG pipeline to test Q&A performance against the provided dataset. Results will be (optionally) shown as a [Seaborn](https://pypi.org/project/seaborn/) plot, and saved as a `.csv` file locally.
+
+Different types of retrievers can be found in the [retrievers subfolder](https://github.com/mindsdb/email_rag/tree/main/retrievers).
+
+### Metrics Visualization
+
+The module `evaluate_rag.py` has a `--show-visualization` option, but you can use `visualize/visualize.py` to view previously saved metrics evaluation `.csv` results:
+
+`python ./visualize/visualize.py --path=./evaluation_feb.csv`
+
+Here is an example visualization with a simple `auto` retriever type on some private emails + Q&A dataset from February:
+
+![Personal Email Initial Metrics](personal_email_initial_metrics.png)
+
+### Ingest Emails Separately
+
+Sometimes, you want to ingest a specific subset of your emails, and then evaluate them separately. For example, you could ingest all of your February 2024 emails, and store them as a `.csv` or vector store to evaluate later with `evaluate_rag.py`.
+
+`python ./ingest.py --since_date=2024-02-01 --until_date=2024-03-01 --output-path=./data/personal_emails/feb_emails.csv`.
+
+You can additionally store the emails in `Postgres` with `pgvector` instead by specifying `--connection-string` and `collection-name` arguments.
+
+Then, you can evaluate separately:
+
+`python ./evaluate_rag.py --dataset=personal_emails --retriever_type=multi, --input_data_type=file --show_visualization=true`
