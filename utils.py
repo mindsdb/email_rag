@@ -1,5 +1,5 @@
 from datetime import timedelta
-from typing import List
+from typing import List, Tuple
 import time
 
 import pandas as pd
@@ -10,6 +10,8 @@ from langchain_core.vectorstores import VectorStore
 # gpt-3.5-turbo
 _DEFAULT_TPM_LIMIT = 60000
 _DEFAULT_RATE_LIMIT_INTERVAL = timedelta(seconds=10)
+_INITIAL_TOKEN_USAGE = 0
+
 
 def documents_to_df(content_column_name: str,
                     documents: List[Document],
@@ -41,29 +43,55 @@ def documents_to_df(content_column_name: str,
     return df
 
 
-def vector_store_from_documents(
-        vector_store: VectorStore,
-        documents: List[Document],
-        embeddings_model: Embeddings,
-        tpm_limit: int = _DEFAULT_TPM_LIMIT,
-        rate_limit_interval: timedelta = _DEFAULT_RATE_LIMIT_INTERVAL) -> VectorStore:
-    first_document = documents[0]
-    # Underlying rate limit mechanism behind this isn't sufficient for a bulk call.
-    # We can easily go above our tokens per minute quota (60 000 for gpt-3.5-turbo).
-    # To get around this, we initialize the store with the first document, then use
-    # our own super simple rate limiting to handle many large embedding calls.
-    store = vector_store.from_documents(
-        documents=[first_document],
-        embedding=embeddings_model,
-    )
-    # Approximate token usage by length of document content.
-    current_token_usage = len(first_document.page_content)
-    for doc in documents[1:]:
-        if current_token_usage >= tpm_limit:
-            # We do what we can since we don't have access to rate limit headers
-            # https://platform.openai.com/docs/guides/rate-limits/usage-tiers?context=tier-one.
-            time.sleep(rate_limit_interval.total_seconds())
-            current_token_usage = 0
-        store.add_documents([doc])
-        current_token_usage += len(doc.page_content)
-    return store
+class VectorStoreOperator:
+    """
+    Encapsulates the logic for adding documents to a vector store with rate limiting.
+    """
+
+    def __init__(self,
+                 vector_store: VectorStore,
+                 documents: List[Document],
+                 embeddings_model: Embeddings,
+                 token_per_minute_limit: int = _DEFAULT_TPM_LIMIT,
+                 rate_limit_interval: timedelta = _DEFAULT_RATE_LIMIT_INTERVAL):
+
+        self.documents = documents
+        self.embeddings_model = embeddings_model
+        self.token_per_minute_limit = token_per_minute_limit
+        self.rate_limit_interval = rate_limit_interval
+        self.current_token_usage = _INITIAL_TOKEN_USAGE
+        self._add_documents_to_store(documents, vector_store)
+
+    @property
+    def vector_store(self):
+        return self._vector_store
+
+    @staticmethod
+    def _calculate_token_usage(document):
+        return len(document.page_content)
+
+    def _rate_limit(self):
+        if self.current_token_usage >= self.token_per_minute_limit:
+            time.sleep(self.rate_limit_interval.total_seconds())
+            self.current_token_usage = _INITIAL_TOKEN_USAGE
+
+    def _update_token_usage(self, document: Document):
+        self._rate_limit()
+        self.current_token_usage += self._calculate_token_usage(document)
+
+    def _add_document(self, document: Document):
+        self._update_token_usage(document)
+        self.vector_store.add_documents([document])
+
+    def _add_documents_to_store(self, documents: List[Document], vector_store: VectorStore):
+        for i, document in enumerate(documents):
+            if i == 0:
+                self._vector_store = vector_store.from_documents(
+                    documents=[document], embedding=self.embeddings_model
+                )
+
+            self._add_document(document)
+
+    def add_documents(self, documents: List[Document]):
+        for document in documents:
+            self._add_document(document)
