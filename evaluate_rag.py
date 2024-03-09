@@ -231,7 +231,7 @@ def evaluate_rag(dataset: str,
 
     # Generate filename based on current datetime.
     dt_string = datetime.now().strftime('%d%m%Y_%H%M%S')
-    output_file = f'evaluate_{input_data_type.value}_rag_{dt_string}.csv'
+    output_file = f'evaluate_{input_data_type.value}_{retriever_type.value}_rag_{dt_string}.csv'
 
     qa_file = os.path.join('./data', dataset, 'rag_dataset.json')
 

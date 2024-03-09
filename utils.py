@@ -11,6 +11,7 @@ from langchain_core.vectorstores import VectorStore
 _DEFAULT_TPM_LIMIT = 60000
 _DEFAULT_RATE_LIMIT_INTERVAL = timedelta(seconds=10)
 
+
 def documents_to_df(content_column_name: str,
                     documents: List[Document],
                     embeddings_model: Embeddings = None,
