@@ -20,6 +20,8 @@ from loaders.email_loader.email_loader import EmailLoader, DEFAULT_CHUNK_SIZE, D
 from loaders.email_loader.email_search_options import EmailSearchOptions
 from loaders.directory_loader.directory_loader import DirectoryLoader
 from pipelines.rag_pipelines import LangChainRAGPipeline
+from retrievers.ensemble_retriever import EnsembleRetrieverConfig
+from retrievers.factory import get_retriever_instance
 from settings import (DEFAULT_LLM,
                       DEFAUlT_VECTOR_STORE,
                       DEFAULT_EVALUATION_PROMPT_TEMPLATE,
@@ -39,6 +41,7 @@ class RetrieverType(Enum):
     AUTO = 'auto'
     SQL = 'sql'
     MULTI = 'multi'
+    ENSEMBLE = 'ensemble'
 
 
 class InputDataType(Enum):
@@ -115,7 +118,9 @@ def _get_pipeline_from_retriever(
         embeddings_model: Embeddings = DEFAULT_EMBEDDINGS,
         rag_prompt_template: str = DEFAULT_EVALUATION_PROMPT_TEMPLATE,
         retriever_prompt_template: Union[str, dict] = None,
-        retriever_type: RetrieverType = RetrieverType.VECTOR_STORE) -> LangChainRAGPipeline:
+        retriever_type: RetrieverType = RetrieverType.VECTOR_STORE,
+        retriever_ensemble_config: EnsembleRetrieverConfig = None
+) -> LangChainRAGPipeline:
     if retriever_type == RetrieverType.SQL:
 
         documents_df = documents_to_df(content_column_name,
@@ -142,11 +147,8 @@ def _get_pipeline_from_retriever(
     if retriever_type == RetrieverType.VECTOR_STORE:
         vectorstore = vector_store_from_documents(
             vector_store, all_documents, embeddings_model)
-        return LangChainRAGPipeline.from_retriever(
-            retriever=vectorstore.as_retriever(),
-            prompt_template=DEFAULT_EVALUATION_PROMPT_TEMPLATE,
-            llm=llm
-        )
+        return LangChainRAGPipeline.from_vector_retriever(retriever=vectorstore.as_retriever(),
+                                                          prompt_template=DEFAULT_EVALUATION_PROMPT_TEMPLATE, llm=llm)
 
     if retriever_type == RetrieverType.AUTO:
         return LangChainRAGPipeline.from_auto_retriever(
@@ -171,6 +173,13 @@ def _get_pipeline_from_retriever(
             llm=llm
         )
 
+    if retriever_type == RetrieverType.ENSEMBLE:
+
+        return LangChainRAGPipeline.from_ensemble_retriever(
+            all_documents,
+
+        )
+
     raise ValueError(
         f'Invalid retriever type, must be one of: vector_store, auto, sql, multi. Got {retriever_type}')
 
@@ -188,7 +197,8 @@ def evaluate_rag(dataset: str,
                  retriever_type: RetrieverType = RetrieverType.VECTOR_STORE,
                  input_data_type: InputDataType = InputDataType.EMAIL,
                  show_visualization=False,
-                 split_documents=True
+                 split_documents=True,
+                 retriever_ensemble_config: dict = None
                  ):
     """
     Evaluates a RAG pipeline that answers questions from a dataset
@@ -213,19 +223,37 @@ def evaluate_rag(dataset: str,
     """
     all_documents = _ingest_documents(
         input_data_type, dataset, split_documents=split_documents)
-    rag_pipeline = _get_pipeline_from_retriever(
-        all_documents,
-        content_column_name=content_column_name,
-        dataset_description=dataset_description,
-        db_connection_string=db_connection_string,
-        test_table_name=test_table_name,
-        vector_store=vector_store,
-        llm=llm,
-        embeddings_model=embeddings_model,
-        rag_prompt_template=rag_prompt_template,
-        retriever_prompt_template=retriever_prompt_template,
-        retriever_type=retriever_type,
-    )
+    if retriever_type == RetrieverType.ENSEMBLE:
+        ensemble_config = EnsembleRetrieverConfig(**retriever_ensemble_config)
+        rag_pipeline = _get_pipeline_from_retriever(
+            all_documents,
+            content_column_name=content_column_name,
+            dataset_description=dataset_description,
+            db_connection_string=db_connection_string,
+            test_table_name=test_table_name,
+            vector_store=vector_store,
+            llm=llm,
+            embeddings_model=embeddings_model,
+            rag_prompt_template=rag_prompt_template,
+            retriever_prompt_template=retriever_prompt_template,
+            retriever_type=retriever_type,
+            retriever_ensemble_config=ensemble_config
+        )
+
+    else:
+        rag_pipeline = _get_pipeline_from_retriever(
+            all_documents,
+            content_column_name=content_column_name,
+            dataset_description=dataset_description,
+            db_connection_string=db_connection_string,
+            test_table_name=test_table_name,
+            vector_store=vector_store,
+            llm=llm,
+            embeddings_model=embeddings_model,
+            rag_prompt_template=rag_prompt_template,
+            retriever_prompt_template=retriever_prompt_template,
+            retriever_type=retriever_type,
+        )
 
     rag_chain = rag_pipeline.rag_with_returned_sources()
 

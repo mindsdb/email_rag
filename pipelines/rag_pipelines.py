@@ -10,6 +10,7 @@ from langchain_core.vectorstores import VectorStore
 from retrievers.auto_retriever import AutoRetriever
 from retrievers.multi_vector_retriever import MultiVectorRetriever
 from retrievers.sql_retriever import SQLRetriever
+from retrievers.ensemble_retriever import EnsembleRetriever, EnsembleRetrieverConfig
 from langchain_core.runnables import RunnableParallel, RunnablePassthrough, RunnableSerializable
 from langchain.docstore.document import Document
 
@@ -56,9 +57,9 @@ class LangChainRAGPipeline:
         return rag_chain_with_source
 
     @classmethod
-    def from_retriever(cls, retriever: BaseRetriever, prompt_template: str, llm: BaseChatModel):
+    def from_vector_retriever(cls, retriever: BaseRetriever, prompt_template: str, llm: BaseChatModel):
         """
-        Builds a RAG pipeline with returned sources using a BaseRetriever
+        Builds a RAG pipeline with returned sources using a vector retriever
         :param retriever: BaseRetriever
         :param prompt_template: str
         :param llm: BaseChatModel
@@ -137,4 +138,15 @@ class LangChainRAGPipeline:
     ):
         retriever_runnable = MultiVectorRetriever(
             documents=documents, vectorstore=vectorstore, text_splitter=text_splitter).as_runnable()
+        return cls(retriever_runnable, rag_prompt_template, llm)
+
+    @classmethod
+    def from_ensemble_retriever(cls,
+                                ensemble_config: EnsembleRetrieverConfig,
+                                rag_prompt_template: str,
+                                llm: BaseChatModel = None
+                                ):
+        retriever_runnable = EnsembleRetriever(
+            ensemble_config
+        ).as_runnable()
         return cls(retriever_runnable, rag_prompt_template, llm)

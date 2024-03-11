@@ -112,27 +112,12 @@ class AutoRetriever(BaseRetriever):
 
         return result
 
-    def df_to_documents(self):
-        """
-        Given a dataframe, convert it to a list of documents.
-        :return:
-        """
-        docs = []
-        for _, row in self.data.iterrows():
-            metadata_dict = row.drop(
-                self.content_column_name).dropna().to_dict()
-            docs.append(
-                Document(page_content=row[self.content_column_name], metadata=metadata_dict))
-
-        return docs
-
     def get_vectorstore(self):
         """
         Given data either List[Documents] pd.Dataframe,  use it to create a vectorstore.
         :return:
         """
-        documents = self.df_to_documents() if isinstance(
-            self.data, pd.DataFrame) else self.data
+        documents = self.data
         return vector_store_from_documents(self.vectorstore, documents, self.embeddings_model)
 
     def as_runnable(self) -> RunnableSerializable:
