@@ -14,6 +14,8 @@ from langchain_core.language_models import BaseChatModel
 from langchain_core.vectorstores import VectorStore
 from sqlalchemy import create_engine
 
+from retrievers.multi_vector_retriever import MultiVectorRetrieverMode
+
 from evaluate import evaluate
 from loaders.email_loader.email_client import EmailClient
 from loaders.email_loader.email_loader import EmailLoader, DEFAULT_CHUNK_SIZE, DEFAULT_CHUNK_OVERLAP
@@ -29,7 +31,7 @@ from settings import (DEFAULT_LLM,
                       DEFAULT_TEST_TABLE_NAME,
                       DEFAULT_POOL_RECYCLE
                       )
-from utils import documents_to_df, vector_store_from_documents
+from utils import documents_to_df, VectorStoreOperator
 from visualize.visualize import visualize_evaluation_metrics
 
 
@@ -115,7 +117,9 @@ def _get_pipeline_from_retriever(
         embeddings_model: Embeddings = DEFAULT_EMBEDDINGS,
         rag_prompt_template: str = DEFAULT_EVALUATION_PROMPT_TEMPLATE,
         retriever_prompt_template: Union[str, dict] = None,
-        retriever_type: RetrieverType = RetrieverType.VECTOR_STORE) -> LangChainRAGPipeline:
+        retriever_type: RetrieverType = RetrieverType.VECTOR_STORE,
+        multi_retriever_mode: MultiVectorRetrieverMode = MultiVectorRetrieverMode.BOTH
+) -> LangChainRAGPipeline:
     if retriever_type == RetrieverType.SQL:
 
         documents_df = documents_to_df(content_column_name,
@@ -140,10 +144,13 @@ def _get_pipeline_from_retriever(
         )
 
     if retriever_type == RetrieverType.VECTOR_STORE:
-        vectorstore = vector_store_from_documents(
-            vector_store, all_documents, embeddings_model)
+        vector_store_operator = VectorStoreOperator(
+            vector_store=vector_store,
+            documents=all_documents,
+            embeddings_model=embeddings_model
+        )
         return LangChainRAGPipeline.from_retriever(
-            retriever=vectorstore.as_retriever(),
+            retriever=vector_store_operator.vector_store.as_retriever(),
             prompt_template=DEFAULT_EVALUATION_PROMPT_TEMPLATE,
             llm=llm
         )
@@ -168,7 +175,8 @@ def _get_pipeline_from_retriever(
             rag_prompt_template=DEFAULT_EVALUATION_PROMPT_TEMPLATE,
             vectorstore=vector_store,
             text_splitter=child_text_splitter,
-            llm=llm
+            llm=llm,
+            mode=multi_retriever_mode
         )
 
     raise ValueError(
@@ -188,7 +196,8 @@ def evaluate_rag(dataset: str,
                  retriever_type: RetrieverType = RetrieverType.VECTOR_STORE,
                  input_data_type: InputDataType = InputDataType.EMAIL,
                  show_visualization=False,
-                 split_documents=True
+                 split_documents=True,
+                 multi_retriever_mode: MultiVectorRetrieverMode = MultiVectorRetrieverMode.BOTH
                  ):
     """
     Evaluates a RAG pipeline that answers questions from a dataset
@@ -208,6 +217,7 @@ def evaluate_rag(dataset: str,
     :param input_data_type: InputDataType
     :param show_visualization: bool
     :param split_documents: bool
+    :param multi_retriever_mode: MultiVectorRetrieverMode
 
     :return:
     """
@@ -225,6 +235,7 @@ def evaluate_rag(dataset: str,
         rag_prompt_template=rag_prompt_template,
         retriever_prompt_template=retriever_prompt_template,
         retriever_type=retriever_type,
+        multi_retriever_mode=multi_retriever_mode
     )
 
     rag_chain = rag_pipeline.rag_with_returned_sources()
@@ -275,6 +286,9 @@ Uses evaluation metrics from the RAGAs library.
                         default=DEFAULT_TEST_TABLE_NAME)
     parser.add_argument('-r', '--retriever_type', help='Type of retriever to use (vector_store, auto, sql, multi)',
                         type=RetrieverType, choices=list(RetrieverType), default=RetrieverType.VECTOR_STORE)
+    parser.add_argument("-mr", "--multi_retriever_mode", help="Mode to use for multi retriever",
+                        type=MultiVectorRetrieverMode, choices=list(MultiVectorRetrieverMode),
+                        default=MultiVectorRetrieverMode.BOTH)
     parser.add_argument('-i', '--input_data_type', help='Type of input data to use (email, file)',
                         type=InputDataType, choices=list(InputDataType), default=InputDataType.EMAIL)
     parser.add_argument('-v', '--show_visualization', type=bool,
@@ -290,7 +304,6 @@ Uses evaluation metrics from the RAGAs library.
 
     evaluate_rag(dataset=args.dataset, content_column_name=args.content_column_name,
                  dataset_description=args.dataset_description, db_connection_string=args.connection_string,
-                 test_table_name=args.test_table_name,
-                 retriever_type=args.retriever_type, input_data_type=args.input_data_type,
-                 show_visualization=args.show_visualization,
-                 split_documents=args.split_documents)
+                 test_table_name=args.test_table_name, retriever_type=args.retriever_type,
+                 input_data_type=args.input_data_type, show_visualization=args.show_visualization,
+                 split_documents=args.split_documents, multi_retriever_mode=MultiVectorRetrieverMode.BOTH)

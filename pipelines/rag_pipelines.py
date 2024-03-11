@@ -8,7 +8,7 @@ from langchain_core.retrievers import BaseRetriever
 from langchain_core.vectorstores import VectorStore
 
 from retrievers.auto_retriever import AutoRetriever
-from retrievers.multi_vector_retriever import MultiVectorRetriever
+from retrievers.multi_vector_retriever import MultiVectorRetriever, MultiVectorRetrieverMode
 from retrievers.sql_retriever import SQLRetriever
 from langchain_core.runnables import RunnableParallel, RunnablePassthrough, RunnableSerializable
 from langchain.docstore.document import Document
@@ -133,8 +133,9 @@ class LangChainRAGPipeline:
         rag_prompt_template: str,
         vectorstore: VectorStore = None,
         text_splitter: TextSplitter = None,
-        llm: BaseChatModel = None
+        llm: BaseChatModel = None,
+        mode: MultiVectorRetrieverMode = MultiVectorRetrieverMode.BOTH,
     ):
         retriever_runnable = MultiVectorRetriever(
-            documents=documents, vectorstore=vectorstore, text_splitter=text_splitter).as_runnable()
+            documents=documents, vectorstore=vectorstore, text_splitter=text_splitter, mode=mode).as_runnable()
         return cls(retriever_runnable, rag_prompt_template, llm)

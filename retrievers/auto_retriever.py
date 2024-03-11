@@ -16,7 +16,7 @@ from settings import (DEFAULT_LLM,
                       DEFAULT_CARDINALITY_THRESHOLD,
                       DEFAUlT_VECTOR_STORE, DEFAULT_CONTENT_COLUMN_NAME
                       )
-from utils import documents_to_df, vector_store_from_documents
+from utils import documents_to_df, VectorStoreOperator
 
 
 class AutoRetriever(BaseRetriever):
@@ -133,7 +133,9 @@ class AutoRetriever(BaseRetriever):
         """
         documents = self.df_to_documents() if isinstance(
             self.data, pd.DataFrame) else self.data
-        return vector_store_from_documents(self.vectorstore, documents, self.embeddings_model)
+        return VectorStoreOperator(vector_store=self.vectorstore,
+                                   documents=documents,
+                                   embeddings_model=self.embeddings_model).vector_store
 
     def as_runnable(self) -> RunnableSerializable:
         """
