@@ -1,3 +1,5 @@
+from enum import Enum
+
 from langchain_community.vectorstores.chroma import Chroma
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 
@@ -81,3 +83,8 @@ DEFAULT_SQL_RETRIEVAL_PROMPT_TEMPLATE = {
                 "sql_query": DEFAULT_TEXT_2_PGVECTOR_PROMPT_TEMPLATE,
                 "sql_result": DEFAULT_SQL_RESULT_PROMPT_TEMPLATE
             }
+
+
+class VectorStoreType(Enum):
+    CHROMA = 'chroma'
+    PGVECTOR = 'pgvector'

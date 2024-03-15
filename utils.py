@@ -1,5 +1,5 @@
 from datetime import timedelta
-from typing import List, Tuple
+from typing import List
 import time
 
 import pandas as pd
@@ -11,7 +11,6 @@ from langchain_core.vectorstores import VectorStore
 _DEFAULT_TPM_LIMIT = 60000
 _DEFAULT_RATE_LIMIT_INTERVAL = timedelta(seconds=10)
 _INITIAL_TOKEN_USAGE = 0
-
 
 
 def documents_to_df(content_column_name: str,
@@ -51,17 +50,33 @@ class VectorStoreOperator:
 
     def __init__(self,
                  vector_store: VectorStore,
-                 documents: List[Document],
                  embeddings_model: Embeddings,
+                 documents: List[Document] = None,
                  token_per_minute_limit: int = _DEFAULT_TPM_LIMIT,
-                 rate_limit_interval: timedelta = _DEFAULT_RATE_LIMIT_INTERVAL):
+                 rate_limit_interval: timedelta = _DEFAULT_RATE_LIMIT_INTERVAL,
+
+                 ):
 
         self.documents = documents
         self.embeddings_model = embeddings_model
         self.token_per_minute_limit = token_per_minute_limit
         self.rate_limit_interval = rate_limit_interval
         self.current_token_usage = _INITIAL_TOKEN_USAGE
-        self._add_documents_to_store(documents, vector_store)
+        self._vector_store = None
+
+        self.verify_vector_store(vector_store, documents)
+
+    def verify_vector_store(self, vector_store, documents):
+        if documents:
+            self._add_documents_to_store(documents, vector_store)
+        elif isinstance(vector_store, VectorStore):
+            # checking is it instance or subclass instance
+            self._vector_store = vector_store
+        elif issubclass(vector_store, VectorStore):
+            # checking is it an uninstantiated subclass of VectorStore i.e. Chroma or PGVector
+            raise ValueError("If not documents are provided, an instantiated vector_store must be provided")
+        else:
+            raise ValueError("Either documents or an instantiated vector_store must be provided")
 
     @property
     def vector_store(self):
@@ -85,13 +100,14 @@ class VectorStoreOperator:
         self.vector_store.add_documents([document])
 
     def _add_documents_to_store(self, documents: List[Document], vector_store: VectorStore):
-        for i, document in enumerate(documents):
-            if i == 0:
-                self._vector_store = vector_store.from_documents(
-                    documents=[document], embedding=self.embeddings_model
-                )
+        self._init_vector_store(documents, vector_store)
+        self.add_documents(documents)
 
-            self._add_document(document)
+    def _init_vector_store(self, documents: List[Document], vector_store: VectorStore):
+        if len(documents) > 0:
+            self._vector_store = vector_store.from_documents(
+                documents=[documents[0]], embedding=self.embeddings_model
+            )
 
     def add_documents(self, documents: List[Document]):
         for document in documents:

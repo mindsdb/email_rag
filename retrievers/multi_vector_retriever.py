@@ -21,6 +21,7 @@ from utils import VectorStoreOperator
 _DEFAULT_ID_KEY = "doc_id"
 _MAX_CONCURRENCY = 5
 
+
 class MultiVectorRetrieverMode(Enum):
     """
     Enum for MultiVectorRetriever types.
@@ -52,21 +53,6 @@ class MultiVectorRetriever(BaseRetriever):
         self.text_splitter = text_splitter
         self.embeddings_model = embeddings_model
         self.mode = mode
-
-    def _create_vector_store_operator(self, documents: List[Document]) -> VectorStoreOperator:
-        return VectorStoreOperator(
-            vector_store=self.vectorstore,
-            documents=documents,
-            embeddings_model=self.embeddings_model
-        )
-
-    def _create_retriever(self, vs_operator: VectorStoreOperator) -> LangChainMultiVectorRetriever:
-        retriever = LangChainMultiVectorRetriever(
-            vectorstore=vs_operator.vector_store,
-            byte_store=self.parentstore,
-            id_key=self.id_key
-        )
-        return retriever
 
     def _generate_id_and_split_document(self, doc: Document) -> tuple[str, list[Document]]:
         """
