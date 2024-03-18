@@ -208,7 +208,7 @@ def evaluate_rag(dataset: str,
                  show_visualization = False,
                  split_documents = True,
                  multi_retriever_mode: MultiVectorRetrieverMode = MultiVectorRetrieverMode.BOTH,
-                 vector_store_type: VectorStoreType = VectorStoreType.PGVECTOR,
+                 vector_store_type: VectorStoreType = VectorStoreType.CHROMA,
                  vector_store_config: dict = None
                  ):
     """
