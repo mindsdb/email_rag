@@ -324,7 +324,7 @@ Uses evaluation metrics from the RAGAs library.
     parser.add_argument('-vs', '--vector_store_config', help='Configuration for vector store',
                         default=None, type=str)
     parser.add_argument('-vt', '--vector_store_type', help='Type of vector store to use',
-                        type=VectorStoreType, choices=list(VectorStoreType), default=VectorStoreType.PGVECTOR)
+                        type=VectorStoreType, choices=list(VectorStoreType), default=VectorStoreType.CHROMA)
     parser.add_argument(
         '-l', '--log', help='Logging level to use (default WARNING)', default='WARNING')
 

@@ -51,7 +51,7 @@ class VectorDBLoader:
             self.vector_storage = Chroma(
                 persist_directory=config.persist_directory,
                 collection_name=config.collection_name,
-                embeddings_model=self.embeddings_model
+                embedding_function=self.embeddings_model
             )
         elif self.vector_store_type == VectorStoreType.PGVECTOR:
             config = PgVectorConfig(**self.config)
