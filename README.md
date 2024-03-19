@@ -105,5 +105,5 @@ If you have already ingested your emails into a vector store, you can connect to
 
 NB it will run up to evaluation part, it will fall over at evaluation part as expected as qa dataset is not provided
 
-It is not working well with PGVector, the reason being is LangChain requires the data to be stored in a particular way for it to be loaded. 
+It is not working well with PGVector, the reason being is LangChain requires the data to be stored in a particular way for it to be loaded. Therefore, its recommened to use ChromaDB for the time being.
 see https://www.reddit.com/r/LangChain/comments/18lodyx/is_it_even_possible_to_initialize_vector_stores/
