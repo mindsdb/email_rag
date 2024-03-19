@@ -2,6 +2,7 @@ from enum import Enum
 
 from langchain_community.vectorstores.chroma import Chroma
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
+from pydantic_settings import BaseSettings
 
 DEFAULT_CARDINALITY_THRESHOLD = 40
 DEFAULT_POOL_RECYCLE = 3600
@@ -88,3 +89,29 @@ DEFAULT_SQL_RETRIEVAL_PROMPT_TEMPLATE = {
 class VectorStoreType(Enum):
     CHROMA = 'chroma'
     PGVECTOR = 'pgvector'
+
+
+class RetrieverType(Enum):
+    VECTOR_STORE = 'vector_store'
+    AUTO = 'auto'
+    SQL = 'sql'
+    MULTI = 'multi'
+
+
+class InputDataType(Enum):
+    EMAIL = 'email'
+    FILE = 'file'
+    VECTOR_STORE = 'vector_store'
+
+
+class VectorStoreConfig(BaseSettings):
+    type: VectorStoreType = VectorStoreType.CHROMA
+    persist_directory: str = None
+    collection_name: str = None
+    connection_string: str = None
+
+    class Config:
+        arbitrary_types_allowed = True
+        extra = "forbid"
+        env_file = ".env"
+        env_prefix = "vector_store_"
