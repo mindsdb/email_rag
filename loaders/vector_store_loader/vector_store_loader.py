@@ -7,7 +7,6 @@ from settings import VectorStoreType
 
 
 class BaseVectorStoreConfig(BaseSettings):
-    pass
 
     class Config:
         arbitrary_types_allowed = True

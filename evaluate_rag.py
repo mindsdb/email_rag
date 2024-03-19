@@ -51,7 +51,7 @@ class InputDataType(Enum):
     VECTOR_STORE = 'vector_store'
 
 
-def ingest_files(dataset: str, split_documents: bool = True):
+def ingest_files(dataset: str, split_documents: bool = True) -> List[Document]:
     # Define the path to the source files directory
     source_files_path = Path('./data') / dataset / 'source_files'
 
@@ -73,7 +73,7 @@ def ingest_files(dataset: str, split_documents: bool = True):
     return all_documents
 
 
-def ingest_emails(split_documents: bool = True):
+def ingest_emails(split_documents: bool = True) -> List[Document]:
     username = os.getenv('EMAIL_USERNAME')
     password = os.getenv('EMAIL_PASSWORD')
     email_client = EmailClient(username, password)
@@ -99,7 +99,11 @@ def ingest_emails(split_documents: bool = True):
     return all_documents
 
 
-def load_vector_store(embeddings_model: Embeddings, vector_store_config: dict, vector_store_type: VectorStoreType):
+def load_vector_store(
+        embeddings_model: Embeddings,
+        vector_store_config: dict,
+        vector_store_type: VectorStoreType
+) -> VectorStore:
     vector_store_loader = VectorDBLoader(embeddings_model=embeddings_model,
                                          config=vector_store_config,
                                          vector_store_type=vector_store_type)
@@ -109,9 +113,9 @@ def load_vector_store(embeddings_model: Embeddings, vector_store_config: dict, v
 def _ingest_documents(input_data_type: InputDataType, dataset: str, split_documents: bool = True) -> List[Document]:
     if input_data_type == InputDataType.FILE:
         return ingest_files(dataset, split_documents)
-    elif input_data_type == InputDataType.EMAIL:
+    if input_data_type == InputDataType.EMAIL:
         return ingest_emails(split_documents)
-    elif input_data_type == InputDataType.VECTOR_STORE:
+    if input_data_type == InputDataType.VECTOR_STORE:
         return
     raise ValueError(
         f'Invalid input data type, must be one of: file, email or vector_store. Got {input_data_type}')
