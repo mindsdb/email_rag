@@ -92,3 +92,18 @@ You can additionally store the emails in `Postgres` with `pgvector` instead by s
 Then, you can evaluate separately:
 
 `python ./evaluate_rag.py --dataset=personal_emails --retriever_type=multi, --input_data_type=file --show_visualization=true`
+
+### Load Data from existing Vector Store
+
+If you have already ingested your emails into a vector store, you can connect to it and load into the RAG pipeline for evaluation:
+
+1. Copy .env.example file to .env file `cp .env.example .env`
+2. Fill in the .env file with your vector store connection details
+3. Run the following command
+
+`python ./evaluate_rag.py -d test_existing_vector_store -i vector_store --existing_vector_store true` 
+
+NB it will run up to evaluation part, it will fall over at evaluation part as expected as qa dataset is not provided
+
+It is not working well with PGVector, the reason being is LangChain requires the data to be stored in a particular way for it to be loaded. 
+see https://www.reddit.com/r/LangChain/comments/18lodyx/is_it_even_possible_to_initialize_vector_stores/
