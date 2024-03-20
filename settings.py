@@ -1,18 +1,48 @@
 from enum import Enum
 
+from langchain_community.chat_models.ollama import ChatOllama
+from langchain_community.embeddings import GPT4AllEmbeddings
 from langchain_community.vectorstores.chroma import Chroma
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from pydantic_settings import BaseSettings
 
 DEFAULT_CARDINALITY_THRESHOLD = 40
 DEFAULT_POOL_RECYCLE = 3600
+
+#OpenAI LLM Provider Settings
+DEFAULT_LLM_PROVIDER = "openai"
 DEFAULT_LLM_MODEL = "gpt-3.5-turbo"
+
+
+#Ollama LLM Provider Settings
+#DEFAULT_LLM_PROVIDER = "ollama"
+#DEFAULT_LLM_MODEL = "mistral"
+#DEFAULT_LLM_MODEL = "gemma:2b"
+
+#Embedding Settings
+DEFAULT_EMBEDDINGS = OpenAIEmbeddings()
+#DEFAULT_EMBEDDINGS = GPT4AllEmbeddings()
+
+
+DEFAULT_OLLAMA_URL = "http://localhost:11434"
 DEFAULT_CONTENT_COLUMN_NAME = "body"
 DEFAULT_DATASET_DESCRIPTION = "email inbox"
 DEFAULT_TEST_TABLE_NAME = "test_email"
-DEFAULT_LLM = ChatOpenAI(model_name=DEFAULT_LLM_MODEL, temperature=0)
-DEFAULT_EMBEDDINGS = OpenAIEmbeddings()
+
+
+
 DEFAUlT_VECTOR_STORE = Chroma
+
+
+def get_llm(**kwargs):
+    if DEFAULT_LLM_PROVIDER == "openai":
+        return ChatOpenAI(model_name=DEFAULT_LLM_MODEL, **kwargs)
+    if DEFAULT_LLM_PROVIDER == "ollama":
+        return ChatOllama(base_url=DEFAULT_OLLAMA_URL, model=DEFAULT_LLM_MODEL, **kwargs)
+
+
+DEFAULT_LLM = get_llm(temperature=0)  # ChatOpenAI(model_name=DEFAULT_LLM_MODEL, temperature=0)
+
 DEFAULT_AUTO_META_PROMPT_TEMPLATE = """
 Below is a json representation of a table with information about {description}. 
 Return a JSON list with an entry for each column. Each entry should have 
@@ -96,6 +126,9 @@ class RetrieverType(Enum):
     AUTO = 'auto'
     SQL = 'sql'
     MULTI = 'multi'
+    BM25 = 'bm25'
+    ENSEMBLE = 'ensemble'
+    HYBRID = 'hybrid'
 
 
 class InputDataType(Enum):

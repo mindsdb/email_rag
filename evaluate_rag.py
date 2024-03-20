@@ -1,3 +1,5 @@
+import uuid
+from dataclasses import dataclass, asdict
 from datetime import datetime
 from pathlib import Path
 import argparse
@@ -11,6 +13,8 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_core.embeddings import Embeddings
 from langchain_core.language_models import BaseChatModel
 from langchain_core.vectorstores import VectorStore
+from langchain.retrievers import BM25Retriever
+
 from sqlalchemy import create_engine
 
 from retrievers.multi_vector_retriever import MultiVectorRetrieverMode
@@ -33,6 +37,8 @@ from settings import (DEFAULT_LLM,
                       )
 from utils import documents_to_df, VectorStoreOperator
 from visualize.visualize import visualize_evaluation_metrics
+
+_DEFAULT_ID_KEY = "doc_id"
 
 
 def ingest_files(dataset: str, split_documents: bool = True) -> List[Document]:
@@ -94,80 +100,189 @@ def _ingest_documents(input_data_type: InputDataType, dataset: str, split_docume
         f'Invalid input data type, must be one of: file, email or vector_store. Got {input_data_type}')
 
 
-def _get_pipeline_from_retriever(
-        all_documents: List[Document],
-        content_column_name: str = DEFAULT_CONTENT_COLUMN_NAME,
-        dataset_description: str = DEFAULT_DATASET_DESCRIPTION,
-        db_connection_string: str = None,
-        test_table_name: str = DEFAULT_TEST_TABLE_NAME,
-        vector_store: VectorStore = DEFAUlT_VECTOR_STORE,
-        llm: BaseChatModel = DEFAULT_LLM,
-        embeddings_model: Embeddings = DEFAULT_EMBEDDINGS,
-        rag_prompt_template: str = DEFAULT_EVALUATION_PROMPT_TEMPLATE,
-        retriever_prompt_template: Union[str, dict] = None,
-        retriever_type: RetrieverType = RetrieverType.VECTOR_STORE,
-        multi_retriever_mode: MultiVectorRetrieverMode = MultiVectorRetrieverMode.BOTH
-) -> LangChainRAGPipeline:
-    if retriever_type == RetrieverType.SQL:
-        documents_df = documents_to_df(content_column_name,
-                                       all_documents,
-                                       embeddings_model=embeddings_model,
-                                       with_embeddings=True)
 
-        # Save the dataframe to a SQL table.
-        alchemyEngine = create_engine(
-            db_connection_string, pool_recycle=DEFAULT_POOL_RECYCLE)
-        db_connection = alchemyEngine.connect()
+@dataclass
+class GetPipelineArgs:
+    all_documents: List[Document]
+    content_column_name: str
+    dataset_description: str
+    db_connection_string: str
+    test_table_name: str
+    vector_store: VectorStore
+    llm: BaseChatModel
+    embeddings_model: Embeddings
+    rag_prompt_template: str
+    retriever_prompt_template: Union[str, dict]
+    retriever_type: RetrieverType
+    multi_retriever_mode: MultiVectorRetrieverMode
+    retriever_map: dict
+    _vector_store_operator: Union[VectorStoreOperator, None] = None
+    _split_docs: list[Document] = None,
+    _doc_ids: list[str] = None
 
-        # issues with langchain compatibility with vector type in postgres need to investigate further
-        documents_df.to_sql(test_table_name, db_connection,
-                            index=False, if_exists='replace')
+    @property
+    def vector_store_operator(self) -> VectorStoreOperator:
+        if not self._doc_ids or not self._split_docs:
+            self._split_docs, self._doc_ids = self._split_documents()
 
-        return LangChainRAGPipeline.from_sql_retriever(
-            connection_string=db_connection_string,
-            retriever_prompt_template=retriever_prompt_template,
-            rag_prompt_template=rag_prompt_template,
-            llm=llm
-        )
+        if not self._vector_store_operator:
+            self._vector_store_operator = VectorStoreOperator(
+                vector_store=self.vector_store,
+                documents=self.split_docs,
+                embeddings_model=self.embeddings_model
+            )
+        return self._vector_store_operator
 
-    if retriever_type == RetrieverType.VECTOR_STORE:
-        vector_store_operator = VectorStoreOperator(
-            vector_store=vector_store,
-            documents=all_documents,
-            embeddings_model=embeddings_model
-        )
-        return LangChainRAGPipeline.from_retriever(
-            retriever=vector_store_operator.vector_store.as_retriever(),
-            prompt_template=DEFAULT_EVALUATION_PROMPT_TEMPLATE,
-            llm=llm
-        )
+    @property
+    def doc_ids(self) -> list[str]:
+        if not self._doc_ids:
+            self._split_docs, self._doc_ids = self._split_documents()
+        return self._doc_ids
 
-    if retriever_type == RetrieverType.AUTO:
-        return LangChainRAGPipeline.from_auto_retriever(
-            vectorstore=vector_store,
-            data=all_documents,
-            data_description=dataset_description,
-            content_column_name=content_column_name,
-            retriever_prompt_template=retriever_prompt_template,
-            rag_prompt_template=DEFAULT_EVALUATION_PROMPT_TEMPLATE,
-            llm=llm
-        )
+    @property
+    def split_docs(self) -> list[Document]:
+        if not self._split_docs:
+            self._split_docs, self._doc_ids = self._split_documents()
+        return self._split_docs
 
-    if retriever_type == RetrieverType.MULTI:
-        # The splitter to use to embed smaller chunks
+    def _split_documents(self) -> tuple[list[Document], list[str]]:
+        """
+        Split the documents into sub-documents and generate unique ids for each document.
+        :return:
+        """
+        split_info = list(map(self._generate_id_and_split_document, self.all_documents))
+        doc_ids, split_docs_lists = zip(*split_info)
+        split_docs = [doc for sublist in split_docs_lists for doc in sublist]
+        return split_docs, list(doc_ids)
+
+    def _generate_id_and_split_document(self, doc: Document) -> tuple[str, list[Document]]:
+        """
+        Generate a unique id for the document and split it into sub-documents.
+        :param doc:
+        :return:
+        """
         child_text_splitter = RecursiveCharacterTextSplitter(
             chunk_size=DEFAULT_CHUNK_SIZE, chunk_overlap=DEFAULT_CHUNK_OVERLAP)
-        return LangChainRAGPipeline.from_multi_vector_retriever(
-            documents=all_documents,
-            rag_prompt_template=DEFAULT_EVALUATION_PROMPT_TEMPLATE,
-            vectorstore=vector_store,
-            text_splitter=child_text_splitter,
-            llm=llm,
-            mode=multi_retriever_mode
-        )
+        doc_id = str(uuid.uuid4())
+        sub_docs = child_text_splitter.split_documents([doc])
+        for sub_doc in sub_docs:
+            sub_doc.metadata[_DEFAULT_ID_KEY] = doc_id
+        return doc_id, sub_docs
+
+
+def _create_vector_store_retriever(pipeline_args: GetPipelineArgs):
+    return LangChainRAGPipeline.from_retriever(
+        retriever=pipeline_args.vector_store_operator.vector_store.as_retriever(),
+        prompt_template=DEFAULT_EVALUATION_PROMPT_TEMPLATE,
+        llm=pipeline_args.llm
+    )
+
+
+def _create_bm25_retriever(pipeline_args: GetPipelineArgs):
+    bm25_retriever = BM25Retriever.from_documents(pipeline_args.all_documents)
+    bm25_retriever.k = 2
+    return LangChainRAGPipeline.from_retriever(
+        retriever=bm25_retriever,
+        prompt_template=DEFAULT_EVALUATION_PROMPT_TEMPLATE,
+        llm=pipeline_args.llm
+    )
+
+
+def _create_hybrid_search_retriever(pipeline_args: GetPipelineArgs):
+    pipeline_args.retriever_map = {'bm25':0.5, 'vector_store':0.5}
+    pipeline_args.retriever_type = RetrieverType.ENSEMBLE
+    return _create_ensemble_retriever(pipeline_args=pipeline_args)
+
+
+def _create_auto_retriever(pipeline_args: GetPipelineArgs):
+    return LangChainRAGPipeline.from_auto_retriever(
+        vectorstore=pipeline_args.vector_store,
+        data=pipeline_args.all_documents,
+        data_description=pipeline_args.dataset_description,
+        content_column_name=pipeline_args.content_column_name,
+        retriever_prompt_template=pipeline_args.retriever_prompt_template,
+        rag_prompt_template=DEFAULT_EVALUATION_PROMPT_TEMPLATE,
+        llm=pipeline_args.llm,
+        vector_store_operator=pipeline_args.vector_store_operator
+    )
+
+
+def _create_sql_retriever(pipeline_args: GetPipelineArgs):
+    documents_df = documents_to_df(pipeline_args.content_column_name,
+                                   pipeline_args.all_documents,
+                                   embeddings_model=pipeline_args.embeddings_model,
+                                   with_embeddings=True)
+
+    # Save the dataframe to a SQL table.
+    alchemyEngine = create_engine(
+        pipeline_args.db_connection_string, pool_recycle=DEFAULT_POOL_RECYCLE)
+    db_connection = alchemyEngine.connect()
+
+    # issues with langchain compatibility with vector type in postgres need to investigate further
+    documents_df.to_sql(pipeline_args.test_table_name, db_connection,
+                        index=False, if_exists='replace')
+
+    return LangChainRAGPipeline.from_sql_retriever(
+        connection_string=pipeline_args.db_connection_string,
+        retriever_prompt_template=pipeline_args.retriever_prompt_template,
+        rag_prompt_template=pipeline_args.rag_prompt_template,
+        llm=pipeline_args.llm
+    )
+
+
+def _create_multi_retriever(pipeline_args: GetPipelineArgs):
+    # The splitter to use to embed smaller chunks
+    child_text_splitter = RecursiveCharacterTextSplitter(
+        chunk_size=DEFAULT_CHUNK_SIZE, chunk_overlap=DEFAULT_CHUNK_OVERLAP)
+    doc_ids = pipeline_args.doc_ids
+    split_docs = pipeline_args.split_docs
+    return LangChainRAGPipeline.from_multi_vector_retriever(
+        documents=split_docs,
+        doc_ids=doc_ids,
+        rag_prompt_template=DEFAULT_EVALUATION_PROMPT_TEMPLATE,
+        vectorstore=pipeline_args.vector_store,
+        text_splitter=child_text_splitter,
+        llm=pipeline_args.llm,
+        mode=pipeline_args.multi_retriever_mode,
+        vector_store_operator=pipeline_args.vector_store_operator,
+    )
+
+
+def _create_ensemble_retriever(pipeline_args: GetPipelineArgs):
+    runnable_retrievers = []
+    for type_name, weight in pipeline_args.retriever_map.items():
+        pipeline_args.retriever_type = RetrieverType(type_name)
+        runnable = _get_pipeline_from_retriever(pipeline_args=pipeline_args)
+        runnable_retrievers.append({"weight": weight, "runnable": runnable.retriever_runnable})
+
+    return LangChainRAGPipeline.from_ensemble_retriever(rag_prompt_template=pipeline_args.rag_prompt_template,
+                                                        llm=pipeline_args.llm,
+                                                        runnable_retrievers=runnable_retrievers)
+
+
+def _get_pipeline_from_retriever(pipeline_args: GetPipelineArgs) -> LangChainRAGPipeline:
+    if pipeline_args.retriever_type == RetrieverType.SQL:
+        return _create_sql_retriever(pipeline_args=pipeline_args)
+
+    if pipeline_args.retriever_type == RetrieverType.VECTOR_STORE:
+        return _create_vector_store_retriever(pipeline_args=pipeline_args)
+
+    if pipeline_args.retriever_type == RetrieverType.AUTO:
+        return _create_auto_retriever(pipeline_args=pipeline_args)
+
+    if pipeline_args.retriever_type == RetrieverType.MULTI:
+        return _create_multi_retriever(pipeline_args=pipeline_args)
+
+    if pipeline_args.retriever_type == RetrieverType.ENSEMBLE:
+        return _create_ensemble_retriever(pipeline_args=pipeline_args)
+
+    if pipeline_args.retriever_type == RetrieverType.BM25:
+        return _create_bm25_retriever(pipeline_args=pipeline_args)
+    if pipeline_args.retriever_type == RetrieverType.HYBRID:
+        return _create_hybrid_search_retriever(pipeline_args=pipeline_args)
 
     raise ValueError(
-        f'Invalid retriever type, must be one of: vector_store, auto, sql, multi. Got {retriever_type}')
+        f'Invalid retriever type, must be one of: vector_store, auto, sql, multi, ensemble, hybrid, bm25.  Got {pipeline_args.retriever_type}')
 
 
 def evaluate_rag(dataset: str,
@@ -182,10 +297,11 @@ def evaluate_rag(dataset: str,
                  retriever_prompt_template: Union[str, dict] = None,
                  retriever_type: RetrieverType = RetrieverType.VECTOR_STORE,
                  input_data_type: InputDataType = InputDataType.EMAIL,
-                 show_visualization = False,
-                 split_documents = True,
+                 show_visualization=False,
+                 split_documents=True,
                  multi_retriever_mode: MultiVectorRetrieverMode = MultiVectorRetrieverMode.BOTH,
-                 existing_vector_store: bool = False
+                 existing_vector_store: bool = False,
+                 retriever_map=None
                  ):
     """
     Evaluates a RAG pipeline that answers questions from a dataset
@@ -209,6 +325,7 @@ def evaluate_rag(dataset: str,
     :param split_documents: bool
     :param multi_retriever_mode: MultiVectorRetrieverMode
     :param existing_vector_store: bool
+    :param retriever_map: dict
 
     :return:
     """
@@ -218,7 +335,8 @@ def evaluate_rag(dataset: str,
     if existing_vector_store:
         vector_store = load_vector_store(embeddings_model)
 
-    rag_pipeline = _get_pipeline_from_retriever(
+
+    pipeline_args = GetPipelineArgs(
         all_documents,
         content_column_name=content_column_name,
         dataset_description=dataset_description,
@@ -230,8 +348,11 @@ def evaluate_rag(dataset: str,
         rag_prompt_template=rag_prompt_template,
         retriever_prompt_template=retriever_prompt_template,
         retriever_type=retriever_type,
-        multi_retriever_mode=multi_retriever_mode
+        multi_retriever_mode=multi_retriever_mode,
+        retriever_map=retriever_map
     )
+
+    rag_pipeline = _get_pipeline_from_retriever(pipeline_args)
 
     rag_chain = rag_pipeline.rag_with_returned_sources()
 
@@ -291,14 +412,23 @@ Uses evaluation metrics from the RAGAs library.
     parser.add_argument('-s', '--split_documents', type=bool,
                         help='Whether or not to split documents after they are loaded',
                         default=True)
+
     parser.add_argument('-evs', '--existing_vector_store',
                         help='If using an existing vector store, update .env file with config',
                         type=bool, default=False)
-    parser.add_argument('-l', '--log', help='Logging level to use (default WARNING)', default='WARNING')
+
+    parser.add_argument('-er', '--ensemble_retrievers', type=str,
+                        help='Comma delineated list of retriever types to use with the Ensemble Retriever', default='')
+    parser.add_argument('-ew', '--ensemble_weights', type=str,
+                        help='Comma delineated list of weights, respective in order to the ensemble_retrievers, '
+                             'to use with the Ensemble Retriever', default='')
+    parser.add_argument(
+        '-l', '--log', help='Logging level to use (default WARNING)', default='WARNING')
 
     args = parser.parse_args()
     log_level = getattr(logging, args.log.upper())
     logging.basicConfig(level=log_level)
+
 
     logger = logging.getLogger(__name__)
 
@@ -314,10 +444,19 @@ Uses evaluation metrics from the RAGAs library.
 
     logger.warning(f'Evaluating RAG pipeline with dataset: {args.dataset}')
 
+    retriever_map = {}
+    if args.ensemble_weights and args.ensemble_retrievers:
+        weights = [float(x) for x in args.ensemble_weights.split(',')]
+        retrievers = args.ensemble_retrievers.split(',')
+        for i, weight in enumerate(weights):
+            retriever_map[retrievers[i]] = weight
+
+
     evaluate_rag(dataset=args.dataset, content_column_name=args.content_column_name,
                  dataset_description=args.dataset_description, db_connection_string=args.connection_string,
                  test_table_name=args.test_table_name, retriever_type=args.retriever_type,
                  input_data_type=args.input_data_type, show_visualization=args.show_visualization,
                  split_documents=args.split_documents, multi_retriever_mode=MultiVectorRetrieverMode.BOTH,
-                 existing_vector_store=args.existing_vector_store
-                 )
+                 existing_vector_store=args.existing_vector_store,
+                 retriever_map=retriever_map)
+

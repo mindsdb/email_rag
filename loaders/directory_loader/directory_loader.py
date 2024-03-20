@@ -13,9 +13,9 @@ from langchain.text_splitter import HTMLHeaderTextSplitter
 from langchain.text_splitter import MarkdownHeaderTextSplitter
 from langchain.text_splitter import TextSplitter
 from langchain_core.documents.base import Document
-from langchain_openai.embeddings import OpenAIEmbeddings
 
 from loaders.directory_loader.csv_loader import CSVLoader
+from settings import DEFAULT_EMBEDDINGS
 
 DEFAULT_CHUNK_SIZE = 1000
 DEFAULT_CHUNK_OVERLAP = 50
@@ -49,7 +49,7 @@ class DirectoryLoader(BaseLoader):
 
     def _get_text_splitter_from_extension(self, extension: str) -> TextSplitter:
         if extension == '.pdf':
-            return SemanticChunker(OpenAIEmbeddings())
+            return SemanticChunker(DEFAULT_EMBEDDINGS)
         if extension == '.md':
             return MarkdownHeaderTextSplitter(headers_to_split_on=[(
                 '#', 'Header 1'), ('##', 'Header 2'), ('###', 'Header 3')])

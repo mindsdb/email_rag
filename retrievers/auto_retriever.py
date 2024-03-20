@@ -35,7 +35,8 @@ class AutoRetriever(BaseRetriever):
             filter_columns: List[str] = None,
             document_description: str = "",
             prompt_template: str = DEFAULT_AUTO_META_PROMPT_TEMPLATE,
-            cardinality_threshold: int = DEFAULT_CARDINALITY_THRESHOLD
+            cardinality_threshold: int = DEFAULT_CARDINALITY_THRESHOLD,
+            vector_store_operator: VectorStoreOperator = None
     ):
         """
         Given a dataframe, use llm to extract metadata from it.
@@ -60,6 +61,7 @@ class AutoRetriever(BaseRetriever):
         self.embeddings_model = embeddings_model
         self.prompt_template = prompt_template
         self.cardinality_threshold = cardinality_threshold
+        self.vector_store_operator = vector_store_operator
 
     def _get_low_cardinality_columns(self, data: pd.DataFrame):
         """
@@ -131,6 +133,8 @@ class AutoRetriever(BaseRetriever):
         Given data either List[Documents] pd.Dataframe,  use it to create a vectorstore.
         :return:
         """
+        if self.vector_store_operator:
+            return self.vector_store_operator.vector_store
         documents = self.df_to_documents() if isinstance(
             self.data, pd.DataFrame) else self.data
         return VectorStoreOperator(vector_store=self.vectorstore,

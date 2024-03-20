@@ -14,6 +14,7 @@ from ragas.run_config import RunConfig
 from pandas import DataFrame
 
 from callback_handlers.log_callback_handler import LogCallbackHandler
+from settings import DEFAULT_LLM, DEFAULT_EMBEDDINGS
 
 _DEFAULT_MAX_RAGAS_RETRIES = 20
 _DEFAULT_MAX_RAGAS_WAIT_TIME_SECS = 500
@@ -69,6 +70,8 @@ def evaluate(
 
     result = ragas_evaluate(
         dataset=dataset,
+        llm=DEFAULT_LLM,
+        embeddings=DEFAULT_EMBEDDINGS,
         metrics=[
             context_precision,
             context_recall,
