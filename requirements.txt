@@ -1,6 +1,8 @@
 asyncio
 bs4==0.0.2
 chardet
+pydantic
+pydantic-settings
 langchain>=0.1.6
 langchain-community
 langchain-openai

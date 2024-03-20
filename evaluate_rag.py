@@ -4,7 +4,6 @@ import argparse
 import logging
 import os
 import platform
-from enum import Enum
 from typing import List, Union
 
 from langchain.docstore.document import Document
@@ -21,6 +20,7 @@ from loaders.email_loader.email_client import EmailClient
 from loaders.email_loader.email_loader import EmailLoader, DEFAULT_CHUNK_SIZE, DEFAULT_CHUNK_OVERLAP
 from loaders.email_loader.email_search_options import EmailSearchOptions
 from loaders.directory_loader.directory_loader import DirectoryLoader
+from loaders.vector_store_loader.vector_store_loader import load_vector_store
 from pipelines.rag_pipelines import LangChainRAGPipeline
 from settings import (DEFAULT_LLM,
                       DEFAUlT_VECTOR_STORE,
@@ -29,26 +29,13 @@ from settings import (DEFAULT_LLM,
                       DEFAULT_CONTENT_COLUMN_NAME,
                       DEFAULT_DATASET_DESCRIPTION,
                       DEFAULT_TEST_TABLE_NAME,
-                      DEFAULT_POOL_RECYCLE
+                      DEFAULT_POOL_RECYCLE, RetrieverType, InputDataType,
                       )
 from utils import documents_to_df, VectorStoreOperator
 from visualize.visualize import visualize_evaluation_metrics
 
 
-# Define the type of retriever to use.
-class RetrieverType(Enum):
-    VECTOR_STORE = 'vector_store'
-    AUTO = 'auto'
-    SQL = 'sql'
-    MULTI = 'multi'
-
-
-class InputDataType(Enum):
-    EMAIL = 'email'
-    FILE = 'file'
-
-
-def ingest_files(dataset: str, split_documents: bool = True):
+def ingest_files(dataset: str, split_documents: bool = True) -> List[Document]:
     # Define the path to the source files directory
     source_files_path = Path('./data') / dataset / 'source_files'
 
@@ -70,7 +57,7 @@ def ingest_files(dataset: str, split_documents: bool = True):
     return all_documents
 
 
-def ingest_emails(split_documents: bool = True):
+def ingest_emails(split_documents: bool = True) -> List[Document]:
     username = os.getenv('EMAIL_USERNAME')
     password = os.getenv('EMAIL_PASSWORD')
     email_client = EmailClient(username, password)
@@ -97,13 +84,14 @@ def ingest_emails(split_documents: bool = True):
 
 
 def _ingest_documents(input_data_type: InputDataType, dataset: str, split_documents: bool = True) -> List[Document]:
-
     if input_data_type == InputDataType.FILE:
         return ingest_files(dataset, split_documents)
     if input_data_type == InputDataType.EMAIL:
         return ingest_emails(split_documents)
+    if input_data_type == InputDataType.VECTOR_STORE:
+        return
     raise ValueError(
-        f'Invalid input data type, must be one of: file, email. Got {input_data_type}')
+        f'Invalid input data type, must be one of: file, email or vector_store. Got {input_data_type}')
 
 
 def _get_pipeline_from_retriever(
@@ -121,7 +109,6 @@ def _get_pipeline_from_retriever(
         multi_retriever_mode: MultiVectorRetrieverMode = MultiVectorRetrieverMode.BOTH
 ) -> LangChainRAGPipeline:
     if retriever_type == RetrieverType.SQL:
-
         documents_df = documents_to_df(content_column_name,
                                        all_documents,
                                        embeddings_model=embeddings_model,
@@ -195,14 +182,17 @@ def evaluate_rag(dataset: str,
                  retriever_prompt_template: Union[str, dict] = None,
                  retriever_type: RetrieverType = RetrieverType.VECTOR_STORE,
                  input_data_type: InputDataType = InputDataType.EMAIL,
-                 show_visualization=False,
-                 split_documents=True,
-                 multi_retriever_mode: MultiVectorRetrieverMode = MultiVectorRetrieverMode.BOTH
+                 show_visualization = False,
+                 split_documents = True,
+                 multi_retriever_mode: MultiVectorRetrieverMode = MultiVectorRetrieverMode.BOTH,
+                 existing_vector_store: bool = False
                  ):
     """
     Evaluates a RAG pipeline that answers questions from a dataset
     about various emails, depending on the dataset.
 
+    :param vector_store_type:
+    :param vector_store_config:
     :param dataset: str
     :param content_column_name: str
     :param dataset_description: str
@@ -218,11 +208,16 @@ def evaluate_rag(dataset: str,
     :param show_visualization: bool
     :param split_documents: bool
     :param multi_retriever_mode: MultiVectorRetrieverMode
+    :param existing_vector_store: bool
 
     :return:
     """
     all_documents = _ingest_documents(
         input_data_type, dataset, split_documents=split_documents)
+
+    if existing_vector_store:
+        vector_store = load_vector_store(embeddings_model)
+
     rag_pipeline = _get_pipeline_from_retriever(
         all_documents,
         content_column_name=content_column_name,
@@ -293,17 +288,36 @@ Uses evaluation metrics from the RAGAs library.
                         type=InputDataType, choices=list(InputDataType), default=InputDataType.EMAIL)
     parser.add_argument('-v', '--show_visualization', type=bool,
                         help='Whether or not to plot and show evaluation metrics', default=False)
-    parser.add_argument('-s', '--split_documents', type=bool, help='Whether or not to split documents after they are loaded',
+    parser.add_argument('-s', '--split_documents', type=bool,
+                        help='Whether or not to split documents after they are loaded',
                         default=True)
-    parser.add_argument(
-        '-l', '--log', help='Logging level to use (default WARNING)', default='WARNING')
+    parser.add_argument('-evs', '--existing_vector_store',
+                        help='If using an existing vector store, update .env file with config',
+                        type=bool, default=False)
+    parser.add_argument('-l', '--log', help='Logging level to use (default WARNING)', default='WARNING')
 
     args = parser.parse_args()
     log_level = getattr(logging, args.log.upper())
     logging.basicConfig(level=log_level)
 
+    logger = logging.getLogger(__name__)
+
+    if args.existing_vector_store:
+        # Update .env file with vector store config
+
+        logger.warning(
+            'Vector store config provided, setting retriever type to vector store as other types '
+            'are not currently supported.')
+
+        # Set the retriever type to vector store
+        args.retriever_type = RetrieverType.VECTOR_STORE
+
+    logger.warning(f'Evaluating RAG pipeline with dataset: {args.dataset}')
+
     evaluate_rag(dataset=args.dataset, content_column_name=args.content_column_name,
                  dataset_description=args.dataset_description, db_connection_string=args.connection_string,
                  test_table_name=args.test_table_name, retriever_type=args.retriever_type,
                  input_data_type=args.input_data_type, show_visualization=args.show_visualization,
-                 split_documents=args.split_documents, multi_retriever_mode=MultiVectorRetrieverMode.BOTH)
+                 split_documents=args.split_documents, multi_retriever_mode=MultiVectorRetrieverMode.BOTH,
+                 existing_vector_store=args.existing_vector_store
+                 )
