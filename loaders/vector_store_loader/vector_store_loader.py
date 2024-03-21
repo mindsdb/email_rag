@@ -42,16 +42,22 @@ class VectorStoreFactory:
 
     @staticmethod
     def _load_pgvector_store(embeddings_model: Embeddings, settings) -> PGVector:
-        empty_store = PGVector(
+        # create an empty store if collection_name does not exist otherwise load the existing collection
+        store = PGVector(
             connection_string=settings.connection_string,
             collection_name=settings.collection_name,
-            embedding_function=embeddings_model,
-            pre_delete_collection=True,
+            embedding_function=embeddings_model
         )
-        return VectorStoreFactory._load_data_into_langchain_pgvector(settings, empty_store)
+        return VectorStoreFactory._load_data_into_langchain_pgvector(settings, store)
 
     @staticmethod
     def _load_data_into_langchain_pgvector(settings, vectorstore: PGVector) -> PGVector:
+        """
+        Fetches data from the existing pgvector table and loads it into the langchain pgvector vector store
+        :param settings:
+        :param vectorstore:
+        :return:
+        """
         df = VectorStoreFactory._fetch_data_from_db(settings)
 
         df[COL_EMBEDDINGS] = df[COL_EMBEDDINGS].apply(ast.literal_eval)
@@ -71,7 +77,12 @@ class VectorStoreFactory:
         return vectorstore
 
     @staticmethod
-    def _fetch_data_from_db(settings) -> pd.DataFrame:
+    def _fetch_data_from_db(settings: VectorStoreConfig) -> pd.DataFrame:
+        """
+        Fetches data from the database using the provided connection_string in the settings
+        :param settings:
+        :return:
+        """
         try:
             engine = create_engine(settings.connection_string)
             db = scoped_session(sessionmaker(bind=engine))
@@ -97,10 +108,20 @@ class VectorStoreLoader(BaseModel):
         validate_assignment = True
 
     def load(self) -> VectorStore:
+        """
+        Loads the vector store based on the provided config and embeddings model
+        :return:
+        """
         self.vector_store = VectorStoreFactory.create(self.embeddings_model, self.config)
         return self.vector_store
 
 
 def load_vector_store(embeddings_model: Embeddings, config: dict={}) -> VectorStore:
+    """
+    Loads the vector store based on the provided config and embeddings model
+    :param embeddings_model:
+    :param config:
+    :return:
+    """
     loader = VectorStoreLoader(embeddings_model=embeddings_model, config=config)
     return loader.load()
