@@ -41,7 +41,7 @@ class LogCallbackHandler(BaseCallbackHandler):
         self, error: Union[Exception, KeyboardInterrupt], **kwargs: Any
     ) -> Any:
         '''Run when LLM errors.'''
-        pass
+        self.logger.exception(error)
 
     def on_chain_start(
         self, serialized: Dict[str, Any], inputs: Dict[str, Any], **kwargs: Any

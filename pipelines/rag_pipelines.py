@@ -8,12 +8,14 @@ from langchain_core.retrievers import BaseRetriever
 from langchain_core.vectorstores import VectorStore
 
 from retrievers.auto_retriever import AutoRetriever
+from retrievers.ensemble_retriever import EnsembleRetriever
 from retrievers.multi_vector_retriever import MultiVectorRetriever, MultiVectorRetrieverMode
 from retrievers.sql_retriever import SQLRetriever
 from langchain_core.runnables import RunnableParallel, RunnablePassthrough, RunnableSerializable
 from langchain.docstore.document import Document
 
 from settings import DEFAULT_LLM, DEFAULT_SQL_RETRIEVAL_PROMPT_TEMPLATE, DEFAULT_AUTO_META_PROMPT_TEMPLATE
+from utils import VectorStoreOperator
 
 
 class LangChainRAGPipeline:
@@ -38,7 +40,7 @@ class LangChainRAGPipeline:
                 # this is to handle the case where the retriever returns a string
                 # instead of a list of documents e.g. SQLRetriever
                 return docs
-            return "\n\n".join(doc.page_content for doc in docs)
+            return "\n\n".join(doc.page_content+("\n".join(k+" : "+v for k,v in doc.metadata.items())) for doc in docs)
 
         prompt = ChatPromptTemplate.from_template(self.prompt_template)
 
@@ -94,6 +96,30 @@ class LangChainRAGPipeline:
         return cls(retriever_runnable, rag_prompt_template, llm)
 
     @classmethod
+    def from_ensemble_retriever(cls,
+                           rag_prompt_template,
+                           runnable_retrievers,
+                           llm: BaseChatModel = None
+                           ):
+        """
+        Builds a RAG pipeline with returned sources using a SQLRetriever
+
+        :param connection_string: str
+        :param retriever_prompt_template: dict
+        :param rag_prompt_template: str
+        :param llm: BaseChatModel
+
+        :return:
+        """
+
+        retriever_runnable = EnsembleRetriever(
+            runnable_retrievers,
+            llm=llm
+        ).as_runnable()
+
+        return cls(retriever_runnable, rag_prompt_template, llm)
+
+    @classmethod
     def from_auto_retriever(cls,
                             retriever_prompt_template: str,
                             rag_prompt_template: str,
@@ -101,7 +127,8 @@ class LangChainRAGPipeline:
                             content_column_name: str,
                             data: List[Document],
                             vectorstore: VectorStore = None,
-                            llm: BaseChatModel = None
+                            llm: BaseChatModel = None,
+                            vector_store_operator: VectorStoreOperator = None
                             ):
         """
         Builds a RAG pipeline with returned sources using a AutoRetriever
@@ -116,6 +143,7 @@ class LangChainRAGPipeline:
         :param data: List[Document]
         :param vectorstore: VectorStore
         :param llm: BaseChatModel
+        :param vector_store_operator: VectorStoreOperator
 
         :return:
         """
@@ -123,19 +151,21 @@ class LangChainRAGPipeline:
 
         retriever_runnable = AutoRetriever(data=data, content_column_name=content_column_name, vectorstore=vectorstore,
                                            document_description=data_description,
-                                           prompt_template=retriever_prompt_template).as_runnable()
+                                           prompt_template=retriever_prompt_template, vector_store_operator=vector_store_operator).as_runnable()
         return cls(retriever_runnable, rag_prompt_template, llm)
 
     @classmethod
     def from_multi_vector_retriever(
         cls,
         documents: List[Document],
+        doc_ids: list[str],
         rag_prompt_template: str,
         vectorstore: VectorStore = None,
         text_splitter: TextSplitter = None,
         llm: BaseChatModel = None,
         mode: MultiVectorRetrieverMode = MultiVectorRetrieverMode.BOTH,
+        vector_store_operator: VectorStoreOperator = None
     ):
         retriever_runnable = MultiVectorRetriever(
-            documents=documents, vectorstore=vectorstore, text_splitter=text_splitter, mode=mode).as_runnable()
+            documents=documents, doc_ids=doc_ids, vectorstore=vectorstore, text_splitter=text_splitter, mode=mode, vector_store_operator=vector_store_operator).as_runnable()
         return cls(retriever_runnable, rag_prompt_template, llm)
