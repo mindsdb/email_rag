@@ -12,10 +12,10 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy.exc import DisconnectionError
 
-COL_ID = "id"
-COL_EMBEDDINGS = "embeddings"
-COL_METADATA = "metadata"
-COL_CONTENT = "content"
+_COL_ID = "id"
+_COL_EMBEDDINGS = "embeddings"
+_COL_METADATA = "metadata"
+_COL_CONTENT = "content"
 
 
 class VectorStoreFactory:
@@ -60,13 +60,13 @@ class VectorStoreFactory:
         """
         df = VectorStoreFactory._fetch_data_from_db(settings)
 
-        df[COL_EMBEDDINGS] = df[COL_EMBEDDINGS].apply(ast.literal_eval)
-        df[COL_METADATA] = df[COL_METADATA].apply(ast.literal_eval)
+        df[_COL_EMBEDDINGS] = df[_COL_EMBEDDINGS].apply(ast.literal_eval)
+        df[_COL_METADATA] = df[_COL_METADATA].apply(ast.literal_eval)
 
-        metadata = df[COL_METADATA].tolist()
-        embeddings = df[COL_EMBEDDINGS].tolist()
-        texts = df[COL_CONTENT].tolist()
-        ids = [str(uuid.uuid1()) for _ in range(len(df))] if COL_ID not in df.columns else df[COL_ID].tolist()
+        metadata = df[_COL_METADATA].tolist()
+        embeddings = df[_COL_EMBEDDINGS].tolist()
+        texts = df[_COL_CONTENT].tolist()
+        ids = [str(uuid.uuid1()) for _ in range(len(df))] if _COL_ID not in df.columns else df[_COL_ID].tolist()
 
         vectorstore.add_embeddings(
             texts=texts,
@@ -91,6 +91,7 @@ class VectorStoreFactory:
 
             return df
         except DisconnectionError as e:
+            # todo replace with logger when integrated in mindsdb
             print("Unable to connect to the database. Please check your connection string and try again.")
             raise e
         finally:
