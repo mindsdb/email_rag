@@ -31,7 +31,6 @@ class AutoSplitter:
         split_documents = []
         document: Document
         for document in documents:
-            print(document.metadata)
             extension = document.metadata['extension']
             if text_splitter:
                 split_func = text_splitter.split_documents
@@ -40,14 +39,11 @@ class AutoSplitter:
             #This could either be a split_text or a split_documents function
             try: #Try split_documents first
                 try:
-                    print("trying split docs")
                     split_documents += split_func([document])
                 except TypeError: #This throw indicates we are using split_text
-                    print("trying split text")
                     split_documents += split_func(document.page_content)
             except Exception as e: #Check if default_failover set, and then try the default splitter.
                 if default_failover:
-                    print("doing default failover")
                     split_func = self.split_func_by_extension(extension=None)
                     split_documents += split_func([document])
                 else:
@@ -65,7 +61,6 @@ class AutoSplitter:
                 '#', 'Header 1'), ('##', 'Header 2'), ('###', 'Header 3')]).split_text
 
     def html_splitter(self):
-        print("DOING HTML SPLITTER")
         if self.headers_to_split_on:
             return HTMLHeaderTextSplitter(headers_to_split_on=self.headers_to_split_on)
         else:
