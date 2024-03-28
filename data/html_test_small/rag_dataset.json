@@ -1,0 +1,264 @@
+{
+    "examples": [
+        {
+            "query": "What are the symptoms?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "Symptoms include fever, coughing, sore throat, fatigue, and shortness of breath.\nHowever, be aware that at this stage if you have a cough or a cold, it's likely that you just have a cough or a cold and not coronavirus.\nIf you have serious symptoms such as difficulty breathing, call 000 for urgent medical help.\nIf you get these symptoms above after being in contact with someone who has been diagnosed with COVID-19, seek medical attention.\nThe same goes if you develop symptoms within 14 days of returning home to Australia after being overseas.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "When should I get tested?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "Your doctor will tell you if you need to get tested.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What's the difference between physical distancing and self-isolation?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "As cases of coronavirus surge, health authorities are advising Australians to practise physical distancing (also called social distancing) as much as possible to limit transmission. Physical distancing is what everyone can do - like staying home - regardless of whether or not they've been exposed to coronavirus.\nSelf-isolating or self-quarantining is a more strict and onerous kind of physical distancing - it means cutting yourself off from the outside world.All passengers who arrive in Australia are going into mandatory quarantine in hotels for a fortnight.\nWestern Australia, South Australia, Queensland, Northern Territory and Tasmania have also essentially closed their borders - any arrivals are required to self-isolate for 14 days.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "How do I practice physical distancing?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "If you have been in contact with a person with a COVID-19 infection while they were ill, you need to isolate yourself for 14 days after you last saw that person.\nIn general, stay home as much as you can.\nIf you have to go out, from midnight Monday, March 30, you cannot see more than one other person. This applies to both private and public gatherings and indoor and outdoor spaces.\nFor example, if you go to the park, you can only go with one person.\nThe restrictions do not apply within your household - if you live in a sharehouse of four, you can still see your housemates.\nYou're also allowed to visit family members in other houses, including your partner.\nAnnouncing this restriction, the Prime Minister said acceptable reasons to leave the house include:Shopping for what you needFor medical care or compassionate needs (e.g. caring for someone else)To exercise (provided no more than two people in a group)For work and education (if you cannot work or learn remotely)\nThe general aim of physical distancing rules is to avoid situations where you may come in close contact with others (face-to-face contact closer than one metre for more than 15 minutes or being in the same closed space for two hours).\nAvoid shaking hands, crowds of people, and busy indoor and outdoor spaces.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What's closed?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "Physical distancing is the reason the Federal Government has closed pubs, indoor sporting venues and churches across Australia.\nThe situation with schools varies state by state. Queensland, South Australia, Western Australia, Tasmania and Northern Territory will keep schools open for the children of essential workers but will began to implement pupil-free days in the coming weeks. Victoria and ACT schools are already on break. NSW schools remain open but students are encouraged to stay at home.\nThe Prime Minister has said all \"non-essential\" travel within Australia should be cancelled. Western Australia and South Australia have closed their borders - any arrivals after Tuesday afternoon, March 24, will be required to self-isolate for 14 days.\nThe goal of these social distancing measures is to avoid a worst-case scenario that would see four million Australians contract COVID-19 in a single wave.\nSlowing the spread may prevent health services from being overwhelmed by coronavirus cases.\nFrom midnight on Wednesday, March 25, these activities and businesses will no longer be allowed to continue:\nAmusement parks and arcadesIndoor and outdoor play centresCommunity and recreation centres, health clubs, fitness centres, yoga, barre, spin facilities, saunas, wellness centresPublic swimming poolsGalleries, museums, national institutions, historic sites, libraries, community centresAuction housesReal estate auctions and open house inspectionsIn-store beauty therapy, tanning, waxing, nail salons and tattoo parlours, spa and massage parlours (excluding allied-health-related services, like physiotherapy)Food courts within shopping centres will only be able to sell takeaway. Shopping centres themselves will remain openHairdressers and barber shops can continue, but a customer must not be on the premises longer than one hourPersonal training and boot camps are limited to a maximum of 10 peopleWeddings can continue, but only with the couple, the celebrant, and witnesses totalling a maximum of five peopleFunerals are limited to a maximum of 10 peopleOutdoor and indoor food markets will be addressed by individual states and territories",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "What are the rules of self-isolation?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "Remember, the vast majority of Australians aren't being told to self-isolate. It only applies to those who have recently come back from overseas, (before midnight on March 28 - after then its forced quarantine), or if you've been in contact with someone who tested positive for COVID-19.\nBut if you are one of those people who has to self-isolate, it means that you need to stay away from all situations where you could infect other people. This means any situation where you may come in close contact with others (face-to-face contact closer than one metre for more than 15 minutes or being in the same closed space for two hours).\nYou should avoid social gatherings, work, school, child care, university, sports gatherings, restaurants, and all other public gatherings.\nYou should try not to leave the house. If your outside areas are a shared space in a building or apartment block, it's best to wear a surgical mask while out there.\nStay in your room and clean lots.\n\n",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "How do I self-isolate in a sharehouse?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "If you're living with people who are not in isolation, wear a mask when you're in the same room as them. It's best to sleep in a different room to your partner, avoid spending time in communal areas and use a separate bathroom, if possible.\nWash your hands with soap and water for 20 seconds before entering areas used by others and after using the bathroom.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Should I avoid domestic travel?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "The Prime Minister has also said all \"non-essential\" travel within Australia should be cancelled. Western Australia, South Australia, Queensland, Northern Territory and Tasmania have essentially closed their borders - any arrivals are required to self-isolate for 14 days.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Should I avoid big gatherings like parties or weddings?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "Yes. Avoid big gatherings.\nWeddings can continue, but only with the couple, the celebrant, and witnesses totalling a maximum of five people. Funerals are limited to a maximum of 10 people\nIn addition to this, pubs, clubs, restaurants and churches have also been forced to close.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Will I get paid if I can't work?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "This may depend on whether you're permanent or casual.\nUsually, if you are asked by your employer not to work (assuming you're a full-time or part-time employee), you would be entitled to be paid.\nHowever, that typically applies to natural disasters, and not a pandemic like COVID-19.\nExperts say that, unless there's a special clause in your Enterprise Agreement, employers may be able to stand employees down without pay.\nThis will vary with each employer, so it's best to check with them.\nFor casual workers and independent contractors, including gig economy workers, the situation is potentially more grim.\nAccording to Fair Work, if you're a casual employee needing to look after a family member who is sick with coronavirus, or suffering an unexpected emergency, you are entitled to just two days of unpaid carer's leave per occasion.\nAfter that, you'll need to contact your employer to work out an arrangement.\nCasual employees and independent contractors may qualify for the sickness allowance, a means-tested payment that provides up to $560 for singles without children and $1,010 for couples out of work due to illness.\nThe Government has waived the one-week waiting period to access the allowance.\nThe Federal Government has increased existing payments for welfare allowances, and expanding eligibility criteria for new applicants, for six months to late September.\nYou can apply for this without going into Centrelink. More information here.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Can I get welfare?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "Yes. ",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Do I still have to pay rent?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "Welfare bodies want a ban on housing evictions for the next few months to support people who have lost their income because of the coronavirus outbreak.\nSo far, however, that's not happening.\nThe WA Government has frozen all 'household fees and charges' - this doesn't include rent. It will mean electricity, water, motor vehicle charges, the emergency services levy and public transport fares in the state will not increase until at least July 2021.\n",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Can you catch coronavirus twice?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "A definitive answer is not yet known, but experts say reinfection seems unlikely.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Are there any extra risks for pregnant women or their developing babies?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "The peak body for obstetrics and gynaecology and women's health, RANZCOG, has advice and information about COVID-19.\nAt this time, pregnant women do not appear to be more severely unwell if they develop COVID-19 infection than the general populationThere is no evidence to suggest an increased risk of miscarriageThere is no evidence to suggest the virus can pass to your developing babyThere is no evidence the virus is carried in breastmilk",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Are schools and unis closed? Will they close?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "Other countries have closed schools and universities as a social distancing measure, however Australia has not yet taken this step.\nThe situation with schools varies state by state. Queensland, South Australia, Western Australia, Tasmania and Northern Territory will keep schools open for the children of essential workers but will began to implement pupil-free days in the coming weeks. Victoria and ACT schools are already on break. NSW schools remain open but students are encouraged to stay at home.\nSeveral schools around the country have closed temporarily after a staff member or student tested positive for the virus.\nSome universities have chosen to close their campuses.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "How far away is a cure or vaccine?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "About 35 companies and academic institutions are racing to create such a vaccine, at least four of which already have candidates they have been testing in animals.\nThe first of these has begun testing in Seattle.\nHowever, even if the trials prove the experimental vaccine is safe and effective, it will still be many months before it can be mass-produced and distributed.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Can I catch COVID-19 from my pet?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "No. There is no evidence that companion animals or pets such as cats and dogs have been infected or could spread the virus that causes COVID-19.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "My plans got derailed. Can I get a refund?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "With airlines cutting trans-Atlantic flights and cruise lines canceling sailings, travel conditions and refund policies are changing daily.  Keep an eye on social media and official communications from your airline, hotel, cruise or wherever you booked to stay up to date with any changes to refund policies. And expect long wait times if you do need to contact a company.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "Will mosquitos be able to catch this virus and pass it on to humans this summer?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "No, Hotez says. As far as we know, it's not a mosquito-transmitted virus.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        },
+        {
+            "query": "How old was the youngest person to die from the virus?",
+            "query_by": {
+                "model_name": "",
+                "type": "human"
+            },
+            "reference_contexts": null,
+            "reference_answer": "A study of more than 72,000 cases in mainland China found that at least one person between ten and 19 years of age had died, but no one younger than ten had died. A subsequent study in the journal Pediatrics found that a 14-year-old boy from China died in February after contracting the coronavirus.\n\nIt was not immediately clear if anyone younger had died elsewhere in the world.\n\nBy comparison, at least 155 children in the U.S. have died after contracting the flu so far this flu season, according to the CDC.",
+            "reference_answer_by": {
+                "model_name": "",
+                "type": "human"
+            }
+        }
+    ]
+}
