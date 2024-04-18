@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Union, Callable
 
 from langchain_core.documents import Document
 from langchain_experimental.text_splitter import SemanticChunker
@@ -24,7 +24,7 @@ class AutoSplitter:
         }
         self.default_splitter = self.recursive_splitter
 
-    def split_func_by_extension(self, extension):
+    def split_func_by_extension(self, extension) -> Union[Callable, HTMLHeaderTextSplitter, MarkdownHeaderTextSplitter]:
         return self._extension_map.get(extension, self.default_splitter)()
 
     def split_documents(self, documents: List[Document], text_splitter = None, default_failover=True) -> List[Document]:
@@ -50,17 +50,17 @@ class AutoSplitter:
                     raise e
         return split_documents
 
-    def semantic_chunker(self):
+    def semantic_chunker(self) -> Callable:
         return SemanticChunker(self.embedding).split_documents
 
-    def markdown_splitter(self):
+    def markdown_splitter(self) -> Union[MarkdownHeaderTextSplitter, Callable]:
         if self.headers_to_split_on:
             return MarkdownHeaderTextSplitter(headers_to_split_on=self.headers_to_split_on)
         else:
             return MarkdownHeaderTextSplitter(headers_to_split_on=[(
                 '#', 'Header 1'), ('##', 'Header 2'), ('###', 'Header 3')]).split_text
 
-    def html_splitter(self):
+    def html_splitter(self) -> Union[HTMLHeaderTextSplitter, Callable]:
         if self.headers_to_split_on:
             return HTMLHeaderTextSplitter(headers_to_split_on=self.headers_to_split_on)
         else:
@@ -70,7 +70,7 @@ class AutoSplitter:
                 ('h3', 'Header 3'),
                 ('h4', 'Header 4')]).split_text
 
-    def recursive_splitter(self):
+    def recursive_splitter(self) -> Callable:
         return RecursiveCharacterTextSplitter(
             chunk_size=self.chunk_size,
             chunk_overlap=self.chunk_overlap).split_documents
