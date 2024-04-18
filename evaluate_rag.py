@@ -6,14 +6,14 @@ import argparse
 import logging
 import os
 import platform
-from typing import List, Union
+from typing import List, Union, Dict
 
 from langchain.docstore.document import Document
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_core.embeddings import Embeddings
 from langchain_core.language_models import BaseChatModel
 from langchain_core.vectorstores import VectorStore
-from langchain.retrievers import BM25Retriever
+from langchain_community.retrievers import BM25Retriever
 
 from sqlalchemy import create_engine
 
@@ -249,7 +249,7 @@ def _create_multi_retriever(pipeline_args: GetPipelineArgs):
 
 
 def _create_ensemble_retriever(pipeline_args: GetPipelineArgs):
-    runnable_retrievers = []
+    runnable_retrievers: List[Dict] = []
     for type_name, weight in pipeline_args.retriever_map.items():
         pipeline_args.retriever_type = RetrieverType(type_name)
         runnable = _get_pipeline_from_retriever(pipeline_args=pipeline_args)

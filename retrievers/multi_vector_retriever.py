@@ -104,12 +104,12 @@ class MultiVectorRetriever(BaseRetriever):
         return chain.batch(self.documents, {"max_concurrency": _MAX_CONCURRENCY})
 
     def as_runnable(self) -> RunnableSerializable:
-        if not self.documents or not self.doc_ids:
-            split_docs, doc_ids = self._split_documents()
-        else:
-            split_docs = self.documents
-            doc_ids = self.doc_ids
         if self.mode in {MultiVectorRetrieverMode.SPLIT, MultiVectorRetrieverMode.BOTH}:
+            if not self.documents or not self.doc_ids:
+                split_docs, doc_ids = self._split_documents()
+            else:
+                split_docs = self.documents
+                doc_ids = self.doc_ids
             retriever, vstore_operator = self._create_retriever_and_vs_operator(split_docs)
             summaries = self._get_document_summaries()
             summary_docs = [
@@ -122,6 +122,7 @@ class MultiVectorRetriever(BaseRetriever):
 
         elif self.mode == MultiVectorRetrieverMode.SUMMARIZE:
             summaries = self._get_document_summaries()
+            doc_ids = [str(uuid.uuid4()) for _ in self.documents]
             summary_docs = [
                 Document(page_content=s, metadata={self.id_key: doc_ids[i]})
                 for i, s in enumerate(summaries)

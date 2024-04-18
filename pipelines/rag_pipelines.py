@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Dict
 
 from langchain.text_splitter import TextSplitter
 from langchain_core.language_models import BaseChatModel
@@ -97,16 +97,15 @@ class LangChainRAGPipeline:
 
     @classmethod
     def from_ensemble_retriever(cls,
-                           rag_prompt_template,
-                           runnable_retrievers,
+                           rag_prompt_template: str,
+                           runnable_retrievers: List[Dict],
                            llm: BaseChatModel = None
                            ):
         """
         Builds a RAG pipeline with returned sources using a SQLRetriever
 
-        :param connection_string: str
-        :param retriever_prompt_template: dict
         :param rag_prompt_template: str
+        :param runnable_retrievers: list[dict]
         :param llm: BaseChatModel
 
         :return:
