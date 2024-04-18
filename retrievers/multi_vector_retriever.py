@@ -105,11 +105,7 @@ class MultiVectorRetriever(BaseRetriever):
 
     def as_runnable(self) -> RunnableSerializable:
         if self.mode in {MultiVectorRetrieverMode.SPLIT, MultiVectorRetrieverMode.BOTH}:
-            if not self.documents or not self.doc_ids:
-                split_docs, doc_ids = self._split_documents()
-            else:
-                split_docs = self.documents
-                doc_ids = self.doc_ids
+            split_docs, doc_ids = self._split_documents()
             retriever, vstore_operator = self._create_retriever_and_vs_operator(split_docs)
             summaries = self._get_document_summaries()
             summary_docs = [
