@@ -10,6 +10,7 @@ from langchain.text_splitter import TextSplitter
 from langchain_core.documents.base import Document
 
 from loaders.directory_loader.csv_loader import CSVLoader
+from settings import DEFAULT_EMBEDDINGS
 
 from splitter.splitter import AutoSplitter
 
@@ -45,6 +46,24 @@ class DirectoryLoader(BaseLoader):
         for doc in loader.lazy_load():
             doc.metadata['extension'] = file_extension
             yield doc
+
+
+    def _get_text_splitter_from_extension(self, extension: str) -> TextSplitter:
+        if extension == '.pdf':
+            return SemanticChunker(DEFAULT_EMBEDDINGS)
+        if extension == '.md':
+            return MarkdownHeaderTextSplitter(headers_to_split_on=[(
+                '#', 'Header 1'), ('##', 'Header 2'), ('###', 'Header 3')])
+        if extension == '.html':
+            return HTMLHeaderTextSplitter(headers_to_split_on=[
+                ('h1', 'Header 1'),
+                ('h2', 'Header 2'),
+                ('h3', 'Header 3'),
+                ('h4', 'Header 4')])
+        # Split by ["\n\n", "\n", " ", ""] in order.
+        return RecursiveCharacterTextSplitter(
+            chunk_size=DEFAULT_CHUNK_SIZE,
+            chunk_overlap=DEFAULT_CHUNK_OVERLAP)
 
 
     def load_and_split(self, text_splitter: TextSplitter = None) -> List[Document]:

@@ -5,7 +5,7 @@ from typing import Iterator, List
 from langchain_community.document_loaders.base import BaseLoader
 from langchain_core.documents import Document
 
-_CONTENT_FIELD_NAMES = ['content', 'text', 'body']
+_CONTENT_FIELD_NAMES = ['content', 'text', 'body','Body','']
 
 
 class CSVLoader(BaseLoader):

@@ -15,7 +15,7 @@ from langchain_core.vectorstores import VectorStore
 from langchain_openai import ChatOpenAI
 
 from retrievers.base import BaseRetriever
-from settings import DEFAULT_EMBEDDINGS, DEFAUlT_VECTOR_STORE, DEFAULT_LLM_MODEL
+from settings import DEFAULT_EMBEDDINGS, DEFAUlT_VECTOR_STORE, DEFAULT_LLM_MODEL, get_llm
 from utils import VectorStoreOperator
 
 _DEFAULT_ID_KEY = "doc_id"
@@ -39,12 +39,14 @@ class MultiVectorRetriever(BaseRetriever):
     def __init__(
             self,
             documents: List[Document],
+            doc_ids: list[str] = None,
             id_key: str = _DEFAULT_ID_KEY,
             vectorstore: VectorStore = DEFAUlT_VECTOR_STORE,
             parentstore: BaseStore = None,
             text_splitter: TextSplitter = None,
             embeddings_model: Embeddings = DEFAULT_EMBEDDINGS,
-            mode: MultiVectorRetrieverMode = MultiVectorRetrieverMode.BOTH
+            mode: MultiVectorRetrieverMode = MultiVectorRetrieverMode.BOTH,
+            vector_store_operator: VectorStoreOperator = None
     ):
         self.vectorstore = vectorstore
         self.parentstore = parentstore if parentstore is not None else InMemoryByteStore()
@@ -53,6 +55,12 @@ class MultiVectorRetriever(BaseRetriever):
         self.text_splitter = text_splitter
         self.embeddings_model = embeddings_model
         self.mode = mode
+        self.doc_ids = doc_ids
+        if vector_store_operator:
+            self.vector_store_operator = vector_store_operator
+        else:
+            self.vector_store_operator = self._create_vector_store_operator(documents=documents)
+
 
     def _generate_id_and_split_document(self, doc: Document) -> tuple[str, list[Document]]:
         """
@@ -78,23 +86,19 @@ class MultiVectorRetriever(BaseRetriever):
 
     def _create_retriever_and_vs_operator(self, docs: List[Document]) \
             -> tuple[LangChainMultiVectorRetriever, VectorStoreOperator]:
-        vstore_operator = VectorStoreOperator(
-            vector_store=self.vectorstore,
-            documents=docs,
-            embeddings_model=self.embeddings_model
-        )
+
         retriever = LangChainMultiVectorRetriever(
-            vectorstore=vstore_operator.vector_store,
+            vectorstore=self.vector_store_operator.vector_store,
             byte_store=self.parentstore,
             id_key=self.id_key
         )
-        return retriever, vstore_operator
+        return retriever, self.vector_store_operator
 
     def _get_document_summaries(self) -> List[str]:
         chain = (
                 {"doc":lambda x:x.page_content}
                 | ChatPromptTemplate.from_template("Summarize the following document:\n\n{doc}")
-                | ChatOpenAI(max_retries=0, model_name=DEFAULT_LLM_MODEL)
+                | get_llm(max_retries=0)
                 | StrOutputParser()
         )
         return chain.batch(self.documents, {"max_concurrency": _MAX_CONCURRENCY})
