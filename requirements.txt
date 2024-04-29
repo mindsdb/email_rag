@@ -19,3 +19,4 @@ pgvector
 psycopg2-binary
 gpt4all
 rank_bm25
+llama-index

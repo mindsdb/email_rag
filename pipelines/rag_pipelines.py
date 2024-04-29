@@ -7,16 +7,30 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.retrievers import BaseRetriever
 from langchain_core.vectorstores import VectorStore
 
+
+from llama_index.core import QueryBundle
+from llama_index.core.postprocessor import LLMRerank
+
 from retrievers.auto_retriever import AutoRetriever
 from retrievers.ensemble_retriever import EnsembleRetriever
 from retrievers.multi_vector_retriever import MultiVectorRetriever, MultiVectorRetrieverMode
 from retrievers.sql_retriever import SQLRetriever
-from langchain_core.runnables import RunnableParallel, RunnablePassthrough, RunnableSerializable
+from langchain_core.runnables import RunnableParallel, RunnablePassthrough, RunnableSerializable, Runnable
 from langchain.docstore.document import Document
 
 from settings import DEFAULT_LLM, DEFAULT_SQL_RETRIEVAL_PROMPT_TEMPLATE, DEFAULT_AUTO_META_PROMPT_TEMPLATE
 from utils import VectorStoreOperator
 
+
+class RunnableFunction(Runnable):
+    def __init__(self, function, *args, **kwargs):
+        self.function = function
+        self.args = args
+        self.kwargs = kwargs
+
+    def invoke(self, input, config=None):
+        # The function is expected to take the input data as its first argument
+        return self.function(input, *self.args, **self.kwargs)
 
 class LangChainRAGPipeline:
     """
@@ -44,6 +58,20 @@ class LangChainRAGPipeline:
 
         prompt = ChatPromptTemplate.from_template(self.prompt_template)
 
+        def retrieve_and_rerank(query_str):
+            # Create a query bundle
+            query_bundle = QueryBundle(query_str)
+            # Perform retrieval
+            retrieved_nodes = self.retriever_runnable.as_runnable().retrieve(query_bundle)
+            # Perform reranking
+            reranker = LLMRerank(
+                llm = self.llm,
+                choice_batch_size=5,
+                top_n=5
+            )
+            reranked_nodes = reranker.postprocess_nodes(retrieved_nodes, query_bundle)
+            return reranked_nodes
+
         rag_chain_from_docs = (
                 RunnablePassthrough.assign(context=(lambda x: format_docs(x["context"])))
                 | prompt
@@ -52,7 +80,7 @@ class LangChainRAGPipeline:
         )
 
         rag_chain_with_source = RunnableParallel(
-            {"context": self.retriever_runnable, "question": RunnablePassthrough()}
+            {"context": RunnableFunction(retrieve_and_rerank), "question": RunnablePassthrough()}
         ).assign(answer=rag_chain_from_docs)
 
         return rag_chain_with_source
