@@ -1,4 +1,5 @@
 from typing import List, Dict
+import re
 
 from langchain.text_splitter import TextSplitter
 from langchain_core.language_models import BaseChatModel
@@ -14,7 +15,8 @@ from retrievers.sql_retriever import SQLRetriever
 from langchain_core.runnables import RunnableParallel, RunnablePassthrough, RunnableSerializable
 from langchain.docstore.document import Document
 
-from settings import DEFAULT_LLM, DEFAULT_SQL_RETRIEVAL_PROMPT_TEMPLATE, DEFAULT_AUTO_META_PROMPT_TEMPLATE
+from settings import DEFAULT_LLM, DEFAULT_SQL_RETRIEVAL_PROMPT_TEMPLATE, DEFAULT_AUTO_META_PROMPT_TEMPLATE, \
+    DEFAULT_RERANKING_PROMPT_TEMPLATE, DEFAULT_RERANK
 from utils import VectorStoreOperator
 
 
@@ -23,11 +25,12 @@ class LangChainRAGPipeline:
     Builds a RAG pipeline using langchain LCEL components
     """
 
-    def __init__(self, retriever_runnable, prompt_template, llm=DEFAULT_LLM):
+    def __init__(self, retriever_runnable, prompt_template, llm=DEFAULT_LLM, rerank_documents=DEFAULT_RERANK):
 
         self.retriever_runnable = retriever_runnable
         self.prompt_template = prompt_template
         self.llm = llm
+        self.do_rerank = rerank_documents
 
     def rag_with_returned_sources(self) -> RunnableSerializable:
         """
@@ -42,39 +45,100 @@ class LangChainRAGPipeline:
                 return docs
             return "\n\n".join(doc.page_content+("\n".join(k+" : "+v for k,v in doc.metadata.items())) for doc in docs)
 
+        # Function to format documents with labels
+        def format_docs_with_labels(docs):
+            if isinstance(docs, str):
+                # this is to handle the case where the retriever returns a string
+                # instead of a list of documents e.g. SQLRetriever
+                return docs
+            formatted_docs = ""
+            for i, doc in enumerate(docs, start=1):
+                formatted_docs += f"Document {i}:\n{doc}\n\n"
+            return formatted_docs
+
+        # Function to extract document IDs from reranking output
+        def extract_document_ids(reranking_output):
+            doc_ids = re.findall(r"Doc: (\d+), Relevance:", reranking_output)
+            return [int(doc_id) for doc_id in doc_ids]
+
+        # Function to map document IDs back to the original documents
+        def get_reranked_docs(doc_ids, original_docs):
+            max_index = len(original_docs)
+            reranked_docs = []
+            for doc_id in doc_ids:
+                if 1 <= doc_id <= max_index:
+                    reranked_docs.append(original_docs[doc_id - 1])
+            return format_docs(reranked_docs)
+
         prompt = ChatPromptTemplate.from_template(self.prompt_template)
 
-        rag_chain_from_docs = (
-                RunnablePassthrough.assign(context=(lambda x: format_docs(x["context"])))
-                | prompt
-                | self.llm
-                | StrOutputParser()
-        )
+        if self.do_rerank:
+            # Create a prompt for reranking
+            reranking_prompt = ChatPromptTemplate.from_template(DEFAULT_RERANKING_PROMPT_TEMPLATE)
 
-        rag_chain_with_source = RunnableParallel(
-            {"context": self.retriever_runnable, "question": RunnablePassthrough()}
-        ).assign(answer=rag_chain_from_docs)
+            # Create a chain to handle the reranking
+            reranking_chain = (
+                    RunnablePassthrough.assign(context_str=lambda x: format_docs_with_labels(x["context"]),
+                                               query_str=lambda x: x["question"])
+                    | reranking_prompt
+                    | self.llm
+                    | StrOutputParser()
+            )
+            rag_chain_with_reranking = (
+                RunnableParallel(
+                    {"context": self.retriever_runnable, "question": RunnablePassthrough()}
+                )
+                .assign(
+                    reranked_docs=lambda x: get_reranked_docs(extract_document_ids(reranking_chain.invoke(x)), x["context"]))
+            )
 
-        return rag_chain_with_source
+            rag_chain_from_docs = (
+                    RunnablePassthrough.assign(context=lambda x: format_docs(x["reranked_docs"]),
+                                               question=lambda x: x["question"])
+                    | prompt
+                    | self.llm
+                    | StrOutputParser()
+            )
+
+            rag_chain_with_source = (
+                rag_chain_with_reranking
+            ).assign(answer=rag_chain_from_docs)
+
+            return rag_chain_with_source
+        else:
+            rag_chain_from_docs = (
+                    RunnablePassthrough.assign(context=(lambda x: format_docs(x["context"])))
+                    | prompt
+                    | self.llm
+                    | StrOutputParser()
+            )
+
+            rag_chain_with_source = RunnableParallel(
+                {"context": self.retriever_runnable, "question": RunnablePassthrough()}
+            ).assign(answer=rag_chain_from_docs)
+
+            return rag_chain_with_source
 
     @classmethod
-    def from_retriever(cls, retriever: BaseRetriever, prompt_template: str, llm: BaseChatModel):
+    def from_retriever(cls, retriever: BaseRetriever, prompt_template: str, llm: BaseChatModel, rerank_documents: bool):
         """
         Builds a RAG pipeline with returned sources using a BaseRetriever
+        :param rerank_documents: bool
         :param retriever: BaseRetriever
         :param prompt_template: str
         :param llm: BaseChatModel
 
         :return:
         """
-        return cls(retriever, prompt_template, llm)
+        return cls(retriever, prompt_template, llm, rerank_documents=rerank_documents)
 
     @classmethod
     def from_sql_retriever(cls,
                            connection_string,
                            retriever_prompt_template: dict,
                            rag_prompt_template,
-                           llm: BaseChatModel = None
+                           llm: BaseChatModel = None,
+                           rerank_documents: bool = False
                            ):
         """
         Builds a RAG pipeline with returned sources using a SQLRetriever
@@ -83,6 +147,7 @@ class LangChainRAGPipeline:
         :param retriever_prompt_template: dict
         :param rag_prompt_template: str
         :param llm: BaseChatModel
+        :param rerank_documents: bool
 
         :return:
         """
@@ -93,13 +158,14 @@ class LangChainRAGPipeline:
             prompt_template=retriever_prompt_template
         ).as_runnable()
 
-        return cls(retriever_runnable, rag_prompt_template, llm)
+        return cls(retriever_runnable, rag_prompt_template, llm, rerank_documents=rerank_documents)
 
     @classmethod
     def from_ensemble_retriever(cls,
                            rag_prompt_template: str,
                            runnable_retrievers: List[Dict],
-                           llm: BaseChatModel = None
+                           llm: BaseChatModel = None,
+                           rerank_documents: bool = False
                            ):
         """
         Builds a RAG pipeline with returned sources using a SQLRetriever
@@ -107,6 +173,7 @@ class LangChainRAGPipeline:
         :param rag_prompt_template: str
         :param runnable_retrievers: list[dict]
         :param llm: BaseChatModel
+        :param rerank_documents: bool
 
         :return:
         """
@@ -116,7 +183,7 @@ class LangChainRAGPipeline:
             llm=llm
         ).as_runnable()
 
-        return cls(retriever_runnable, rag_prompt_template, llm)
+        return cls(retriever_runnable, rag_prompt_template, llm, rerank_documents=rerank_documents)
 
     @classmethod
     def from_auto_retriever(cls,
@@ -127,7 +194,8 @@ class LangChainRAGPipeline:
                             data: List[Document],
                             vectorstore: VectorStore = None,
                             llm: BaseChatModel = None,
-                            vector_store_operator: VectorStoreOperator = None
+                            vector_store_operator: VectorStoreOperator = None,
+                            rerank_documents: bool = False,
                             ):
         """
         Builds a RAG pipeline with returned sources using a AutoRetriever
@@ -143,6 +211,7 @@ class LangChainRAGPipeline:
         :param vectorstore: VectorStore
         :param llm: BaseChatModel
         :param vector_store_operator: VectorStoreOperator
+        :param rerank_documents: bool
 
         :return:
         """
@@ -151,7 +220,7 @@ class LangChainRAGPipeline:
         retriever_runnable = AutoRetriever(data=data, content_column_name=content_column_name, vectorstore=vectorstore,
                                            document_description=data_description,
                                            prompt_template=retriever_prompt_template, vector_store_operator=vector_store_operator).as_runnable()
-        return cls(retriever_runnable, rag_prompt_template, llm)
+        return cls(retriever_runnable, rag_prompt_template, llm, rerank_documents=rerank_documents)
 
     @classmethod
     def from_multi_vector_retriever(
@@ -163,8 +232,9 @@ class LangChainRAGPipeline:
         text_splitter: TextSplitter = None,
         llm: BaseChatModel = None,
         mode: MultiVectorRetrieverMode = MultiVectorRetrieverMode.BOTH,
-        vector_store_operator: VectorStoreOperator = None
+        vector_store_operator: VectorStoreOperator = None,
+        rerank_documents: bool = False
     ):
         retriever_runnable = MultiVectorRetriever(
             documents=documents, doc_ids=doc_ids, vectorstore=vectorstore, text_splitter=text_splitter, mode=mode, vector_store_operator=vector_store_operator).as_runnable()
-        return cls(retriever_runnable, rag_prompt_template, llm)
+        return cls(retriever_runnable, rag_prompt_template, llm, rerank_documents=rerank_documents)
