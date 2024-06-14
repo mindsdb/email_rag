@@ -51,6 +51,7 @@ def evaluate(
 
     answers = []
     contexts = []
+    reranked_docs = []
     num_questions = len(questions)
     for i, question in enumerate(questions):
         logging.info('Answering question {} of {}'.format(
@@ -59,6 +60,8 @@ def evaluate(
         answers.append(result['answer'])
         contexts.append(
             [docs.page_content for docs in result['context']])
+        if 'reranked_docs' in result:
+            reranked_docs.append(result['reranked_docs'])
 
     data = {
         'question': questions,
@@ -66,6 +69,8 @@ def evaluate(
         'contexts': contexts,
         'ground_truths': ground_truths
     }
+    if len(reranked_docs) != 0:
+        data['reranked_docs'] = reranked_docs
     dataset = Dataset.from_dict(data)
 
     result = ragas_evaluate(

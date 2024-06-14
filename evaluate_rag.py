@@ -114,6 +114,7 @@ class GetPipelineArgs:
     rag_prompt_template: str
     retriever_prompt_template: Union[str, dict]
     retriever_type: RetrieverType
+    rerank_documents: bool
     multi_retriever_mode: MultiVectorRetrieverMode
     retriever_map: dict
     _vector_store_operator: Union[VectorStoreOperator, None] = None
@@ -171,20 +172,30 @@ class GetPipelineArgs:
 
 
 def _create_vector_store_retriever(pipeline_args: GetPipelineArgs):
+    if pipeline_args.rerank_documents:
+        k = 40
+    else:
+        k = 5
     return LangChainRAGPipeline.from_retriever(
-        retriever=pipeline_args.vector_store_operator.vector_store.as_retriever(),
+        retriever=pipeline_args.vector_store_operator.vector_store.as_retriever(search_kwargs={"k": k}),
         prompt_template=DEFAULT_EVALUATION_PROMPT_TEMPLATE,
-        llm=pipeline_args.llm
+        llm=pipeline_args.llm,
+        rerank_documents = pipeline_args.rerank_documents
     )
 
 
 def _create_bm25_retriever(pipeline_args: GetPipelineArgs):
+    if pipeline_args.rerank_documents:
+        k = 40
+    else:
+        k = 5
     bm25_retriever = BM25Retriever.from_documents(pipeline_args.all_documents)
-    bm25_retriever.k = 2
+    bm25_retriever.k = k
     return LangChainRAGPipeline.from_retriever(
         retriever=bm25_retriever,
         prompt_template=DEFAULT_EVALUATION_PROMPT_TEMPLATE,
-        llm=pipeline_args.llm
+        llm=pipeline_args.llm,
+        rerank_documents=pipeline_args.rerank_documents
     )
 
 
@@ -203,7 +214,8 @@ def _create_auto_retriever(pipeline_args: GetPipelineArgs):
         retriever_prompt_template=pipeline_args.retriever_prompt_template,
         rag_prompt_template=DEFAULT_EVALUATION_PROMPT_TEMPLATE,
         llm=pipeline_args.llm,
-        vector_store_operator=pipeline_args.vector_store_operator
+        vector_store_operator=pipeline_args.vector_store_operator,
+        rerank_documents=pipeline_args.rerank_documents
     )
 
 
@@ -226,7 +238,8 @@ def _create_sql_retriever(pipeline_args: GetPipelineArgs):
         connection_string=pipeline_args.db_connection_string,
         retriever_prompt_template=pipeline_args.retriever_prompt_template,
         rag_prompt_template=pipeline_args.rag_prompt_template,
-        llm=pipeline_args.llm
+        llm=pipeline_args.llm,
+        rerank_documents=pipeline_args.rerank_documents
     )
 
 
@@ -245,6 +258,7 @@ def _create_multi_retriever(pipeline_args: GetPipelineArgs):
         llm=pipeline_args.llm,
         mode=pipeline_args.multi_retriever_mode,
         vector_store_operator=pipeline_args.vector_store_operator,
+        rerank_documents=pipeline_args.rerank_documents
     )
 
 
@@ -257,7 +271,8 @@ def _create_ensemble_retriever(pipeline_args: GetPipelineArgs):
 
     return LangChainRAGPipeline.from_ensemble_retriever(rag_prompt_template=pipeline_args.rag_prompt_template,
                                                         llm=pipeline_args.llm,
-                                                        runnable_retrievers=runnable_retrievers)
+                                                        runnable_retrievers=runnable_retrievers,
+                                                        rerank_documents = pipeline_args.rerank_documents)
 
 
 def _get_pipeline_from_retriever(pipeline_args: GetPipelineArgs) -> LangChainRAGPipeline:
@@ -301,6 +316,7 @@ def evaluate_rag(dataset: str,
                  split_documents=True,
                  multi_retriever_mode: MultiVectorRetrieverMode = MultiVectorRetrieverMode.BOTH,
                  existing_vector_store: bool = False,
+                 rerank_documents=False,
                  retriever_map=None
                  ):
     """
@@ -349,7 +365,8 @@ def evaluate_rag(dataset: str,
         retriever_prompt_template=retriever_prompt_template,
         retriever_type=retriever_type,
         multi_retriever_mode=multi_retriever_mode,
-        retriever_map=retriever_map
+        retriever_map=retriever_map,
+        rerank_documents=rerank_documents
     )
 
     rag_pipeline = _get_pipeline_from_retriever(pipeline_args)
@@ -412,6 +429,9 @@ Uses evaluation metrics from the RAGAs library.
     parser.add_argument('-s', '--split_documents', type=bool,
                         help='Whether or not to split documents after they are loaded',
                         default=True)
+    parser.add_argument('-rd','--rerank_documents', type=bool,
+                        help='Whether or not to use an LLM to rerank documents after pulling.',
+                        default=False)
 
     parser.add_argument('-evs', '--existing_vector_store',
                         help='If using an existing vector store, update .env file with config',
@@ -458,5 +478,6 @@ Uses evaluation metrics from the RAGAs library.
                  input_data_type=args.input_data_type, show_visualization=args.show_visualization,
                  split_documents=args.split_documents, multi_retriever_mode=MultiVectorRetrieverMode.BOTH,
                  existing_vector_store=args.existing_vector_store,
+                 rerank_documents=args.rerank_documents,
                  retriever_map=retriever_map)
 
