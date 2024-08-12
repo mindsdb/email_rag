@@ -67,21 +67,27 @@ You are an AI assistant responsible for generating a question and answer pair fr
 ### Task:
 - **Primary Objective**: Generate a question that requires both the document content and metadata to be answered.
 - **Secondary Objective**: If it's not feasible, generate a question based on the document content alone.
+- **Tertiary Objective**: Identify the specific parts of the document that provide context for the answer.
 
 ### Output Format:
 - Return a valid JSON string structured as follows:
 {{
     "question": "<Your generated question here>",
-    "answer": "<Your generated answer here>"
+    "answer": "<Your generated answer here>",
+    "reference_contexts": [
+        "<Relevant excerpt from the document>",
+        "<Another relevant excerpt if applicable>"
+    ]
 }}
 - Ensure that the JSON string is correctly formatted before returning.
+- The "reference_contexts" should be a list of string excerpts from the document that are most relevant to answering the question.
 
 ### Example:
 - **Document**: {document}
 - **Metadata**: {metadata}
 
 ### Response:
-- Return the result in the specified JSON format.
+- Return the result in the specified JSON format, including the question, answer, and reference contexts.
 
 Answer:
 '''
