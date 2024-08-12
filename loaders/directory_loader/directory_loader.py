@@ -1,17 +1,11 @@
 import pathlib
 from typing import Iterator, List
-
 from langchain_community.document_loaders.base import BaseLoader
-from langchain_community.document_loaders import PyMuPDFLoader
-from langchain_community.document_loaders import TextLoader
-from langchain_community.document_loaders import UnstructuredHTMLLoader
-from langchain_community.document_loaders import UnstructuredMarkdownLoader
+from langchain_community.document_loaders import PyMuPDFLoader, TextLoader, UnstructuredHTMLLoader, UnstructuredMarkdownLoader
 from langchain.text_splitter import TextSplitter
 from langchain_core.documents.base import Document
-
 from loaders.directory_loader.csv_loader import CSVLoader
 from settings import DEFAULT_EMBEDDINGS
-
 from splitter.splitter import AutoSplitter
 
 class DirectoryLoader(BaseLoader):
@@ -23,7 +17,7 @@ class DirectoryLoader(BaseLoader):
         self.html_loader_options = {
             "mode": "single"
         }
-        self.as_text = True
+        self.as_text = False
         super().__init__()
 
     def _get_loader_from_extension(self, extension: str, path: str) -> BaseLoader:
@@ -32,6 +26,7 @@ class DirectoryLoader(BaseLoader):
         if extension == '.pdf':
             return PyMuPDFLoader(path)
         if extension == '.csv':
+            # CSVLoader will handle loading each row as a separate document
             return CSVLoader(path)
         if extension == '.html':
             return UnstructuredHTMLLoader(path, **self.html_loader_options)
@@ -46,7 +41,6 @@ class DirectoryLoader(BaseLoader):
         for doc in loader.lazy_load():
             doc.metadata['extension'] = file_extension
             yield doc
-
 
     def _get_text_splitter_from_extension(self, extension: str) -> TextSplitter:
         if extension == '.pdf':
@@ -64,7 +58,6 @@ class DirectoryLoader(BaseLoader):
         return RecursiveCharacterTextSplitter(
             chunk_size=DEFAULT_CHUNK_SIZE,
             chunk_overlap=DEFAULT_CHUNK_OVERLAP)
-
 
     def load_and_split(self, text_splitter: TextSplitter = None) -> List[Document]:
         return self.splitter.split_documents(self.load(), text_splitter=text_splitter)
