@@ -72,6 +72,7 @@ def generate(
                 'model_name': DEFAULT_LLM_MODEL,
                 'type': 'ai'
             },
+            "reference_contexts": qa_dict['reference_contexts'],
             'reference_answer_by': {
                 'model_name': DEFAULT_LLM_MODEL,
                 'type': 'ai'
