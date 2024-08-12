@@ -9,7 +9,7 @@ from langchain_core.documents.base import Document
 from loaders.directory_loader.directory_loader import DirectoryLoader
 from settings import DEFAULT_LLM, DEFAULT_LLM_MODEL, DEFAULT_QA_GENERATION_PROMPT_TEMPLATE
 
-_MAX_DOCUMENT_TOKENS = 40000
+_MAX_DOCUMENT_TOKENS = 60000
 
 app = typer.Typer()
 
