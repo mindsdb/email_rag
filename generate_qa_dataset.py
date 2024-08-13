@@ -2,7 +2,6 @@ from pathlib import Path
 from typing import List
 import json
 import logging
-import os
 
 import typer
 from langchain_core.documents.base import Document
@@ -10,12 +9,14 @@ from loaders.directory_loader.directory_loader import DirectoryLoader
 from settings import DEFAULT_LLM, DEFAULT_LLM_MODEL, DEFAULT_QA_GENERATION_PROMPT_TEMPLATE
 
 _MAX_DOCUMENT_TOKENS = 60000
+DATA_PATH = Path('..') / 'data' / 'retrieval'
 
 app = typer.Typer()
 
+
 def _load_files(dataset: str) -> List[Document]:
     # Define the path to the source files directory
-    source_files_path = Path('./data') / dataset / 'source_files'
+    source_files_path = DATA_PATH / dataset / 'source_files'
     source_files = []
     for f in source_files_path.iterdir():
         if f.is_file():
@@ -82,10 +83,11 @@ def generate(
 
     dataset_obj = {'examples': all_examples}
 
-    dataset_path = os.path.join('./data', dataset, 'rag_dataset.json')
+    dataset_path = DATA_PATH / dataset / 'rag_dataset.json'
     with open(dataset_path, 'w') as dataset_file:
         json.dump(dataset_obj, dataset_file, indent=4)
     logging.info('Dataset saved to {}'.format(dataset_path))
+
 
 if __name__ == '__main__':
     app()
