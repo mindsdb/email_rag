@@ -22,7 +22,7 @@ _DEFAULT_MAX_RAGAS_WAIT_TIME_SECS = 500
 
 def evaluate(
         pipeline: RunnableSerializable,
-        qa_dataset_path: str,
+        qa_dataset: str,
         output_path: str) -> DataFrame:
     '''
     Evaluates a RAG pipeline against the given Q&A dataset using the RAGAs library.
@@ -37,11 +37,6 @@ def evaluate(
     Returns:
         df (DataFrame): DataFrame representing evaluation results
     '''
-    qa_dataset = {'examples': []}
-    with open(qa_dataset_path) as qa_dataset_file:
-        dataset_str = qa_dataset_file.read()
-        qa_dataset = json.loads(dataset_str)
-
     examples = qa_dataset['examples']
     questions = []
     ground_truths = []

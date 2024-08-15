@@ -1,9 +1,9 @@
 import pathlib
-from typing import Iterator, List
+from typing import Iterator, List, Optional
+from langchain.docstore.document import Document
+from langchain.text_splitter import TextSplitter
 from langchain_community.document_loaders.base import BaseLoader
 from langchain_community.document_loaders import PyMuPDFLoader, TextLoader, UnstructuredHTMLLoader, UnstructuredMarkdownLoader
-from langchain.text_splitter import TextSplitter
-from langchain_core.documents.base import Document
 from loaders.directory_loader.csv_loader import CSVLoader
 from settings import DEFAULT_EMBEDDINGS
 from splitter.splitter import AutoSplitter
@@ -26,7 +26,6 @@ class DirectoryLoader(BaseLoader):
         if extension == '.pdf':
             return PyMuPDFLoader(path)
         if extension == '.csv':
-            # CSVLoader will handle loading each row as a separate document
             return CSVLoader(path)
         if extension == '.html':
             return UnstructuredHTMLLoader(path, **self.html_loader_options)
@@ -40,14 +39,14 @@ class DirectoryLoader(BaseLoader):
 
         for doc in loader.lazy_load():
             doc.metadata['extension'] = file_extension
+            doc.metadata['source'] = path
             yield doc
 
     def _get_text_splitter_from_extension(self, extension: str) -> TextSplitter:
         if extension == '.pdf':
             return SemanticChunker(DEFAULT_EMBEDDINGS)
         if extension == '.md':
-            return MarkdownHeaderTextSplitter(headers_to_split_on=[(
-                '#', 'Header 1'), ('##', 'Header 2'), ('###', 'Header 3')])
+            return MarkdownHeaderTextSplitter(headers_to_split_on=[('#', 'Header 1'), ('##', 'Header 2'), ('###', 'Header 3')])
         if extension == '.html':
             return HTMLHeaderTextSplitter(headers_to_split_on=[
                 ('h1', 'Header 1'),
@@ -59,7 +58,7 @@ class DirectoryLoader(BaseLoader):
             chunk_size=DEFAULT_CHUNK_SIZE,
             chunk_overlap=DEFAULT_CHUNK_OVERLAP)
 
-    def load_and_split(self, text_splitter: TextSplitter = None) -> List[Document]:
+    def load_and_split(self, text_splitter: Optional[TextSplitter] = None) -> List[Document]:
         return self.splitter.split_documents(self.load(), text_splitter=text_splitter)
 
     def load(self) -> List[Document]:
@@ -67,6 +66,4 @@ class DirectoryLoader(BaseLoader):
 
     def lazy_load(self) -> Iterator[Document]:
         for f in self.paths:
-            # Load and split each file individually
-            for doc in self._lazy_load_documents_from_file(f):
-                yield doc
+            yield from self._lazy_load_documents_from_file(f)
