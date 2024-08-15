@@ -197,6 +197,7 @@ def create_vector_store_and_operator(documents: List[Document], vector_store_cla
     logger.info('Vector store and operator creation complete')
     return vector_store_operator
 
+
 def ingest_files(dataset: str, split_documents: bool, max_docs: Optional[int] = None) -> List[Document]:
     source_files_path = pathlib.Path('./data') / dataset / 'source_files'
     source_files = [str(f) for f in source_files_path.iterdir() if f.is_file()]
@@ -401,7 +402,7 @@ def _get_pipeline_from_retriever(pipeline_args: GetPipelineArgs) -> LangChainRAG
 
 
 def load_and_limit_qa_samples(qa_file: str, max_qa_samples: Optional[int] = None) -> List[Dict]:
-    # Open and load the JSON file
+
     with open(qa_file, 'r') as f:
         qa_data = json.load(f)
 
@@ -409,10 +410,8 @@ def load_and_limit_qa_samples(qa_file: str, max_qa_samples: Optional[int] = None
     if max_qa_samples is not None:
         qa_data['examples'] = qa_data['examples'][:max_qa_samples]
 
-    # Log the number of samples loaded
     logger.info(f"Loaded {len(qa_data['examples'])} QA samples for evaluation")
 
-    # Return the (potentially limited) data
     return qa_data
 
 
@@ -481,13 +480,12 @@ def evaluate_rag(dataset: str,
         # Load and limit QA samples before evaluation
         qa_samples = load_and_limit_qa_samples(qa_file, max_qa_samples)
 
-        evaluation_df = evaluate.evaluate(rag_chain, qa_samples, output_file)
+        summary_df, individual_scores_df = evaluate.evaluate(rag_chain, qa_samples, output_file)
 
         if show_visualization:
-            visualize_evaluation_metrics(output_file, evaluation_df)
+            visualize_evaluation_metrics(output_file, individual_scores_df)
 
         logger.info(f"Evaluation complete. Results saved to {output_file}")
-        return evaluation_df
 
     except Exception as e:
         logger.error(f"An error occurred during evaluation: {str(e)}")
