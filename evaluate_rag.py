@@ -445,7 +445,7 @@ def evaluate_rag(dataset: str,
         if llm is None:
             raise ValueError("llm must be provided")
 
-        all_documents = ingest_files(dataset, split_documents=False, max_docs=max_input_docs)
+        all_documents = ingest_files(dataset, split_documents=split_documents, max_docs=max_input_docs)
 
         if not existing_vector_store:
             vector_store_operator = create_vector_store_and_operator(all_documents, vector_store_class,
