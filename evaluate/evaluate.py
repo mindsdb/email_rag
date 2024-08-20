@@ -20,6 +20,7 @@ from settings import DEFAULT_LLM, DEFAULT_EMBEDDINGS
 
 _DEFAULT_MAX_RAGAS_RETRIES = 20
 _DEFAULT_MAX_RAGAS_WAIT_TIME_SECS = 500
+_DEFAULT_METRICS = ['context_precision', 'context_recall', 'faithfulness', 'answer_relevancy']
 
 def evaluate(
         pipeline: RunnableSerializable,
@@ -91,12 +92,12 @@ def evaluate(
 
     # Summary statistics DataFrame
     summary_df = DataFrame({
-        'metric': ['context_precision', 'context_recall', 'faithfulness', 'answer_relevancy'],
-        'mean': individual_scores_df[['context_precision', 'context_recall', 'faithfulness', 'answer_relevancy']].mean(),
-        'median': individual_scores_df[['context_precision', 'context_recall', 'faithfulness', 'answer_relevancy']].median(),
-        'std': individual_scores_df[['context_precision', 'context_recall', 'faithfulness', 'answer_relevancy']].std(),
-        'min': individual_scores_df[['context_precision', 'context_recall', 'faithfulness', 'answer_relevancy']].min(),
-        'max': individual_scores_df[['context_precision', 'context_recall', 'faithfulness', 'answer_relevancy']].max(),
+        'metric': _DEFAULT_METRICS,
+        'mean': individual_scores_df[_DEFAULT_METRICS].mean(),
+        'median': individual_scores_df[_DEFAULT_METRICS].median(),
+        'std': individual_scores_df[_DEFAULT_METRICS].std(),
+        'min': individual_scores_df[_DEFAULT_METRICS].min(),
+        'max': individual_scores_df[_DEFAULT_METRICS].max(),
     })
 
     # Generate timestamp
