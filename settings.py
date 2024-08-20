@@ -11,7 +11,7 @@ DEFAULT_POOL_RECYCLE = 3600
 
 #OpenAI LLM Provider Settings
 DEFAULT_LLM_PROVIDER = "openai"
-DEFAULT_LLM_MODEL = "gpt-3.5-turbo"
+DEFAULT_LLM_MODEL = "gpt-4o"
 
 
 #Ollama LLM Provider Settings
@@ -57,25 +57,41 @@ Question: {question}
 Context: {context}
 Answer:'''
 
-DEFAULT_QA_GENERATION_PROMPT_TEMPLATE = '''You are an assistant for
-generating sample questions and answers from the given document and metadata. Given
-a document and its metadata as context, generate a question and answer from that document and its metadata.
+DEFAULT_QA_GENERATION_PROMPT_TEMPLATE = '''
+You are an AI assistant responsible for generating a question and answer pair from a given document and its associated metadata. Your task is to analyze the document content and the metadata provided, then generate a question that ideally requires information from both to answer. If that's not possible, generate a question based solely on the document.
 
-The document will be a string. The metadata will be a JSON string. You need
-to parse the JSON to understand it.
+### Instructions:
+1. **Document**: The primary text content that should be analyzed.
+2. **Metadata**: Additional contextual information provided as a JSON string.
 
-Generate a question that requires BOTH the document and metadata to answer, if possible.
-Otherwise, generate a question that requires ONLY the document to answer.
+### Task:
+- **Primary Objective**: Generate a question that requires both the document content and metadata to be answered.
+- **Secondary Objective**: If it's not feasible, generate a question based on the document content alone.
+- **Tertiary Objective**: Identify the specific parts of the document that provide context for the answer.
 
-Return a JSON dictionary with the question and answer like this:
-{{ "question": <the full generated question>, "answer": <the full generated answer> }}
+### Output Format:
+- Return a valid JSON string structured as follows:
+{{
+    "question": "<Your generated question here>",
+    "answer": "<Your generated answer here>",
+    "reference_contexts": [
+        "<Relevant excerpt from the document>",
+        "<Another relevant excerpt if applicable>"
+    ]
+}}
+- Ensure that the JSON string is correctly formatted before returning.
+- The "reference_contexts" should be a list of string excerpts from the document that are most relevant to answering the question.
 
-Make sure the JSON string is valid before returning it. You must return the question and answer
-in the specified JSON format no matter what.
+### Example:
+- **Document**: {document}
+- **Metadata**: {metadata}
 
-Document: {document}
-Metadata: {metadata}
-Answer:'''
+### Response:
+- Return the result in the specified JSON format, including the question, answer, and reference contexts.
+
+Answer:
+'''
+
 
 DEFAULT_TEXT_2_PGVECTOR_PROMPT_TEMPLATE = """You are a Postgres expert. Given an input question, first create a syntactically correct Postgres query to run, then look at the results of the query and return the answer to the input question.
 Unless the user specifies in the question a specific number of examples to obtain, query for at most 5 results using the LIMIT clause as per Postgres. You can order the results to return the most informative data in the database.

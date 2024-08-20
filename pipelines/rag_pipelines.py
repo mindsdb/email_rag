@@ -37,13 +37,12 @@ class LangChainRAGPipeline:
         Builds a RAG pipeline with returned sources
         :return:
         """
-
         def format_docs(docs):
             if isinstance(docs, str):
                 # this is to handle the case where the retriever returns a string
                 # instead of a list of documents e.g. SQLRetriever
                 return docs
-            return "\n\n".join(doc.page_content+("\n".join(k+" : "+v for k,v in doc.metadata.items())) for doc in docs)
+            return "\n\n".join(doc.page_content for doc in docs)
 
         # Function to format documents with labels
         def format_docs_with_labels(docs):
