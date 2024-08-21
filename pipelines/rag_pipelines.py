@@ -1,7 +1,11 @@
+from copy import deepcopy, copy
 from typing import List, Dict
 import re
 
+from langchain.retrievers import ContextualCompressionRetriever
+from langchain.retrievers.document_compressors import CrossEncoderReranker
 from langchain.text_splitter import TextSplitter
+from langchain_community.cross_encoders import HuggingFaceCrossEncoder
 from langchain_core.language_models import BaseChatModel
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
@@ -16,7 +20,7 @@ from langchain_core.runnables import RunnableParallel, RunnablePassthrough, Runn
 from langchain.docstore.document import Document
 
 from settings import DEFAULT_LLM, DEFAULT_SQL_RETRIEVAL_PROMPT_TEMPLATE, DEFAULT_AUTO_META_PROMPT_TEMPLATE, \
-    DEFAULT_RERANKING_PROMPT_TEMPLATE, DEFAULT_RERANK
+    DEFAULT_RERANKING_PROMPT_TEMPLATE, DEFAULT_RERANK, ReRankerType
 from utils import VectorStoreOperator
 
 
@@ -30,20 +34,19 @@ class LangChainRAGPipeline:
         self.retriever_runnable = retriever_runnable
         self.prompt_template = prompt_template
         self.llm = llm
-        self.do_rerank = rerank_documents
+        self.rerank_type = rerank_documents
 
     def rag_with_returned_sources(self) -> RunnableSerializable:
         """
         Builds a RAG pipeline with returned sources
         :return:
         """
-
         def format_docs(docs):
             if isinstance(docs, str):
                 # this is to handle the case where the retriever returns a string
                 # instead of a list of documents e.g. SQLRetriever
                 return docs
-            return "\n\n".join(doc.page_content+("\n".join(k+" : "+v for k,v in doc.metadata.items())) for doc in docs)
+            return "\n\n".join(doc.page_content for doc in docs)
 
         # Function to format documents with labels
         def format_docs_with_labels(docs):
@@ -72,7 +75,7 @@ class LangChainRAGPipeline:
 
         prompt = ChatPromptTemplate.from_template(self.prompt_template)
 
-        if self.do_rerank:
+        if self.rerank_type == ReRankerType.OPENAI_PROMPT:
             # Create a prompt for reranking
             reranking_prompt = ChatPromptTemplate.from_template(DEFAULT_RERANKING_PROMPT_TEMPLATE)
 
@@ -105,19 +108,30 @@ class LangChainRAGPipeline:
             ).assign(answer=rag_chain_from_docs)
 
             return rag_chain_with_source
-        else:
-            rag_chain_from_docs = (
-                    RunnablePassthrough.assign(context=(lambda x: format_docs(x["context"])))
-                    | prompt
-                    | self.llm
-                    | StrOutputParser()
+
+        if self.rerank_type == ReRankerType.CROSS_ENCODER:
+
+            retriever = copy(self.retriever_runnable)
+
+            model = HuggingFaceCrossEncoder()
+            compressor = CrossEncoderReranker(model=model, top_n=3)
+            self.retriever_runnable = ContextualCompressionRetriever(
+                base_compressor=compressor, base_retriever=retriever
             )
 
-            rag_chain_with_source = RunnableParallel(
-                {"context": self.retriever_runnable, "question": RunnablePassthrough()}
-            ).assign(answer=rag_chain_from_docs)
+        rag_chain_from_docs = (
+                RunnablePassthrough.assign(context=(lambda x: format_docs(x["context"])))
+                | prompt
+                | self.llm
+                | StrOutputParser()
+        )
 
-            return rag_chain_with_source
+        rag_chain_with_source = RunnableParallel(
+            {"context": self.retriever_runnable, "question": RunnablePassthrough()}
+        ).assign(answer=rag_chain_from_docs)
+
+        return rag_chain_with_source
+
 
     @classmethod
     def from_retriever(cls, retriever: BaseRetriever, prompt_template: str, llm: BaseChatModel, rerank_documents: bool):

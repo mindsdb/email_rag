@@ -15,7 +15,7 @@ from loaders.email_loader.email_client import EmailClient
 from loaders.email_loader.email_search_options import EmailSearchOptions
 
 DEFAULT_CHUNK_SIZE = 500
-DEFAULT_CHUNK_OVERLAP = 50
+DEFAULT_CHUNK_OVERLAP = 100
 
 
 class EmailLoader(BaseLoader):
