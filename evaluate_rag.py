@@ -145,7 +145,9 @@ class GetPipelineArgs:
         child_text_splitter = RecursiveCharacterTextSplitter(
             chunk_size=DEFAULT_CHUNK_SIZE, chunk_overlap=DEFAULT_CHUNK_OVERLAP)
 
-        for doc, doc_id in zip(self.all_documents, self._doc_ids):
+        for doc in self.all_documents:
+            doc_id = str(uuid.uuid4())
+            self._doc_ids.append(doc_id)
             sub_docs = child_text_splitter.split_documents([doc])
             for sub_doc in sub_docs:
                 sub_doc.metadata[_DEFAULT_ID_KEY] = doc_id
@@ -281,7 +283,7 @@ def _create_retriever(pipeline_args: GetPipelineArgs, retriever_type: RetrieverT
     return creator(pipeline_args)
 
 def _create_vector_store_retriever(pipeline_args: GetPipelineArgs):
-    k = 5 if pipeline_args.rerank_documents == ReRankerType.DISABLED else 45
+    k = 40 if pipeline_args.rerank_documents else 5 if pipeline_args.rerank_documents == ReRankerType.DISABLED else 45
     return LangChainRAGPipeline.from_retriever(
         retriever=pipeline_args.vector_store_operator.vector_store.as_retriever(search_kwargs={"k": k}),
         prompt_template=DEFAULT_EVALUATION_PROMPT_TEMPLATE,
