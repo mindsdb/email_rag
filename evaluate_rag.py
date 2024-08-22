@@ -28,7 +28,8 @@ from retrievers.multi_vector_retriever import MultiVectorRetrieverMode
 from settings import (DEFAULT_CONTENT_COLUMN_NAME,
                       DEFAULT_DATASET_DESCRIPTION, DEFAULT_EMBEDDINGS, DEFAULT_EVALUATION_PROMPT_TEMPLATE,
                       DEFAULT_LLM, DEFAULT_POOL_RECYCLE, DEFAULT_TEST_TABLE_NAME, DEFAUlT_VECTOR_STORE,
-                      InputDataType, RetrieverType, ReRankerType)
+                      InputDataType, RetrieverType)
+from rerankers.settings import ReRankerType
 from utils import VectorStoreOperator, documents_to_df
 from visualize.visualize import visualize_evaluation_metrics
 

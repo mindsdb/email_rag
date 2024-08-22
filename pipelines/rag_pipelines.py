@@ -9,10 +9,8 @@ from langchain_community.cross_encoders import HuggingFaceCrossEncoder
 from langchain_core.language_models import BaseChatModel
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.retrievers import BaseRetriever
 from langchain_core.vectorstores import VectorStore
 
-from rerankers.openai import OpenAIReranker
 from rerankers.settings import get_reranker, ReRankerConfig
 from retrievers.auto_retriever import AutoRetriever
 from retrievers.ensemble_retriever import EnsembleRetriever
@@ -20,10 +18,9 @@ from retrievers.multi_vector_retriever import MultiVectorRetriever, MultiVectorR
 from retrievers.sql_retriever import SQLRetriever
 from langchain_core.runnables import RunnableParallel, RunnablePassthrough, RunnableSerializable
 from langchain.docstore.document import Document
-from langchain_nvidia_ai_endpoints.reranking import NVIDIARerank
 
 from settings import DEFAULT_LLM, DEFAULT_SQL_RETRIEVAL_PROMPT_TEMPLATE, DEFAULT_AUTO_META_PROMPT_TEMPLATE, \
-    DEFAULT_RERANKING_PROMPT_TEMPLATE, DEFAULT_RERANK, ReRankerType
+    DEFAULT_RERANKING_PROMPT_TEMPLATE
 from utils import VectorStoreOperator
 
 
