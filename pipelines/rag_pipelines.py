@@ -3,7 +3,7 @@ from typing import List, Dict
 import re
 
 from langchain.retrievers import ContextualCompressionRetriever
-from langchain.retrievers.document_compressors import CrossEncoderReranker
+from langchain.retrievers.document_compressors import CrossEncoderReranker, CohereRerank
 from langchain.text_splitter import TextSplitter
 from langchain_community.cross_encoders import HuggingFaceCrossEncoder
 from langchain_core.language_models import BaseChatModel
@@ -12,12 +12,14 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.retrievers import BaseRetriever
 from langchain_core.vectorstores import VectorStore
 
+from rerankers.openai import OpenAIReranker
 from retrievers.auto_retriever import AutoRetriever
 from retrievers.ensemble_retriever import EnsembleRetriever
 from retrievers.multi_vector_retriever import MultiVectorRetriever, MultiVectorRetrieverMode
 from retrievers.sql_retriever import SQLRetriever
 from langchain_core.runnables import RunnableParallel, RunnablePassthrough, RunnableSerializable
 from langchain.docstore.document import Document
+from langchain_nvidia_ai_endpoints.reranking import NVIDIARerank
 
 from settings import DEFAULT_LLM, DEFAULT_SQL_RETRIEVAL_PROMPT_TEMPLATE, DEFAULT_AUTO_META_PROMPT_TEMPLATE, \
     DEFAULT_RERANKING_PROMPT_TEMPLATE, DEFAULT_RERANK, ReRankerType
@@ -109,10 +111,34 @@ class LangChainRAGPipeline:
 
             return rag_chain_with_source
 
+        if self.rerank_type == ReRankerType.OPENAI_LOGPROBS:
+            retriever = copy(self.retriever_runnable)
+            # we use default values for the reranker for now
+            compressor = OpenAIReranker(model=self.llm.model_name, top_n=3)
+            self.retriever_runnable = ContextualCompressionRetriever(
+                base_compressor=compressor, base_retriever=retriever
+            )
+
+        if self.rerank_type == ReRankerType.NVIDIA:
+            retriever = copy(self.retriever_runnable)
+            # we use default values for the reranker for now
+            compressor = NVIDIARerank()
+            self.retriever_runnable = ContextualCompressionRetriever(
+                base_compressor=compressor, base_retriever=retriever
+            )
+
+        if self.rerank_type == ReRankerType.COHERE:
+            retriever = copy(self.retriever_runnable)
+            # we use default values for the reranker for now
+            compressor = CohereRerank()
+            self.retriever_runnable = ContextualCompressionRetriever(
+                base_compressor=compressor, base_retriever=retriever
+            )
+
         if self.rerank_type == ReRankerType.CROSS_ENCODER:
 
             retriever = copy(self.retriever_runnable)
-
+            # we use default values for the reranker for now
             model = HuggingFaceCrossEncoder()
             compressor = CrossEncoderReranker(model=model, top_n=3)
             self.retriever_runnable = ContextualCompressionRetriever(

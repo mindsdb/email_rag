@@ -2,32 +2,26 @@ import argparse
 import json
 import logging
 import os
-import platform
 import sys
 import uuid
-from concurrent.futures import ThreadPoolExecutor, as_completed
-from dataclasses import asdict, dataclass, field
+from dataclasses import dataclass, field
 from datetime import datetime
-from pathlib import Path
 import pathlib
 from typing import Dict, List, Optional, Type, Union
 
 from langchain.docstore.document import Document
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.vectorstores import Chroma
 from langchain_community.retrievers import BM25Retriever
 from langchain_core.embeddings import Embeddings
 from langchain_core.language_models import BaseChatModel
 from langchain_core.vectorstores import VectorStore
 from sqlalchemy import create_engine
-from tqdm import tqdm
 
 from evaluate import evaluate
 from loaders.directory_loader.directory_loader import DirectoryLoader
 from loaders.email_loader.email_client import EmailClient
 from loaders.email_loader.email_loader import DEFAULT_CHUNK_OVERLAP, DEFAULT_CHUNK_SIZE, EmailLoader
 from loaders.email_loader.email_search_options import EmailSearchOptions
-from loaders.vector_store_loader.vector_store_loader import load_vector_store
 from pipelines.rag_pipelines import LangChainRAGPipeline
 from retrievers.multi_vector_retriever import MultiVectorRetrieverMode
 from settings import (DEFAULT_CONTENT_COLUMN_NAME,
@@ -156,6 +150,7 @@ class GetPipelineArgs:
         # Update the VectorStoreOperator with the split documents
         self.vector_store_operator.documents = self._split_docs
 
+
     def _generate_id_and_split_document(self, doc: Document) -> tuple[str, list[Document]]:
         """
         Generate a unique id for the document and split it into sub-documents.
@@ -283,7 +278,7 @@ def _create_retriever(pipeline_args: GetPipelineArgs, retriever_type: RetrieverT
     return creator(pipeline_args)
 
 def _create_vector_store_retriever(pipeline_args: GetPipelineArgs):
-    k = 40 if pipeline_args.rerank_documents else 5 if pipeline_args.rerank_documents == ReRankerType.DISABLED else 45
+    k = 5 if pipeline_args.rerank_documents == ReRankerType.DISABLED else 45
     return LangChainRAGPipeline.from_retriever(
         retriever=pipeline_args.vector_store_operator.vector_store.as_retriever(search_kwargs={"k": k}),
         prompt_template=DEFAULT_EVALUATION_PROMPT_TEMPLATE,
