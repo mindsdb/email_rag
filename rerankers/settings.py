@@ -3,13 +3,14 @@ from langchain.retrievers.document_compressors import CohereRerank, CrossEncoder
 from langchain_community.cross_encoders import HuggingFaceCrossEncoder
 from langchain_nvidia_ai_endpoints import NVIDIARerank
 from pydantic import BaseModel, Field
-from typing import Union, Any
+from typing import Union, Any, Optional
 from enum import Enum
 
 from rerankers.openai import OpenAIReranker
 
 logger = logging.getLogger(__name__)
 
+DEFAULT_CROSS_ENCODER_MODEL = "BAAI/bge-reranker-base"
 
 class ReRankerType(str, Enum):
     DISABLED = "disabled"
@@ -44,8 +45,7 @@ class CohereConfig(BaseReRankerConfig):
 
 class CrossEncoderConfig(BaseReRankerConfig):
     type: ReRankerType = ReRankerType.CROSS_ENCODER
-    model_name: str = Field(None, description="HuggingFace model to use for cross-encoding")
-
+    model_name: Optional[str] = Field(DEFAULT_CROSS_ENCODER_MODEL, description="HuggingFace model name to use for reranking")
 
 class ReRankerConfig(BaseModel):
     config: Union[BaseReRankerConfig, OpenAILogProbsConfig, NvidiaConfig, CohereConfig, CrossEncoderConfig]
