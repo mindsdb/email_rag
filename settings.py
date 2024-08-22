@@ -169,15 +169,6 @@ class RetrieverType(Enum):
     ENSEMBLE = 'ensemble'
     HYBRID = 'hybrid'
 
-class ReRankerType(Enum):
-    DISABLED = 'disabled'
-    OPENAI_PROMPT = 'openai_prompt'
-    OPENAI_LOGPROBS = 'openai_logprobs' #TODO: Implement this
-    CROSS_ENCODER = 'cross_encoder'
-    COHERE = 'cohere' #TODO: Implement this
-    NVIDIA = 'nvidia' #TODO: Implement this
-
-
 class InputDataType(Enum):
     EMAIL = 'email'
     FILE = 'file'
