@@ -169,6 +169,7 @@ class RetrieverType(Enum):
     ENSEMBLE = 'ensemble'
     HYBRID = 'hybrid'
 
+
 class InputDataType(Enum):
     EMAIL = 'email'
     FILE = 'file'
