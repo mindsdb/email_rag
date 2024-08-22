@@ -481,7 +481,22 @@ def evaluate_rag(dataset: str,
         # Load and limit QA samples before evaluation
         qa_samples = load_and_limit_qa_samples(qa_file, max_qa_samples)
 
-        summary_df, individual_scores_df = evaluate.evaluate(rag_chain, qa_samples, output_file)
+        # Create a configuration dictionary
+        config = {
+            'dataset':dataset,
+            'retriever_type':retriever_type.value,
+            'input_data_type':input_data_type.value,
+            'split_documents':split_documents,
+            'multi_retriever_mode':multi_retriever_mode.value,
+            'rerank_documents':rerank_documents.value,
+            'embeddings_model':embeddings_model.model,
+            'llm':llm.model_name
+        }
+
+        individual_scores_df, summary_df = evaluate.evaluate(rag_chain, qa_samples, config)
+
+        # Save the results
+        evaluate.save_evaluation_results(individual_scores_df, summary_df, output_file)
 
         if show_visualization:
             visualize_evaluation_metrics(output_file, individual_scores_df)

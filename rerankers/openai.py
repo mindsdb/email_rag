@@ -13,9 +13,12 @@ from settings import DEFAULT_LLM_MODEL
 
 log = logging.getLogger(__name__)
 
+
 class Ranking(BaseModel):
     index: int
     relevance_score: float
+    is_relevant: bool
+
 
 class OpenAIReranker(BaseDocumentCompressor):
     _default_model: str = DEFAULT_LLM_MODEL
@@ -24,6 +27,8 @@ class OpenAIReranker(BaseDocumentCompressor):
     model: str = DEFAULT_LLM_MODEL  # Model to use for reranking
     temperature: float = 0.0  # Temperature for the model
     openai_api_key: Optional[str] = None
+    remove_irrelevant: bool = True  # New flag to control removal of irrelevant documents,
+    # by default it will remove irrelevant documents
 
     _api_key_var: str = "OPENAI_API_KEY"
     client: Optional[Any] = None
@@ -69,8 +74,8 @@ Is this document relevant to the query? Respond with either 'Relevant' or 'Not R
             response = client.chat.completions.create(
                 model=self.model,
                 messages=[
-                    {"role": "system", "content": "You are a document reranker."},
-                    {"role": "user", "content": prompt_template}
+                    {"role":"system", "content":"You are a document reranker."},
+                    {"role":"user", "content":prompt_template}
                 ],
                 max_tokens=1,
                 temperature=self.temperature,
@@ -78,7 +83,6 @@ Is this document relevant to the query? Respond with either 'Relevant' or 'Not R
             )
 
             # Extract the logprob for the last token (relevant or not relevant)
-            # We only care to include relevant documents
             last_token = response.choices[0].logprobs.content[0].token.strip().lower()
 
             is_relevant = last_token == 'relevant'
@@ -97,15 +101,19 @@ Is this document relevant to the query? Respond with either 'Relevant' or 'Not R
         rankings = []
         for idx, doc in enumerate(documents):
             is_relevant, relevance_score = self._rank_single_document(doc, query)
-            if is_relevant:
-                rankings.append(Ranking(index=idx, relevance_score=relevance_score))
+            rankings.append(Ranking(index=idx, relevance_score=relevance_score, is_relevant=is_relevant))
 
-        log.info(f"Reranking complete. {len(rankings)} relevant documents found")
+        log.info(f"Reranking complete. {len(rankings)} documents processed")
+
+        if self.remove_irrelevant:
+            rankings = [r for r in rankings if r.is_relevant]
+            log.info(f"{len(rankings)} relevant documents found after filtering")
+
         if not rankings:
-            log.warning("No relevant documents found after reranking")
+            log.warning("No relevant documents found after reranking and filtering")
             return []
 
-        sorted_rankings = sorted(rankings, key=lambda x: x.relevance_score, reverse=True)[:self.top_n]
+        sorted_rankings = sorted(rankings, key=lambda x:x.relevance_score, reverse=True)[:self.top_n]
         log.info(f"Returning top {len(sorted_rankings)} documents")
         return sorted_rankings
 
@@ -128,11 +136,12 @@ Is this document relevant to the query? Respond with either 'Relevant' or 'Not R
         for ranking in rankings:
             doc = documents[ranking.index]
             doc.metadata["relevance_score"] = ranking.relevance_score
+            doc.metadata["is_relevant"] = ranking.is_relevant
             compressed.append(doc)
 
-        log.info(f"Compression complete. {len(compressed)} relevant documents returned")
+        log.info(f"Compression complete. {len(compressed)} documents returned")
         if not compressed:
-            log.warning("No relevant documents found after compression")
+            log.warning("No documents found after compression")
 
         return compressed
 
@@ -140,7 +149,8 @@ Is this document relevant to the query? Respond with either 'Relevant' or 'Not R
     def _identifying_params(self) -> Dict[str, Any]:
         """Get the identifying parameters."""
         return {
-            "model": self.model,
-            "top_n": self.top_n,
-            "temperature": self.temperature,
+            "model":self.model,
+            "top_n":self.top_n,
+            "temperature":self.temperature,
+            "remove_irrelevant":self.remove_irrelevant,
         }
