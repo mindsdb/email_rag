@@ -25,7 +25,7 @@ _DEFAULT_METRICS = ['context_precision', 'context_recall', 'faithfulness', 'answ
 def evaluate(
         pipeline: RunnableSerializable,
         qa_dataset: Dict,
-        output_path: str) -> Tuple[DataFrame, DataFrame]:
+        config: Dict) -> Tuple[DataFrame, DataFrame]:
     '''
     Evaluates a RAG pipeline against the given Q&A dataset using the RAGAs library.
 
@@ -35,7 +35,7 @@ def evaluate(
             MUST follow format: {
                 'examples': [{'query': '...', 'reference_answer': '...'}]
             }
-        output_path (str): Path to output evaluation results
+        config (Dict): Configuration details of the RAG pipeline
     Returns:
         Tuple[DataFrame, DataFrame]: Two DataFrames representing evaluation results:
             1. Scores for each individual example
@@ -64,7 +64,7 @@ def evaluate(
         'question': questions,
         'answer': answers,
         'contexts': contexts,
-        'ground_truth': ground_truths  # Changed from 'ground_truths' to 'ground_truth'
+        'ground_truth': ground_truths
     }
     if reranked_docs:
         data['reranked_docs'] = reranked_docs
@@ -100,6 +100,21 @@ def evaluate(
         'max': individual_scores_df[_DEFAULT_METRICS].max(),
     })
 
+    # Add configuration details to summary DataFrame
+    for key, value in config.items():
+        summary_df[key] = str(value)
+
+    return individual_scores_df, summary_df
+
+def save_evaluation_results(individual_scores_df: DataFrame, summary_df: DataFrame, output_path: str):
+    '''
+    Saves the evaluation results to CSV files.
+
+    Parameters:
+        individual_scores_df (DataFrame): DataFrame containing individual scores
+        summary_df (DataFrame): DataFrame containing summary statistics
+        output_path (str): Base path for output files
+    '''
     # Generate timestamp
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 
@@ -112,5 +127,3 @@ def evaluate(
 
     logging.info(f"Individual scores saved to: {individual_scores_path}")
     logging.info(f"Summary statistics saved to: {summary_path}")
-
-    return individual_scores_df, summary_df

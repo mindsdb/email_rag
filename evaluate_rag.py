@@ -2,38 +2,34 @@ import argparse
 import json
 import logging
 import os
-import platform
 import sys
 import uuid
-from concurrent.futures import ThreadPoolExecutor, as_completed
-from dataclasses import asdict, dataclass, field
+from dataclasses import dataclass, field
 from datetime import datetime
-from pathlib import Path
 import pathlib
 from typing import Dict, List, Optional, Type, Union
 
 from langchain.docstore.document import Document
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.vectorstores import Chroma
 from langchain_community.retrievers import BM25Retriever
 from langchain_core.embeddings import Embeddings
 from langchain_core.language_models import BaseChatModel
 from langchain_core.vectorstores import VectorStore
 from sqlalchemy import create_engine
-from tqdm import tqdm
 
 from evaluate import evaluate
 from loaders.directory_loader.directory_loader import DirectoryLoader
 from loaders.email_loader.email_client import EmailClient
 from loaders.email_loader.email_loader import DEFAULT_CHUNK_OVERLAP, DEFAULT_CHUNK_SIZE, EmailLoader
 from loaders.email_loader.email_search_options import EmailSearchOptions
-from loaders.vector_store_loader.vector_store_loader import load_vector_store
 from pipelines.rag_pipelines import LangChainRAGPipeline
+from rerankers.settings import ReRankerConfig
 from retrievers.multi_vector_retriever import MultiVectorRetrieverMode
 from settings import (DEFAULT_CONTENT_COLUMN_NAME,
                       DEFAULT_DATASET_DESCRIPTION, DEFAULT_EMBEDDINGS, DEFAULT_EVALUATION_PROMPT_TEMPLATE,
                       DEFAULT_LLM, DEFAULT_POOL_RECYCLE, DEFAULT_TEST_TABLE_NAME, DEFAUlT_VECTOR_STORE,
                       InputDataType, RetrieverType)
+from rerankers.settings import ReRankerType
 from utils import VectorStoreOperator, documents_to_df
 from visualize.visualize import visualize_evaluation_metrics
 
@@ -114,15 +110,22 @@ class GetPipelineArgs:
     rag_prompt_template: str
     retriever_prompt_template: Union[str, dict]
     retriever_type: RetrieverType
-    rerank_documents: bool
+    rerank_documents: ReRankerType
     multi_retriever_mode: MultiVectorRetrieverMode
     retriever_map: dict
+    split_documents: bool = True
+    reranker_config: Optional[ReRankerConfig] = None
     _split_docs: List[Document] = field(default_factory=list)
-    _doc_ids: List[str] = field(default_factory=list)
+    _doc_ids: List[str] = field(init=False)
 
     def __post_init__(self):
-        if not self._split_docs:
+        self._doc_ids = [str(uuid.uuid4()) for _ in self.all_documents]
+        if self.split_documents and self.all_documents and not self._split_docs:
             self._split_documents()
+        elif not self.split_documents:
+            self._split_docs = self.all_documents
+            for doc, doc_id in zip(self._split_docs, self._doc_ids):
+                doc.metadata[_DEFAULT_ID_KEY] = doc_id
 
     @property
     def doc_ids(self) -> List[str]:
@@ -149,6 +152,7 @@ class GetPipelineArgs:
 
         # Update the VectorStoreOperator with the split documents
         self.vector_store_operator.documents = self._split_docs
+
 
     def _generate_id_and_split_document(self, doc: Document) -> tuple[str, list[Document]]:
         """
@@ -276,29 +280,26 @@ def _create_retriever(pipeline_args: GetPipelineArgs, retriever_type: RetrieverT
         raise ValueError(f'Invalid retriever type: {retriever_type}')
     return creator(pipeline_args)
 
+
 def _create_vector_store_retriever(pipeline_args: GetPipelineArgs):
-    k = 40 if pipeline_args.rerank_documents else 5
+    k = 5 if pipeline_args.reranker_config is None or pipeline_args.reranker_config.config.type == ReRankerType.DISABLED else 45
     return LangChainRAGPipeline.from_retriever(
         retriever=pipeline_args.vector_store_operator.vector_store.as_retriever(search_kwargs={"k": k}),
         prompt_template=DEFAULT_EVALUATION_PROMPT_TEMPLATE,
         llm=pipeline_args.llm,
-        rerank_documents=pipeline_args.rerank_documents
+        reranker_config=pipeline_args.reranker_config
     )
 
 def _create_bm25_retriever(pipeline_args: GetPipelineArgs):
-    if pipeline_args.rerank_documents:
-        k = 40
-    else:
-        k = 5
+    k = 40 if pipeline_args.reranker_config and pipeline_args.reranker_config.config.type != ReRankerType.DISABLED else 5
     bm25_retriever = BM25Retriever.from_documents(pipeline_args.all_documents)
     bm25_retriever.k = k
     return LangChainRAGPipeline.from_retriever(
         retriever=bm25_retriever,
         prompt_template=DEFAULT_EVALUATION_PROMPT_TEMPLATE,
         llm=pipeline_args.llm,
-        rerank_documents=pipeline_args.rerank_documents
+        reranker_config=pipeline_args.reranker_config
     )
-
 
 def _create_hybrid_search_retriever(pipeline_args: GetPipelineArgs):
     pipeline_args.retriever_map = {'bm25':0.5, 'vector_store':0.5}
@@ -431,7 +432,7 @@ def evaluate_rag(dataset: str,
                  split_documents: bool = True,
                  multi_retriever_mode: MultiVectorRetrieverMode = MultiVectorRetrieverMode.BOTH,
                  existing_vector_store: bool = False,
-                 rerank_documents: bool = False,
+                 reranker_config: Optional[ReRankerConfig] = None,
                  retriever_map: Optional[Dict[str, float]] = None,
                  max_input_docs: Optional[int] = None,
                  max_qa_samples: Optional[int] = None
@@ -467,7 +468,8 @@ def evaluate_rag(dataset: str,
             retriever_type=retriever_type,
             multi_retriever_mode=multi_retriever_mode,
             retriever_map=retriever_map or {},
-            rerank_documents=rerank_documents
+            rerank_documents=reranker_config.config.type,
+            reranker_config=reranker_config
         )
 
         rag_pipeline = _create_retriever(pipeline_args, retriever_type)
@@ -480,7 +482,22 @@ def evaluate_rag(dataset: str,
         # Load and limit QA samples before evaluation
         qa_samples = load_and_limit_qa_samples(qa_file, max_qa_samples)
 
-        summary_df, individual_scores_df = evaluate.evaluate(rag_chain, qa_samples, output_file)
+        # Create a configuration dictionary
+        config = {
+            'dataset':dataset,
+            'retriever_type':retriever_type.value,
+            'input_data_type':input_data_type.value,
+            'split_documents':split_documents,
+            'multi_retriever_mode':multi_retriever_mode.value,
+            'reranking':reranker_config.config.type.value,
+            'embeddings_model':embeddings_model.model,
+            'llm':llm.model_name
+        }
+
+        individual_scores_df, summary_df = evaluate.evaluate(rag_chain, qa_samples, config)
+
+        # Save the results
+        evaluate.save_evaluation_results(individual_scores_df, summary_df, output_file)
 
         if show_visualization:
             visualize_evaluation_metrics(output_file, individual_scores_df)
@@ -517,8 +534,10 @@ if __name__ == '__main__':
                         help='Whether to plot and show evaluation metrics')
     parser.add_argument('-s', '--split_documents', action='store_true',
                         help='Whether to split documents after they are loaded')
-    parser.add_argument('-rd', '--rerank_documents', action='store_true',
-                        help='Whether to use an LLM to rerank documents after pulling')
+    parser.add_argument('-rr', '--reranker', type=ReRankerType, choices=list(ReRankerType),
+                        help='Type of reranker to use', default=ReRankerType.DISABLED)
+    parser.add_argument('-rrc', '--reranker_config', type=str,
+                        help='JSON string with additional reranker configuration')
     parser.add_argument('-evs', '--existing_vector_store', action='store_true',
                         help='If using an existing vector store, update .env file with config')
     parser.add_argument('-er', '--ensemble_retrievers', type=str, default='',
@@ -568,6 +587,11 @@ if __name__ == '__main__':
 
     logger.info(f'Evaluating RAG pipeline with dataset: {args.dataset}')
 
+    reranker_config = None
+    if args.reranker != ReRankerType.DISABLED:
+        reranker_kwargs = json.loads(args.reranker_config) if args.reranker_config else {}
+        reranker_config = ReRankerConfig.create(args.reranker, **reranker_kwargs)
+
     try:
         evaluate_rag(
             dataset=args.dataset,
@@ -581,7 +605,7 @@ if __name__ == '__main__':
             split_documents=args.split_documents,
             multi_retriever_mode=args.multi_retriever_mode,
             existing_vector_store=args.existing_vector_store,
-            rerank_documents=args.rerank_documents,
+            reranker_config=reranker_config,
             retriever_map=retriever_map,
             max_input_docs=args.max_input_docs,
             max_qa_samples=args.max_qa_samples
