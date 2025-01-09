@@ -1,5 +1,5 @@
-# Email RAG
-
+# Email RAG (T.I.M.E)
+ 
 Repo to try and build an incredible RAG system over email **(this is to test the SOTA in RAG)**
 
 Possibly we will name this TIME: Thoroughly Intelligent Mail Explorer" Like sending a Special Circumstances agent to investigate where all those 'I'll reply later' emails went"
