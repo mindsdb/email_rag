@@ -2,7 +2,7 @@
  
 Repo to try and build an incredible RAG system over email **(this is to test the SOTA in RAG)**
 
-Possibly we will name this TIME: Thoroughly Intelligent Mail Explorer" Like sending a Special Circumstances agent to investigate where all those 'I'll reply later' emails went"
+T.I.M.E: Thoroughly Intelligent Mail Explorer" Like sending a Special Circumstances agent to investigate where all those 'I'll reply later' emails went"
 
 RAG over conversational data is an interesting topic to us, because, we all have access to these datasets, and we can apply our intuitions to what feels useful and what is not.
 
